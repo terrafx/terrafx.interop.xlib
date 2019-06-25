@@ -12,6 +12,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".root", ".root", "{2F337CB6
 		Directory.Build.props = Directory.Build.props
 		Directory.Build.targets = Directory.Build.targets
 		LICENSE.md = LICENSE.md
+		NOTICE.md = NOTICE.md
 		pack.cmd = pack.cmd
 		pack.sh = pack.sh
 		restore.cmd = restore.cmd
@@ -38,13 +39,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "sources", "sources", "{0B82
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interop", "Interop", "{70FBCFD9-B96E-4E72-B35C-681D9B2DA3D6}"
-	ProjectSection(SolutionItems) = preProject
-		sources\Interop\.editorconfig = sources\Interop\.editorconfig
-	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libX11", "libX11", "{63D2AF3C-3ACA-4FEA-94F9-58A30B5D175A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "X11", "X11", "{63D2AF3C-3ACA-4FEA-94F9-58A30B5D175A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerraFX.Interop.libX11", "sources\Interop\libX11\TerraFX.Interop.libX11.csproj", "{71ACA9BE-5460-401A-8768-33FA25046A46}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerraFX.Interop.X11", "sources\Interop\X11\TerraFX.Interop.X11.csproj", "{71ACA9BE-5460-401A-8768-33FA25046A46}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{EFB05081-EC44-49D3-B6D1-52AE42085B5B}"
 	ProjectSection(SolutionItems) = preProject
@@ -54,9 +52,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{EFB05081
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Interop", "Interop", "{7E31C739-2787-44ED-8304-7EFCEE1A2B2C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "libX11", "libX11", "{32D5D5C6-C467-4200-A978-4DCEBAD16ABF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "X11", "X11", "{32D5D5C6-C467-4200-A978-4DCEBAD16ABF}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerraFX.Interop.libX11.UnitTests", "tests\Interop\libX11\TerraFX.Interop.libX11.UnitTests.csproj", "{FE1214EA-21BD-4087-AD01-D42DBA8572FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerraFX.Interop.X11.UnitTests", "tests\Interop\X11\TerraFX.Interop.X11.UnitTests.csproj", "{FE1214EA-21BD-4087-AD01-D42DBA8572FE}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{48E1F49D-7103-4DE6-9F69-915183B85095}"
 	ProjectSection(SolutionItems) = preProject
