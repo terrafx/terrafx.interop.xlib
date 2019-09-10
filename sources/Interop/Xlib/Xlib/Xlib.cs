@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public static unsafe partial class X11
+    public static unsafe partial class Xlib
     {
         private const string libraryPath = "X11";
 

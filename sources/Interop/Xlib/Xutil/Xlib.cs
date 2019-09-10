@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public static unsafe partial class X11
+    public static unsafe partial class Xlib
     {
         [DllImport(libraryPath, EntryPoint = "XAllocClassHint", CallingConvention = CallingConvention.Cdecl)]
         [return: NativeTypeName("XClassHint *")]
