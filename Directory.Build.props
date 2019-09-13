@@ -14,7 +14,7 @@
   <PropertyGroup>
     <BaseArtifactsPath>$(MSBuildThisFileDirectory)artifacts/</BaseArtifactsPath>
     <BaseArtifactsPathSuffix>$(TerraFXProjectCategory)/$(MSBuildProjectName)</BaseArtifactsPathSuffix>
-    <RepositoryUrl>https://github.com/terrafx/terrafx.interop.x11/</RepositoryUrl>
+    <RepositoryUrl>https://github.com/terrafx/terrafx.interop.xlib/</RepositoryUrl>
   </PropertyGroup>
 
   <!-- Default settings that explicitly differ from the Sdk.props defaults  -->
@@ -40,8 +40,8 @@
     <BaseOutputPath>$(BaseArtifactsPath)bin/$(BaseArtifactsPathSuffix)/</BaseOutputPath>
     <Company>TerraFX</Company>
     <PackageOutputPath>$(BaseArtifactsPath)pkg/$(Configuration)/</PackageOutputPath>
-    <Product>TerraFX.Interop.X11</Product>
-    <VersionPrefix>0.1.0</VersionPrefix>
+    <Product>TerraFX.Interop.Xlib</Product>
+    <VersionPrefix>6.3.0</VersionPrefix>
     <VersionSuffix>alpha</VersionSuffix>
     <VersionSuffix Condition="'$(SYSTEM_PULLREQUEST_PULLREQUESTNUMBER)' != ''">pr$(SYSTEM_PULLREQUEST_PULLREQUESTNUMBER)</VersionSuffix>
   </PropertyGroup>
@@ -51,7 +51,7 @@
     <AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)TerraFX.snk</AssemblyOriginatorKeyFile>
     <AssemblyOriginatorPublicKey>002400000c800000940000000602000000240000525341310004000001000100897039f5ff762b25b9ba982c3f5836c34e299279c33df505bf806a07bccdf0e1216e661943f557b954cb18422ed522a5b3174b85385052677f39c4ce19f30a1ddbaa507054bc5943461651f396afc612cd80419c5ee2b5277571ff65f51d14ba99e4e4196de0f393e89850a465f019dbdc365ed5e81bbafe1370f54efd254ba8</AssemblyOriginatorPublicKey>
     <Copyright>Copyright © Tanner Gooding and Contributors</Copyright>
-    <Description>Interop bindings for X11.</Description>
+    <Description>Interop bindings for Xlib.</Description>
     <Features>strict</Features>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <HighEntropyVA>true</HighEntropyVA>
