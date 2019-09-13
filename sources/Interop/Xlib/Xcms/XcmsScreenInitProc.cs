@@ -3,10 +3,11 @@
 // Ported from X11\Xcms.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © Tektronix, Inc.
 
+using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate int XcmsScreenInitProc([NativeTypeName("Display *")] XDisplay* param0, int param1, [NativeTypeName("XcmsPerScrnInfo *")] XcmsPerScrnInfo* param2);
+    public unsafe delegate int XcmsScreenInitProc([NativeTypeName("Display *")] UIntPtr dpy, int screen_number, [NativeTypeName("XcmsPerScrnInfo *")] XcmsPerScrnInfo* screen_info);
 }

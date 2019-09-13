@@ -3,10 +3,11 @@
 // Ported from X11\Xlib.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
+using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate void XIDProc([NativeTypeName("Display *")] XDisplay* param0, [NativeTypeName("XPointer")] sbyte* param1, [NativeTypeName("XPointer")] sbyte* param2);
+    public unsafe delegate void XIDProc([NativeTypeName("Display *")] UIntPtr param0, [NativeTypeName("XPointer")] sbyte* param1, [NativeTypeName("XPointer")] sbyte* param2);
 }

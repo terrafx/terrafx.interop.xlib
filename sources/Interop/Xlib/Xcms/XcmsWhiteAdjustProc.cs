@@ -9,5 +9,5 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate int XcmsWhiteAdjustProc([NativeTypeName("XcmsCCC")] XcmsCCC* param0, [NativeTypeName("XcmsColor *")] XcmsColor* param1, [NativeTypeName("XcmsColor *")] XcmsColor* param2, [NativeTypeName("XcmsColorFormat")] UIntPtr param3, [NativeTypeName("XcmsColor *")] XcmsColor* param4, [NativeTypeName("unsigned int")] uint param5, [NativeTypeName("int *")] int* param6);
+    public unsafe delegate int XcmsWhiteAdjustProc([NativeTypeName("XcmsCCC")] XcmsCCC* ccc, [NativeTypeName("XcmsColor *")] XcmsColor* initial_white_point, [NativeTypeName("XcmsColor *")] XcmsColor* target_white_point, [NativeTypeName("XcmsColorFormat")] UIntPtr target_format, [NativeTypeName("XcmsColor *")] XcmsColor* colors_in_out, [NativeTypeName("unsigned int")] uint ncolors, [NativeTypeName("int *")] int* compression_flags_return);
 }

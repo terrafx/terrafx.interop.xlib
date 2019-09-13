@@ -12,7 +12,7 @@ namespace TerraFX.Interop
         public int type;
 
         [NativeTypeName("Display *")]
-        public XDisplay* display;
+        public UIntPtr display;
 
         [NativeTypeName("XID")]
         public UIntPtr resourceid;

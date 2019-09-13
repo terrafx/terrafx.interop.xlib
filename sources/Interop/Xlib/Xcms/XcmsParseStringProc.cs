@@ -8,5 +8,5 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate int XcmsParseStringProc([NativeTypeName("char *")] sbyte* param0, [NativeTypeName("XcmsColor *")] XcmsColor* param1);
+    public unsafe delegate int XcmsParseStringProc([NativeTypeName("char *")] sbyte* color_string, [NativeTypeName("XcmsColor *")] XcmsColor* color_return);
 }

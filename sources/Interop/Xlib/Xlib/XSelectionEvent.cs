@@ -17,7 +17,7 @@ namespace TerraFX.Interop
         public int send_event;
 
         [NativeTypeName("Display *")]
-        public XDisplay* display;
+        public UIntPtr display;
 
         [NativeTypeName("Window")]
         public UIntPtr requestor;

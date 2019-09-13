@@ -13,7 +13,7 @@ namespace TerraFX.Interop
         public XExtData* ext_data;
 
         [NativeTypeName("struct XDisplay *")]
-        public XDisplay* display;
+        public UIntPtr display;
 
         [NativeTypeName("Window")]
         public UIntPtr root;

@@ -3,24 +3,13 @@
 // Ported from X11\Xlib.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
-using System;
+using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct XGenericEvent
+    public unsafe partial struct XExtData
     {
-        public int type;
-
-        [NativeTypeName("unsigned long")]
-        public UIntPtr serial;
-
-        public int send_event;
-
-        [NativeTypeName("Display *")]
-        public UIntPtr display;
-
-        public int extension;
-
-        public int evtype;
+        [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+        public delegate int _free_private([NativeTypeName("struct _XExtData *")] XExtData* extension);
     }
 }

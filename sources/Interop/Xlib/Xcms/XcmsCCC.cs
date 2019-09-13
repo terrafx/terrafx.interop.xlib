@@ -10,7 +10,7 @@ namespace TerraFX.Interop
     public unsafe partial struct XcmsCCC
     {
         [NativeTypeName("Display *")]
-        public XDisplay* dpy;
+        public UIntPtr dpy;
 
         public int screenNumber;
 

@@ -8,5 +8,5 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop
 {
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public unsafe delegate void XcmsScreenFreeProc([NativeTypeName("XPointer")] sbyte* param0);
+    public unsafe delegate void XcmsScreenFreeProc([NativeTypeName("XPointer")] sbyte* screenData);
 }
