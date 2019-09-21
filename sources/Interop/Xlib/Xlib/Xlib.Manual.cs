@@ -5,7 +5,6 @@
 
 using System;
 using System.Runtime.InteropServices;
-using static TerraFX.Utilities.InteropUtilities;
 
 namespace TerraFX.Interop
 {
@@ -391,6 +390,6 @@ namespace TerraFX.Interop
         public static IntPtr EventMaskOfScreen([NativeTypeName("Screen *")] Screen* s) => s->root_input_mask;
 
         [return: NativeTypeName("XID")]
-        public static UIntPtr XAllocID([NativeTypeName("Display *")] UIntPtr dpy) => MarshalFunction<XPrivDisplay._resource_alloc>(((XPrivDisplay*)dpy)->resource_alloc)(dpy);
+        public static UIntPtr XAllocID([NativeTypeName("Display *")] UIntPtr dpy) => Marshal.GetDelegateForFunctionPointer<XPrivDisplay._resource_alloc>(((XPrivDisplay*)dpy)->resource_alloc)(dpy);
     }
 }
