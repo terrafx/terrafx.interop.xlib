@@ -10,8 +10,6 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Xlib
     {
-        private const string libraryPath = "X11";
-
         [DllImport(libraryPath, EntryPoint = "_Xmblen", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
         public static extern int _Xmblen([NativeTypeName("char *")] sbyte* str, int len);
 
