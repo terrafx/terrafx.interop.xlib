@@ -53,17 +53,6 @@ namespace TerraFX.Interop
                 internal IntPtr e2;
                 internal IntPtr e3;
                 internal IntPtr e4;
-
-                public unsafe ref IntPtr this[int index]
-                {
-                    get
-                    {
-                        fixed (IntPtr* pThis = &e0)
-                        {
-                            return ref pThis[index];
-                        }
-                    }
-                }
             }
         }
     }
