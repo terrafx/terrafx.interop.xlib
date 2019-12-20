@@ -8,21 +8,78 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Xlib
     {
-        private const string libraryPath = "libX11";
+        private const string LibraryPath = "libX11";
+
+        public static event DllImportResolver? ResolveLibrary;
 
         static Xlib()
         {
-            NativeLibrary.SetDllImportResolver(Assembly.GetExecutingAssembly(), ResolveLibrary);
+            NativeLibrary.SetDllImportResolver(Assembly.GetExecutingAssembly(), OnDllImport);
         }
 
-        private static IntPtr ResolveLibrary(string libraryName, Assembly assembly, DllImportSearchPath? searchPath)
+        private static IntPtr OnDllImport(string libraryName, Assembly assembly, DllImportSearchPath? searchPath)
         {
-            if (!NativeLibrary.TryLoad("libX11.so", assembly, searchPath, out var nativeLibrary))
+            IntPtr nativeLibrary;
+
+            if (TryResolveLibrary(libraryName, assembly, searchPath, out nativeLibrary))
             {
-                nativeLibrary = NativeLibrary.Load("libX11.so.6", assembly, searchPath);
+                return nativeLibrary;
             }
 
-            return nativeLibrary;
+            if (libraryName.Equals("libX11") && TryResolveLibX11(assembly, searchPath, out nativeLibrary))
+            {
+                return nativeLibrary;
+            }
+
+            return IntPtr.Zero;
+        }
+
+        private static bool TryResolveLibX11(Assembly assembly, DllImportSearchPath? searchPath, out IntPtr nativeLibrary)
+        {
+            if (NativeLibrary.TryLoad("libX11", assembly, searchPath, out nativeLibrary))
+            {
+                return true;
+            }
+
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+            {
+                if (NativeLibrary.TryLoad("libX11.so.6", assembly, searchPath, out nativeLibrary))
+                {
+                    return true;
+                }
+            }
+            else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+            {
+                if (NativeLibrary.TryLoad("libX11.6.dylib", assembly, searchPath, out nativeLibrary))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private static bool TryResolveLibrary(string libraryName, Assembly assembly, DllImportSearchPath? searchPath, out IntPtr nativeLibrary)
+        {
+            var resolveLibrary = ResolveLibrary;
+
+            if (resolveLibrary != null)
+            {
+                var resolvers = resolveLibrary.GetInvocationList();
+
+                foreach (DllImportResolver resolver in resolvers)
+                {
+                    nativeLibrary = resolver(libraryName, assembly, searchPath);
+
+                    if (nativeLibrary != IntPtr.Zero)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            nativeLibrary = IntPtr.Zero;
+            return false;
         }
     }
 }
