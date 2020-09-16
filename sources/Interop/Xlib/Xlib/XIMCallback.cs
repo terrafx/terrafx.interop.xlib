@@ -13,6 +13,6 @@ namespace TerraFX.Interop
         public sbyte* client_data;
 
         [NativeTypeName("XIMProc")]
-        public IntPtr callback;
+        public delegate* unmanaged<IntPtr, sbyte*, sbyte*, void> callback;
     }
 }

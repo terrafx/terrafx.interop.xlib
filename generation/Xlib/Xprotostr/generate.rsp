@@ -4,5 +4,7 @@
 Xlib-Xprotostr.h
 --output
 ../../../sources/Interop/Xlib/Xprotostr
+--test-output
+../../../tests/Interop/Xlib/Xprotostr
 --traverse
 /usr/include/X11/Xprotostr.h

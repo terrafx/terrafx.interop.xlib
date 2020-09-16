@@ -20,13 +20,13 @@ namespace TerraFX.Interop
         public XcmsColor clientWhitePt;
 
         [NativeTypeName("XcmsCompressionProc")]
-        public IntPtr gamutCompProc;
+        public delegate* unmanaged<XcmsCCC*, XcmsColor*, uint, uint, int*, int> gamutCompProc;
 
         [NativeTypeName("XPointer")]
         public sbyte* gamutCompClientData;
 
         [NativeTypeName("XcmsWhiteAdjustProc")]
-        public IntPtr whitePtAdjProc;
+        public delegate* unmanaged<XcmsCCC*, XcmsColor*, XcmsColor*, nuint, XcmsColor*, uint, int*, int> whitePtAdjProc;
 
         [NativeTypeName("XPointer")]
         public sbyte* whitePtAdjClientData;

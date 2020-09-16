@@ -1,8 +1,12 @@
 @../../settings.rsp
 @../../remap.rsp
+--exclude
+XATOM_H
 --file
 Xlib-Xatom.h
 --output
 ../../../sources/Interop/Xlib/Xatom
+--test-output
+../../../tests/Interop/Xlib/Xatom
 --traverse
 /usr/include/X11/Xatom.h

@@ -4,5 +4,7 @@
 Xlib-Xproto.h
 --output
 ../../../sources/Interop/Xlib/Xproto
+--test-output
+../../../tests/Interop/Xlib/Xproto
 --traverse
 /usr/include/X11/Xproto.h

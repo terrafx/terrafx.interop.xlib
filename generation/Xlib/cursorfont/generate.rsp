@@ -4,5 +4,7 @@
 Xlib-cursorfont.h
 --output
 ../../../sources/Interop/Xlib/cursorfont
+--test-output
+../../../tests/Interop/Xlib/cursorfont
 --traverse
 /usr/include/X11/cursorfont.h

@@ -13,9 +13,9 @@ namespace TerraFX.Interop
         public XcmsColorSpace** DDColorSpaces;
 
         [NativeTypeName("XcmsScreenInitProc")]
-        public IntPtr screenInitProc;
+        public delegate* unmanaged<IntPtr, int, XcmsPerScrnInfo*, int> screenInitProc;
 
         [NativeTypeName("XcmsScreenFreeProc")]
-        public IntPtr screenFreeProc;
+        public delegate* unmanaged<sbyte*, void> screenFreeProc;
     }
 }

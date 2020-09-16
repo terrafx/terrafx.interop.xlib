@@ -113,7 +113,7 @@ namespace TerraFX.Interop
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("XcmsCCC")]
-        public static extern XcmsCCC* XcmsCreateCCC([NativeTypeName("Display *")] IntPtr param0, int param1, [NativeTypeName("Visual *")] Visual* param2, [NativeTypeName("XcmsColor *")] XcmsColor* param3, [NativeTypeName("XcmsCompressionProc")] IntPtr param4, [NativeTypeName("XPointer")] sbyte* param5, [NativeTypeName("XcmsWhiteAdjustProc")] IntPtr param6, [NativeTypeName("XPointer")] sbyte* param7);
+        public static extern XcmsCCC* XcmsCreateCCC([NativeTypeName("Display *")] IntPtr param0, int param1, [NativeTypeName("Visual *")] Visual* param2, [NativeTypeName("XcmsColor *")] XcmsColor* param3, [NativeTypeName("XcmsCompressionProc")] delegate* unmanaged<XcmsCCC*, XcmsColor*, uint, uint, int*, int> param4, [NativeTypeName("XPointer")] sbyte* param5, [NativeTypeName("XcmsWhiteAdjustProc")] delegate* unmanaged<XcmsCCC*, XcmsColor*, XcmsColor*, nuint, XcmsColor*, uint, int*, int> param6, [NativeTypeName("XPointer")] sbyte* param7);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("XcmsCCC")]
@@ -180,11 +180,11 @@ namespace TerraFX.Interop
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("XcmsCompressionProc")]
-        public static extern IntPtr XcmsSetCompressionProc([NativeTypeName("XcmsCCC")] XcmsCCC* param0, [NativeTypeName("XcmsCompressionProc")] IntPtr param1, [NativeTypeName("XPointer")] sbyte* param2);
+        public static extern delegate* unmanaged<XcmsCCC*, XcmsColor*, uint, uint, int*, int> XcmsSetCompressionProc([NativeTypeName("XcmsCCC")] XcmsCCC* param0, [NativeTypeName("XcmsCompressionProc")] delegate* unmanaged<XcmsCCC*, XcmsColor*, uint, uint, int*, int> param1, [NativeTypeName("XPointer")] sbyte* param2);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("XcmsWhiteAdjustProc")]
-        public static extern IntPtr XcmsSetWhiteAdjustProc([NativeTypeName("XcmsCCC")] XcmsCCC* param0, [NativeTypeName("XcmsWhiteAdjustProc")] IntPtr param1, [NativeTypeName("XPointer")] sbyte* param2);
+        public static extern delegate* unmanaged<XcmsCCC*, XcmsColor*, XcmsColor*, nuint, XcmsColor*, uint, int*, int> XcmsSetWhiteAdjustProc([NativeTypeName("XcmsCCC")] XcmsCCC* param0, [NativeTypeName("XcmsWhiteAdjustProc")] delegate* unmanaged<XcmsCCC*, XcmsColor*, XcmsColor*, nuint, XcmsColor*, uint, int*, int> param1, [NativeTypeName("XPointer")] sbyte* param2);
 
         [DllImport("libX11", ExactSpelling = true)]
         public static extern int XcmsSetWhitePoint([NativeTypeName("XcmsCCC")] XcmsCCC* param0, [NativeTypeName("XcmsColor *")] XcmsColor* param1);
@@ -228,5 +228,50 @@ namespace TerraFX.Interop
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("Visual *")]
         public static extern Visual* XcmsVisualOfCCC([NativeTypeName("XcmsCCC")] XcmsCCC* param0);
+
+        [NativeTypeName("#define XcmsFailure 0")]
+        public const int XcmsFailure = 0;
+
+        [NativeTypeName("#define XcmsSuccess 1")]
+        public const int XcmsSuccess = 1;
+
+        [NativeTypeName("#define XcmsSuccessWithCompression 2")]
+        public const int XcmsSuccessWithCompression = 2;
+
+        [NativeTypeName("#define XcmsUndefinedFormat (XcmsColorFormat)0x00000000")]
+        public const nuint XcmsUndefinedFormat = (nuint)(0x00000000);
+
+        [NativeTypeName("#define XcmsCIEXYZFormat (XcmsColorFormat)0x00000001")]
+        public const nuint XcmsCIEXYZFormat = (nuint)(0x00000001);
+
+        [NativeTypeName("#define XcmsCIEuvYFormat (XcmsColorFormat)0x00000002")]
+        public const nuint XcmsCIEuvYFormat = (nuint)(0x00000002);
+
+        [NativeTypeName("#define XcmsCIExyYFormat (XcmsColorFormat)0x00000003")]
+        public const nuint XcmsCIExyYFormat = (nuint)(0x00000003);
+
+        [NativeTypeName("#define XcmsCIELabFormat (XcmsColorFormat)0x00000004")]
+        public const nuint XcmsCIELabFormat = (nuint)(0x00000004);
+
+        [NativeTypeName("#define XcmsCIELuvFormat (XcmsColorFormat)0x00000005")]
+        public const nuint XcmsCIELuvFormat = (nuint)(0x00000005);
+
+        [NativeTypeName("#define XcmsTekHVCFormat (XcmsColorFormat)0x00000006")]
+        public const nuint XcmsTekHVCFormat = (nuint)(0x00000006);
+
+        [NativeTypeName("#define XcmsRGBFormat (XcmsColorFormat)0x80000000")]
+        public const nuint XcmsRGBFormat = (nuint)(0x80000000);
+
+        [NativeTypeName("#define XcmsRGBiFormat (XcmsColorFormat)0x80000001")]
+        public const nuint XcmsRGBiFormat = (nuint)(0x80000001);
+
+        [NativeTypeName("#define XcmsInitNone 0x00")]
+        public const int XcmsInitNone = 0x00;
+
+        [NativeTypeName("#define XcmsInitSuccess 0x01")]
+        public const int XcmsInitSuccess = 0x01;
+
+        [NativeTypeName("#define XcmsInitFailure 0xff")]
+        public const int XcmsInitFailure = 0xff;
     }
 }

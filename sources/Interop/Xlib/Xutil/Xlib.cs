@@ -232,5 +232,182 @@ namespace TerraFX.Interop
 
         [DllImport("libX11", ExactSpelling = true)]
         public static extern int XXorRegion([NativeTypeName("Region")] IntPtr param0, [NativeTypeName("Region")] IntPtr param1, [NativeTypeName("Region")] IntPtr param2);
+
+        [NativeTypeName("#define NoValue 0x0000")]
+        public const int NoValue = 0x0000;
+
+        [NativeTypeName("#define XValue 0x0001")]
+        public const int XValue = 0x0001;
+
+        [NativeTypeName("#define YValue 0x0002")]
+        public const int YValue = 0x0002;
+
+        [NativeTypeName("#define WidthValue 0x0004")]
+        public const int WidthValue = 0x0004;
+
+        [NativeTypeName("#define HeightValue 0x0008")]
+        public const int HeightValue = 0x0008;
+
+        [NativeTypeName("#define AllValues 0x000F")]
+        public const int AllValues = 0x000F;
+
+        [NativeTypeName("#define XNegative 0x0010")]
+        public const int XNegative = 0x0010;
+
+        [NativeTypeName("#define YNegative 0x0020")]
+        public const int YNegative = 0x0020;
+
+        [NativeTypeName("#define USPosition (1L << 0)")]
+        public const nint USPosition = (1 << 0);
+
+        [NativeTypeName("#define USSize (1L << 1)")]
+        public const nint USSize = (1 << 1);
+
+        [NativeTypeName("#define PPosition (1L << 2)")]
+        public const nint PPosition = (1 << 2);
+
+        [NativeTypeName("#define PSize (1L << 3)")]
+        public const nint PSize = (1 << 3);
+
+        [NativeTypeName("#define PMinSize (1L << 4)")]
+        public const nint PMinSize = (1 << 4);
+
+        [NativeTypeName("#define PMaxSize (1L << 5)")]
+        public const nint PMaxSize = (1 << 5);
+
+        [NativeTypeName("#define PResizeInc (1L << 6)")]
+        public const nint PResizeInc = (1 << 6);
+
+        [NativeTypeName("#define PAspect (1L << 7)")]
+        public const nint PAspect = (1 << 7);
+
+        [NativeTypeName("#define PBaseSize (1L << 8)")]
+        public const nint PBaseSize = (1 << 8);
+
+        [NativeTypeName("#define PWinGravity (1L << 9)")]
+        public const nint PWinGravity = (1 << 9);
+
+        [NativeTypeName("#define PAllHints (PPosition|PSize|PMinSize|PMaxSize|PResizeInc|PAspect)")]
+        public const nint PAllHints = ((1 << 2) | (1 << 3) | (1 << 4) | (1 << 5) | (1 << 6) | (1 << 7));
+
+        [NativeTypeName("#define InputHint (1L << 0)")]
+        public const nint InputHint = (1 << 0);
+
+        [NativeTypeName("#define StateHint (1L << 1)")]
+        public const nint StateHint = (1 << 1);
+
+        [NativeTypeName("#define IconPixmapHint (1L << 2)")]
+        public const nint IconPixmapHint = (1 << 2);
+
+        [NativeTypeName("#define IconWindowHint (1L << 3)")]
+        public const nint IconWindowHint = (1 << 3);
+
+        [NativeTypeName("#define IconPositionHint (1L << 4)")]
+        public const nint IconPositionHint = (1 << 4);
+
+        [NativeTypeName("#define IconMaskHint (1L << 5)")]
+        public const nint IconMaskHint = (1 << 5);
+
+        [NativeTypeName("#define WindowGroupHint (1L << 6)")]
+        public const nint WindowGroupHint = (1 << 6);
+
+        [NativeTypeName("#define AllHints (InputHint|StateHint|IconPixmapHint|IconWindowHint| \\\nIconPositionHint|IconMaskHint|WindowGroupHint)")]
+        public const nint AllHints = ((1 << 0) | (1 << 1) | (1 << 2) | (1 << 3) | (1 << 4) | (1 << 5) | (1 << 6));
+
+        [NativeTypeName("#define XUrgencyHint (1L << 8)")]
+        public const nint XUrgencyHint = (1 << 8);
+
+        [NativeTypeName("#define WithdrawnState 0")]
+        public const int WithdrawnState = 0;
+
+        [NativeTypeName("#define NormalState 1")]
+        public const int NormalState = 1;
+
+        [NativeTypeName("#define IconicState 3")]
+        public const int IconicState = 3;
+
+        [NativeTypeName("#define DontCareState 0")]
+        public const int DontCareState = 0;
+
+        [NativeTypeName("#define ZoomState 2")]
+        public const int ZoomState = 2;
+
+        [NativeTypeName("#define InactiveState 4")]
+        public const int InactiveState = 4;
+
+        [NativeTypeName("#define XNoMemory -1")]
+        public const int XNoMemory = -1;
+
+        [NativeTypeName("#define XLocaleNotSupported -2")]
+        public const int XLocaleNotSupported = -2;
+
+        [NativeTypeName("#define XConverterNotFound -3")]
+        public const int XConverterNotFound = -3;
+
+        [NativeTypeName("#define RectangleOut 0")]
+        public const int RectangleOut = 0;
+
+        [NativeTypeName("#define RectangleIn 1")]
+        public const int RectangleIn = 1;
+
+        [NativeTypeName("#define RectanglePart 2")]
+        public const int RectanglePart = 2;
+
+        [NativeTypeName("#define VisualNoMask 0x0")]
+        public const int VisualNoMask = 0x0;
+
+        [NativeTypeName("#define VisualIDMask 0x1")]
+        public const int VisualIDMask = 0x1;
+
+        [NativeTypeName("#define VisualScreenMask 0x2")]
+        public const int VisualScreenMask = 0x2;
+
+        [NativeTypeName("#define VisualDepthMask 0x4")]
+        public const int VisualDepthMask = 0x4;
+
+        [NativeTypeName("#define VisualClassMask 0x8")]
+        public const int VisualClassMask = 0x8;
+
+        [NativeTypeName("#define VisualRedMaskMask 0x10")]
+        public const int VisualRedMaskMask = 0x10;
+
+        [NativeTypeName("#define VisualGreenMaskMask 0x20")]
+        public const int VisualGreenMaskMask = 0x20;
+
+        [NativeTypeName("#define VisualBlueMaskMask 0x40")]
+        public const int VisualBlueMaskMask = 0x40;
+
+        [NativeTypeName("#define VisualColormapSizeMask 0x80")]
+        public const int VisualColormapSizeMask = 0x80;
+
+        [NativeTypeName("#define VisualBitsPerRGBMask 0x100")]
+        public const int VisualBitsPerRGBMask = 0x100;
+
+        [NativeTypeName("#define VisualAllMask 0x1FF")]
+        public const int VisualAllMask = 0x1FF;
+
+        [NativeTypeName("#define ReleaseByFreeingColormap ((XID) 1L)")]
+        public const nuint ReleaseByFreeingColormap = ((nuint)(1));
+
+        [NativeTypeName("#define BitmapSuccess 0")]
+        public const int BitmapSuccess = 0;
+
+        [NativeTypeName("#define BitmapOpenFailed 1")]
+        public const int BitmapOpenFailed = 1;
+
+        [NativeTypeName("#define BitmapFileInvalid 2")]
+        public const int BitmapFileInvalid = 2;
+
+        [NativeTypeName("#define BitmapNoMemory 3")]
+        public const int BitmapNoMemory = 3;
+
+        [NativeTypeName("#define XCSUCCESS 0")]
+        public const int XCSUCCESS = 0;
+
+        [NativeTypeName("#define XCNOMEM 1")]
+        public const int XCNOMEM = 1;
+
+        [NativeTypeName("#define XCNOENT 2")]
+        public const int XCNOENT = 2;
     }
 }

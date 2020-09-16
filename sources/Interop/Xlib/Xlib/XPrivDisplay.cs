@@ -38,7 +38,7 @@ namespace TerraFX.Interop
         public int private6;
 
         [NativeTypeName("XID (*)(struct _XDisplay *)")]
-        public IntPtr resource_alloc;
+        public delegate* unmanaged<IntPtr, nuint> resource_alloc;
 
         public int byte_order;
 
@@ -90,7 +90,7 @@ namespace TerraFX.Interop
         public IntPtr db;
 
         [NativeTypeName("int (*)(struct _XDisplay *)")]
-        public IntPtr private15;
+        public delegate* unmanaged<IntPtr, int> private15;
 
         [NativeTypeName("char *")]
         public sbyte* display_name;

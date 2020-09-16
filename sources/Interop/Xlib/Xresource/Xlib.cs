@@ -94,7 +94,7 @@ namespace TerraFX.Interop
         public static extern void XrmCombineDatabase([NativeTypeName("XrmDatabase")] IntPtr param0, [NativeTypeName("XrmDatabase *")] IntPtr* param1, int param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XrmEnumerateDatabase([NativeTypeName("XrmDatabase")] IntPtr param0, [NativeTypeName("XrmNameList")] int* param1, [NativeTypeName("XrmClassList")] int* param2, int param3, [NativeTypeName("int (*)(XrmDatabase *, XrmBindingList, XrmQuarkList, XrmRepresentation *, XrmValue *, XPointer)")] IntPtr param4, [NativeTypeName("XPointer")] sbyte* param5);
+        public static extern int XrmEnumerateDatabase([NativeTypeName("XrmDatabase")] IntPtr param0, [NativeTypeName("XrmNameList")] int* param1, [NativeTypeName("XrmClassList")] int* param2, int param3, [NativeTypeName("int (*)(XrmDatabase *, XrmBindingList, XrmQuarkList, XrmRepresentation *, XrmValue *, XPointer)")] delegate* unmanaged<IntPtr*, XrmBinding*, int*, int*, XrmValue*, sbyte*, int> param4, [NativeTypeName("XPointer")] sbyte* param5);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("const char *")]
@@ -102,5 +102,17 @@ namespace TerraFX.Interop
 
         [DllImport("libX11", ExactSpelling = true)]
         public static extern void XrmParseCommand([NativeTypeName("XrmDatabase *")] IntPtr* param0, [NativeTypeName("XrmOptionDescList")] XrmOptionDescRec* param1, int param2, [NativeTypeName("const char *")] sbyte* param3, [NativeTypeName("int *")] int* param4, [NativeTypeName("char **")] sbyte** param5);
+
+        [NativeTypeName("#define NULLQUARK ((XrmQuark) 0)")]
+        public const int NULLQUARK = ((int)(0));
+
+        [NativeTypeName("#define NULLSTRING ((XrmString) 0)")]
+        public static readonly sbyte* NULLSTRING = ((sbyte*)(0));
+
+        [NativeTypeName("#define XrmEnumAllLevels 0")]
+        public const int XrmEnumAllLevels = 0;
+
+        [NativeTypeName("#define XrmEnumOneLevel 1")]
+        public const int XrmEnumOneLevel = 1;
     }
 }

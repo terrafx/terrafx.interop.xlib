@@ -3,8 +3,6 @@
 // Ported from include/X11/Xcms.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © Tektronix, Inc.
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct XcmsColorSpace
@@ -16,13 +14,13 @@ namespace TerraFX.Interop
         public nuint id;
 
         [NativeTypeName("XcmsParseStringProc")]
-        public IntPtr parseString;
+        public delegate* unmanaged<sbyte*, XcmsColor*, int> parseString;
 
         [NativeTypeName("XcmsFuncListPtr")]
-        public IntPtr* to_CIEXYZ;
+        public delegate* unmanaged<XcmsCCC*, XcmsColor*, XcmsColor*, uint, int>* to_CIEXYZ;
 
         [NativeTypeName("XcmsFuncListPtr")]
-        public IntPtr* from_CIEXYZ;
+        public delegate* unmanaged<XcmsCCC*, XcmsColor*, XcmsColor*, uint, int>* from_CIEXYZ;
 
         public int inverse_flag;
     }

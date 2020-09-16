@@ -3,8 +3,6 @@
 // Ported from include/X11/Xlib.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct XExtData
@@ -15,7 +13,7 @@ namespace TerraFX.Interop
         public XExtData* next;
 
         [NativeTypeName("int (*)(struct _XExtData *)")]
-        public IntPtr free_private;
+        public delegate* unmanaged<XExtData*, int> free_private;
 
         [NativeTypeName("XPointer")]
         public sbyte* private_data;

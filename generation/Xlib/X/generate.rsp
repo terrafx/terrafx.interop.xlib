@@ -4,5 +4,7 @@
 Xlib-X.h
 --output
 ../../../sources/Interop/Xlib/X
+--test-output
+../../../tests/Interop/Xlib/X
 --traverse
 /usr/include/X11/X.h

@@ -1,8 +1,17 @@
 @../../settings.rsp
 @../../remap.rsp
+--exclude
+ClientWhitePointOfCCC
+DisplayOfCCC
+FunctionSetOfCCC
+ScreenNumberOfCCC
+ScreenWhitePointOfCCC
+VisualOfCCC
 --file
 Xlib-Xcms.h
 --output
 ../../../sources/Interop/Xlib/Xcms
+--test-output
+../../../tests/Interop/Xlib/Xcms
 --traverse
 /usr/include/X11/Xcms.h

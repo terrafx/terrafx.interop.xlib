@@ -11,7 +11,11 @@
 exclude-com-proxies
 exclude-empty-records
 exclude-enum-operators
+generate-aggressive-inlining
+generate-macro-bindings
+generate-tests-nunit
 multi-file
+preview-codegen-fnptr
 preview-codegen-nint
 --headerFile
 header.txt
