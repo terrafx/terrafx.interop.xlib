@@ -8,8 +8,6 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Xlib
     {
-        private const string LibraryPath = "libX11";
-
         public static event DllImportResolver? ResolveLibrary;
 
         static Xlib()
@@ -36,11 +34,6 @@ namespace TerraFX.Interop
 
         private static bool TryResolveLibX11(Assembly assembly, DllImportSearchPath? searchPath, out IntPtr nativeLibrary)
         {
-            if (NativeLibrary.TryLoad("libX11", assembly, searchPath, out nativeLibrary))
-            {
-                return true;
-            }
-
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
             {
                 if (NativeLibrary.TryLoad("libX11.so.6", assembly, searchPath, out nativeLibrary))
@@ -56,7 +49,7 @@ namespace TerraFX.Interop
                 }
             }
 
-            return false;
+            return NativeLibrary.TryLoad("libX11", assembly, searchPath, out nativeLibrary);
         }
 
         private static bool TryResolveLibrary(string libraryName, Assembly assembly, DllImportSearchPath? searchPath, out IntPtr nativeLibrary)
