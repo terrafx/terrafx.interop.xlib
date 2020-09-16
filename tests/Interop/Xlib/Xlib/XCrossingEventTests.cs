@@ -36,7 +36,7 @@ namespace TerraFX.Interop.UnitTests
             }
             else
             {
-                Assert.That(sizeof(XCrossingEvent), Is.EqualTo(72));
+                Assert.That(sizeof(XCrossingEvent), Is.EqualTo(68));
             }
         }
     }

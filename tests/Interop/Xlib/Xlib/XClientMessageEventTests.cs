@@ -36,7 +36,7 @@ namespace TerraFX.Interop.UnitTests
             }
             else
             {
-                Assert.That(sizeof(XClientMessageEvent), Is.EqualTo(56));
+                Assert.That(sizeof(XClientMessageEvent), Is.EqualTo(48));
             }
         }
     }

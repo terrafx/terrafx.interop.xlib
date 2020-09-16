@@ -36,7 +36,7 @@ namespace TerraFX.Interop.UnitTests
             }
             else
             {
-                Assert.That(sizeof(XUnmapEvent), Is.EqualTo(32));
+                Assert.That(sizeof(XUnmapEvent), Is.EqualTo(28));
             }
         }
     }

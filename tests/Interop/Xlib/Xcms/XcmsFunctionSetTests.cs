@@ -36,7 +36,7 @@ namespace TerraFX.Interop.UnitTests
             }
             else
             {
-                Assert.That(sizeof(XcmsFunctionSet), Is.EqualTo(16));
+                Assert.That(sizeof(XcmsFunctionSet), Is.EqualTo(12));
             }
         }
     }

@@ -36,7 +36,7 @@ namespace TerraFX.Interop.UnitTests
             }
             else
             {
-                Assert.That(sizeof(XErrorEvent), Is.EqualTo(24));
+                Assert.That(sizeof(XErrorEvent), Is.EqualTo(20));
             }
         }
     }

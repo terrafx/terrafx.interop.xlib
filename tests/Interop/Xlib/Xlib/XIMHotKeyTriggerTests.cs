@@ -4,6 +4,7 @@
 // Original source is Copyright © The Open Group
 
 using NUnit.Framework;
+using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
@@ -29,7 +30,14 @@ namespace TerraFX.Interop.UnitTests
         [Test]
         public static void SizeOfTest()
         {
-            Assert.That(sizeof(XIMHotKeyTrigger), Is.EqualTo(16));
+            if (Environment.Is64BitProcess)
+            {
+                Assert.That(sizeof(XIMHotKeyTrigger), Is.EqualTo(16));
+            }
+            else
+            {
+                Assert.That(sizeof(XIMHotKeyTrigger), Is.EqualTo(12));
+            }
         }
     }
 }

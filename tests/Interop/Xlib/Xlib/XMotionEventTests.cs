@@ -36,7 +36,7 @@ namespace TerraFX.Interop.UnitTests
             }
             else
             {
-                Assert.That(sizeof(XMotionEvent), Is.EqualTo(64));
+                Assert.That(sizeof(XMotionEvent), Is.EqualTo(60));
             }
         }
     }

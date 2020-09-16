@@ -36,7 +36,7 @@ namespace TerraFX.Interop.UnitTests
             }
             else
             {
-                Assert.That(sizeof(XWindowAttributes), Is.EqualTo(96));
+                Assert.That(sizeof(XWindowAttributes), Is.EqualTo(92));
             }
         }
     }

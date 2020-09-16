@@ -36,7 +36,7 @@ namespace TerraFX.Interop.UnitTests
             }
             else
             {
-                Assert.That(sizeof(XKeyEvent), Is.EqualTo(64));
+                Assert.That(sizeof(XKeyEvent), Is.EqualTo(60));
             }
         }
     }

@@ -36,7 +36,7 @@ namespace TerraFX.Interop.UnitTests
             }
             else
             {
-                Assert.That(sizeof(XIMStringConversionText), Is.EqualTo(24));
+                Assert.That(sizeof(XIMStringConversionText), Is.EqualTo(16));
             }
         }
     }

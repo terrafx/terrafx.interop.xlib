@@ -36,7 +36,7 @@ namespace TerraFX.Interop.UnitTests
             }
             else
             {
-                Assert.That(sizeof(XGCValues), Is.EqualTo(96));
+                Assert.That(sizeof(XGCValues), Is.EqualTo(92));
             }
         }
     }

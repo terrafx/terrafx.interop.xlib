@@ -36,7 +36,7 @@ namespace TerraFX.Interop.UnitTests
             }
             else
             {
-                Assert.That(sizeof(XOMFontInfo), Is.EqualTo(16));
+                Assert.That(sizeof(XOMFontInfo), Is.EqualTo(12));
             }
         }
     }

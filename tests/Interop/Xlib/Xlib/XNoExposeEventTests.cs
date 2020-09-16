@@ -36,7 +36,7 @@ namespace TerraFX.Interop.UnitTests
             }
             else
             {
-                Assert.That(sizeof(XNoExposeEvent), Is.EqualTo(32));
+                Assert.That(sizeof(XNoExposeEvent), Is.EqualTo(28));
             }
         }
     }

@@ -36,7 +36,7 @@ namespace TerraFX.Interop.UnitTests
             }
             else
             {
-                Assert.That(sizeof(XSelectionEvent), Is.EqualTo(40));
+                Assert.That(sizeof(XSelectionEvent), Is.EqualTo(36));
             }
         }
     }
