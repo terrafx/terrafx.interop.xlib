@@ -58,11 +58,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TerraFX.Interop.Xlib.UnitTe
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{48E1F49D-7103-4DE6-9F69-915183B85095}"
 	ProjectSection(SolutionItems) = preProject
-		scripts\azure-ci.yml = scripts\azure-ci.yml
-		scripts\azure-pipelines.yml = scripts\azure-pipelines.yml
-		scripts\azure-pr.yml = scripts\azure-pr.yml
-		scripts\azure-unix.yml = scripts\azure-unix.yml
-		scripts\azure-windows.yml = scripts\azure-windows.yml
 		scripts\build.ps1 = scripts\build.ps1
 		scripts\build.sh = scripts\build.sh
 		scripts\cibuild.cmd = scripts\cibuild.cmd
@@ -147,6 +142,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Xutil", "Xutil", "{DF5123A5
 		generation\Xlib\Xutil\Xlib-Xutil.h = generation\Xlib\Xutil\Xlib-Xutil.h
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{928928F6-2FC7-4848-8BA4-4B9E03D4736A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{87C91881-18AD-4273-829F-E46158664F12}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflows\ci.yml = .github\workflows\ci.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -183,6 +185,7 @@ Global
 		{AACEFB20-C357-444F-95D6-91DBA365AF3E} = {CDA6EE4E-D045-4EDE-ACB2-43D435651D91}
 		{5F9025A5-D822-4506-8D9F-284248336937} = {CDA6EE4E-D045-4EDE-ACB2-43D435651D91}
 		{DF5123A5-AB01-42FB-8F1E-2DD319107969} = {CDA6EE4E-D045-4EDE-ACB2-43D435651D91}
+		{87C91881-18AD-4273-829F-E46158664F12} = {928928F6-2FC7-4848-8BA4-4B9E03D4736A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}
