@@ -105,7 +105,7 @@ function Generate {
 
   for f in $generateRspFiles; do
     pushd "$(dirname $f)" > /dev/null
-    dotnet exec /mnt/c/Repos/ClangSharp/artifacts/bin/sources/ClangSharpPInvokeGenerator/Debug/netcoreapp3.1/ClangSharpPInvokeGenerator.dll "@generate.rsp"
+    ClangSharpPInvokeGenerator "@generate.rsp"
     popd
   done
 }
