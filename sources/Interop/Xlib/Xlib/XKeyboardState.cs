@@ -1,9 +1,7 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from X11\Xlib.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
+// Ported from include/X11/Xlib.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
-
-using System;
 
 namespace TerraFX.Interop
 {
@@ -20,7 +18,7 @@ namespace TerraFX.Interop
         public uint bell_duration;
 
         [NativeTypeName("unsigned long")]
-        public UIntPtr led_mask;
+        public nuint led_mask;
 
         public int global_auto_repeat;
 

@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from X11\Xlib.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
+// Ported from include/X11/Xlib.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
 using System;
@@ -12,11 +12,11 @@ namespace TerraFX.Interop
         [NativeTypeName("XExtData *")]
         public XExtData* ext_data;
 
-        [NativeTypeName("struct XDisplay *")]
-        public UIntPtr display;
+        [NativeTypeName("struct _XDisplay *")]
+        public IntPtr display;
 
         [NativeTypeName("Window")]
-        public UIntPtr root;
+        public nuint root;
 
         public int width;
 
@@ -37,16 +37,16 @@ namespace TerraFX.Interop
         public Visual* root_visual;
 
         [NativeTypeName("GC")]
-        public XGC* default_gc;
+        public IntPtr default_gc;
 
         [NativeTypeName("Colormap")]
-        public UIntPtr cmap;
+        public nuint cmap;
 
         [NativeTypeName("unsigned long")]
-        public UIntPtr white_pixel;
+        public nuint white_pixel;
 
         [NativeTypeName("unsigned long")]
-        public UIntPtr black_pixel;
+        public nuint black_pixel;
 
         public int max_maps;
 
@@ -57,6 +57,6 @@ namespace TerraFX.Interop
         public int save_unders;
 
         [NativeTypeName("long")]
-        public IntPtr root_input_mask;
+        public nint root_input_mask;
     }
 }

@@ -1,7 +1,7 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from X11\Xresource.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
-// Original source is Copyright © The Open Group and Digital Equipment Corporation, Maynard, Massachusetts.
+// Ported from include/X11/Xresource.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
+// Original source is Copyright © The Open Group
 
 using System;
 using System.Runtime.InteropServices;
@@ -10,97 +10,109 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Xlib
     {
-        [DllImport(LibraryPath, EntryPoint = "Xpermalloc", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("char *")]
-        public static extern sbyte* Xpermalloc([NativeTypeName("unsigned int")] uint size);
+        public static extern sbyte* Xpermalloc([NativeTypeName("unsigned int")] uint param0);
 
-        [DllImport(LibraryPath, EntryPoint = "XrmStringToQuark", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("XrmQuark")]
-        public static extern int XrmStringToQuark([NativeTypeName("const char *")] sbyte* c_string);
+        public static extern int XrmStringToQuark([NativeTypeName("const char *")] sbyte* param0);
 
-        [DllImport(LibraryPath, EntryPoint = "XrmPermStringToQuark", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("XrmQuark")]
-        public static extern int XrmPermStringToQuark([NativeTypeName("const char *")] sbyte* c_string);
+        public static extern int XrmPermStringToQuark([NativeTypeName("const char *")] sbyte* param0);
 
-        [DllImport(LibraryPath, EntryPoint = "XrmQuarkToString", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("XrmString")]
-        public static extern sbyte* XrmQuarkToString([NativeTypeName("XrmQuark")] int quark);
+        public static extern sbyte* XrmQuarkToString([NativeTypeName("XrmQuark")] int param0);
 
-        [DllImport(LibraryPath, EntryPoint = "XrmUniqueQuark", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("XrmQuark")]
         public static extern int XrmUniqueQuark();
 
-        [DllImport(LibraryPath, EntryPoint = "XrmStringToQuarkList", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void XrmStringToQuarkList([NativeTypeName("const char *")] sbyte* c_string, [NativeTypeName("XrmQuarkList")] int* quarks_return);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern void XrmStringToQuarkList([NativeTypeName("const char *")] sbyte* param0, [NativeTypeName("XrmQuarkList")] int* param1);
 
-        [DllImport(LibraryPath, EntryPoint = "XrmStringToBindingQuarkList", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void XrmStringToBindingQuarkList([NativeTypeName("const char *")] sbyte* c_string, [NativeTypeName("XrmBindingList")] XrmBinding* bindings_return, [NativeTypeName("XrmQuarkList")] int* quarks_return);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern void XrmStringToBindingQuarkList([NativeTypeName("const char *")] sbyte* param0, [NativeTypeName("XrmBindingList")] XrmBinding* param1, [NativeTypeName("XrmQuarkList")] int* param2);
 
-        [DllImport(LibraryPath, EntryPoint = "XrmDestroyDatabase", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void XrmDestroyDatabase([NativeTypeName("XrmDatabase")] XrmHashBucketRec* database);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern void XrmDestroyDatabase([NativeTypeName("XrmDatabase")] IntPtr param0);
 
-        [DllImport(LibraryPath, EntryPoint = "XrmQPutResource", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void XrmQPutResource([NativeTypeName("XrmDatabase *")] XrmHashBucketRec** database, [NativeTypeName("XrmBindingList")] XrmBinding* bindings, [NativeTypeName("XrmQuarkList")] int* quarks, [NativeTypeName("XrmRepresentation")] int type, [NativeTypeName("XrmValue *")] XrmValue* value);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern void XrmQPutResource([NativeTypeName("XrmDatabase *")] IntPtr* param0, [NativeTypeName("XrmBindingList")] XrmBinding* param1, [NativeTypeName("XrmQuarkList")] int* param2, [NativeTypeName("XrmRepresentation")] int param3, [NativeTypeName("XrmValue *")] XrmValue* param4);
 
-        [DllImport(LibraryPath, EntryPoint = "XrmPutResource", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void XrmPutResource([NativeTypeName("XrmDatabase *")] XrmHashBucketRec** database, [NativeTypeName("const char *")] sbyte* specifier, [NativeTypeName("const char *")] sbyte* type, [NativeTypeName("XrmValue *")] XrmValue* value);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern void XrmPutResource([NativeTypeName("XrmDatabase *")] IntPtr* param0, [NativeTypeName("const char *")] sbyte* param1, [NativeTypeName("const char *")] sbyte* param2, [NativeTypeName("XrmValue *")] XrmValue* param3);
 
-        [DllImport(LibraryPath, EntryPoint = "XrmQPutStringResource", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void XrmQPutStringResource([NativeTypeName("XrmDatabase *")] XrmHashBucketRec** database, [NativeTypeName("XrmBindingList")] XrmBinding* bindings, [NativeTypeName("XrmQuarkList")] int* quarks, [NativeTypeName("const char *")] sbyte* value);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern void XrmQPutStringResource([NativeTypeName("XrmDatabase *")] IntPtr* param0, [NativeTypeName("XrmBindingList")] XrmBinding* param1, [NativeTypeName("XrmQuarkList")] int* param2, [NativeTypeName("const char *")] sbyte* param3);
 
-        [DllImport(LibraryPath, EntryPoint = "XrmPutStringResource", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void XrmPutStringResource([NativeTypeName("XrmDatabase *")] XrmHashBucketRec** database, [NativeTypeName("const char *")] sbyte* specifier, [NativeTypeName("const char *")] sbyte* value);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern void XrmPutStringResource([NativeTypeName("XrmDatabase *")] IntPtr* param0, [NativeTypeName("const char *")] sbyte* param1, [NativeTypeName("const char *")] sbyte* param2);
 
-        [DllImport(LibraryPath, EntryPoint = "XrmPutLineResource", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void XrmPutLineResource([NativeTypeName("XrmDatabase *")] XrmHashBucketRec** database, [NativeTypeName("const char *")] sbyte* line);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern void XrmPutLineResource([NativeTypeName("XrmDatabase *")] IntPtr* param0, [NativeTypeName("const char *")] sbyte* param1);
 
-        [DllImport(LibraryPath, EntryPoint = "XrmQGetResource", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XrmQGetResource([NativeTypeName("XrmDatabase")] XrmHashBucketRec* database, [NativeTypeName("XrmNameList")] int* quark_name, [NativeTypeName("XrmClassList")] int* quark_class, [NativeTypeName("XrmRepresentation *")] int* quark_type_return, [NativeTypeName("XrmValue *")] XrmValue* value_return);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XrmQGetResource([NativeTypeName("XrmDatabase")] IntPtr param0, [NativeTypeName("XrmNameList")] int* param1, [NativeTypeName("XrmClassList")] int* param2, [NativeTypeName("XrmRepresentation *")] int* param3, [NativeTypeName("XrmValue *")] XrmValue* param4);
 
-        [DllImport(LibraryPath, EntryPoint = "XrmGetResource", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XrmGetResource([NativeTypeName("XrmDatabase")] XrmHashBucketRec* database, [NativeTypeName("const char *")] sbyte* str_name, [NativeTypeName("const char *")] sbyte* str_class, [NativeTypeName("char **")] sbyte** str_type_return, [NativeTypeName("XrmValue *")] XrmValue* value_return);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XrmGetResource([NativeTypeName("XrmDatabase")] IntPtr param0, [NativeTypeName("const char *")] sbyte* param1, [NativeTypeName("const char *")] sbyte* param2, [NativeTypeName("char **")] sbyte** param3, [NativeTypeName("XrmValue *")] XrmValue* param4);
 
-        [DllImport(LibraryPath, EntryPoint = "XrmQGetSearchList", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XrmQGetSearchList([NativeTypeName("XrmDatabase")] XrmHashBucketRec* database, [NativeTypeName("XrmNameList")] int* names, [NativeTypeName("XrmClassList")] int* classes, [NativeTypeName("XrmSearchList")] XrmHashBucketRec** list_return, int list_length);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XrmQGetSearchList([NativeTypeName("XrmDatabase")] IntPtr param0, [NativeTypeName("XrmNameList")] int* param1, [NativeTypeName("XrmClassList")] int* param2, [NativeTypeName("XrmSearchList")] IntPtr** param3, int param4);
 
-        [DllImport(LibraryPath, EntryPoint = "XrmQGetSearchResource", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XrmQGetSearchResource([NativeTypeName("XrmSearchList")] XrmHashBucketRec** list, [NativeTypeName("XrmName")] int name, [NativeTypeName("XrmClass")] int c_class, [NativeTypeName("XrmRepresentation *")] int* type_return, [NativeTypeName("XrmValue *")] XrmValue* value_return);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XrmQGetSearchResource([NativeTypeName("XrmSearchList")] IntPtr** param0, [NativeTypeName("XrmName")] int param1, [NativeTypeName("XrmClass")] int param2, [NativeTypeName("XrmRepresentation *")] int* param3, [NativeTypeName("XrmValue *")] XrmValue* param4);
 
-        [DllImport(LibraryPath, EntryPoint = "XrmSetDatabase", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void XrmSetDatabase([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("XrmDatabase")] XrmHashBucketRec* database);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern void XrmSetDatabase([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("XrmDatabase")] IntPtr param1);
 
-        [DllImport(LibraryPath, EntryPoint = "XrmGetDatabase", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("XrmDatabase")]
-        public static extern XrmHashBucketRec* XrmGetDatabase([NativeTypeName("Display *")] UIntPtr display);
+        public static extern IntPtr XrmGetDatabase([NativeTypeName("Display *")] IntPtr param0);
 
-        [DllImport(LibraryPath, EntryPoint = "XrmGetFileDatabase", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("XrmDatabase")]
-        public static extern XrmHashBucketRec* XrmGetFileDatabase([NativeTypeName("const char *")] sbyte* filename);
+        public static extern IntPtr XrmGetFileDatabase([NativeTypeName("const char *")] sbyte* param0);
 
-        [DllImport(LibraryPath, EntryPoint = "XrmCombineFileDatabase", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XrmCombineFileDatabase([NativeTypeName("const char *")] sbyte* filename, [NativeTypeName("XrmDatabase *")] XrmHashBucketRec** target, int c_override);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XrmCombineFileDatabase([NativeTypeName("const char *")] sbyte* param0, [NativeTypeName("XrmDatabase *")] IntPtr* param1, int param2);
 
-        [DllImport(LibraryPath, EntryPoint = "XrmGetStringDatabase", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("XrmDatabase")]
-        public static extern XrmHashBucketRec* XrmGetStringDatabase([NativeTypeName("const char *")] sbyte* data);
+        public static extern IntPtr XrmGetStringDatabase([NativeTypeName("const char *")] sbyte* param0);
 
-        [DllImport(LibraryPath, EntryPoint = "XrmPutFileDatabase", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void XrmPutFileDatabase([NativeTypeName("XrmDatabase")] XrmHashBucketRec* database, [NativeTypeName("const char *")] sbyte* filename);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern void XrmPutFileDatabase([NativeTypeName("XrmDatabase")] IntPtr param0, [NativeTypeName("const char *")] sbyte* param1);
 
-        [DllImport(LibraryPath, EntryPoint = "XrmMergeDatabases", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void XrmMergeDatabases([NativeTypeName("XrmDatabase")] XrmHashBucketRec* source_db, [NativeTypeName("XrmDatabase *")] XrmHashBucketRec** target_db);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern void XrmMergeDatabases([NativeTypeName("XrmDatabase")] IntPtr param0, [NativeTypeName("XrmDatabase *")] IntPtr* param1);
 
-        [DllImport(LibraryPath, EntryPoint = "XrmCombineDatabase", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void XrmCombineDatabase([NativeTypeName("XrmDatabase")] XrmHashBucketRec* source_db, [NativeTypeName("XrmDatabase *")] XrmHashBucketRec** target_db, int c_override);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern void XrmCombineDatabase([NativeTypeName("XrmDatabase")] IntPtr param0, [NativeTypeName("XrmDatabase *")] IntPtr* param1, int param2);
 
-        [DllImport(LibraryPath, EntryPoint = "XrmEnumerateDatabase", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XrmEnumerateDatabase([NativeTypeName("XrmDatabase")] XrmHashBucketRec* db, [NativeTypeName("XrmNameList")] int* name_prefix, [NativeTypeName("XrmClassList")] int* class_prefix, int mode, [NativeTypeName("int (*)(XrmDatabase *, XrmBindingList, XrmQuarkList, XrmRepresentation *, XrmValue *, XPointer)")] IntPtr proc, [NativeTypeName("XPointer")] sbyte* closure);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XrmEnumerateDatabase([NativeTypeName("XrmDatabase")] IntPtr param0, [NativeTypeName("XrmNameList")] int* param1, [NativeTypeName("XrmClassList")] int* param2, int param3, [NativeTypeName("int (*)(XrmDatabase *, XrmBindingList, XrmQuarkList, XrmRepresentation *, XrmValue *, XPointer)")] delegate* unmanaged<IntPtr*, XrmBinding*, int*, int*, XrmValue*, sbyte*, int> param4, [NativeTypeName("XPointer")] sbyte* param5);
 
-        [DllImport(LibraryPath, EntryPoint = "XrmLocaleOfDatabase", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("const char *")]
-        public static extern sbyte* XrmLocaleOfDatabase([NativeTypeName("XrmDatabase")] XrmHashBucketRec* database);
+        public static extern sbyte* XrmLocaleOfDatabase([NativeTypeName("XrmDatabase")] IntPtr param0);
 
-        [DllImport(LibraryPath, EntryPoint = "XrmParseCommand", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void XrmParseCommand([NativeTypeName("XrmDatabase *")] XrmHashBucketRec** database, [NativeTypeName("XrmOptionDescList")] XrmOptionDescRec* table, int table_count, [NativeTypeName("const char *")] sbyte* name, [NativeTypeName("int *")] int* argc_in_out, [NativeTypeName("char **")] sbyte** argv_in_out);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern void XrmParseCommand([NativeTypeName("XrmDatabase *")] IntPtr* param0, [NativeTypeName("XrmOptionDescList")] XrmOptionDescRec* param1, int param2, [NativeTypeName("const char *")] sbyte* param3, [NativeTypeName("int *")] int* param4, [NativeTypeName("char **")] sbyte** param5);
+
+        [NativeTypeName("#define NULLQUARK ((XrmQuark) 0)")]
+        public const int NULLQUARK = ((int)(0));
+
+        [NativeTypeName("#define NULLSTRING ((XrmString) 0)")]
+        public static readonly sbyte* NULLSTRING = ((sbyte*)(0));
+
+        [NativeTypeName("#define XrmEnumAllLevels 0")]
+        public const int XrmEnumAllLevels = 0;
+
+        [NativeTypeName("#define XrmEnumOneLevel 1")]
+        public const int XrmEnumOneLevel = 1;
     }
 }

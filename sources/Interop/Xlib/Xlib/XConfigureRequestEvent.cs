@@ -1,29 +1,29 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from X11\Xlib.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
+// Ported from include/X11/Xlib.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
 using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct XConfigureRequestEvent
+    public partial struct XConfigureRequestEvent
     {
         public int type;
 
         [NativeTypeName("unsigned long")]
-        public UIntPtr serial;
+        public nuint serial;
 
         public int send_event;
 
         [NativeTypeName("Display *")]
-        public UIntPtr display;
+        public IntPtr display;
 
         [NativeTypeName("Window")]
-        public UIntPtr parent;
+        public nuint parent;
 
         [NativeTypeName("Window")]
-        public UIntPtr window;
+        public nuint window;
 
         public int x;
 
@@ -36,11 +36,11 @@ namespace TerraFX.Interop
         public int border_width;
 
         [NativeTypeName("Window")]
-        public UIntPtr above;
+        public nuint above;
 
         public int detail;
 
         [NativeTypeName("unsigned long")]
-        public UIntPtr value_mask;
+        public nuint value_mask;
     }
 }

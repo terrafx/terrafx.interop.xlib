@@ -1,38 +1,39 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from X11\Xlib.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
+// Ported from include/X11/Xlib.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct XClientMessageEvent
+    public partial struct XClientMessageEvent
     {
         public int type;
 
         [NativeTypeName("unsigned long")]
-        public UIntPtr serial;
+        public nuint serial;
 
         public int send_event;
 
         [NativeTypeName("Display *")]
-        public UIntPtr display;
+        public IntPtr display;
 
         [NativeTypeName("Window")]
-        public UIntPtr window;
+        public nuint window;
 
         [NativeTypeName("Atom")]
-        public UIntPtr message_type;
+        public nuint message_type;
 
         public int format;
 
         [NativeTypeName("union (anonymous union at /usr/include/X11/Xlib.h:905:2)")]
-        public _data__AnonymousRecord data;
+        public _data_e__Union data;
 
         [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _data__AnonymousRecord
+        public unsafe partial struct _data_e__Union
         {
             [FieldOffset(0)]
             [NativeTypeName("char [20]")]
@@ -48,11 +49,23 @@ namespace TerraFX.Interop
 
             public partial struct _l_e__FixedBuffer
             {
-                internal IntPtr e0;
-                internal IntPtr e1;
-                internal IntPtr e2;
-                internal IntPtr e3;
-                internal IntPtr e4;
+                public nint e0;
+                public nint e1;
+                public nint e2;
+                public nint e3;
+                public nint e4;
+
+                public ref nint this[int index]
+                {
+                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                    get
+                    {
+                        return ref AsSpan()[index];
+                    }
+                }
+
+                [MethodImpl(MethodImplOptions.AggressiveInlining)]
+                public Span<nint> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 5);
             }
         }
     }

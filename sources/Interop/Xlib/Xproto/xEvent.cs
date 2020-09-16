@@ -1,7 +1,7 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from X11\Xproto.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
-// Original source is Copyright © The Open Group and Digital Equipment Corporation, Maynard, Massachusetts.
+// Ported from include/X11/Xproto.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
+// Original source is Copyright © The Open Group
 
 using System.Runtime.InteropServices;
 
@@ -10,116 +10,116 @@ namespace TerraFX.Interop
     public partial struct xEvent
     {
         [NativeTypeName("union (anonymous union at /usr/include/X11/Xproto.h:997:5)")]
-        public _u__AnonymousRecord u;
+        public _u_e__Union u;
 
         [StructLayout(LayoutKind.Explicit)]
-        public partial struct _u__AnonymousRecord
+        public partial struct _u_e__Union
         {
             [FieldOffset(0)]
             [NativeTypeName("struct (anonymous struct at /usr/include/X11/Xproto.h:998:2)")]
-            public _u__AnonymousRecord2 u;
+            public _u_e__Struct u;
 
             [FieldOffset(0)]
             [NativeTypeName("struct (anonymous struct at /usr/include/X11/Xproto.h:1003:2)")]
-            public _keyButtonPointer__AnonymousRecord keyButtonPointer;
+            public _keyButtonPointer_e__Struct keyButtonPointer;
 
             [FieldOffset(0)]
             [NativeTypeName("struct (anonymous struct at /usr/include/X11/Xproto.h:1012:2)")]
-            public _enterLeave__AnonymousRecord enterLeave;
+            public _enterLeave_e__Struct enterLeave;
 
             [FieldOffset(0)]
             [NativeTypeName("struct (anonymous struct at /usr/include/X11/Xproto.h:1023:2)")]
-            public _focus__AnonymousRecord focus;
+            public _focus_e__Struct focus;
 
             [FieldOffset(0)]
             [NativeTypeName("struct (anonymous struct at /usr/include/X11/Xproto.h:1029:2)")]
-            public _expose__AnonymousRecord expose;
+            public _expose_e__Struct expose;
 
             [FieldOffset(0)]
             [NativeTypeName("struct (anonymous struct at /usr/include/X11/Xproto.h:1036:2)")]
-            public _graphicsExposure__AnonymousRecord graphicsExposure;
+            public _graphicsExposure_e__Struct graphicsExposure;
 
             [FieldOffset(0)]
             [NativeTypeName("struct (anonymous struct at /usr/include/X11/Xproto.h:1045:2)")]
-            public _noExposure__AnonymousRecord noExposure;
+            public _noExposure_e__Struct noExposure;
 
             [FieldOffset(0)]
             [NativeTypeName("struct (anonymous struct at /usr/include/X11/Xproto.h:1052:2)")]
-            public _visibility__AnonymousRecord visibility;
+            public _visibility_e__Struct visibility;
 
             [FieldOffset(0)]
             [NativeTypeName("struct (anonymous struct at /usr/include/X11/Xproto.h:1058:2)")]
-            public _createNotify__AnonymousRecord createNotify;
+            public _createNotify_e__Struct createNotify;
 
             [FieldOffset(0)]
             [NativeTypeName("struct (anonymous struct at /usr/include/X11/Xproto.h:1074:2)")]
-            public _destroyNotify__AnonymousRecord destroyNotify;
+            public _destroyNotify_e__Struct destroyNotify;
 
             [FieldOffset(0)]
             [NativeTypeName("struct (anonymous struct at /usr/include/X11/Xproto.h:1078:2)")]
-            public _unmapNotify__AnonymousRecord unmapNotify;
+            public _unmapNotify_e__Struct unmapNotify;
 
             [FieldOffset(0)]
             [NativeTypeName("struct (anonymous struct at /usr/include/X11/Xproto.h:1084:2)")]
-            public _mapNotify__AnonymousRecord mapNotify;
+            public _mapNotify_e__Struct mapNotify;
 
             [FieldOffset(0)]
             [NativeTypeName("struct (anonymous struct at /usr/include/X11/Xproto.h:1090:2)")]
-            public _mapRequest__AnonymousRecord mapRequest;
+            public _mapRequest_e__Struct mapRequest;
 
             [FieldOffset(0)]
             [NativeTypeName("struct (anonymous struct at /usr/include/X11/Xproto.h:1094:2)")]
-            public _reparent__AnonymousRecord reparent;
+            public _reparent_e__Struct reparent;
 
             [FieldOffset(0)]
             [NativeTypeName("struct (anonymous struct at /usr/include/X11/Xproto.h:1101:2)")]
-            public _configureNotify__AnonymousRecord configureNotify;
+            public _configureNotify_e__Struct configureNotify;
 
             [FieldOffset(0)]
             [NativeTypeName("struct (anonymous struct at /usr/include/X11/Xproto.h:1109:2)")]
-            public _configureRequest__AnonymousRecord configureRequest;
+            public _configureRequest_e__Struct configureRequest;
 
             [FieldOffset(0)]
             [NativeTypeName("struct (anonymous struct at /usr/include/X11/Xproto.h:1117:2)")]
-            public _gravity__AnonymousRecord gravity;
+            public _gravity_e__Struct gravity;
 
             [FieldOffset(0)]
             [NativeTypeName("struct (anonymous struct at /usr/include/X11/Xproto.h:1123:2)")]
-            public _resizeRequest__AnonymousRecord resizeRequest;
+            public _resizeRequest_e__Struct resizeRequest;
 
             [FieldOffset(0)]
             [NativeTypeName("struct (anonymous struct at /usr/include/X11/Xproto.h:1128:2)")]
-            public _circulate__AnonymousRecord circulate;
+            public _circulate_e__Struct circulate;
 
             [FieldOffset(0)]
             [NativeTypeName("struct (anonymous struct at /usr/include/X11/Xproto.h:1136:2)")]
-            public _property__AnonymousRecord property;
+            public _property_e__Struct property;
 
             [FieldOffset(0)]
             [NativeTypeName("struct (anonymous struct at /usr/include/X11/Xproto.h:1145:2)")]
-            public _selectionClear__AnonymousRecord selectionClear;
+            public _selectionClear_e__Struct selectionClear;
 
             [FieldOffset(0)]
             [NativeTypeName("struct (anonymous struct at /usr/include/X11/Xproto.h:1151:2)")]
-            public _selectionRequest__AnonymousRecord selectionRequest;
+            public _selectionRequest_e__Struct selectionRequest;
 
             [FieldOffset(0)]
             [NativeTypeName("struct (anonymous struct at /usr/include/X11/Xproto.h:1157:2)")]
-            public _selectionNotify__AnonymousRecord selectionNotify;
+            public _selectionNotify_e__Struct selectionNotify;
 
             [FieldOffset(0)]
             [NativeTypeName("struct (anonymous struct at /usr/include/X11/Xproto.h:1163:2)")]
-            public _colormap__AnonymousRecord colormap;
+            public _colormap_e__Struct colormap;
 
             [FieldOffset(0)]
             [NativeTypeName("struct (anonymous struct at /usr/include/X11/Xproto.h:1175:2)")]
-            public _mappingNotify__AnonymousRecord mappingNotify;
+            public _mappingNotify_e__Struct mappingNotify;
 
             [FieldOffset(0)]
             [NativeTypeName("struct (anonymous struct at /usr/include/X11/Xproto.h:1182:2)")]
-            public _clientMessage__AnonymousRecord clientMessage;
+            public _clientMessage_e__Struct clientMessage;
 
-            public partial struct _u__AnonymousRecord2
+            public partial struct _u_e__Struct
             {
                 [NativeTypeName("BYTE")]
                 public byte type;
@@ -131,7 +131,7 @@ namespace TerraFX.Interop
                 public ushort sequenceNumber;
             }
 
-            public partial struct _keyButtonPointer__AnonymousRecord
+            public partial struct _keyButtonPointer_e__Struct
             {
                 [NativeTypeName("CARD32")]
                 public uint pad00;
@@ -170,7 +170,7 @@ namespace TerraFX.Interop
                 public byte pad1;
             }
 
-            public partial struct _enterLeave__AnonymousRecord
+            public partial struct _enterLeave_e__Struct
             {
                 [NativeTypeName("CARD32")]
                 public uint pad00;
@@ -209,7 +209,7 @@ namespace TerraFX.Interop
                 public byte flags;
             }
 
-            public partial struct _focus__AnonymousRecord
+            public partial struct _focus_e__Struct
             {
                 [NativeTypeName("CARD32")]
                 public uint pad00;
@@ -230,7 +230,7 @@ namespace TerraFX.Interop
                 public byte pad3;
             }
 
-            public partial struct _expose__AnonymousRecord
+            public partial struct _expose_e__Struct
             {
                 [NativeTypeName("CARD32")]
                 public uint pad00;
@@ -257,7 +257,7 @@ namespace TerraFX.Interop
                 public ushort pad2;
             }
 
-            public partial struct _graphicsExposure__AnonymousRecord
+            public partial struct _graphicsExposure_e__Struct
             {
                 [NativeTypeName("CARD32")]
                 public uint pad00;
@@ -296,7 +296,7 @@ namespace TerraFX.Interop
                 public byte pad3;
             }
 
-            public partial struct _noExposure__AnonymousRecord
+            public partial struct _noExposure_e__Struct
             {
                 [NativeTypeName("CARD32")]
                 public uint pad00;
@@ -314,7 +314,7 @@ namespace TerraFX.Interop
                 public byte bpad;
             }
 
-            public partial struct _visibility__AnonymousRecord
+            public partial struct _visibility_e__Struct
             {
                 [NativeTypeName("CARD32")]
                 public uint pad00;
@@ -335,7 +335,7 @@ namespace TerraFX.Interop
                 public byte pad3;
             }
 
-            public partial struct _createNotify__AnonymousRecord
+            public partial struct _createNotify_e__Struct
             {
                 [NativeTypeName("CARD32")]
                 public uint pad00;
@@ -368,7 +368,7 @@ namespace TerraFX.Interop
                 public byte bpad;
             }
 
-            public partial struct _destroyNotify__AnonymousRecord
+            public partial struct _destroyNotify_e__Struct
             {
                 [NativeTypeName("CARD32")]
                 public uint pad00;
@@ -380,7 +380,7 @@ namespace TerraFX.Interop
                 public uint window;
             }
 
-            public partial struct _unmapNotify__AnonymousRecord
+            public partial struct _unmapNotify_e__Struct
             {
                 [NativeTypeName("CARD32")]
                 public uint pad00;
@@ -404,7 +404,7 @@ namespace TerraFX.Interop
                 public byte pad3;
             }
 
-            public partial struct _mapNotify__AnonymousRecord
+            public partial struct _mapNotify_e__Struct
             {
                 [NativeTypeName("CARD32")]
                 public uint pad00;
@@ -428,7 +428,7 @@ namespace TerraFX.Interop
                 public byte pad3;
             }
 
-            public partial struct _mapRequest__AnonymousRecord
+            public partial struct _mapRequest_e__Struct
             {
                 [NativeTypeName("CARD32")]
                 public uint pad00;
@@ -440,7 +440,7 @@ namespace TerraFX.Interop
                 public uint window;
             }
 
-            public partial struct _reparent__AnonymousRecord
+            public partial struct _reparent_e__Struct
             {
                 [NativeTypeName("CARD32")]
                 public uint pad00;
@@ -473,7 +473,7 @@ namespace TerraFX.Interop
                 public byte pad3;
             }
 
-            public partial struct _configureNotify__AnonymousRecord
+            public partial struct _configureNotify_e__Struct
             {
                 [NativeTypeName("CARD32")]
                 public uint pad00;
@@ -509,7 +509,7 @@ namespace TerraFX.Interop
                 public byte bpad;
             }
 
-            public partial struct _configureRequest__AnonymousRecord
+            public partial struct _configureRequest_e__Struct
             {
                 [NativeTypeName("CARD32")]
                 public uint pad00;
@@ -545,7 +545,7 @@ namespace TerraFX.Interop
                 public uint pad1;
             }
 
-            public partial struct _gravity__AnonymousRecord
+            public partial struct _gravity_e__Struct
             {
                 [NativeTypeName("CARD32")]
                 public uint pad00;
@@ -575,7 +575,7 @@ namespace TerraFX.Interop
                 public uint pad4;
             }
 
-            public partial struct _resizeRequest__AnonymousRecord
+            public partial struct _resizeRequest_e__Struct
             {
                 [NativeTypeName("CARD32")]
                 public uint pad00;
@@ -590,7 +590,7 @@ namespace TerraFX.Interop
                 public ushort height;
             }
 
-            public partial struct _circulate__AnonymousRecord
+            public partial struct _circulate_e__Struct
             {
                 [NativeTypeName("CARD32")]
                 public uint pad00;
@@ -617,7 +617,7 @@ namespace TerraFX.Interop
                 public byte pad3;
             }
 
-            public partial struct _property__AnonymousRecord
+            public partial struct _property_e__Struct
             {
                 [NativeTypeName("CARD32")]
                 public uint pad00;
@@ -641,7 +641,7 @@ namespace TerraFX.Interop
                 public ushort pad2;
             }
 
-            public partial struct _selectionClear__AnonymousRecord
+            public partial struct _selectionClear_e__Struct
             {
                 [NativeTypeName("CARD32")]
                 public uint pad00;
@@ -656,7 +656,7 @@ namespace TerraFX.Interop
                 public uint atom;
             }
 
-            public partial struct _selectionRequest__AnonymousRecord
+            public partial struct _selectionRequest_e__Struct
             {
                 [NativeTypeName("CARD32")]
                 public uint pad00;
@@ -680,7 +680,7 @@ namespace TerraFX.Interop
                 public uint property;
             }
 
-            public partial struct _selectionNotify__AnonymousRecord
+            public partial struct _selectionNotify_e__Struct
             {
                 [NativeTypeName("CARD32")]
                 public uint pad00;
@@ -701,7 +701,7 @@ namespace TerraFX.Interop
                 public uint property;
             }
 
-            public partial struct _colormap__AnonymousRecord
+            public partial struct _colormap_e__Struct
             {
                 [NativeTypeName("CARD32")]
                 public uint pad00;
@@ -725,7 +725,7 @@ namespace TerraFX.Interop
                 public byte pad2;
             }
 
-            public partial struct _mappingNotify__AnonymousRecord
+            public partial struct _mappingNotify_e__Struct
             {
                 [NativeTypeName("CARD32")]
                 public uint pad00;
@@ -743,7 +743,7 @@ namespace TerraFX.Interop
                 public byte pad1;
             }
 
-            public partial struct _clientMessage__AnonymousRecord
+            public partial struct _clientMessage_e__Struct
             {
                 [NativeTypeName("CARD32")]
                 public uint pad00;
@@ -752,24 +752,24 @@ namespace TerraFX.Interop
                 public uint window;
 
                 [NativeTypeName("union (anonymous union at /usr/include/X11/Xproto.h:1185:6)")]
-                public _u__AnonymousRecord u;
+                public _u_e__Union u;
 
                 [StructLayout(LayoutKind.Explicit)]
-                public partial struct _u__AnonymousRecord
+                public partial struct _u_e__Union
                 {
                     [FieldOffset(0)]
                     [NativeTypeName("struct (anonymous struct at /usr/include/X11/Xproto.h:1186:3)")]
-                    public _l__AnonymousRecord l;
+                    public _l_e__Struct l;
 
                     [FieldOffset(0)]
                     [NativeTypeName("struct (anonymous struct at /usr/include/X11/Xproto.h:1194:3)")]
-                    public _s__AnonymousRecord s;
+                    public _s_e__Struct s;
 
                     [FieldOffset(0)]
                     [NativeTypeName("struct (anonymous struct at /usr/include/X11/Xproto.h:1207:3)")]
-                    public _b__AnonymousRecord b;
+                    public _b_e__Struct b;
 
-                    public partial struct _l__AnonymousRecord
+                    public partial struct _l_e__Struct
                     {
                         [NativeTypeName("CARD32")]
                         public uint type;
@@ -790,7 +790,7 @@ namespace TerraFX.Interop
                         public int longs4;
                     }
 
-                    public partial struct _s__AnonymousRecord
+                    public partial struct _s_e__Struct
                     {
                         [NativeTypeName("CARD32")]
                         public uint type;
@@ -826,7 +826,7 @@ namespace TerraFX.Interop
                         public short shorts9;
                     }
 
-                    public unsafe partial struct _b__AnonymousRecord
+                    public unsafe partial struct _b_e__Struct
                     {
                         [NativeTypeName("CARD32")]
                         public uint type;
