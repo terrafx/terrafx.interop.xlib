@@ -1,0 +1,8 @@
+@../../settings.rsp
+@../../remap.rsp
+--file
+Xlib-Xcms.h
+--output
+../../../sources/Interop/Xlib/Xcms
+--traverse
+/usr/include/X11/Xcms.h

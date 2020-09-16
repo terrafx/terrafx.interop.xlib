@@ -3,6 +3,7 @@
 // Ported from X11\Xresource.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group and Digital Equipment Corporation, Maynard, Massachusetts.
 
+using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -18,7 +19,7 @@ namespace TerraFX.Interop
         public const int XrmEnumOneLevel = 1;
 
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        public delegate int proc([NativeTypeName("XrmDatabase *")] XrmHashBucketRec** db, [NativeTypeName("XrmBindingList")] XrmBinding* bindings, [NativeTypeName("XrmQuarkList")] int* quarks, [NativeTypeName("XrmRepresentation *")] int* type, [NativeTypeName("XrmValue *")] XrmValue* value, [NativeTypeName("XPointer")] sbyte* closure);
+        public delegate int proc([NativeTypeName("XrmDatabase *")] IntPtr* db, [NativeTypeName("XrmBindingList")] XrmBinding* bindings, [NativeTypeName("XrmQuarkList")] int* quarks, [NativeTypeName("XrmRepresentation *")] int* type, [NativeTypeName("XrmValue *")] XrmValue* value, [NativeTypeName("XPointer")] sbyte* closure);
 
         public static bool XrmStringsEqual([NativeTypeName("const char *")] sbyte* a1, [NativeTypeName("const char *")] sbyte* a2) => false; // strcmp(a1, a2) == 0
 

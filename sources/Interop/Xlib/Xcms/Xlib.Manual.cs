@@ -49,7 +49,7 @@ namespace TerraFX.Interop
         public const int XcmsInitFailure = 0xFF;
 
         [return: NativeTypeName("Display *")]
-        public static UIntPtr DisplayOfCCC([NativeTypeName("XcmsCCC")] XcmsCCC* ccc) => ccc->dpy;
+        public static IntPtr DisplayOfCCC([NativeTypeName("XcmsCCC")] XcmsCCC* ccc) => ccc->dpy;
 
         public static int ScreenNumberOfCCC([NativeTypeName("XcmsCCC")] XcmsCCC* ccc) => ccc->screenNumber;
 

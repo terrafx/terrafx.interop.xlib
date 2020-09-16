@@ -1,0 +1,8 @@
+@../../settings.rsp
+@../../remap.rsp
+--file
+Xlib-cursorfont.h
+--output
+../../../sources/Interop/Xlib/cursorfont
+--traverse
+/usr/include/X11/cursorfont.h

@@ -1,9 +1,7 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from X11\Xlib.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
+// Ported from include/X11/Xlib.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
-
-using System;
 
 namespace TerraFX.Interop
 {
@@ -12,13 +10,13 @@ namespace TerraFX.Interop
         public int function;
 
         [NativeTypeName("unsigned long")]
-        public UIntPtr plane_mask;
+        public nuint plane_mask;
 
         [NativeTypeName("unsigned long")]
-        public UIntPtr foreground;
+        public nuint foreground;
 
         [NativeTypeName("unsigned long")]
-        public UIntPtr background;
+        public nuint background;
 
         public int line_width;
 
@@ -35,17 +33,17 @@ namespace TerraFX.Interop
         public int arc_mode;
 
         [NativeTypeName("Pixmap")]
-        public UIntPtr tile;
+        public nuint tile;
 
         [NativeTypeName("Pixmap")]
-        public UIntPtr stipple;
+        public nuint stipple;
 
         public int ts_x_origin;
 
         public int ts_y_origin;
 
         [NativeTypeName("Font")]
-        public UIntPtr font;
+        public nuint font;
 
         public int subwindow_mode;
 
@@ -56,7 +54,7 @@ namespace TerraFX.Interop
         public int clip_y_origin;
 
         [NativeTypeName("Pixmap")]
-        public UIntPtr clip_mask;
+        public nuint clip_mask;
 
         public int dash_offset;
 

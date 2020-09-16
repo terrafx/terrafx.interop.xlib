@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from X11\Xlib.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
+// Ported from include/X11/Xlib.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
 using System;
@@ -12,8 +12,8 @@ namespace TerraFX.Interop
         [NativeTypeName("XExtData *")]
         public XExtData* ext_data;
 
-        [NativeTypeName("struct XPrivate *")]
-        public XPrivate* private1;
+        [NativeTypeName("struct _XPrivate *")]
+        public IntPtr private1;
 
         public int fd;
 
@@ -27,17 +27,17 @@ namespace TerraFX.Interop
         public sbyte* vendor;
 
         [NativeTypeName("XID")]
-        public UIntPtr private3;
+        public nuint private3;
 
         [NativeTypeName("XID")]
-        public UIntPtr private4;
+        public nuint private4;
 
         [NativeTypeName("XID")]
-        public UIntPtr private5;
+        public nuint private5;
 
         public int private6;
 
-        [NativeTypeName("XID (*)(struct XDisplay *)")]
+        [NativeTypeName("XID (*)(struct _XDisplay *)")]
         public IntPtr resource_alloc;
 
         public int byte_order;
@@ -57,19 +57,19 @@ namespace TerraFX.Interop
 
         public int release;
 
-        [NativeTypeName("struct XPrivate *")]
-        public XPrivate* private9;
+        [NativeTypeName("struct _XPrivate *")]
+        public IntPtr private9;
 
-        [NativeTypeName("struct XPrivate *")]
-        public XPrivate* private10;
+        [NativeTypeName("struct _XPrivate *")]
+        public IntPtr private10;
 
         public int qlen;
 
         [NativeTypeName("unsigned long")]
-        public UIntPtr last_request_read;
+        public nuint last_request_read;
 
         [NativeTypeName("unsigned long")]
-        public UIntPtr request;
+        public nuint request;
 
         [NativeTypeName("XPointer")]
         public sbyte* private11;
@@ -86,10 +86,10 @@ namespace TerraFX.Interop
         [NativeTypeName("unsigned int")]
         public uint max_request_size;
 
-        [NativeTypeName("struct XrmHashBucketRec *")]
-        public XrmHashBucketRec* db;
+        [NativeTypeName("struct _XrmHashBucketRec *")]
+        public IntPtr db;
 
-        [NativeTypeName("int (*)(struct XDisplay *)")]
+        [NativeTypeName("int (*)(struct _XDisplay *)")]
         public IntPtr private15;
 
         [NativeTypeName("char *")]
@@ -103,10 +103,10 @@ namespace TerraFX.Interop
         public Screen* screens;
 
         [NativeTypeName("unsigned long")]
-        public UIntPtr motion_buffer;
+        public nuint motion_buffer;
 
         [NativeTypeName("unsigned long")]
-        public UIntPtr private16;
+        public nuint private16;
 
         public int min_keycode;
 

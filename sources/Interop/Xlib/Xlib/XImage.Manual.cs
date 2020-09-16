@@ -14,7 +14,7 @@ namespace TerraFX.Interop
         {
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
             [return: NativeTypeName("XImage *")]
-            public delegate XImage* _create_image([NativeTypeName("struct XDisplay*")] UIntPtr display, Visual* visual, [NativeTypeName("unsigned int")] uint depth, int format, int offset, [NativeTypeName("char*")] sbyte* data, [NativeTypeName("unsigned int")] uint width, [NativeTypeName("unsigned int")] uint height, int bitmap_pad, int bytes_per_line);
+            public delegate XImage* _create_image([NativeTypeName("struct XDisplay *")] IntPtr display, Visual* visual, [NativeTypeName("unsigned int")] uint depth, int format, int offset, [NativeTypeName("char*")] sbyte* data, [NativeTypeName("unsigned int")] uint width, [NativeTypeName("unsigned int")] uint height, int bitmap_pad, int bytes_per_line);
 
             [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
             public delegate int _destroy_image([NativeTypeName("struct _XImage *")] XImage* param0);

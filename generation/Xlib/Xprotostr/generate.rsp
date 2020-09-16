@@ -1,0 +1,8 @@
+@../../settings.rsp
+@../../remap.rsp
+--file
+Xlib-Xprotostr.h
+--output
+../../../sources/Interop/Xlib/Xprotostr
+--traverse
+/usr/include/X11/Xprotostr.h

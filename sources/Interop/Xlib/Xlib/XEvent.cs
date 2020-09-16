@@ -1,6 +1,6 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from X11\Xlib.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
+// Ported from include/X11/Xlib.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
 using System;
@@ -119,30 +119,40 @@ namespace TerraFX.Interop
 
         public partial struct _pad_e__FixedBuffer
         {
-            internal IntPtr e0;
-            internal IntPtr e1;
-            internal IntPtr e2;
-            internal IntPtr e3;
-            internal IntPtr e4;
-            internal IntPtr e5;
-            internal IntPtr e6;
-            internal IntPtr e7;
-            internal IntPtr e8;
-            internal IntPtr e9;
-            internal IntPtr e10;
-            internal IntPtr e11;
-            internal IntPtr e12;
-            internal IntPtr e13;
-            internal IntPtr e14;
-            internal IntPtr e15;
-            internal IntPtr e16;
-            internal IntPtr e17;
-            internal IntPtr e18;
-            internal IntPtr e19;
-            internal IntPtr e20;
-            internal IntPtr e21;
-            internal IntPtr e22;
-            internal IntPtr e23;
+            public nint e0;
+            public nint e1;
+            public nint e2;
+            public nint e3;
+            public nint e4;
+            public nint e5;
+            public nint e6;
+            public nint e7;
+            public nint e8;
+            public nint e9;
+            public nint e10;
+            public nint e11;
+            public nint e12;
+            public nint e13;
+            public nint e14;
+            public nint e15;
+            public nint e16;
+            public nint e17;
+            public nint e18;
+            public nint e19;
+            public nint e20;
+            public nint e21;
+            public nint e22;
+            public nint e23;
+
+            public ref nint this[int index]
+            {
+                get
+                {
+                    return ref AsSpan()[index];
+                }
+            }
+
+            public Span<nint> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 24);
         }
     }
 }

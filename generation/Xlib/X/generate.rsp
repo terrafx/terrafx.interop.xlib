@@ -1,0 +1,8 @@
+@../../settings.rsp
+@../../remap.rsp
+--file
+Xlib-X.h
+--output
+../../../sources/Interop/Xlib/X
+--traverse
+/usr/include/X11/X.h

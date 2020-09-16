@@ -1,9 +1,8 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from X11\Xcms.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
+// Ported from include/X11/Xcms.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © Tektronix, Inc.
 
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -11,16 +10,16 @@ namespace TerraFX.Interop
     public partial struct XcmsColor
     {
         [NativeTypeName("union (anonymous union at /usr/include/X11/Xcms.h:176:5)")]
-        public _spec__AnonymousRecord spec;
+        public _spec_e__Union spec;
 
         [NativeTypeName("unsigned long")]
-        public UIntPtr pixel;
+        public nuint pixel;
 
         [NativeTypeName("XcmsColorFormat")]
-        public UIntPtr format;
+        public nuint format;
 
         [StructLayout(LayoutKind.Explicit)]
-        public partial struct _spec__AnonymousRecord
+        public partial struct _spec_e__Union
         {
             [FieldOffset(0)]
             public XcmsRGB RGB;

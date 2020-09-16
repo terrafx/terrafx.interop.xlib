@@ -1,0 +1,8 @@
+@../../settings.rsp
+@../../remap.rsp
+--file
+Xlib-keysymdef.h
+--output
+../../../sources/Interop/Xlib/keysymdef
+--traverse
+/usr/include/X11/keysymdef.h

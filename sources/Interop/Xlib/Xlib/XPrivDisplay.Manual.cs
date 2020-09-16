@@ -12,9 +12,9 @@ namespace TerraFX.Interop
     {
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         [return: NativeTypeName("XID")]
-        public delegate UIntPtr _resource_alloc([NativeTypeName("struct XDisplay *")] UIntPtr param0);
+        public delegate UIntPtr _resource_alloc([NativeTypeName("struct XDisplay *")] IntPtr param0);
 
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-        public delegate int _private15([NativeTypeName("struct XDisplay*")] UIntPtr param0);
+        public delegate int _private15([NativeTypeName("struct XDisplay *")] IntPtr param0);
     }
 }

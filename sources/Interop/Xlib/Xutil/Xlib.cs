@@ -1,7 +1,7 @@
 // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT). See License.md in the repository root for more information.
 
-// Ported from X11\Xutil.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
-// Original source is Copyright © The Open Group and Digital Equipment Corporation, Maynard, Massachusetts.
+// Ported from include/X11/Xutil.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
+// Original source is Copyright © The Open Group
 
 using System;
 using System.Runtime.InteropServices;
@@ -10,244 +10,227 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Xlib
     {
-        [DllImport(LibraryPath, EntryPoint = "XDestroyImage", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XDestroyImage([NativeTypeName("XImage *")] XImage* ximage);
-
-        [DllImport(LibraryPath, EntryPoint = "XDestroyImage", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("unsigned long")]
-        public static extern UIntPtr XGetPixel([NativeTypeName("XImage *")] XImage* ximage, int x, int y);
-
-        [DllImport(LibraryPath, EntryPoint = "XPutPixel", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XPutPixel([NativeTypeName("XImage *")] XImage* ximage, int x, int y, [NativeTypeName("unsigned long")] UIntPtr pixel);
-
-        [DllImport(LibraryPath, EntryPoint = "XSubImage", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        [return: NativeTypeName("XImage *")]
-        public static extern XImage* XSubImage([NativeTypeName("XImage *")] XImage* ximage, int x, int y, [NativeTypeName("unsigned int")] uint width, [NativeTypeName("unsigned int")] uint height);
-
-        [DllImport(LibraryPath, EntryPoint = "XAddPixel", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XAddPixel([NativeTypeName("XImage *")] XImage* ximage, [NativeTypeName("long")] IntPtr value);
-
-        [DllImport(LibraryPath, EntryPoint = "XAllocClassHint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("XClassHint *")]
         public static extern XClassHint* XAllocClassHint();
 
-        [DllImport(LibraryPath, EntryPoint = "XAllocIconSize", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("XIconSize *")]
         public static extern XIconSize* XAllocIconSize();
 
-        [DllImport(LibraryPath, EntryPoint = "XAllocSizeHints", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("XSizeHints *")]
         public static extern XSizeHints* XAllocSizeHints();
 
-        [DllImport(LibraryPath, EntryPoint = "XAllocStandardColormap", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("XStandardColormap *")]
         public static extern XStandardColormap* XAllocStandardColormap();
 
-        [DllImport(LibraryPath, EntryPoint = "XAllocWMHints", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("XWMHints *")]
         public static extern XWMHints* XAllocWMHints();
 
-        [DllImport(LibraryPath, EntryPoint = "XClipBox", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XClipBox([NativeTypeName("Region")] XRegion* r, [NativeTypeName("XRectangle *")] XRectangle* rect_return);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XClipBox([NativeTypeName("Region")] IntPtr param0, [NativeTypeName("XRectangle *")] XRectangle* param1);
 
-        [DllImport(LibraryPath, EntryPoint = "XCreateRegion", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("Region")]
-        public static extern XRegion* XCreateRegion();
+        public static extern IntPtr XCreateRegion();
 
-        [DllImport(LibraryPath, EntryPoint = "XDefaultString", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("const char *")]
         public static extern sbyte* XDefaultString();
 
-        [DllImport(LibraryPath, EntryPoint = "XDeleteContext", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XDeleteContext([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("XID")] UIntPtr rid, [NativeTypeName("XContext")] int context);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XDeleteContext([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("XID")] nuint param1, [NativeTypeName("XContext")] int param2);
 
-        [DllImport(LibraryPath, EntryPoint = "XDestroyRegion", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XDestroyRegion([NativeTypeName("Region")] XRegion* r);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XDestroyRegion([NativeTypeName("Region")] IntPtr param0);
 
-        [DllImport(LibraryPath, EntryPoint = "XEmptyRegion", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XEmptyRegion([NativeTypeName("Region")] XRegion* r);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XEmptyRegion([NativeTypeName("Region")] IntPtr param0);
 
-        [DllImport(LibraryPath, EntryPoint = "XEqualRegion", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XEqualRegion([NativeTypeName("Region")] XRegion* r1, [NativeTypeName("Region")] XRegion* r2);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XEqualRegion([NativeTypeName("Region")] IntPtr param0, [NativeTypeName("Region")] IntPtr param1);
 
-        [DllImport(LibraryPath, EntryPoint = "XFindContext", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XFindContext([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("XID")] UIntPtr rid, [NativeTypeName("XContext")] int context, [NativeTypeName("XPointer *")] sbyte** data_return);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XFindContext([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("XID")] nuint param1, [NativeTypeName("XContext")] int param2, [NativeTypeName("XPointer *")] sbyte** param3);
 
-        [DllImport(LibraryPath, EntryPoint = "XGetClassHint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XGetClassHint([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("Window")] UIntPtr w, [NativeTypeName("XClassHint *")] XClassHint* class_hints_return);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XGetClassHint([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("XClassHint *")] XClassHint* param2);
 
-        [DllImport(LibraryPath, EntryPoint = "XGetIconSizes", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XGetIconSizes([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("Window")] UIntPtr w, [NativeTypeName("XIconSize **")] XIconSize** size_list_return, [NativeTypeName("int *")] int* count_return);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XGetIconSizes([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("XIconSize **")] XIconSize** param2, [NativeTypeName("int *")] int* param3);
 
-        [DllImport(LibraryPath, EntryPoint = "XGetNormalHints", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XGetNormalHints([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("Window")] UIntPtr w, [NativeTypeName("XSizeHints *")] XSizeHints* hints_return);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XGetNormalHints([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("XSizeHints *")] XSizeHints* param2);
 
-        [DllImport(LibraryPath, EntryPoint = "XGetRGBColormaps", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XGetRGBColormaps([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("Window")] UIntPtr w, [NativeTypeName("XStandardColormap **")] XStandardColormap** stdcmap_return, [NativeTypeName("int *")] int* count_return, [NativeTypeName("Atom")] UIntPtr property);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XGetRGBColormaps([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("XStandardColormap **")] XStandardColormap** param2, [NativeTypeName("int *")] int* param3, [NativeTypeName("Atom")] nuint param4);
 
-        [DllImport(LibraryPath, EntryPoint = "XGetSizeHints", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XGetSizeHints([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("Window")] UIntPtr w, [NativeTypeName("XSizeHints *")] XSizeHints* hints_return, [NativeTypeName("Atom")] UIntPtr property);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XGetSizeHints([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("XSizeHints *")] XSizeHints* param2, [NativeTypeName("Atom")] nuint param3);
 
-        [DllImport(LibraryPath, EntryPoint = "XGetStandardColormap", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XGetStandardColormap([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("Window")] UIntPtr w, [NativeTypeName("XStandardColormap *")] XStandardColormap* colormap_return, [NativeTypeName("Atom")] UIntPtr property);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XGetStandardColormap([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("XStandardColormap *")] XStandardColormap* param2, [NativeTypeName("Atom")] nuint param3);
 
-        [DllImport(LibraryPath, EntryPoint = "XGetTextProperty", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XGetTextProperty([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("Window")] UIntPtr window, [NativeTypeName("XTextProperty *")] XTextProperty* text_prop_return, [NativeTypeName("Atom")] UIntPtr property);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XGetTextProperty([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("XTextProperty *")] XTextProperty* param2, [NativeTypeName("Atom")] nuint param3);
 
-        [DllImport(LibraryPath, EntryPoint = "XGetVisualInfo", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("XVisualInfo *")]
-        public static extern XVisualInfo* XGetVisualInfo([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("long")] IntPtr vinfo_mask, [NativeTypeName("XVisualInfo *")] XVisualInfo* vinfo_template, [NativeTypeName("int *")] int* nitems_return);
+        public static extern XVisualInfo* XGetVisualInfo([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("long")] nint param1, [NativeTypeName("XVisualInfo *")] XVisualInfo* param2, [NativeTypeName("int *")] int* param3);
 
-        [DllImport(LibraryPath, EntryPoint = "XGetWMClientMachine", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XGetWMClientMachine([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("Window")] UIntPtr w, [NativeTypeName("XTextProperty *")] XTextProperty* text_prop_return);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XGetWMClientMachine([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("XTextProperty *")] XTextProperty* param2);
 
-        [DllImport(LibraryPath, EntryPoint = "XGetWMHints", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("XWMHints *")]
-        public static extern XWMHints* XGetWMHints([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("Window")] UIntPtr w);
+        public static extern XWMHints* XGetWMHints([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1);
 
-        [DllImport(LibraryPath, EntryPoint = "XGetWMIconName", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XGetWMIconName([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("Window")] UIntPtr w, [NativeTypeName("XTextProperty *")] XTextProperty* text_prop_return);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XGetWMIconName([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("XTextProperty *")] XTextProperty* param2);
 
-        [DllImport(LibraryPath, EntryPoint = "XGetWMName", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XGetWMName([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("Window")] UIntPtr w, [NativeTypeName("XTextProperty *")] XTextProperty* text_prop_return);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XGetWMName([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("XTextProperty *")] XTextProperty* param2);
 
-        [DllImport(LibraryPath, EntryPoint = "XGetWMNormalHints", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XGetWMNormalHints([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("Window")] UIntPtr w, [NativeTypeName("XSizeHints *")] XSizeHints* hints_return, [NativeTypeName("long *")] IntPtr* supplied_return);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XGetWMNormalHints([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("XSizeHints *")] XSizeHints* param2, [NativeTypeName("long *")] nint* param3);
 
-        [DllImport(LibraryPath, EntryPoint = "XGetWMSizeHints", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XGetWMSizeHints([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("Window")] UIntPtr w, [NativeTypeName("XSizeHints *")] XSizeHints* hints_return, [NativeTypeName("long *")] IntPtr* supplied_return, [NativeTypeName("Atom")] UIntPtr property);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XGetWMSizeHints([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("XSizeHints *")] XSizeHints* param2, [NativeTypeName("long *")] nint* param3, [NativeTypeName("Atom")] nuint param4);
 
-        [DllImport(LibraryPath, EntryPoint = "XGetZoomHints", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XGetZoomHints([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("Window")] UIntPtr w, [NativeTypeName("XSizeHints *")] XSizeHints* zhints_return);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XGetZoomHints([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("XSizeHints *")] XSizeHints* param2);
 
-        [DllImport(LibraryPath, EntryPoint = "XIntersectRegion", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XIntersectRegion([NativeTypeName("Region")] XRegion* sra, [NativeTypeName("Region")] XRegion* srb, [NativeTypeName("Region")] XRegion* dr_return);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XIntersectRegion([NativeTypeName("Region")] IntPtr param0, [NativeTypeName("Region")] IntPtr param1, [NativeTypeName("Region")] IntPtr param2);
 
-        [DllImport(LibraryPath, EntryPoint = "XConvertCase", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void XConvertCase([NativeTypeName("KeySym")] UIntPtr sym, [NativeTypeName("KeySym *")] UIntPtr* lower, [NativeTypeName("KeySym *")] UIntPtr* upper);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern void XConvertCase([NativeTypeName("KeySym")] nuint param0, [NativeTypeName("KeySym *")] nuint* param1, [NativeTypeName("KeySym *")] nuint* param2);
 
-        [DllImport(LibraryPath, EntryPoint = "XLookupString", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XLookupString([NativeTypeName("XKeyEvent *")] XKeyEvent* event_struct, [NativeTypeName("char *")] sbyte* buffer_return, int bytes_buffer, [NativeTypeName("KeySym *")] UIntPtr* keysym_return, [NativeTypeName("XComposeStatus *")] XComposeStatus* status_in_out);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XLookupString([NativeTypeName("XKeyEvent *")] XKeyEvent* param0, [NativeTypeName("char *")] sbyte* param1, int param2, [NativeTypeName("KeySym *")] nuint* param3, [NativeTypeName("XComposeStatus *")] XComposeStatus* param4);
 
-        [DllImport(LibraryPath, EntryPoint = "XMatchVisualInfo", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XMatchVisualInfo([NativeTypeName("Display *")] UIntPtr display, int screen, int depth, int c_class, [NativeTypeName("XVisualInfo *")] XVisualInfo* vinfo_return);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XMatchVisualInfo([NativeTypeName("Display *")] IntPtr param0, int param1, int param2, int param3, [NativeTypeName("XVisualInfo *")] XVisualInfo* param4);
 
-        [DllImport(LibraryPath, EntryPoint = "XOffsetRegion", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XOffsetRegion([NativeTypeName("Region")] XRegion* r, int dx, int dy);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XOffsetRegion([NativeTypeName("Region")] IntPtr param0, int param1, int param2);
 
-        [DllImport(LibraryPath, EntryPoint = "XPointInRegion", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XPointInRegion([NativeTypeName("Region")] XRegion* r, int x, int y);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XPointInRegion([NativeTypeName("Region")] IntPtr param0, int param1, int param2);
 
-        [DllImport(LibraryPath, EntryPoint = "XPolygonRegion", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("Region")]
-        public static extern XRegion* XPolygonRegion([NativeTypeName("XPoint *")] XPoint* points, int n, int fill_rule);
+        public static extern IntPtr XPolygonRegion([NativeTypeName("XPoint *")] XPoint* param0, int param1, int param2);
 
-        [DllImport(LibraryPath, EntryPoint = "XRectInRegion", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XRectInRegion([NativeTypeName("Region")] XRegion* r, int x, int y, [NativeTypeName("unsigned int")] uint width, [NativeTypeName("unsigned int")] uint height);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XRectInRegion([NativeTypeName("Region")] IntPtr param0, int param1, int param2, [NativeTypeName("unsigned int")] uint param3, [NativeTypeName("unsigned int")] uint param4);
 
-        [DllImport(LibraryPath, EntryPoint = "XSaveContext", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XSaveContext([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("XID")] UIntPtr rid, [NativeTypeName("XContext")] int context, [NativeTypeName("const char *")] sbyte* data);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XSaveContext([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("XID")] nuint param1, [NativeTypeName("XContext")] int param2, [NativeTypeName("const char *")] sbyte* param3);
 
-        [DllImport(LibraryPath, EntryPoint = "XSetClassHint", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XSetClassHint([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("Window")] UIntPtr w, [NativeTypeName("XClassHint *")] XClassHint* class_hints);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XSetClassHint([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("XClassHint *")] XClassHint* param2);
 
-        [DllImport(LibraryPath, EntryPoint = "XSetIconSizes", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XSetIconSizes([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("Window")] UIntPtr w, [NativeTypeName("XIconSize *")] XIconSize* size_list, int count);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XSetIconSizes([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("XIconSize *")] XIconSize* param2, int param3);
 
-        [DllImport(LibraryPath, EntryPoint = "XSetNormalHints", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XSetNormalHints([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("Window")] UIntPtr w, [NativeTypeName("XSizeHints *")] XSizeHints* hints);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XSetNormalHints([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("XSizeHints *")] XSizeHints* param2);
 
-        [DllImport(LibraryPath, EntryPoint = "XSetRGBColormaps", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void XSetRGBColormaps([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("Window")] UIntPtr w, [NativeTypeName("XStandardColormap *")] XStandardColormap* stdcmaps, int count, [NativeTypeName("Atom")] UIntPtr property);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern void XSetRGBColormaps([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("XStandardColormap *")] XStandardColormap* param2, int param3, [NativeTypeName("Atom")] nuint param4);
 
-        [DllImport(LibraryPath, EntryPoint = "XSetSizeHints", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XSetSizeHints([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("Window")] UIntPtr w, [NativeTypeName("XSizeHints *")] XSizeHints* hints, [NativeTypeName("Atom")] UIntPtr property);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XSetSizeHints([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("XSizeHints *")] XSizeHints* param2, [NativeTypeName("Atom")] nuint param3);
 
-        [DllImport(LibraryPath, EntryPoint = "XSetStandardProperties", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XSetStandardProperties([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("Window")] UIntPtr w, [NativeTypeName("const char *")] sbyte* window_name, [NativeTypeName("const char *")] sbyte* icon_name, [NativeTypeName("Pixmap")] UIntPtr icon_pixmap, [NativeTypeName("char **")] sbyte** argv, int argc, [NativeTypeName("XSizeHints *")] XSizeHints* hints);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XSetStandardProperties([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("const char *")] sbyte* param2, [NativeTypeName("const char *")] sbyte* param3, [NativeTypeName("Pixmap")] nuint param4, [NativeTypeName("char **")] sbyte** param5, int param6, [NativeTypeName("XSizeHints *")] XSizeHints* param7);
 
-        [DllImport(LibraryPath, EntryPoint = "XSetTextProperty", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void XSetTextProperty([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("Window")] UIntPtr w, [NativeTypeName("XTextProperty *")] XTextProperty* text_prop, [NativeTypeName("Atom")] UIntPtr property);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern void XSetTextProperty([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("XTextProperty *")] XTextProperty* param2, [NativeTypeName("Atom")] nuint param3);
 
-        [DllImport(LibraryPath, EntryPoint = "XSetWMClientMachine", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void XSetWMClientMachine([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("Window")] UIntPtr w, [NativeTypeName("XTextProperty *")] XTextProperty* text_prop);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern void XSetWMClientMachine([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("XTextProperty *")] XTextProperty* param2);
 
-        [DllImport(LibraryPath, EntryPoint = "XSetWMHints", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XSetWMHints([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("Window")] UIntPtr w, [NativeTypeName("XWMHints *")] XWMHints* wm_hints);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XSetWMHints([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("XWMHints *")] XWMHints* param2);
 
-        [DllImport(LibraryPath, EntryPoint = "XSetWMIconName", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void XSetWMIconName([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("Window")] UIntPtr w, [NativeTypeName("XTextProperty *")] XTextProperty* text_prop);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern void XSetWMIconName([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("XTextProperty *")] XTextProperty* param2);
 
-        [DllImport(LibraryPath, EntryPoint = "XSetWMName", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void XSetWMName([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("Window")] UIntPtr w, [NativeTypeName("XTextProperty *")] XTextProperty* text_prop);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern void XSetWMName([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("XTextProperty *")] XTextProperty* param2);
 
-        [DllImport(LibraryPath, EntryPoint = "XSetWMNormalHints", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void XSetWMNormalHints([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("Window")] UIntPtr w, [NativeTypeName("XSizeHints *")] XSizeHints* hints);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern void XSetWMNormalHints([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("XSizeHints *")] XSizeHints* param2);
 
-        [DllImport(LibraryPath, EntryPoint = "XSetWMProperties", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void XSetWMProperties([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("Window")] UIntPtr w, [NativeTypeName("XTextProperty *")] XTextProperty* window_name, [NativeTypeName("XTextProperty *")] XTextProperty* icon_name, [NativeTypeName("char **")] sbyte** argv, int argc, [NativeTypeName("XSizeHints *")] XSizeHints* normal_hints, [NativeTypeName("XWMHints *")] XWMHints* wm_hints, [NativeTypeName("XClassHint *")] XClassHint* class_hints);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern void XSetWMProperties([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("XTextProperty *")] XTextProperty* param2, [NativeTypeName("XTextProperty *")] XTextProperty* param3, [NativeTypeName("char **")] sbyte** param4, int param5, [NativeTypeName("XSizeHints *")] XSizeHints* param6, [NativeTypeName("XWMHints *")] XWMHints* param7, [NativeTypeName("XClassHint *")] XClassHint* param8);
 
-        [DllImport(LibraryPath, EntryPoint = "XmbSetWMProperties", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void XmbSetWMProperties([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("Window")] UIntPtr w, [NativeTypeName("const char *")] sbyte* window_name, [NativeTypeName("const char *")] sbyte* icon_name, [NativeTypeName("char **")] sbyte** argv, int argc, [NativeTypeName("XSizeHints *")] XSizeHints* normal_hints, [NativeTypeName("XWMHints *")] XWMHints* wm_hints, [NativeTypeName("XClassHint *")] XClassHint* class_hints);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern void XmbSetWMProperties([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("const char *")] sbyte* param2, [NativeTypeName("const char *")] sbyte* param3, [NativeTypeName("char **")] sbyte** param4, int param5, [NativeTypeName("XSizeHints *")] XSizeHints* param6, [NativeTypeName("XWMHints *")] XWMHints* param7, [NativeTypeName("XClassHint *")] XClassHint* param8);
 
-        [DllImport(LibraryPath, EntryPoint = "Xutf8SetWMProperties", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void Xutf8SetWMProperties([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("Window")] UIntPtr w, [NativeTypeName("const char *")] sbyte* window_name, [NativeTypeName("const char *")] sbyte* icon_name, [NativeTypeName("char **")] sbyte** argv, int argc, [NativeTypeName("XSizeHints *")] XSizeHints* normal_hints, [NativeTypeName("XWMHints *")] XWMHints* wm_hints, [NativeTypeName("XClassHint *")] XClassHint* class_hints);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern void Xutf8SetWMProperties([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("const char *")] sbyte* param2, [NativeTypeName("const char *")] sbyte* param3, [NativeTypeName("char **")] sbyte** param4, int param5, [NativeTypeName("XSizeHints *")] XSizeHints* param6, [NativeTypeName("XWMHints *")] XWMHints* param7, [NativeTypeName("XClassHint *")] XClassHint* param8);
 
-        [DllImport(LibraryPath, EntryPoint = "XSetWMSizeHints", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void XSetWMSizeHints([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("Window")] UIntPtr w, [NativeTypeName("XSizeHints *")] XSizeHints* hints, [NativeTypeName("Atom")] UIntPtr property);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern void XSetWMSizeHints([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("XSizeHints *")] XSizeHints* param2, [NativeTypeName("Atom")] nuint param3);
 
-        [DllImport(LibraryPath, EntryPoint = "XSetRegion", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XSetRegion([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("GC")] XGC* gc, [NativeTypeName("Region")] XRegion* r);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XSetRegion([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("GC")] IntPtr param1, [NativeTypeName("Region")] IntPtr param2);
 
-        [DllImport(LibraryPath, EntryPoint = "XSetStandardColormap", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern void XSetStandardColormap([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("Window")] UIntPtr w, [NativeTypeName("XStandardColormap *")] XStandardColormap* colormap, [NativeTypeName("Atom")] UIntPtr property);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern void XSetStandardColormap([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("XStandardColormap *")] XStandardColormap* param2, [NativeTypeName("Atom")] nuint param3);
 
-        [DllImport(LibraryPath, EntryPoint = "XSetZoomHints", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XSetZoomHints([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("Window")] UIntPtr w, [NativeTypeName("XSizeHints *")] XSizeHints* zhints);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XSetZoomHints([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("XSizeHints *")] XSizeHints* param2);
 
-        [DllImport(LibraryPath, EntryPoint = "XShrinkRegion", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XShrinkRegion([NativeTypeName("Region")] XRegion* r, int dx, int dy);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XShrinkRegion([NativeTypeName("Region")] IntPtr param0, int param1, int param2);
 
-        [DllImport(LibraryPath, EntryPoint = "XStringListToTextProperty", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XStringListToTextProperty([NativeTypeName("char **")] sbyte** list, int count, [NativeTypeName("XTextProperty *")] XTextProperty* text_prop_return);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XStringListToTextProperty([NativeTypeName("char **")] sbyte** param0, int param1, [NativeTypeName("XTextProperty *")] XTextProperty* param2);
 
-        [DllImport(LibraryPath, EntryPoint = "XSubtractRegion", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XSubtractRegion([NativeTypeName("Region")] XRegion* sra, [NativeTypeName("Region")] XRegion* srb, [NativeTypeName("Region")] XRegion* dr_return);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XSubtractRegion([NativeTypeName("Region")] IntPtr param0, [NativeTypeName("Region")] IntPtr param1, [NativeTypeName("Region")] IntPtr param2);
 
-        [DllImport(LibraryPath, EntryPoint = "XmbTextListToTextProperty", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XmbTextListToTextProperty([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("char **")] sbyte** list, int count, XICCEncodingStyle style, [NativeTypeName("XTextProperty *")] XTextProperty* text_prop_return);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XmbTextListToTextProperty([NativeTypeName("Display *")] IntPtr display, [NativeTypeName("char **")] sbyte** list, int count, XICCEncodingStyle style, [NativeTypeName("XTextProperty *")] XTextProperty* text_prop_return);
 
-        [DllImport(LibraryPath, EntryPoint = "XwcTextListToTextProperty", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XwcTextListToTextProperty([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("wchar_t **")] int** list, int count, XICCEncodingStyle style, [NativeTypeName("XTextProperty *")] XTextProperty* text_prop_return);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XwcTextListToTextProperty([NativeTypeName("Display *")] IntPtr display, [NativeTypeName("wchar_t **")] int** list, int count, XICCEncodingStyle style, [NativeTypeName("XTextProperty *")] XTextProperty* text_prop_return);
 
-        [DllImport(LibraryPath, EntryPoint = "Xutf8TextListToTextProperty", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int Xutf8TextListToTextProperty([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("char **")] sbyte** list, int count, XICCEncodingStyle style, [NativeTypeName("XTextProperty *")] XTextProperty* text_prop_return);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int Xutf8TextListToTextProperty([NativeTypeName("Display *")] IntPtr display, [NativeTypeName("char **")] sbyte** list, int count, XICCEncodingStyle style, [NativeTypeName("XTextProperty *")] XTextProperty* text_prop_return);
 
-        [DllImport(LibraryPath, EntryPoint = "XwcFreeStringList", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+        [DllImport("libX11", ExactSpelling = true)]
         public static extern void XwcFreeStringList([NativeTypeName("wchar_t **")] int** list);
 
-        [DllImport(LibraryPath, EntryPoint = "XTextPropertyToStringList", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XTextPropertyToStringList([NativeTypeName("XTextProperty *")] XTextProperty* text_prop, [NativeTypeName("char ***")] sbyte*** list_return, [NativeTypeName("int *")] int* count_return);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XTextPropertyToStringList([NativeTypeName("XTextProperty *")] XTextProperty* param0, [NativeTypeName("char ***")] sbyte*** param1, [NativeTypeName("int *")] int* param2);
 
-        [DllImport(LibraryPath, EntryPoint = "XmbTextPropertyToTextList", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XmbTextPropertyToTextList([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("const XTextProperty *")] XTextProperty* text_prop, [NativeTypeName("char ***")] sbyte*** list_return, [NativeTypeName("int *")] int* count_return);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XmbTextPropertyToTextList([NativeTypeName("Display *")] IntPtr display, [NativeTypeName("const XTextProperty *")] XTextProperty* text_prop, [NativeTypeName("char ***")] sbyte*** list_return, [NativeTypeName("int *")] int* count_return);
 
-        [DllImport(LibraryPath, EntryPoint = "XwcTextPropertyToTextList", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XwcTextPropertyToTextList([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("const XTextProperty *")] XTextProperty* text_prop, [NativeTypeName("wchar_t ***")] int*** list_return, [NativeTypeName("int *")] int* count_return);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XwcTextPropertyToTextList([NativeTypeName("Display *")] IntPtr display, [NativeTypeName("const XTextProperty *")] XTextProperty* text_prop, [NativeTypeName("wchar_t ***")] int*** list_return, [NativeTypeName("int *")] int* count_return);
 
-        [DllImport(LibraryPath, EntryPoint = "Xutf8TextPropertyToTextList", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int Xutf8TextPropertyToTextList([NativeTypeName("Display *")] UIntPtr display, [NativeTypeName("const XTextProperty *")] XTextProperty* text_prop, [NativeTypeName("char ***")] sbyte*** list_return, [NativeTypeName("int *")] int* count_return);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int Xutf8TextPropertyToTextList([NativeTypeName("Display *")] IntPtr display, [NativeTypeName("const XTextProperty *")] XTextProperty* text_prop, [NativeTypeName("char ***")] sbyte*** list_return, [NativeTypeName("int *")] int* count_return);
 
-        [DllImport(LibraryPath, EntryPoint = "XUnionRectWithRegion", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XUnionRectWithRegion([NativeTypeName("XRectangle *")] XRectangle* rectangle, [NativeTypeName("Region")] XRegion* src_region, [NativeTypeName("Region")] XRegion* dest_region_return);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XUnionRectWithRegion([NativeTypeName("XRectangle *")] XRectangle* param0, [NativeTypeName("Region")] IntPtr param1, [NativeTypeName("Region")] IntPtr param2);
 
-        [DllImport(LibraryPath, EntryPoint = "XUnionRegion", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XUnionRegion([NativeTypeName("Region")] XRegion* sra, [NativeTypeName("Region")] XRegion* srb, [NativeTypeName("Region")] XRegion* dr_return);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XUnionRegion([NativeTypeName("Region")] IntPtr param0, [NativeTypeName("Region")] IntPtr param1, [NativeTypeName("Region")] IntPtr param2);
 
-        [DllImport(LibraryPath, EntryPoint = "XWMGeometry", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XWMGeometry([NativeTypeName("Display *")] UIntPtr display, int screen_number, [NativeTypeName("const char *")] sbyte* user_geometry, [NativeTypeName("const char *")] sbyte* default_geometry, [NativeTypeName("unsigned int")] uint border_width, [NativeTypeName("XSizeHints *")] XSizeHints* hints, [NativeTypeName("int *")] int* x_return, [NativeTypeName("int *")] int* y_return, [NativeTypeName("int *")] int* width_return, [NativeTypeName("int *")] int* height_return, [NativeTypeName("int *")] int* gravity_return);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XWMGeometry([NativeTypeName("Display *")] IntPtr param0, int param1, [NativeTypeName("const char *")] sbyte* param2, [NativeTypeName("const char *")] sbyte* param3, [NativeTypeName("unsigned int")] uint param4, [NativeTypeName("XSizeHints *")] XSizeHints* param5, [NativeTypeName("int *")] int* param6, [NativeTypeName("int *")] int* param7, [NativeTypeName("int *")] int* param8, [NativeTypeName("int *")] int* param9, [NativeTypeName("int *")] int* param10);
 
-        [DllImport(LibraryPath, EntryPoint = "XXorRegion", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
-        public static extern int XXorRegion([NativeTypeName("Region")] XRegion* sra, [NativeTypeName("Region")] XRegion* srb, [NativeTypeName("Region")] XRegion* dr_return);
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XXorRegion([NativeTypeName("Region")] IntPtr param0, [NativeTypeName("Region")] IntPtr param1, [NativeTypeName("Region")] IntPtr param2);
     }
 }

@@ -284,7 +284,7 @@ namespace TerraFX.Interop
         public static Visual* DefaultVisual([NativeTypeName("Display *")] UIntPtr dpy, int scr) => ScreenOfDisplay(dpy, scr)->root_visual;
 
         [return: NativeTypeName("GC")]
-        public static XGC* DefaultGC([NativeTypeName("Display *")] UIntPtr dpy, int scr) => ScreenOfDisplay(dpy, scr)->default_gc;
+        public static IntPtr DefaultGC([NativeTypeName("Display *")] UIntPtr dpy, int scr) => ScreenOfDisplay(dpy, scr)->default_gc;
 
         [return: NativeTypeName("unsigned long")]
         public static UIntPtr BlackPixel([NativeTypeName("Display *")] UIntPtr dpy, int scr) => ScreenOfDisplay(dpy, scr)->black_pixel;
@@ -346,7 +346,7 @@ namespace TerraFX.Interop
         public static Screen* DefaultScreenOfDisplay([NativeTypeName("Display *")] UIntPtr dpy) => ScreenOfDisplay(dpy, DefaultScreen(dpy));
 
         [return: NativeTypeName("Display *")]
-        public static UIntPtr DisplayOfScreen([NativeTypeName("Screen *")] Screen* s) => s->display;
+        public static IntPtr DisplayOfScreen([NativeTypeName("Screen *")] Screen* s) => s->display;
 
         [return: NativeTypeName("Window")]
         public static UIntPtr RootWindowOfScreen([NativeTypeName("Screen *")] Screen* s) => s->root;
@@ -361,7 +361,7 @@ namespace TerraFX.Interop
         public static int DefaultDepthOfScreen([NativeTypeName("Screen *")] Screen* s) => s->root_depth;
 
         [return: NativeTypeName("GC")]
-        public static XGC* DefaultGCOfScreen([NativeTypeName("Screen *")] Screen* s) => s->default_gc;
+        public static IntPtr DefaultGCOfScreen([NativeTypeName("Screen *")] Screen* s) => s->default_gc;
 
         [return: NativeTypeName("Visual *")]
         public static Visual* DefaultVisualOfScreen([NativeTypeName("Screen *")] Screen* s) => s->root_visual;
@@ -390,6 +390,6 @@ namespace TerraFX.Interop
         public static IntPtr EventMaskOfScreen([NativeTypeName("Screen *")] Screen* s) => s->root_input_mask;
 
         [return: NativeTypeName("XID")]
-        public static UIntPtr XAllocID([NativeTypeName("Display *")] UIntPtr dpy) => Marshal.GetDelegateForFunctionPointer<XPrivDisplay._resource_alloc>(((XPrivDisplay*)dpy)->resource_alloc)(dpy);
+        public static UIntPtr XAllocID([NativeTypeName("Display *")] IntPtr dpy) => Marshal.GetDelegateForFunctionPointer<XPrivDisplay._resource_alloc>(((XPrivDisplay*)dpy)->resource_alloc)(dpy);
     }
 }

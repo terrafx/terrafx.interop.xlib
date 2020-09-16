@@ -12,6 +12,7 @@ architecture=''
 build=false
 ci=false
 configuration='Debug'
+generate=false
 help=false
 pack=false
 restore=false
@@ -38,6 +39,10 @@ while [[ $# -gt 0 ]]; do
     --configuration)
       configuration=$2
       shift 2
+      ;;
+    --generate)
+      generate=true
+      shift 1
       ;;
     --help)
       help=true
@@ -94,6 +99,17 @@ function CreateDirectory {
   fi
 }
 
+function Generate {
+  generationDir="$RepoRoot/generation"
+  generateRspFiles=$(find $generationDir -name 'generate.rsp')
+
+  for f in $generateRspFiles; do
+    pushd "$(dirname $f)" > /dev/null
+    dotnet exec /mnt/c/Repos/ClangSharp/artifacts/bin/sources/ClangSharpPInvokeGenerator/Debug/netcoreapp3.1/ClangSharpPInvokeGenerator.dll "@generate.rsp"
+    popd
+  done
+}
+
 function Help {
   echo "Common settings:"
   echo "  --configuration <value>   Build configuration (Debug, Release)"
@@ -110,6 +126,7 @@ function Help {
   echo "  --solution <value>        Path to solution to build"
   echo "  --ci                      Set when running on CI server"
   echo "  --architecture <value>    Test Architecture (<auto>, amd64, x64, x86, arm64, arm)"
+  echo "  --generate                Generates the bindings for the solution"
   echo ""
   echo "Command line arguments not listed above are passed through to MSBuild."
 }
@@ -204,9 +221,18 @@ if [[ ! -z "$architecture" ]]; then
   DotNetInstallDirectory="$ArtifactsDir/dotnet"
   CreateDirectory "$DotNetInstallDirectory"
 
+. "$DotNetInstallScript" --channel 3.1 --install-dir "$DotNetInstallDirectory" --architecture "$architecture"
   . "$DotNetInstallScript" --channel master --version 5.0.100-preview.8.20417.9 --install-dir "$DotNetInstallDirectory" --architecture "$architecture"
 
   PATH="$DotNetInstallDirectory:$PATH:"
+fi
+
+if $generate; then
+  Generate
+
+  if [ "$LASTEXITCODE" != 0 ]; then
+    return "$LASTEXITCODE"
+  fi
 fi
 
 if $restore; then

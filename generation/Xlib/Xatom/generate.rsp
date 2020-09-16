@@ -1,0 +1,8 @@
+@../../settings.rsp
+@../../remap.rsp
+--file
+Xlib-Xatom.h
+--output
+../../../sources/Interop/Xlib/Xatom
+--traverse
+/usr/include/X11/Xatom.h
