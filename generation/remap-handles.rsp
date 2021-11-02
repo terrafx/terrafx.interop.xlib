@@ -1,0 +1,3 @@
+--remap
+_XPrivate*=@IntPtr
+_XrmHashBucketRec*=@XrmHashBucket

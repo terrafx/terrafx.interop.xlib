@@ -1,6 +1,7 @@
 @../../settings.rsp
 @../../remap.rsp
 --exclude
+AllPlanes
 BitmapBitOrder
 BitmapPad
 BitmapUnit
