@@ -3,20 +3,17 @@
 // Ported from include/X11/Xlib.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct XwcTextItem
     {
         [NativeTypeName("wchar_t *")]
-        public int* chars;
+        public uint* chars;
 
         public int nchars;
 
         public int delta;
 
-        [NativeTypeName("XFontSet")]
-        public IntPtr font_set;
+        public XFontSet font_set;
     }
 }

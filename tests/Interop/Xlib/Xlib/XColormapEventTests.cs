@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="XColormapEvent" /> struct.</summary>
-    public static unsafe class XColormapEventTests
+    public static unsafe partial class XColormapEventTests
     {
         /// <summary>Validates that the <see cref="XColormapEvent" /> struct is blittable.</summary>
         [Test]

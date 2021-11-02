@@ -7,11 +7,9 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct XVisualInfo
     {
-        [NativeTypeName("Visual *")]
         public Visual* visual;
 
-        [NativeTypeName("VisualID")]
-        public nuint visualid;
+        public VisualID visualid;
 
         public int screen;
 

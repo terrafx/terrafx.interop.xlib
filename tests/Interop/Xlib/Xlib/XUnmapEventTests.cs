@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="XUnmapEvent" /> struct.</summary>
-    public static unsafe class XUnmapEventTests
+    public static unsafe partial class XUnmapEventTests
     {
         /// <summary>Validates that the <see cref="XUnmapEvent" /> struct is blittable.</summary>
         [Test]

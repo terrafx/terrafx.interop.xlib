@@ -7,8 +7,7 @@ namespace TerraFX.Interop
 {
     public partial struct XStandardColormap
     {
-        [NativeTypeName("Colormap")]
-        public nuint colormap;
+        public Colormap colormap;
 
         [NativeTypeName("unsigned long")]
         public nuint red_max;
@@ -31,10 +30,8 @@ namespace TerraFX.Interop
         [NativeTypeName("unsigned long")]
         public nuint base_pixel;
 
-        [NativeTypeName("VisualID")]
-        public nuint visualid;
+        public VisualID visualid;
 
-        [NativeTypeName("XID")]
-        public nuint killid;
+        public XID killid;
     }
 }

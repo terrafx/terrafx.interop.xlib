@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct xAllocColorPlanesReply
     {
-        [NativeTypeName("BYTE")]
         public byte type;
 
-        [NativeTypeName("BYTE")]
         public byte pad1;
 
         [NativeTypeName("CARD16")]

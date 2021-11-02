@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="xGetInputFocusReply" /> struct.</summary>
-    public static unsafe class xGetInputFocusReplyTests
+    public static unsafe partial class xGetInputFocusReplyTests
     {
         /// <summary>Validates that the <see cref="xGetInputFocusReply" /> struct is blittable.</summary>
         [Test]

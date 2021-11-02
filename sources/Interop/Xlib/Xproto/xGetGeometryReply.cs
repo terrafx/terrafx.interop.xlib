@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct xGetGeometryReply
     {
-        [NativeTypeName("BYTE")]
         public byte type;
 
         [NativeTypeName("CARD8")]

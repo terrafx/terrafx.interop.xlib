@@ -3,19 +3,15 @@
 // Ported from include/X11/Xlib.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
-using System;
-
 namespace TerraFX.Interop
 {
-    public partial struct XErrorEvent
+    public unsafe partial struct XErrorEvent
     {
         public int type;
 
-        [NativeTypeName("Display *")]
-        public IntPtr display;
+        public Display* display;
 
-        [NativeTypeName("XID")]
-        public nuint resourceid;
+        public XID resourceid;
 
         [NativeTypeName("unsigned long")]
         public nuint serial;

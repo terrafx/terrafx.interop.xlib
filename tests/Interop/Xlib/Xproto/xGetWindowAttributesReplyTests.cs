@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="xGetWindowAttributesReply" /> struct.</summary>
-    public static unsafe class xGetWindowAttributesReplyTests
+    public static unsafe partial class xGetWindowAttributesReplyTests
     {
         /// <summary>Validates that the <see cref="xGetWindowAttributesReply" /> struct is blittable.</summary>
         [Test]

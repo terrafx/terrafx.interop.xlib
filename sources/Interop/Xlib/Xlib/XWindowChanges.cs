@@ -17,8 +17,7 @@ namespace TerraFX.Interop
 
         public int border_width;
 
-        [NativeTypeName("Window")]
-        public nuint sibling;
+        public Window sibling;
 
         public int stack_mode;
     }

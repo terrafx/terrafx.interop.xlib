@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="XIMHotKeyTriggers" /> struct.</summary>
-    public static unsafe class XIMHotKeyTriggersTests
+    public static unsafe partial class XIMHotKeyTriggersTests
     {
         /// <summary>Validates that the <see cref="XIMHotKeyTriggers" /> struct is blittable.</summary>
         [Test]

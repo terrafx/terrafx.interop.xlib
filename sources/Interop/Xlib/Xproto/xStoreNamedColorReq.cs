@@ -25,10 +25,8 @@ namespace TerraFX.Interop
         [NativeTypeName("CARD16")]
         public ushort nbytes;
 
-        [NativeTypeName("BYTE")]
         public byte pad1;
 
-        [NativeTypeName("BYTE")]
         public byte pad2;
     }
 }

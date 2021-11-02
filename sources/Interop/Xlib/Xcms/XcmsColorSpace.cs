@@ -17,10 +17,10 @@ namespace TerraFX.Interop
         public delegate* unmanaged<sbyte*, XcmsColor*, int> parseString;
 
         [NativeTypeName("XcmsFuncListPtr")]
-        public delegate* unmanaged<XcmsCCC*, XcmsColor*, XcmsColor*, uint, int>* to_CIEXYZ;
+        public delegate* unmanaged<XcmsCCC, XcmsColor*, XcmsColor*, uint, int>* to_CIEXYZ;
 
         [NativeTypeName("XcmsFuncListPtr")]
-        public delegate* unmanaged<XcmsCCC*, XcmsColor*, XcmsColor*, uint, int>* from_CIEXYZ;
+        public delegate* unmanaged<XcmsCCC, XcmsColor*, XcmsColor*, uint, int>* from_CIEXYZ;
 
         public int inverse_flag;
     }

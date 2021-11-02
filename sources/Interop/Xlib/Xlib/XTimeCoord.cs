@@ -7,8 +7,7 @@ namespace TerraFX.Interop
 {
     public partial struct XTimeCoord
     {
-        [NativeTypeName("Time")]
-        public nuint time;
+        public Time time;
 
         public short x;
 

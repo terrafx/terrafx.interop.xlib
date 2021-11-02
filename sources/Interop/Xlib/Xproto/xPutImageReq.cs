@@ -5,13 +5,13 @@
 
 namespace TerraFX.Interop
 {
-    public partial struct FillPolyReq
+    public partial struct xPutImageReq
     {
         [NativeTypeName("CARD8")]
         public byte reqType;
 
-        [NativeTypeName("BYTE")]
-        public byte pad;
+        [NativeTypeName("CARD8")]
+        public byte format;
 
         [NativeTypeName("CARD16")]
         public ushort length;
@@ -22,13 +22,25 @@ namespace TerraFX.Interop
         [NativeTypeName("CARD32")]
         public uint gc;
 
-        [NativeTypeName("BYTE")]
-        public byte shape;
-
-        [NativeTypeName("BYTE")]
-        public byte coordMode;
+        [NativeTypeName("CARD16")]
+        public ushort width;
 
         [NativeTypeName("CARD16")]
-        public ushort pad1;
+        public ushort height;
+
+        [NativeTypeName("INT16")]
+        public short dstX;
+
+        [NativeTypeName("INT16")]
+        public short dstY;
+
+        [NativeTypeName("CARD8")]
+        public byte leftPad;
+
+        [NativeTypeName("CARD8")]
+        public byte depth;
+
+        [NativeTypeName("CARD16")]
+        public ushort pad;
     }
 }

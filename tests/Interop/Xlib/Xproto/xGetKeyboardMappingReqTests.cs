@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="xGetKeyboardMappingReq" /> struct.</summary>
-    public static unsafe class xGetKeyboardMappingReqTests
+    public static unsafe partial class xGetKeyboardMappingReqTests
     {
         /// <summary>Validates that the <see cref="xGetKeyboardMappingReq" /> struct is blittable.</summary>
         [Test]

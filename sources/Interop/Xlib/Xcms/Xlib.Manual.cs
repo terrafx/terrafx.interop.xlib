@@ -9,19 +9,17 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Xlib
     {
-        [return: NativeTypeName("Display *")]
-        public static IntPtr DisplayOfCCC([NativeTypeName("XcmsCCC")] XcmsCCC* ccc) => ccc->dpy;
+        public static Display* DisplayOfCCC(XcmsCCC ccc) => ((XcmsCCCRec*)(ccc))->dpy;
 
-        public static int ScreenNumberOfCCC([NativeTypeName("XcmsCCC")] XcmsCCC* ccc) => ccc->screenNumber;
+        public static int ScreenNumberOfCCC(XcmsCCC ccc) => ((XcmsCCCRec*)(ccc))->screenNumber;
 
-        [return: NativeTypeName("Visual *")]
-        public static Visual* VisualOfCCC([NativeTypeName("XcmsCCC")] XcmsCCC* ccc) => ccc->visual;
+        public static Visual* VisualOfCCC(XcmsCCC ccc) => ((XcmsCCCRec*)(ccc))->visual;
 
-        public static XcmsColor* ClientWhitePointOfCCC([NativeTypeName("XcmsCCC")] XcmsCCC* ccc) => &ccc->clientWhitePt;
+        public static XcmsColor* ClientWhitePointOfCCC(XcmsCCC ccc) => &((XcmsCCCRec*)(ccc))->clientWhitePt;
 
-        public static XcmsColor* ScreenWhitePointOfCCC([NativeTypeName("XcmsCCC")] XcmsCCC* ccc) => &ccc->pPerScrnInfo->screenWhitePt;
+        public static XcmsColor* ScreenWhitePointOfCCC(XcmsCCC ccc) => &((XcmsCCCRec*)(ccc))->pPerScrnInfo->screenWhitePt;
 
         [return: NativeTypeName("XPointer")]
-        public static sbyte* FunctionSetOfCCC([NativeTypeName("XcmsCCC")] XcmsCCC* ccc) => ccc->pPerScrnInfo->functionSet;
+        public static sbyte* FunctionSetOfCCC(XcmsCCC ccc) => ((XcmsCCCRec*)(ccc))->pPerScrnInfo->functionSet;
     }
 }

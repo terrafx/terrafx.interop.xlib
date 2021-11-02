@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="xWarpPointerReq" /> struct.</summary>
-    public static unsafe class xWarpPointerReqTests
+    public static unsafe partial class xWarpPointerReqTests
     {
         /// <summary>Validates that the <see cref="xWarpPointerReq" /> struct is blittable.</summary>
         [Test]

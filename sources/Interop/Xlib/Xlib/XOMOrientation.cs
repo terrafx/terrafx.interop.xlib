@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public int num_orientation;
 
-        [NativeTypeName("XOrientation *")]
         public XOrientation* orientation;
     }
 }

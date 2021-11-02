@@ -29,7 +29,7 @@ namespace TerraFX.Interop
 
             [FieldOffset(0)]
             [NativeTypeName("wchar_t *")]
-            public int* wcs;
+            public uint* wcs;
         }
     }
 }

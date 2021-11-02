@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct xQueryKeymapReply
     {
-        [NativeTypeName("BYTE")]
         public byte type;
 
-        [NativeTypeName("BYTE")]
         public byte pad1;
 
         [NativeTypeName("CARD16")]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="XSizeHints" /> struct.</summary>
-    public static unsafe class XSizeHintsTests
+    public static unsafe partial class XSizeHintsTests
     {
         /// <summary>Validates that the <see cref="XSizeHints" /> struct is blittable.</summary>
         [Test]

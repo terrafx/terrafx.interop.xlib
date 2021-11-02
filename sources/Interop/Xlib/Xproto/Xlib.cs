@@ -482,7 +482,7 @@ namespace TerraFX.Interop
         public const int ELFlagSameScreen = (1 << 1);
 
         [NativeTypeName("#define XEventSize (sizeof(xEvent))")]
-        public const nuint XEventSize = unchecked(32);
+        public const nuint XEventSize = (32);
 
         [NativeTypeName("#define X_Reply 1")]
         public const int X_Reply = 1;

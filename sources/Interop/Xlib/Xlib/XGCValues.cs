@@ -32,18 +32,15 @@ namespace TerraFX.Interop
 
         public int arc_mode;
 
-        [NativeTypeName("Pixmap")]
-        public nuint tile;
+        public Pixmap tile;
 
-        [NativeTypeName("Pixmap")]
-        public nuint stipple;
+        public Pixmap stipple;
 
         public int ts_x_origin;
 
         public int ts_y_origin;
 
-        [NativeTypeName("Font")]
-        public nuint font;
+        public Font font;
 
         public int subwindow_mode;
 
@@ -53,8 +50,7 @@ namespace TerraFX.Interop
 
         public int clip_y_origin;
 
-        [NativeTypeName("Pixmap")]
-        public nuint clip_mask;
+        public Pixmap clip_mask;
 
         public int dash_offset;
 

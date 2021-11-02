@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="XIMPreeditCaretCallbackStruct" /> struct.</summary>
-    public static unsafe class XIMPreeditCaretCallbackStructTests
+    public static unsafe partial class XIMPreeditCaretCallbackStructTests
     {
         /// <summary>Validates that the <see cref="XIMPreeditCaretCallbackStruct" /> struct is blittable.</summary>
         [Test]

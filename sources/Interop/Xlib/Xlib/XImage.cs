@@ -3,8 +3,6 @@
 // Ported from include/X11/Xlib.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct XImage
@@ -52,7 +50,7 @@ namespace TerraFX.Interop
         public unsafe partial struct funcs
         {
             [NativeTypeName("struct _XImage *(*)(struct _XDisplay *, Visual *, unsigned int, int, int, char *, unsigned int, unsigned int, int, int)")]
-            public delegate* unmanaged<IntPtr, Visual*, uint, int, int, sbyte*, uint, uint, int, int, XImage*> create_image;
+            public delegate* unmanaged<Display*, Visual*, uint, int, int, sbyte*, uint, uint, int, int, XImage*> create_image;
 
             [NativeTypeName("int (*)(struct _XImage *)")]
             public delegate* unmanaged<XImage*, int> destroy_image;

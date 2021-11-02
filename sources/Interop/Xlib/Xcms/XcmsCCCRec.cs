@@ -3,35 +3,30 @@
 // Ported from include/X11/Xcms.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © Tektronix, Inc.
 
-using System;
-
 namespace TerraFX.Interop
 {
-    public unsafe partial struct XcmsCCC
+    public unsafe partial struct XcmsCCCRec
     {
-        [NativeTypeName("Display *")]
-        public IntPtr dpy;
+        public Display* dpy;
 
         public int screenNumber;
 
-        [NativeTypeName("Visual *")]
         public Visual* visual;
 
         public XcmsColor clientWhitePt;
 
         [NativeTypeName("XcmsCompressionProc")]
-        public delegate* unmanaged<XcmsCCC*, XcmsColor*, uint, uint, int*, int> gamutCompProc;
+        public delegate* unmanaged<XcmsCCC, XcmsColor*, uint, uint, int*, int> gamutCompProc;
 
         [NativeTypeName("XPointer")]
         public sbyte* gamutCompClientData;
 
         [NativeTypeName("XcmsWhiteAdjustProc")]
-        public delegate* unmanaged<XcmsCCC*, XcmsColor*, XcmsColor*, nuint, XcmsColor*, uint, int*, int> whitePtAdjProc;
+        public delegate* unmanaged<XcmsCCC, XcmsColor*, XcmsColor*, nuint, XcmsColor*, uint, int*, int> whitePtAdjProc;
 
         [NativeTypeName("XPointer")]
         public sbyte* whitePtAdjClientData;
 
-        [NativeTypeName("XcmsPerScrnInfo *")]
         public XcmsPerScrnInfo* pPerScrnInfo;
     }
 }

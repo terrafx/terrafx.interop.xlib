@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("CARD8")]
         public byte reqType;
 
-        [NativeTypeName("BYTE")]
         public byte pad;
 
         [NativeTypeName("CARD16")]
@@ -22,10 +21,8 @@ namespace TerraFX.Interop
         [NativeTypeName("INT16")]
         public short interval;
 
-        [NativeTypeName("BYTE")]
         public byte preferBlank;
 
-        [NativeTypeName("BYTE")]
         public byte allowExpose;
 
         [NativeTypeName("CARD16")]

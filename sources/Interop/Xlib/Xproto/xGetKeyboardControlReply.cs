@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct xGetKeyboardControlReply
     {
-        [NativeTypeName("BYTE")]
         public byte type;
 
         [NativeTypeName("BOOL")]

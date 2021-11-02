@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="XIMStringConversionText" /> struct.</summary>
-    public static unsafe class XIMStringConversionTextTests
+    public static unsafe partial class XIMStringConversionTextTests
     {
         /// <summary>Validates that the <see cref="XIMStringConversionText" /> struct is blittable.</summary>
         [Test]

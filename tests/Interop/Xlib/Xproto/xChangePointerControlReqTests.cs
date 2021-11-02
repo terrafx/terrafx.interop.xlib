@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="xChangePointerControlReq" /> struct.</summary>
-    public static unsafe class xChangePointerControlReqTests
+    public static unsafe partial class xChangePointerControlReqTests
     {
         /// <summary>Validates that the <see cref="xChangePointerControlReq" /> struct is blittable.</summary>
         [Test]

@@ -3,8 +3,6 @@
 // Ported from include/X11/Xlib.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct XGenericEventCookie
@@ -16,8 +14,7 @@ namespace TerraFX.Interop
 
         public int send_event;
 
-        [NativeTypeName("Display *")]
-        public IntPtr display;
+        public Display* display;
 
         public int extension;
 
@@ -26,7 +23,6 @@ namespace TerraFX.Interop
         [NativeTypeName("unsigned int")]
         public uint cookie;
 
-        [NativeTypeName("void *")]
         public void* data;
     }
 }

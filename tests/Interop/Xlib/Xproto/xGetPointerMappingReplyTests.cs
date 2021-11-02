@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="xGetPointerMappingReply" /> struct.</summary>
-    public static unsafe class xGetPointerMappingReplyTests
+    public static unsafe partial class xGetPointerMappingReplyTests
     {
         /// <summary>Validates that the <see cref="xGetPointerMappingReply" /> struct is blittable.</summary>
         [Test]

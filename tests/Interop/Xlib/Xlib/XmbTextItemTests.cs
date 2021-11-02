@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="XmbTextItem" /> struct.</summary>
-    public static unsafe class XmbTextItemTests
+    public static unsafe partial class XmbTextItemTests
     {
         /// <summary>Validates that the <see cref="XmbTextItem" /> struct is blittable.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="XIMCallback" /> struct.</summary>
-    public static unsafe class XIMCallbackTests
+    public static unsafe partial class XIMCallbackTests
     {
         /// <summary>Validates that the <see cref="XIMCallback" /> struct is blittable.</summary>
         [Test]

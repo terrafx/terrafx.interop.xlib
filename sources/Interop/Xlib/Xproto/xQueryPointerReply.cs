@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct xQueryPointerReply
     {
-        [NativeTypeName("BYTE")]
         public byte type;
 
         [NativeTypeName("BOOL")]

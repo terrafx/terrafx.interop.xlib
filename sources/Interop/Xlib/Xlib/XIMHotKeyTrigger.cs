@@ -7,8 +7,7 @@ namespace TerraFX.Interop
 {
     public partial struct XIMHotKeyTrigger
     {
-        [NativeTypeName("KeySym")]
-        public nuint keysym;
+        public KeySym keysym;
 
         public int modifier;
 

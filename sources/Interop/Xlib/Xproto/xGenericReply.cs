@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct xGenericReply
     {
-        [NativeTypeName("BYTE")]
         public byte type;
 
-        [NativeTypeName("BYTE")]
         public byte data1;
 
         [NativeTypeName("CARD16")]

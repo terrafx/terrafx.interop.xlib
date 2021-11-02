@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="XNoExposeEvent" /> struct.</summary>
-    public static unsafe class XNoExposeEventTests
+    public static unsafe partial class XNoExposeEventTests
     {
         /// <summary>Validates that the <see cref="XNoExposeEvent" /> struct is blittable.</summary>
         [Test]

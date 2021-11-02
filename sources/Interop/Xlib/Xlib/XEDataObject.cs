@@ -3,7 +3,6 @@
 // Ported from include/X11/Xlib.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
-using System;
 using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
@@ -12,27 +11,21 @@ namespace TerraFX.Interop
     public unsafe partial struct XEDataObject
     {
         [FieldOffset(0)]
-        [NativeTypeName("Display *")]
-        public IntPtr display;
+        public Display* display;
 
         [FieldOffset(0)]
-        [NativeTypeName("GC")]
-        public IntPtr gc;
+        public GC gc;
 
         [FieldOffset(0)]
-        [NativeTypeName("Visual *")]
         public Visual* visual;
 
         [FieldOffset(0)]
-        [NativeTypeName("Screen *")]
         public Screen* screen;
 
         [FieldOffset(0)]
-        [NativeTypeName("ScreenFormat *")]
         public ScreenFormat* pixmap_format;
 
         [FieldOffset(0)]
-        [NativeTypeName("XFontStruct *")]
         public XFontStruct* font;
     }
 }

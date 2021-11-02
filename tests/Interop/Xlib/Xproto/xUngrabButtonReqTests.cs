@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="xUngrabButtonReq" /> struct.</summary>
-    public static unsafe class xUngrabButtonReqTests
+    public static unsafe partial class xUngrabButtonReqTests
     {
         /// <summary>Validates that the <see cref="xUngrabButtonReq" /> struct is blittable.</summary>
         [Test]

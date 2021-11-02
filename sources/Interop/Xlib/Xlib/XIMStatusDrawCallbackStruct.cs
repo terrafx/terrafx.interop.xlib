@@ -18,12 +18,10 @@ namespace TerraFX.Interop
         public unsafe partial struct _data_e__Union
         {
             [FieldOffset(0)]
-            [NativeTypeName("XIMText *")]
             public XIMText* text;
 
             [FieldOffset(0)]
-            [NativeTypeName("Pixmap")]
-            public nuint bitmap;
+            public Pixmap bitmap;
         }
     }
 }

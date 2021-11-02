@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct xListHostsReply
     {
-        [NativeTypeName("BYTE")]
         public byte type;
 
         [NativeTypeName("BOOL")]

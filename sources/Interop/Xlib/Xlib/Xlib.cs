@@ -10,77 +10,66 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Xlib
     {
-        [DllImport("libX11", ExactSpelling = true)]
+        [DllImport("libX11", EntryPoint = "_Z7_XmblenPci", ExactSpelling = true)]
         public static extern int _Xmblen([NativeTypeName("char *")] sbyte* str, int len);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("XFontStruct *")]
-        public static extern XFontStruct* XLoadQueryFont([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("const char *")] sbyte* param1);
+        public static extern XFontStruct* XLoadQueryFont(Display* param0, [NativeTypeName("const char *")] sbyte* param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("XFontStruct *")]
-        public static extern XFontStruct* XQueryFont([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("XID")] nuint param1);
+        public static extern XFontStruct* XQueryFont(Display* param0, XID param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("XTimeCoord *")]
-        public static extern XTimeCoord* XGetMotionEvents([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("Time")] nuint param2, [NativeTypeName("Time")] nuint param3, [NativeTypeName("int *")] int* param4);
+        public static extern XTimeCoord* XGetMotionEvents(Display* param0, Window param1, Time param2, Time param3, int* param4);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("XModifierKeymap *")]
-        public static extern XModifierKeymap* XDeleteModifiermapEntry([NativeTypeName("XModifierKeymap *")] XModifierKeymap* param0, [NativeTypeName("KeyCode")] byte param1, int param2);
+        public static extern XModifierKeymap* XDeleteModifiermapEntry(XModifierKeymap* param0, [NativeTypeName("KeyCode")] byte param1, int param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("XModifierKeymap *")]
-        public static extern XModifierKeymap* XGetModifierMapping([NativeTypeName("Display *")] IntPtr param0);
+        public static extern XModifierKeymap* XGetModifierMapping(Display* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("XModifierKeymap *")]
-        public static extern XModifierKeymap* XInsertModifiermapEntry([NativeTypeName("XModifierKeymap *")] XModifierKeymap* param0, [NativeTypeName("KeyCode")] byte param1, int param2);
+        public static extern XModifierKeymap* XInsertModifiermapEntry(XModifierKeymap* param0, [NativeTypeName("KeyCode")] byte param1, int param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("XModifierKeymap *")]
         public static extern XModifierKeymap* XNewModifiermap(int param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("XImage *")]
-        public static extern XImage* XCreateImage([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Visual *")] Visual* param1, [NativeTypeName("unsigned int")] uint param2, int param3, int param4, [NativeTypeName("char *")] sbyte* param5, [NativeTypeName("unsigned int")] uint param6, [NativeTypeName("unsigned int")] uint param7, int param8, int param9);
+        public static extern XImage* XCreateImage(Display* param0, Visual* param1, [NativeTypeName("unsigned int")] uint param2, int param3, int param4, [NativeTypeName("char *")] sbyte* param5, [NativeTypeName("unsigned int")] uint param6, [NativeTypeName("unsigned int")] uint param7, int param8, int param9);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XInitImage([NativeTypeName("XImage *")] XImage* param0);
+        public static extern int XInitImage(XImage* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("XImage *")]
-        public static extern XImage* XGetImage([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, int param2, int param3, [NativeTypeName("unsigned int")] uint param4, [NativeTypeName("unsigned int")] uint param5, [NativeTypeName("unsigned long")] nuint param6, int param7);
+        public static extern XImage* XGetImage(Display* param0, Drawable param1, int param2, int param3, [NativeTypeName("unsigned int")] uint param4, [NativeTypeName("unsigned int")] uint param5, [NativeTypeName("unsigned long")] nuint param6, int param7);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("XImage *")]
-        public static extern XImage* XGetSubImage([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, int param2, int param3, [NativeTypeName("unsigned int")] uint param4, [NativeTypeName("unsigned int")] uint param5, [NativeTypeName("unsigned long")] nuint param6, int param7, [NativeTypeName("XImage *")] XImage* param8, int param9, int param10);
+        public static extern XImage* XGetSubImage(Display* param0, Drawable param1, int param2, int param3, [NativeTypeName("unsigned int")] uint param4, [NativeTypeName("unsigned int")] uint param5, [NativeTypeName("unsigned long")] nuint param6, int param7, XImage* param8, int param9, int param10);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("Display *")]
-        public static extern IntPtr XOpenDisplay([NativeTypeName("const char *")] sbyte* param0);
+        public static extern Display* XOpenDisplay([NativeTypeName("const char *")] sbyte* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
         public static extern void XrmInitialize();
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("char *")]
-        public static extern sbyte* XFetchBytes([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("int *")] int* param1);
+        public static extern sbyte* XFetchBytes(Display* param0, int* param1);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("char *")]
-        public static extern sbyte* XFetchBuffer([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("int *")] int* param1, int param2);
+        public static extern sbyte* XFetchBuffer(Display* param0, int* param1, int param2);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("char *")]
-        public static extern sbyte* XGetAtomName([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Atom")] nuint param1);
+        public static extern sbyte* XGetAtomName(Display* param0, Atom param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XGetAtomNames([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Atom *")] nuint* param1, int param2, [NativeTypeName("char **")] sbyte** param3);
+        public static extern int XGetAtomNames(Display* param0, Atom* param1, int param2, [NativeTypeName("char **")] sbyte** param3);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("char *")]
-        public static extern sbyte* XGetDefault([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("const char *")] sbyte* param1, [NativeTypeName("const char *")] sbyte* param2);
+        public static extern sbyte* XGetDefault(Display* param0, [NativeTypeName("const char *")] sbyte* param1, [NativeTypeName("const char *")] sbyte* param2);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("char *")]
@@ -88,210 +77,176 @@ namespace TerraFX.Interop
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("char *")]
-        public static extern sbyte* XKeysymToString([NativeTypeName("KeySym")] nuint param0);
+        public static extern sbyte* XKeysymToString(KeySym param0);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("int (*)(Display *)")]
-        public static extern delegate* unmanaged<IntPtr, int> XSynchronize([NativeTypeName("Display *")] IntPtr param0, int param1);
+        public static extern delegate* unmanaged<Display*, int> XSynchronize(Display* param0, int param1);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("int (*)(Display *)")]
-        public static extern delegate* unmanaged<IntPtr, int> XSetAfterFunction([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("int (*)(Display *)")] delegate* unmanaged<IntPtr, int> param1);
+        public static extern delegate* unmanaged<Display*, int> XSetAfterFunction(Display* param0, [NativeTypeName("int (*)(Display *)")] delegate* unmanaged<Display*, int> param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("Atom")]
-        public static extern nuint XInternAtom([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("const char *")] sbyte* param1, int param2);
+        public static extern Atom XInternAtom(Display* param0, [NativeTypeName("const char *")] sbyte* param1, int param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XInternAtoms([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("char **")] sbyte** param1, int param2, int param3, [NativeTypeName("Atom *")] nuint* param4);
+        public static extern int XInternAtoms(Display* param0, [NativeTypeName("char **")] sbyte** param1, int param2, int param3, Atom* param4);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("Colormap")]
-        public static extern nuint XCopyColormapAndFree([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Colormap")] nuint param1);
+        public static extern Colormap XCopyColormapAndFree(Display* param0, Colormap param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("Colormap")]
-        public static extern nuint XCreateColormap([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("Visual *")] Visual* param2, int param3);
+        public static extern Colormap XCreateColormap(Display* param0, Window param1, Visual* param2, int param3);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("Cursor")]
-        public static extern nuint XCreatePixmapCursor([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Pixmap")] nuint param1, [NativeTypeName("Pixmap")] nuint param2, [NativeTypeName("XColor *")] XColor* param3, [NativeTypeName("XColor *")] XColor* param4, [NativeTypeName("unsigned int")] uint param5, [NativeTypeName("unsigned int")] uint param6);
+        public static extern Cursor XCreatePixmapCursor(Display* param0, Pixmap param1, Pixmap param2, XColor* param3, XColor* param4, [NativeTypeName("unsigned int")] uint param5, [NativeTypeName("unsigned int")] uint param6);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("Cursor")]
-        public static extern nuint XCreateGlyphCursor([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Font")] nuint param1, [NativeTypeName("Font")] nuint param2, [NativeTypeName("unsigned int")] uint param3, [NativeTypeName("unsigned int")] uint param4, [NativeTypeName("const XColor *")] XColor* param5, [NativeTypeName("const XColor *")] XColor* param6);
+        public static extern Cursor XCreateGlyphCursor(Display* param0, Font param1, Font param2, [NativeTypeName("unsigned int")] uint param3, [NativeTypeName("unsigned int")] uint param4, [NativeTypeName("const XColor *")] XColor* param5, [NativeTypeName("const XColor *")] XColor* param6);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("Cursor")]
-        public static extern nuint XCreateFontCursor([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("unsigned int")] uint param1);
+        public static extern Cursor XCreateFontCursor(Display* param0, [NativeTypeName("unsigned int")] uint param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("Font")]
-        public static extern nuint XLoadFont([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("const char *")] sbyte* param1);
+        public static extern Font XLoadFont(Display* param0, [NativeTypeName("const char *")] sbyte* param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("GC")]
-        public static extern IntPtr XCreateGC([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("unsigned long")] nuint param2, [NativeTypeName("XGCValues *")] XGCValues* param3);
+        public static extern GC XCreateGC(Display* param0, Drawable param1, [NativeTypeName("unsigned long")] nuint param2, XGCValues* param3);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("GContext")]
-        public static extern nuint XGContextFromGC([NativeTypeName("GC")] IntPtr param0);
+        public static extern GContext XGContextFromGC(GC param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern void XFlushGC([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("GC")] IntPtr param1);
+        public static extern void XFlushGC(Display* param0, GC param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("Pixmap")]
-        public static extern nuint XCreatePixmap([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("unsigned int")] uint param2, [NativeTypeName("unsigned int")] uint param3, [NativeTypeName("unsigned int")] uint param4);
+        public static extern Pixmap XCreatePixmap(Display* param0, Drawable param1, [NativeTypeName("unsigned int")] uint param2, [NativeTypeName("unsigned int")] uint param3, [NativeTypeName("unsigned int")] uint param4);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("Pixmap")]
-        public static extern nuint XCreateBitmapFromData([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("const char *")] sbyte* param2, [NativeTypeName("unsigned int")] uint param3, [NativeTypeName("unsigned int")] uint param4);
+        public static extern Pixmap XCreateBitmapFromData(Display* param0, Drawable param1, [NativeTypeName("const char *")] sbyte* param2, [NativeTypeName("unsigned int")] uint param3, [NativeTypeName("unsigned int")] uint param4);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("Pixmap")]
-        public static extern nuint XCreatePixmapFromBitmapData([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("char *")] sbyte* param2, [NativeTypeName("unsigned int")] uint param3, [NativeTypeName("unsigned int")] uint param4, [NativeTypeName("unsigned long")] nuint param5, [NativeTypeName("unsigned long")] nuint param6, [NativeTypeName("unsigned int")] uint param7);
+        public static extern Pixmap XCreatePixmapFromBitmapData(Display* param0, Drawable param1, [NativeTypeName("char *")] sbyte* param2, [NativeTypeName("unsigned int")] uint param3, [NativeTypeName("unsigned int")] uint param4, [NativeTypeName("unsigned long")] nuint param5, [NativeTypeName("unsigned long")] nuint param6, [NativeTypeName("unsigned int")] uint param7);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("Window")]
-        public static extern nuint XCreateSimpleWindow([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, int param2, int param3, [NativeTypeName("unsigned int")] uint param4, [NativeTypeName("unsigned int")] uint param5, [NativeTypeName("unsigned int")] uint param6, [NativeTypeName("unsigned long")] nuint param7, [NativeTypeName("unsigned long")] nuint param8);
+        public static extern Window XCreateSimpleWindow(Display* param0, Window param1, int param2, int param3, [NativeTypeName("unsigned int")] uint param4, [NativeTypeName("unsigned int")] uint param5, [NativeTypeName("unsigned int")] uint param6, [NativeTypeName("unsigned long")] nuint param7, [NativeTypeName("unsigned long")] nuint param8);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("Window")]
-        public static extern nuint XGetSelectionOwner([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Atom")] nuint param1);
+        public static extern Window XGetSelectionOwner(Display* param0, Atom param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("Window")]
-        public static extern nuint XCreateWindow([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, int param2, int param3, [NativeTypeName("unsigned int")] uint param4, [NativeTypeName("unsigned int")] uint param5, [NativeTypeName("unsigned int")] uint param6, int param7, [NativeTypeName("unsigned int")] uint param8, [NativeTypeName("Visual *")] Visual* param9, [NativeTypeName("unsigned long")] nuint param10, [NativeTypeName("XSetWindowAttributes *")] XSetWindowAttributes* param11);
+        public static extern Window XCreateWindow(Display* param0, Window param1, int param2, int param3, [NativeTypeName("unsigned int")] uint param4, [NativeTypeName("unsigned int")] uint param5, [NativeTypeName("unsigned int")] uint param6, int param7, [NativeTypeName("unsigned int")] uint param8, Visual* param9, [NativeTypeName("unsigned long")] nuint param10, XSetWindowAttributes* param11);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("Colormap *")]
-        public static extern nuint* XListInstalledColormaps([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("int *")] int* param2);
+        public static extern Colormap* XListInstalledColormaps(Display* param0, Window param1, int* param2);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("char **")]
-        public static extern sbyte** XListFonts([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("const char *")] sbyte* param1, int param2, [NativeTypeName("int *")] int* param3);
+        public static extern sbyte** XListFonts(Display* param0, [NativeTypeName("const char *")] sbyte* param1, int param2, int* param3);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("char **")]
-        public static extern sbyte** XListFontsWithInfo([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("const char *")] sbyte* param1, int param2, [NativeTypeName("int *")] int* param3, [NativeTypeName("XFontStruct **")] XFontStruct** param4);
+        public static extern sbyte** XListFontsWithInfo(Display* param0, [NativeTypeName("const char *")] sbyte* param1, int param2, int* param3, XFontStruct** param4);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("char **")]
-        public static extern sbyte** XGetFontPath([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("int *")] int* param1);
+        public static extern sbyte** XGetFontPath(Display* param0, int* param1);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("char **")]
-        public static extern sbyte** XListExtensions([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("int *")] int* param1);
+        public static extern sbyte** XListExtensions(Display* param0, int* param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("Atom *")]
-        public static extern nuint* XListProperties([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("int *")] int* param2);
+        public static extern Atom* XListProperties(Display* param0, Window param1, int* param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("XHostAddress *")]
-        public static extern XHostAddress* XListHosts([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("int *")] int* param1, [NativeTypeName("int *")] int* param2);
+        public static extern XHostAddress* XListHosts(Display* param0, int* param1, int* param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("KeySym")]
-        public static extern nuint XKeycodeToKeysym([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("KeyCode")] byte param1, int param2);
+        public static extern KeySym XKeycodeToKeysym(Display* param0, [NativeTypeName("KeyCode")] byte param1, int param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("KeySym")]
-        public static extern nuint XLookupKeysym([NativeTypeName("XKeyEvent *")] XKeyEvent* param0, int param1);
+        public static extern KeySym XLookupKeysym(XKeyEvent* param0, int param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("KeySym *")]
-        public static extern nuint* XGetKeyboardMapping([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("KeyCode")] byte param1, int param2, [NativeTypeName("int *")] int* param3);
+        public static extern KeySym* XGetKeyboardMapping(Display* param0, [NativeTypeName("KeyCode")] byte param1, int param2, int* param3);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("KeySym")]
-        public static extern nuint XStringToKeysym([NativeTypeName("const char *")] sbyte* param0);
+        public static extern KeySym XStringToKeysym([NativeTypeName("const char *")] sbyte* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("long")]
-        public static extern nint XMaxRequestSize([NativeTypeName("Display *")] IntPtr param0);
+        public static extern nint XMaxRequestSize(Display* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("long")]
-        public static extern nint XExtendedMaxRequestSize([NativeTypeName("Display *")] IntPtr param0);
+        public static extern nint XExtendedMaxRequestSize(Display* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("char *")]
-        public static extern sbyte* XResourceManagerString([NativeTypeName("Display *")] IntPtr param0);
+        public static extern sbyte* XResourceManagerString(Display* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("char *")]
-        public static extern sbyte* XScreenResourceString([NativeTypeName("Screen *")] Screen* param0);
+        public static extern sbyte* XScreenResourceString(Screen* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("unsigned long")]
-        public static extern nuint XDisplayMotionBufferSize([NativeTypeName("Display *")] IntPtr param0);
+        public static extern nuint XDisplayMotionBufferSize(Display* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("VisualID")]
-        public static extern nuint XVisualIDFromVisual([NativeTypeName("Visual *")] Visual* param0);
+        public static extern VisualID XVisualIDFromVisual(Visual* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
         public static extern int XInitThreads();
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern void XLockDisplay([NativeTypeName("Display *")] IntPtr param0);
+        public static extern void XLockDisplay(Display* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern void XUnlockDisplay([NativeTypeName("Display *")] IntPtr param0);
+        public static extern void XUnlockDisplay(Display* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("XExtCodes *")]
-        public static extern XExtCodes* XInitExtension([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("const char *")] sbyte* param1);
+        public static extern XExtCodes* XInitExtension(Display* param0, [NativeTypeName("const char *")] sbyte* param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("XExtCodes *")]
-        public static extern XExtCodes* XAddExtension([NativeTypeName("Display *")] IntPtr param0);
+        public static extern XExtCodes* XAddExtension(Display* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("XExtData *")]
-        public static extern XExtData* XFindOnExtensionList([NativeTypeName("XExtData **")] XExtData** param0, int param1);
+        public static extern XExtData* XFindOnExtensionList(XExtData** param0, int param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("XExtData **")]
         public static extern XExtData** XEHeadOfExtensionList(XEDataObject param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("Window")]
-        public static extern nuint XRootWindow([NativeTypeName("Display *")] IntPtr param0, int param1);
+        public static extern Window XRootWindow(Display* param0, int param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("Window")]
-        public static extern nuint XDefaultRootWindow([NativeTypeName("Display *")] IntPtr param0);
+        public static extern Window XDefaultRootWindow(Display* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("Window")]
-        public static extern nuint XRootWindowOfScreen([NativeTypeName("Screen *")] Screen* param0);
+        public static extern Window XRootWindowOfScreen(Screen* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("Visual *")]
-        public static extern Visual* XDefaultVisual([NativeTypeName("Display *")] IntPtr param0, int param1);
+        public static extern Visual* XDefaultVisual(Display* param0, int param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("Visual *")]
-        public static extern Visual* XDefaultVisualOfScreen([NativeTypeName("Screen *")] Screen* param0);
+        public static extern Visual* XDefaultVisualOfScreen(Screen* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("GC")]
-        public static extern IntPtr XDefaultGC([NativeTypeName("Display *")] IntPtr param0, int param1);
+        public static extern GC XDefaultGC(Display* param0, int param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("GC")]
-        public static extern IntPtr XDefaultGCOfScreen([NativeTypeName("Screen *")] Screen* param0);
+        public static extern GC XDefaultGCOfScreen(Screen* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("unsigned long")]
-        public static extern nuint XBlackPixel([NativeTypeName("Display *")] IntPtr param0, int param1);
+        public static extern nuint XBlackPixel(Display* param0, int param1);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("unsigned long")]
-        public static extern nuint XWhitePixel([NativeTypeName("Display *")] IntPtr param0, int param1);
+        public static extern nuint XWhitePixel(Display* param0, int param1);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("unsigned long")]
@@ -299,373 +254,366 @@ namespace TerraFX.Interop
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("unsigned long")]
-        public static extern nuint XBlackPixelOfScreen([NativeTypeName("Screen *")] Screen* param0);
+        public static extern nuint XBlackPixelOfScreen(Screen* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("unsigned long")]
-        public static extern nuint XWhitePixelOfScreen([NativeTypeName("Screen *")] Screen* param0);
+        public static extern nuint XWhitePixelOfScreen(Screen* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("unsigned long")]
-        public static extern nuint XNextRequest([NativeTypeName("Display *")] IntPtr param0);
+        public static extern nuint XNextRequest(Display* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("unsigned long")]
-        public static extern nuint XLastKnownRequestProcessed([NativeTypeName("Display *")] IntPtr param0);
+        public static extern nuint XLastKnownRequestProcessed(Display* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("char *")]
-        public static extern sbyte* XServerVendor([NativeTypeName("Display *")] IntPtr param0);
+        public static extern sbyte* XServerVendor(Display* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("char *")]
-        public static extern sbyte* XDisplayString([NativeTypeName("Display *")] IntPtr param0);
+        public static extern sbyte* XDisplayString(Display* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("Colormap")]
-        public static extern nuint XDefaultColormap([NativeTypeName("Display *")] IntPtr param0, int param1);
+        public static extern Colormap XDefaultColormap(Display* param0, int param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("Colormap")]
-        public static extern nuint XDefaultColormapOfScreen([NativeTypeName("Screen *")] Screen* param0);
+        public static extern Colormap XDefaultColormapOfScreen(Screen* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("Display *")]
-        public static extern IntPtr XDisplayOfScreen([NativeTypeName("Screen *")] Screen* param0);
+        public static extern Display* XDisplayOfScreen(Screen* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("Screen *")]
-        public static extern Screen* XScreenOfDisplay([NativeTypeName("Display *")] IntPtr param0, int param1);
+        public static extern Screen* XScreenOfDisplay(Display* param0, int param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("Screen *")]
-        public static extern Screen* XDefaultScreenOfDisplay([NativeTypeName("Display *")] IntPtr param0);
+        public static extern Screen* XDefaultScreenOfDisplay(Display* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("long")]
-        public static extern nint XEventMaskOfScreen([NativeTypeName("Screen *")] Screen* param0);
+        public static extern nint XEventMaskOfScreen(Screen* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XScreenNumberOfScreen([NativeTypeName("Screen *")] Screen* param0);
+        public static extern int XScreenNumberOfScreen(Screen* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("XErrorHandler")]
-        public static extern delegate* unmanaged<IntPtr, XErrorEvent*, int> XSetErrorHandler([NativeTypeName("XErrorHandler")] delegate* unmanaged<IntPtr, XErrorEvent*, int> param0);
+        public static extern delegate* unmanaged<Display*, XErrorEvent*, int> XSetErrorHandler([NativeTypeName("XErrorHandler")] delegate* unmanaged<Display*, XErrorEvent*, int> param0);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("XIOErrorHandler")]
-        public static extern delegate* unmanaged<IntPtr, int> XSetIOErrorHandler([NativeTypeName("XIOErrorHandler")] delegate* unmanaged<IntPtr, int> param0);
+        public static extern delegate* unmanaged<Display*, int> XSetIOErrorHandler([NativeTypeName("XIOErrorHandler")] delegate* unmanaged<Display*, int> param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("XPixmapFormatValues *")]
-        public static extern XPixmapFormatValues* XListPixmapFormats([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("int *")] int* param1);
+        public static extern XPixmapFormatValues* XListPixmapFormats(Display* param0, int* param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("int *")]
-        public static extern int* XListDepths([NativeTypeName("Display *")] IntPtr param0, int param1, [NativeTypeName("int *")] int* param2);
+        public static extern int* XListDepths(Display* param0, int param1, int* param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XReconfigureWMWindow([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, int param2, [NativeTypeName("unsigned int")] uint param3, [NativeTypeName("XWindowChanges *")] XWindowChanges* param4);
+        public static extern int XReconfigureWMWindow(Display* param0, Window param1, int param2, [NativeTypeName("unsigned int")] uint param3, XWindowChanges* param4);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XGetWMProtocols([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("Atom **")] nuint** param2, [NativeTypeName("int *")] int* param3);
+        public static extern int XGetWMProtocols(Display* param0, Window param1, Atom** param2, int* param3);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSetWMProtocols([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("Atom *")] nuint* param2, int param3);
+        public static extern int XSetWMProtocols(Display* param0, Window param1, Atom* param2, int param3);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XIconifyWindow([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, int param2);
+        public static extern int XIconifyWindow(Display* param0, Window param1, int param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XWithdrawWindow([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, int param2);
+        public static extern int XWithdrawWindow(Display* param0, Window param1, int param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XGetCommand([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("char ***")] sbyte*** param2, [NativeTypeName("int *")] int* param3);
+        public static extern int XGetCommand(Display* param0, Window param1, [NativeTypeName("char ***")] sbyte*** param2, int* param3);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XGetWMColormapWindows([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("Window **")] nuint** param2, [NativeTypeName("int *")] int* param3);
+        public static extern int XGetWMColormapWindows(Display* param0, Window param1, Window** param2, int* param3);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSetWMColormapWindows([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("Window *")] nuint* param2, int param3);
+        public static extern int XSetWMColormapWindows(Display* param0, Window param1, Window* param2, int param3);
 
         [DllImport("libX11", ExactSpelling = true)]
         public static extern void XFreeStringList([NativeTypeName("char **")] sbyte** param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSetTransientForHint([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("Window")] nuint param2);
+        public static extern int XSetTransientForHint(Display* param0, Window param1, Window param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XActivateScreenSaver([NativeTypeName("Display *")] IntPtr param0);
+        public static extern int XActivateScreenSaver(Display* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XAddHost([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("XHostAddress *")] XHostAddress* param1);
+        public static extern int XAddHost(Display* param0, XHostAddress* param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XAddHosts([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("XHostAddress *")] XHostAddress* param1, int param2);
+        public static extern int XAddHosts(Display* param0, XHostAddress* param1, int param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XAddToExtensionList([NativeTypeName("struct _XExtData **")] XExtData** param0, [NativeTypeName("XExtData *")] XExtData* param1);
+        public static extern int XAddToExtensionList([NativeTypeName("struct _XExtData **")] XExtData** param0, XExtData* param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XAddToSaveSet([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1);
+        public static extern int XAddToSaveSet(Display* param0, Window param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XAllocColor([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Colormap")] nuint param1, [NativeTypeName("XColor *")] XColor* param2);
+        public static extern int XAllocColor(Display* param0, Colormap param1, XColor* param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XAllocColorCells([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Colormap")] nuint param1, int param2, [NativeTypeName("unsigned long *")] nuint* param3, [NativeTypeName("unsigned int")] uint param4, [NativeTypeName("unsigned long *")] nuint* param5, [NativeTypeName("unsigned int")] uint param6);
+        public static extern int XAllocColorCells(Display* param0, Colormap param1, int param2, [NativeTypeName("unsigned long *")] nuint* param3, [NativeTypeName("unsigned int")] uint param4, [NativeTypeName("unsigned long *")] nuint* param5, [NativeTypeName("unsigned int")] uint param6);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XAllocColorPlanes([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Colormap")] nuint param1, int param2, [NativeTypeName("unsigned long *")] nuint* param3, int param4, int param5, int param6, int param7, [NativeTypeName("unsigned long *")] nuint* param8, [NativeTypeName("unsigned long *")] nuint* param9, [NativeTypeName("unsigned long *")] nuint* param10);
+        public static extern int XAllocColorPlanes(Display* param0, Colormap param1, int param2, [NativeTypeName("unsigned long *")] nuint* param3, int param4, int param5, int param6, int param7, [NativeTypeName("unsigned long *")] nuint* param8, [NativeTypeName("unsigned long *")] nuint* param9, [NativeTypeName("unsigned long *")] nuint* param10);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XAllocNamedColor([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Colormap")] nuint param1, [NativeTypeName("const char *")] sbyte* param2, [NativeTypeName("XColor *")] XColor* param3, [NativeTypeName("XColor *")] XColor* param4);
+        public static extern int XAllocNamedColor(Display* param0, Colormap param1, [NativeTypeName("const char *")] sbyte* param2, XColor* param3, XColor* param4);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XAllowEvents([NativeTypeName("Display *")] IntPtr param0, int param1, [NativeTypeName("Time")] nuint param2);
+        public static extern int XAllowEvents(Display* param0, int param1, Time param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XAutoRepeatOff([NativeTypeName("Display *")] IntPtr param0);
+        public static extern int XAutoRepeatOff(Display* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XAutoRepeatOn([NativeTypeName("Display *")] IntPtr param0);
+        public static extern int XAutoRepeatOn(Display* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XBell([NativeTypeName("Display *")] IntPtr param0, int param1);
+        public static extern int XBell(Display* param0, int param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XBitmapBitOrder([NativeTypeName("Display *")] IntPtr param0);
+        public static extern int XBitmapBitOrder(Display* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XBitmapPad([NativeTypeName("Display *")] IntPtr param0);
+        public static extern int XBitmapPad(Display* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XBitmapUnit([NativeTypeName("Display *")] IntPtr param0);
+        public static extern int XBitmapUnit(Display* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XCellsOfScreen([NativeTypeName("Screen *")] Screen* param0);
+        public static extern int XCellsOfScreen(Screen* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XChangeActivePointerGrab([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("unsigned int")] uint param1, [NativeTypeName("Cursor")] nuint param2, [NativeTypeName("Time")] nuint param3);
+        public static extern int XChangeActivePointerGrab(Display* param0, [NativeTypeName("unsigned int")] uint param1, Cursor param2, Time param3);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XChangeGC([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("GC")] IntPtr param1, [NativeTypeName("unsigned long")] nuint param2, [NativeTypeName("XGCValues *")] XGCValues* param3);
+        public static extern int XChangeGC(Display* param0, GC param1, [NativeTypeName("unsigned long")] nuint param2, XGCValues* param3);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XChangeKeyboardControl([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("unsigned long")] nuint param1, [NativeTypeName("XKeyboardControl *")] XKeyboardControl* param2);
+        public static extern int XChangeKeyboardControl(Display* param0, [NativeTypeName("unsigned long")] nuint param1, XKeyboardControl* param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XChangeKeyboardMapping([NativeTypeName("Display *")] IntPtr param0, int param1, int param2, [NativeTypeName("KeySym *")] nuint* param3, int param4);
+        public static extern int XChangeKeyboardMapping(Display* param0, int param1, int param2, KeySym* param3, int param4);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XChangePointerControl([NativeTypeName("Display *")] IntPtr param0, int param1, int param2, int param3, int param4, int param5);
+        public static extern int XChangePointerControl(Display* param0, int param1, int param2, int param3, int param4, int param5);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XChangeProperty([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("Atom")] nuint param2, [NativeTypeName("Atom")] nuint param3, int param4, int param5, [NativeTypeName("const unsigned char *")] byte* param6, int param7);
+        public static extern int XChangeProperty(Display* param0, Window param1, Atom param2, Atom param3, int param4, int param5, [NativeTypeName("const unsigned char *")] byte* param6, int param7);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XChangeSaveSet([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, int param2);
+        public static extern int XChangeSaveSet(Display* param0, Window param1, int param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XChangeWindowAttributes([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("unsigned long")] nuint param2, [NativeTypeName("XSetWindowAttributes *")] XSetWindowAttributes* param3);
+        public static extern int XChangeWindowAttributes(Display* param0, Window param1, [NativeTypeName("unsigned long")] nuint param2, XSetWindowAttributes* param3);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XCheckIfEvent([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("XEvent *")] XEvent* param1, [NativeTypeName("int (*)(Display *, XEvent *, XPointer)")] delegate* unmanaged<IntPtr, XEvent*, sbyte*, int> param2, [NativeTypeName("XPointer")] sbyte* param3);
+        public static extern int XCheckIfEvent(Display* param0, XEvent* param1, [NativeTypeName("int (*)(Display *, XEvent *, XPointer)")] delegate* unmanaged<Display*, XEvent*, sbyte*, int> param2, [NativeTypeName("XPointer")] sbyte* param3);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XCheckMaskEvent([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("long")] nint param1, [NativeTypeName("XEvent *")] XEvent* param2);
+        public static extern int XCheckMaskEvent(Display* param0, [NativeTypeName("long")] nint param1, XEvent* param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XCheckTypedEvent([NativeTypeName("Display *")] IntPtr param0, int param1, [NativeTypeName("XEvent *")] XEvent* param2);
+        public static extern int XCheckTypedEvent(Display* param0, int param1, XEvent* param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XCheckTypedWindowEvent([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, int param2, [NativeTypeName("XEvent *")] XEvent* param3);
+        public static extern int XCheckTypedWindowEvent(Display* param0, Window param1, int param2, XEvent* param3);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XCheckWindowEvent([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("long")] nint param2, [NativeTypeName("XEvent *")] XEvent* param3);
+        public static extern int XCheckWindowEvent(Display* param0, Window param1, [NativeTypeName("long")] nint param2, XEvent* param3);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XCirculateSubwindows([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, int param2);
+        public static extern int XCirculateSubwindows(Display* param0, Window param1, int param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XCirculateSubwindowsDown([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1);
+        public static extern int XCirculateSubwindowsDown(Display* param0, Window param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XCirculateSubwindowsUp([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1);
+        public static extern int XCirculateSubwindowsUp(Display* param0, Window param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XClearArea([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, int param2, int param3, [NativeTypeName("unsigned int")] uint param4, [NativeTypeName("unsigned int")] uint param5, int param6);
+        public static extern int XClearArea(Display* param0, Window param1, int param2, int param3, [NativeTypeName("unsigned int")] uint param4, [NativeTypeName("unsigned int")] uint param5, int param6);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XClearWindow([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1);
+        public static extern int XClearWindow(Display* param0, Window param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XCloseDisplay([NativeTypeName("Display *")] IntPtr param0);
+        public static extern int XCloseDisplay(Display* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XConfigureWindow([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("unsigned int")] uint param2, [NativeTypeName("XWindowChanges *")] XWindowChanges* param3);
+        public static extern int XConfigureWindow(Display* param0, Window param1, [NativeTypeName("unsigned int")] uint param2, XWindowChanges* param3);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XConnectionNumber([NativeTypeName("Display *")] IntPtr param0);
+        public static extern int XConnectionNumber(Display* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XConvertSelection([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Atom")] nuint param1, [NativeTypeName("Atom")] nuint param2, [NativeTypeName("Atom")] nuint param3, [NativeTypeName("Window")] nuint param4, [NativeTypeName("Time")] nuint param5);
+        public static extern int XConvertSelection(Display* param0, Atom param1, Atom param2, Atom param3, Window param4, Time param5);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XCopyArea([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("Drawable")] nuint param2, [NativeTypeName("GC")] IntPtr param3, int param4, int param5, [NativeTypeName("unsigned int")] uint param6, [NativeTypeName("unsigned int")] uint param7, int param8, int param9);
+        public static extern int XCopyArea(Display* param0, Drawable param1, Drawable param2, GC param3, int param4, int param5, [NativeTypeName("unsigned int")] uint param6, [NativeTypeName("unsigned int")] uint param7, int param8, int param9);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XCopyGC([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("GC")] IntPtr param1, [NativeTypeName("unsigned long")] nuint param2, [NativeTypeName("GC")] IntPtr param3);
+        public static extern int XCopyGC(Display* param0, GC param1, [NativeTypeName("unsigned long")] nuint param2, GC param3);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XCopyPlane([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("Drawable")] nuint param2, [NativeTypeName("GC")] IntPtr param3, int param4, int param5, [NativeTypeName("unsigned int")] uint param6, [NativeTypeName("unsigned int")] uint param7, int param8, int param9, [NativeTypeName("unsigned long")] nuint param10);
+        public static extern int XCopyPlane(Display* param0, Drawable param1, Drawable param2, GC param3, int param4, int param5, [NativeTypeName("unsigned int")] uint param6, [NativeTypeName("unsigned int")] uint param7, int param8, int param9, [NativeTypeName("unsigned long")] nuint param10);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XDefaultDepth([NativeTypeName("Display *")] IntPtr param0, int param1);
+        public static extern int XDefaultDepth(Display* param0, int param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XDefaultDepthOfScreen([NativeTypeName("Screen *")] Screen* param0);
+        public static extern int XDefaultDepthOfScreen(Screen* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XDefaultScreen([NativeTypeName("Display *")] IntPtr param0);
+        public static extern int XDefaultScreen(Display* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XDefineCursor([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("Cursor")] nuint param2);
+        public static extern int XDefineCursor(Display* param0, Window param1, Cursor param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XDeleteProperty([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("Atom")] nuint param2);
+        public static extern int XDeleteProperty(Display* param0, Window param1, Atom param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XDestroyWindow([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1);
+        public static extern int XDestroyWindow(Display* param0, Window param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XDestroySubwindows([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1);
+        public static extern int XDestroySubwindows(Display* param0, Window param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XDoesBackingStore([NativeTypeName("Screen *")] Screen* param0);
+        public static extern int XDoesBackingStore(Screen* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XDoesSaveUnders([NativeTypeName("Screen *")] Screen* param0);
+        public static extern int XDoesSaveUnders(Screen* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XDisableAccessControl([NativeTypeName("Display *")] IntPtr param0);
+        public static extern int XDisableAccessControl(Display* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XDisplayCells([NativeTypeName("Display *")] IntPtr param0, int param1);
+        public static extern int XDisplayCells(Display* param0, int param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XDisplayHeight([NativeTypeName("Display *")] IntPtr param0, int param1);
+        public static extern int XDisplayHeight(Display* param0, int param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XDisplayHeightMM([NativeTypeName("Display *")] IntPtr param0, int param1);
+        public static extern int XDisplayHeightMM(Display* param0, int param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XDisplayKeycodes([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("int *")] int* param1, [NativeTypeName("int *")] int* param2);
+        public static extern int XDisplayKeycodes(Display* param0, int* param1, int* param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XDisplayPlanes([NativeTypeName("Display *")] IntPtr param0, int param1);
+        public static extern int XDisplayPlanes(Display* param0, int param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XDisplayWidth([NativeTypeName("Display *")] IntPtr param0, int param1);
+        public static extern int XDisplayWidth(Display* param0, int param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XDisplayWidthMM([NativeTypeName("Display *")] IntPtr param0, int param1);
+        public static extern int XDisplayWidthMM(Display* param0, int param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XDrawArc([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("GC")] IntPtr param2, int param3, int param4, [NativeTypeName("unsigned int")] uint param5, [NativeTypeName("unsigned int")] uint param6, int param7, int param8);
+        public static extern int XDrawArc(Display* param0, Drawable param1, GC param2, int param3, int param4, [NativeTypeName("unsigned int")] uint param5, [NativeTypeName("unsigned int")] uint param6, int param7, int param8);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XDrawArcs([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("GC")] IntPtr param2, [NativeTypeName("XArc *")] XArc* param3, int param4);
+        public static extern int XDrawArcs(Display* param0, Drawable param1, GC param2, XArc* param3, int param4);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XDrawImageString([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("GC")] IntPtr param2, int param3, int param4, [NativeTypeName("const char *")] sbyte* param5, int param6);
+        public static extern int XDrawImageString(Display* param0, Drawable param1, GC param2, int param3, int param4, [NativeTypeName("const char *")] sbyte* param5, int param6);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XDrawImageString16([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("GC")] IntPtr param2, int param3, int param4, [NativeTypeName("const XChar2b *")] XChar2b* param5, int param6);
+        public static extern int XDrawImageString16(Display* param0, Drawable param1, GC param2, int param3, int param4, [NativeTypeName("const XChar2b *")] XChar2b* param5, int param6);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XDrawLine([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("GC")] IntPtr param2, int param3, int param4, int param5, int param6);
+        public static extern int XDrawLine(Display* param0, Drawable param1, GC param2, int param3, int param4, int param5, int param6);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XDrawLines([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("GC")] IntPtr param2, [NativeTypeName("XPoint *")] XPoint* param3, int param4, int param5);
+        public static extern int XDrawLines(Display* param0, Drawable param1, GC param2, XPoint* param3, int param4, int param5);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XDrawPoint([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("GC")] IntPtr param2, int param3, int param4);
+        public static extern int XDrawPoint(Display* param0, Drawable param1, GC param2, int param3, int param4);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XDrawPoints([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("GC")] IntPtr param2, [NativeTypeName("XPoint *")] XPoint* param3, int param4, int param5);
+        public static extern int XDrawPoints(Display* param0, Drawable param1, GC param2, XPoint* param3, int param4, int param5);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XDrawRectangle([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("GC")] IntPtr param2, int param3, int param4, [NativeTypeName("unsigned int")] uint param5, [NativeTypeName("unsigned int")] uint param6);
+        public static extern int XDrawRectangle(Display* param0, Drawable param1, GC param2, int param3, int param4, [NativeTypeName("unsigned int")] uint param5, [NativeTypeName("unsigned int")] uint param6);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XDrawRectangles([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("GC")] IntPtr param2, [NativeTypeName("XRectangle *")] XRectangle* param3, int param4);
+        public static extern int XDrawRectangles(Display* param0, Drawable param1, GC param2, XRectangle* param3, int param4);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XDrawSegments([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("GC")] IntPtr param2, [NativeTypeName("XSegment *")] XSegment* param3, int param4);
+        public static extern int XDrawSegments(Display* param0, Drawable param1, GC param2, XSegment* param3, int param4);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XDrawString([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("GC")] IntPtr param2, int param3, int param4, [NativeTypeName("const char *")] sbyte* param5, int param6);
+        public static extern int XDrawString(Display* param0, Drawable param1, GC param2, int param3, int param4, [NativeTypeName("const char *")] sbyte* param5, int param6);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XDrawString16([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("GC")] IntPtr param2, int param3, int param4, [NativeTypeName("const XChar2b *")] XChar2b* param5, int param6);
+        public static extern int XDrawString16(Display* param0, Drawable param1, GC param2, int param3, int param4, [NativeTypeName("const XChar2b *")] XChar2b* param5, int param6);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XDrawText([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("GC")] IntPtr param2, int param3, int param4, [NativeTypeName("XTextItem *")] XTextItem* param5, int param6);
+        public static extern int XDrawText(Display* param0, Drawable param1, GC param2, int param3, int param4, XTextItem* param5, int param6);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XDrawText16([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("GC")] IntPtr param2, int param3, int param4, [NativeTypeName("XTextItem16 *")] XTextItem16* param5, int param6);
+        public static extern int XDrawText16(Display* param0, Drawable param1, GC param2, int param3, int param4, XTextItem16* param5, int param6);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XEnableAccessControl([NativeTypeName("Display *")] IntPtr param0);
+        public static extern int XEnableAccessControl(Display* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XEventsQueued([NativeTypeName("Display *")] IntPtr param0, int param1);
+        public static extern int XEventsQueued(Display* param0, int param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XFetchName([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("char **")] sbyte** param2);
+        public static extern int XFetchName(Display* param0, Window param1, [NativeTypeName("char **")] sbyte** param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XFillArc([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("GC")] IntPtr param2, int param3, int param4, [NativeTypeName("unsigned int")] uint param5, [NativeTypeName("unsigned int")] uint param6, int param7, int param8);
+        public static extern int XFillArc(Display* param0, Drawable param1, GC param2, int param3, int param4, [NativeTypeName("unsigned int")] uint param5, [NativeTypeName("unsigned int")] uint param6, int param7, int param8);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XFillArcs([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("GC")] IntPtr param2, [NativeTypeName("XArc *")] XArc* param3, int param4);
+        public static extern int XFillArcs(Display* param0, Drawable param1, GC param2, XArc* param3, int param4);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XFillPolygon([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("GC")] IntPtr param2, [NativeTypeName("XPoint *")] XPoint* param3, int param4, int param5, int param6);
+        public static extern int XFillPolygon(Display* param0, Drawable param1, GC param2, XPoint* param3, int param4, int param5, int param6);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XFillRectangle([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("GC")] IntPtr param2, int param3, int param4, [NativeTypeName("unsigned int")] uint param5, [NativeTypeName("unsigned int")] uint param6);
+        public static extern int XFillRectangle(Display* param0, Drawable param1, GC param2, int param3, int param4, [NativeTypeName("unsigned int")] uint param5, [NativeTypeName("unsigned int")] uint param6);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XFillRectangles([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("GC")] IntPtr param2, [NativeTypeName("XRectangle *")] XRectangle* param3, int param4);
+        public static extern int XFillRectangles(Display* param0, Drawable param1, GC param2, XRectangle* param3, int param4);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XFlush([NativeTypeName("Display *")] IntPtr param0);
+        public static extern int XFlush(Display* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XForceScreenSaver([NativeTypeName("Display *")] IntPtr param0, int param1);
+        public static extern int XForceScreenSaver(Display* param0, int param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XFree([NativeTypeName("void *")] void* param0);
+        public static extern int XFree(void* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XFreeColormap([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Colormap")] nuint param1);
+        public static extern int XFreeColormap(Display* param0, Colormap param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XFreeColors([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Colormap")] nuint param1, [NativeTypeName("unsigned long *")] nuint* param2, int param3, [NativeTypeName("unsigned long")] nuint param4);
+        public static extern int XFreeColors(Display* param0, Colormap param1, [NativeTypeName("unsigned long *")] nuint* param2, int param3, [NativeTypeName("unsigned long")] nuint param4);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XFreeCursor([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Cursor")] nuint param1);
+        public static extern int XFreeCursor(Display* param0, Cursor param1);
 
         [DllImport("libX11", ExactSpelling = true)]
         public static extern int XFreeExtensionList([NativeTypeName("char **")] sbyte** param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XFreeFont([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("XFontStruct *")] XFontStruct* param1);
+        public static extern int XFreeFont(Display* param0, XFontStruct* param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XFreeFontInfo([NativeTypeName("char **")] sbyte** param0, [NativeTypeName("XFontStruct *")] XFontStruct* param1, int param2);
+        public static extern int XFreeFontInfo([NativeTypeName("char **")] sbyte** param0, XFontStruct* param1, int param2);
 
         [DllImport("libX11", ExactSpelling = true)]
         public static extern int XFreeFontNames([NativeTypeName("char **")] sbyte** param0);
@@ -674,443 +622,443 @@ namespace TerraFX.Interop
         public static extern int XFreeFontPath([NativeTypeName("char **")] sbyte** param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XFreeGC([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("GC")] IntPtr param1);
+        public static extern int XFreeGC(Display* param0, GC param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XFreeModifiermap([NativeTypeName("XModifierKeymap *")] XModifierKeymap* param0);
+        public static extern int XFreeModifiermap(XModifierKeymap* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XFreePixmap([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Pixmap")] nuint param1);
+        public static extern int XFreePixmap(Display* param0, Pixmap param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XGeometry([NativeTypeName("Display *")] IntPtr param0, int param1, [NativeTypeName("const char *")] sbyte* param2, [NativeTypeName("const char *")] sbyte* param3, [NativeTypeName("unsigned int")] uint param4, [NativeTypeName("unsigned int")] uint param5, [NativeTypeName("unsigned int")] uint param6, int param7, int param8, [NativeTypeName("int *")] int* param9, [NativeTypeName("int *")] int* param10, [NativeTypeName("int *")] int* param11, [NativeTypeName("int *")] int* param12);
+        public static extern int XGeometry(Display* param0, int param1, [NativeTypeName("const char *")] sbyte* param2, [NativeTypeName("const char *")] sbyte* param3, [NativeTypeName("unsigned int")] uint param4, [NativeTypeName("unsigned int")] uint param5, [NativeTypeName("unsigned int")] uint param6, int param7, int param8, int* param9, int* param10, int* param11, int* param12);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XGetErrorDatabaseText([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("const char *")] sbyte* param1, [NativeTypeName("const char *")] sbyte* param2, [NativeTypeName("const char *")] sbyte* param3, [NativeTypeName("char *")] sbyte* param4, int param5);
+        public static extern int XGetErrorDatabaseText(Display* param0, [NativeTypeName("const char *")] sbyte* param1, [NativeTypeName("const char *")] sbyte* param2, [NativeTypeName("const char *")] sbyte* param3, [NativeTypeName("char *")] sbyte* param4, int param5);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XGetErrorText([NativeTypeName("Display *")] IntPtr param0, int param1, [NativeTypeName("char *")] sbyte* param2, int param3);
+        public static extern int XGetErrorText(Display* param0, int param1, [NativeTypeName("char *")] sbyte* param2, int param3);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XGetFontProperty([NativeTypeName("XFontStruct *")] XFontStruct* param0, [NativeTypeName("Atom")] nuint param1, [NativeTypeName("unsigned long *")] nuint* param2);
+        public static extern int XGetFontProperty(XFontStruct* param0, Atom param1, [NativeTypeName("unsigned long *")] nuint* param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XGetGCValues([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("GC")] IntPtr param1, [NativeTypeName("unsigned long")] nuint param2, [NativeTypeName("XGCValues *")] XGCValues* param3);
+        public static extern int XGetGCValues(Display* param0, GC param1, [NativeTypeName("unsigned long")] nuint param2, XGCValues* param3);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XGetGeometry([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("Window *")] nuint* param2, [NativeTypeName("int *")] int* param3, [NativeTypeName("int *")] int* param4, [NativeTypeName("unsigned int *")] uint* param5, [NativeTypeName("unsigned int *")] uint* param6, [NativeTypeName("unsigned int *")] uint* param7, [NativeTypeName("unsigned int *")] uint* param8);
+        public static extern int XGetGeometry(Display* param0, Drawable param1, Window* param2, int* param3, int* param4, [NativeTypeName("unsigned int *")] uint* param5, [NativeTypeName("unsigned int *")] uint* param6, [NativeTypeName("unsigned int *")] uint* param7, [NativeTypeName("unsigned int *")] uint* param8);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XGetIconName([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("char **")] sbyte** param2);
+        public static extern int XGetIconName(Display* param0, Window param1, [NativeTypeName("char **")] sbyte** param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XGetInputFocus([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window *")] nuint* param1, [NativeTypeName("int *")] int* param2);
+        public static extern int XGetInputFocus(Display* param0, Window* param1, int* param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XGetKeyboardControl([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("XKeyboardState *")] XKeyboardState* param1);
+        public static extern int XGetKeyboardControl(Display* param0, XKeyboardState* param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XGetPointerControl([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("int *")] int* param1, [NativeTypeName("int *")] int* param2, [NativeTypeName("int *")] int* param3);
+        public static extern int XGetPointerControl(Display* param0, int* param1, int* param2, int* param3);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XGetPointerMapping([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("unsigned char *")] byte* param1, int param2);
+        public static extern int XGetPointerMapping(Display* param0, [NativeTypeName("unsigned char *")] byte* param1, int param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XGetScreenSaver([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("int *")] int* param1, [NativeTypeName("int *")] int* param2, [NativeTypeName("int *")] int* param3, [NativeTypeName("int *")] int* param4);
+        public static extern int XGetScreenSaver(Display* param0, int* param1, int* param2, int* param3, int* param4);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XGetTransientForHint([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("Window *")] nuint* param2);
+        public static extern int XGetTransientForHint(Display* param0, Window param1, Window* param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XGetWindowProperty([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("Atom")] nuint param2, [NativeTypeName("long")] nint param3, [NativeTypeName("long")] nint param4, int param5, [NativeTypeName("Atom")] nuint param6, [NativeTypeName("Atom *")] nuint* param7, [NativeTypeName("int *")] int* param8, [NativeTypeName("unsigned long *")] nuint* param9, [NativeTypeName("unsigned long *")] nuint* param10, [NativeTypeName("unsigned char **")] byte** param11);
+        public static extern int XGetWindowProperty(Display* param0, Window param1, Atom param2, [NativeTypeName("long")] nint param3, [NativeTypeName("long")] nint param4, int param5, Atom param6, Atom* param7, int* param8, [NativeTypeName("unsigned long *")] nuint* param9, [NativeTypeName("unsigned long *")] nuint* param10, [NativeTypeName("unsigned char **")] byte** param11);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XGetWindowAttributes([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("XWindowAttributes *")] XWindowAttributes* param2);
+        public static extern int XGetWindowAttributes(Display* param0, Window param1, XWindowAttributes* param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XGrabButton([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("unsigned int")] uint param1, [NativeTypeName("unsigned int")] uint param2, [NativeTypeName("Window")] nuint param3, int param4, [NativeTypeName("unsigned int")] uint param5, int param6, int param7, [NativeTypeName("Window")] nuint param8, [NativeTypeName("Cursor")] nuint param9);
+        public static extern int XGrabButton(Display* param0, [NativeTypeName("unsigned int")] uint param1, [NativeTypeName("unsigned int")] uint param2, Window param3, int param4, [NativeTypeName("unsigned int")] uint param5, int param6, int param7, Window param8, Cursor param9);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XGrabKey([NativeTypeName("Display *")] IntPtr param0, int param1, [NativeTypeName("unsigned int")] uint param2, [NativeTypeName("Window")] nuint param3, int param4, int param5, int param6);
+        public static extern int XGrabKey(Display* param0, int param1, [NativeTypeName("unsigned int")] uint param2, Window param3, int param4, int param5, int param6);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XGrabKeyboard([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, int param2, int param3, int param4, [NativeTypeName("Time")] nuint param5);
+        public static extern int XGrabKeyboard(Display* param0, Window param1, int param2, int param3, int param4, Time param5);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XGrabPointer([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, int param2, [NativeTypeName("unsigned int")] uint param3, int param4, int param5, [NativeTypeName("Window")] nuint param6, [NativeTypeName("Cursor")] nuint param7, [NativeTypeName("Time")] nuint param8);
+        public static extern int XGrabPointer(Display* param0, Window param1, int param2, [NativeTypeName("unsigned int")] uint param3, int param4, int param5, Window param6, Cursor param7, Time param8);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XGrabServer([NativeTypeName("Display *")] IntPtr param0);
+        public static extern int XGrabServer(Display* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XHeightMMOfScreen([NativeTypeName("Screen *")] Screen* param0);
+        public static extern int XHeightMMOfScreen(Screen* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XHeightOfScreen([NativeTypeName("Screen *")] Screen* param0);
+        public static extern int XHeightOfScreen(Screen* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XIfEvent([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("XEvent *")] XEvent* param1, [NativeTypeName("int (*)(Display *, XEvent *, XPointer)")] delegate* unmanaged<IntPtr, XEvent*, sbyte*, int> param2, [NativeTypeName("XPointer")] sbyte* param3);
+        public static extern int XIfEvent(Display* param0, XEvent* param1, [NativeTypeName("int (*)(Display *, XEvent *, XPointer)")] delegate* unmanaged<Display*, XEvent*, sbyte*, int> param2, [NativeTypeName("XPointer")] sbyte* param3);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XImageByteOrder([NativeTypeName("Display *")] IntPtr param0);
+        public static extern int XImageByteOrder(Display* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XInstallColormap([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Colormap")] nuint param1);
+        public static extern int XInstallColormap(Display* param0, Colormap param1);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("KeyCode")]
-        public static extern byte XKeysymToKeycode([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("KeySym")] nuint param1);
+        public static extern byte XKeysymToKeycode(Display* param0, KeySym param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XKillClient([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("XID")] nuint param1);
+        public static extern int XKillClient(Display* param0, XID param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XLookupColor([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Colormap")] nuint param1, [NativeTypeName("const char *")] sbyte* param2, [NativeTypeName("XColor *")] XColor* param3, [NativeTypeName("XColor *")] XColor* param4);
+        public static extern int XLookupColor(Display* param0, Colormap param1, [NativeTypeName("const char *")] sbyte* param2, XColor* param3, XColor* param4);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XLowerWindow([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1);
+        public static extern int XLowerWindow(Display* param0, Window param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XMapRaised([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1);
+        public static extern int XMapRaised(Display* param0, Window param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XMapSubwindows([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1);
+        public static extern int XMapSubwindows(Display* param0, Window param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XMapWindow([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1);
+        public static extern int XMapWindow(Display* param0, Window param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XMaskEvent([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("long")] nint param1, [NativeTypeName("XEvent *")] XEvent* param2);
+        public static extern int XMaskEvent(Display* param0, [NativeTypeName("long")] nint param1, XEvent* param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XMaxCmapsOfScreen([NativeTypeName("Screen *")] Screen* param0);
+        public static extern int XMaxCmapsOfScreen(Screen* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XMinCmapsOfScreen([NativeTypeName("Screen *")] Screen* param0);
+        public static extern int XMinCmapsOfScreen(Screen* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XMoveResizeWindow([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, int param2, int param3, [NativeTypeName("unsigned int")] uint param4, [NativeTypeName("unsigned int")] uint param5);
+        public static extern int XMoveResizeWindow(Display* param0, Window param1, int param2, int param3, [NativeTypeName("unsigned int")] uint param4, [NativeTypeName("unsigned int")] uint param5);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XMoveWindow([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, int param2, int param3);
+        public static extern int XMoveWindow(Display* param0, Window param1, int param2, int param3);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XNextEvent([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("XEvent *")] XEvent* param1);
+        public static extern int XNextEvent(Display* param0, XEvent* param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XNoOp([NativeTypeName("Display *")] IntPtr param0);
+        public static extern int XNoOp(Display* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XParseColor([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Colormap")] nuint param1, [NativeTypeName("const char *")] sbyte* param2, [NativeTypeName("XColor *")] XColor* param3);
+        public static extern int XParseColor(Display* param0, Colormap param1, [NativeTypeName("const char *")] sbyte* param2, XColor* param3);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XParseGeometry([NativeTypeName("const char *")] sbyte* param0, [NativeTypeName("int *")] int* param1, [NativeTypeName("int *")] int* param2, [NativeTypeName("unsigned int *")] uint* param3, [NativeTypeName("unsigned int *")] uint* param4);
+        public static extern int XParseGeometry([NativeTypeName("const char *")] sbyte* param0, int* param1, int* param2, [NativeTypeName("unsigned int *")] uint* param3, [NativeTypeName("unsigned int *")] uint* param4);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XPeekEvent([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("XEvent *")] XEvent* param1);
+        public static extern int XPeekEvent(Display* param0, XEvent* param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XPeekIfEvent([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("XEvent *")] XEvent* param1, [NativeTypeName("int (*)(Display *, XEvent *, XPointer)")] delegate* unmanaged<IntPtr, XEvent*, sbyte*, int> param2, [NativeTypeName("XPointer")] sbyte* param3);
+        public static extern int XPeekIfEvent(Display* param0, XEvent* param1, [NativeTypeName("int (*)(Display *, XEvent *, XPointer)")] delegate* unmanaged<Display*, XEvent*, sbyte*, int> param2, [NativeTypeName("XPointer")] sbyte* param3);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XPending([NativeTypeName("Display *")] IntPtr param0);
+        public static extern int XPending(Display* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XPlanesOfScreen([NativeTypeName("Screen *")] Screen* param0);
+        public static extern int XPlanesOfScreen(Screen* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XProtocolRevision([NativeTypeName("Display *")] IntPtr param0);
+        public static extern int XProtocolRevision(Display* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XProtocolVersion([NativeTypeName("Display *")] IntPtr param0);
+        public static extern int XProtocolVersion(Display* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XPutBackEvent([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("XEvent *")] XEvent* param1);
+        public static extern int XPutBackEvent(Display* param0, XEvent* param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XPutImage([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("GC")] IntPtr param2, [NativeTypeName("XImage *")] XImage* param3, int param4, int param5, int param6, int param7, [NativeTypeName("unsigned int")] uint param8, [NativeTypeName("unsigned int")] uint param9);
+        public static extern int XPutImage(Display* param0, Drawable param1, GC param2, XImage* param3, int param4, int param5, int param6, int param7, [NativeTypeName("unsigned int")] uint param8, [NativeTypeName("unsigned int")] uint param9);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XQLength([NativeTypeName("Display *")] IntPtr param0);
+        public static extern int XQLength(Display* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XQueryBestCursor([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("unsigned int")] uint param2, [NativeTypeName("unsigned int")] uint param3, [NativeTypeName("unsigned int *")] uint* param4, [NativeTypeName("unsigned int *")] uint* param5);
+        public static extern int XQueryBestCursor(Display* param0, Drawable param1, [NativeTypeName("unsigned int")] uint param2, [NativeTypeName("unsigned int")] uint param3, [NativeTypeName("unsigned int *")] uint* param4, [NativeTypeName("unsigned int *")] uint* param5);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XQueryBestSize([NativeTypeName("Display *")] IntPtr param0, int param1, [NativeTypeName("Drawable")] nuint param2, [NativeTypeName("unsigned int")] uint param3, [NativeTypeName("unsigned int")] uint param4, [NativeTypeName("unsigned int *")] uint* param5, [NativeTypeName("unsigned int *")] uint* param6);
+        public static extern int XQueryBestSize(Display* param0, int param1, Drawable param2, [NativeTypeName("unsigned int")] uint param3, [NativeTypeName("unsigned int")] uint param4, [NativeTypeName("unsigned int *")] uint* param5, [NativeTypeName("unsigned int *")] uint* param6);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XQueryBestStipple([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("unsigned int")] uint param2, [NativeTypeName("unsigned int")] uint param3, [NativeTypeName("unsigned int *")] uint* param4, [NativeTypeName("unsigned int *")] uint* param5);
+        public static extern int XQueryBestStipple(Display* param0, Drawable param1, [NativeTypeName("unsigned int")] uint param2, [NativeTypeName("unsigned int")] uint param3, [NativeTypeName("unsigned int *")] uint* param4, [NativeTypeName("unsigned int *")] uint* param5);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XQueryBestTile([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("unsigned int")] uint param2, [NativeTypeName("unsigned int")] uint param3, [NativeTypeName("unsigned int *")] uint* param4, [NativeTypeName("unsigned int *")] uint* param5);
+        public static extern int XQueryBestTile(Display* param0, Drawable param1, [NativeTypeName("unsigned int")] uint param2, [NativeTypeName("unsigned int")] uint param3, [NativeTypeName("unsigned int *")] uint* param4, [NativeTypeName("unsigned int *")] uint* param5);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XQueryColor([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Colormap")] nuint param1, [NativeTypeName("XColor *")] XColor* param2);
+        public static extern int XQueryColor(Display* param0, Colormap param1, XColor* param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XQueryColors([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Colormap")] nuint param1, [NativeTypeName("XColor *")] XColor* param2, int param3);
+        public static extern int XQueryColors(Display* param0, Colormap param1, XColor* param2, int param3);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XQueryExtension([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("const char *")] sbyte* param1, [NativeTypeName("int *")] int* param2, [NativeTypeName("int *")] int* param3, [NativeTypeName("int *")] int* param4);
+        public static extern int XQueryExtension(Display* param0, [NativeTypeName("const char *")] sbyte* param1, int* param2, int* param3, int* param4);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XQueryKeymap([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("char [32]")] sbyte* param1);
+        public static extern int XQueryKeymap(Display* param0, [NativeTypeName("char [32]")] sbyte* param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XQueryPointer([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("Window *")] nuint* param2, [NativeTypeName("Window *")] nuint* param3, [NativeTypeName("int *")] int* param4, [NativeTypeName("int *")] int* param5, [NativeTypeName("int *")] int* param6, [NativeTypeName("int *")] int* param7, [NativeTypeName("unsigned int *")] uint* param8);
+        public static extern int XQueryPointer(Display* param0, Window param1, Window* param2, Window* param3, int* param4, int* param5, int* param6, int* param7, [NativeTypeName("unsigned int *")] uint* param8);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XQueryTextExtents([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("XID")] nuint param1, [NativeTypeName("const char *")] sbyte* param2, int param3, [NativeTypeName("int *")] int* param4, [NativeTypeName("int *")] int* param5, [NativeTypeName("int *")] int* param6, [NativeTypeName("XCharStruct *")] XCharStruct* param7);
+        public static extern int XQueryTextExtents(Display* param0, XID param1, [NativeTypeName("const char *")] sbyte* param2, int param3, int* param4, int* param5, int* param6, XCharStruct* param7);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XQueryTextExtents16([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("XID")] nuint param1, [NativeTypeName("const XChar2b *")] XChar2b* param2, int param3, [NativeTypeName("int *")] int* param4, [NativeTypeName("int *")] int* param5, [NativeTypeName("int *")] int* param6, [NativeTypeName("XCharStruct *")] XCharStruct* param7);
+        public static extern int XQueryTextExtents16(Display* param0, XID param1, [NativeTypeName("const XChar2b *")] XChar2b* param2, int param3, int* param4, int* param5, int* param6, XCharStruct* param7);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XQueryTree([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("Window *")] nuint* param2, [NativeTypeName("Window *")] nuint* param3, [NativeTypeName("Window **")] nuint** param4, [NativeTypeName("unsigned int *")] uint* param5);
+        public static extern int XQueryTree(Display* param0, Window param1, Window* param2, Window* param3, Window** param4, [NativeTypeName("unsigned int *")] uint* param5);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XRaiseWindow([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1);
+        public static extern int XRaiseWindow(Display* param0, Window param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XReadBitmapFile([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("const char *")] sbyte* param2, [NativeTypeName("unsigned int *")] uint* param3, [NativeTypeName("unsigned int *")] uint* param4, [NativeTypeName("Pixmap *")] nuint* param5, [NativeTypeName("int *")] int* param6, [NativeTypeName("int *")] int* param7);
+        public static extern int XReadBitmapFile(Display* param0, Drawable param1, [NativeTypeName("const char *")] sbyte* param2, [NativeTypeName("unsigned int *")] uint* param3, [NativeTypeName("unsigned int *")] uint* param4, Pixmap* param5, int* param6, int* param7);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XReadBitmapFileData([NativeTypeName("const char *")] sbyte* param0, [NativeTypeName("unsigned int *")] uint* param1, [NativeTypeName("unsigned int *")] uint* param2, [NativeTypeName("unsigned char **")] byte** param3, [NativeTypeName("int *")] int* param4, [NativeTypeName("int *")] int* param5);
+        public static extern int XReadBitmapFileData([NativeTypeName("const char *")] sbyte* param0, [NativeTypeName("unsigned int *")] uint* param1, [NativeTypeName("unsigned int *")] uint* param2, [NativeTypeName("unsigned char **")] byte** param3, int* param4, int* param5);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XRebindKeysym([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("KeySym")] nuint param1, [NativeTypeName("KeySym *")] nuint* param2, int param3, [NativeTypeName("const unsigned char *")] byte* param4, int param5);
+        public static extern int XRebindKeysym(Display* param0, KeySym param1, KeySym* param2, int param3, [NativeTypeName("const unsigned char *")] byte* param4, int param5);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XRecolorCursor([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Cursor")] nuint param1, [NativeTypeName("XColor *")] XColor* param2, [NativeTypeName("XColor *")] XColor* param3);
+        public static extern int XRecolorCursor(Display* param0, Cursor param1, XColor* param2, XColor* param3);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XRefreshKeyboardMapping([NativeTypeName("XMappingEvent *")] XMappingEvent* param0);
+        public static extern int XRefreshKeyboardMapping(XMappingEvent* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XRemoveFromSaveSet([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1);
+        public static extern int XRemoveFromSaveSet(Display* param0, Window param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XRemoveHost([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("XHostAddress *")] XHostAddress* param1);
+        public static extern int XRemoveHost(Display* param0, XHostAddress* param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XRemoveHosts([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("XHostAddress *")] XHostAddress* param1, int param2);
+        public static extern int XRemoveHosts(Display* param0, XHostAddress* param1, int param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XReparentWindow([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("Window")] nuint param2, int param3, int param4);
+        public static extern int XReparentWindow(Display* param0, Window param1, Window param2, int param3, int param4);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XResetScreenSaver([NativeTypeName("Display *")] IntPtr param0);
+        public static extern int XResetScreenSaver(Display* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XResizeWindow([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("unsigned int")] uint param2, [NativeTypeName("unsigned int")] uint param3);
+        public static extern int XResizeWindow(Display* param0, Window param1, [NativeTypeName("unsigned int")] uint param2, [NativeTypeName("unsigned int")] uint param3);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XRestackWindows([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window *")] nuint* param1, int param2);
+        public static extern int XRestackWindows(Display* param0, Window* param1, int param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XRotateBuffers([NativeTypeName("Display *")] IntPtr param0, int param1);
+        public static extern int XRotateBuffers(Display* param0, int param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XRotateWindowProperties([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("Atom *")] nuint* param2, int param3, int param4);
+        public static extern int XRotateWindowProperties(Display* param0, Window param1, Atom* param2, int param3, int param4);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XScreenCount([NativeTypeName("Display *")] IntPtr param0);
+        public static extern int XScreenCount(Display* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSelectInput([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("long")] nint param2);
+        public static extern int XSelectInput(Display* param0, Window param1, [NativeTypeName("long")] nint param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSendEvent([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, int param2, [NativeTypeName("long")] nint param3, [NativeTypeName("XEvent *")] XEvent* param4);
+        public static extern int XSendEvent(Display* param0, Window param1, int param2, [NativeTypeName("long")] nint param3, XEvent* param4);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSetAccessControl([NativeTypeName("Display *")] IntPtr param0, int param1);
+        public static extern int XSetAccessControl(Display* param0, int param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSetArcMode([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("GC")] IntPtr param1, int param2);
+        public static extern int XSetArcMode(Display* param0, GC param1, int param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSetBackground([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("GC")] IntPtr param1, [NativeTypeName("unsigned long")] nuint param2);
+        public static extern int XSetBackground(Display* param0, GC param1, [NativeTypeName("unsigned long")] nuint param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSetClipMask([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("GC")] IntPtr param1, [NativeTypeName("Pixmap")] nuint param2);
+        public static extern int XSetClipMask(Display* param0, GC param1, Pixmap param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSetClipOrigin([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("GC")] IntPtr param1, int param2, int param3);
+        public static extern int XSetClipOrigin(Display* param0, GC param1, int param2, int param3);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSetClipRectangles([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("GC")] IntPtr param1, int param2, int param3, [NativeTypeName("XRectangle *")] XRectangle* param4, int param5, int param6);
+        public static extern int XSetClipRectangles(Display* param0, GC param1, int param2, int param3, XRectangle* param4, int param5, int param6);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSetCloseDownMode([NativeTypeName("Display *")] IntPtr param0, int param1);
+        public static extern int XSetCloseDownMode(Display* param0, int param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSetCommand([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("char **")] sbyte** param2, int param3);
+        public static extern int XSetCommand(Display* param0, Window param1, [NativeTypeName("char **")] sbyte** param2, int param3);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSetDashes([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("GC")] IntPtr param1, int param2, [NativeTypeName("const char *")] sbyte* param3, int param4);
+        public static extern int XSetDashes(Display* param0, GC param1, int param2, [NativeTypeName("const char *")] sbyte* param3, int param4);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSetFillRule([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("GC")] IntPtr param1, int param2);
+        public static extern int XSetFillRule(Display* param0, GC param1, int param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSetFillStyle([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("GC")] IntPtr param1, int param2);
+        public static extern int XSetFillStyle(Display* param0, GC param1, int param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSetFont([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("GC")] IntPtr param1, [NativeTypeName("Font")] nuint param2);
+        public static extern int XSetFont(Display* param0, GC param1, Font param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSetFontPath([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("char **")] sbyte** param1, int param2);
+        public static extern int XSetFontPath(Display* param0, [NativeTypeName("char **")] sbyte** param1, int param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSetForeground([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("GC")] IntPtr param1, [NativeTypeName("unsigned long")] nuint param2);
+        public static extern int XSetForeground(Display* param0, GC param1, [NativeTypeName("unsigned long")] nuint param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSetFunction([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("GC")] IntPtr param1, int param2);
+        public static extern int XSetFunction(Display* param0, GC param1, int param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSetGraphicsExposures([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("GC")] IntPtr param1, int param2);
+        public static extern int XSetGraphicsExposures(Display* param0, GC param1, int param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSetIconName([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("const char *")] sbyte* param2);
+        public static extern int XSetIconName(Display* param0, Window param1, [NativeTypeName("const char *")] sbyte* param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSetInputFocus([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, int param2, [NativeTypeName("Time")] nuint param3);
+        public static extern int XSetInputFocus(Display* param0, Window param1, int param2, Time param3);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSetLineAttributes([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("GC")] IntPtr param1, [NativeTypeName("unsigned int")] uint param2, int param3, int param4, int param5);
+        public static extern int XSetLineAttributes(Display* param0, GC param1, [NativeTypeName("unsigned int")] uint param2, int param3, int param4, int param5);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSetModifierMapping([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("XModifierKeymap *")] XModifierKeymap* param1);
+        public static extern int XSetModifierMapping(Display* param0, XModifierKeymap* param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSetPlaneMask([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("GC")] IntPtr param1, [NativeTypeName("unsigned long")] nuint param2);
+        public static extern int XSetPlaneMask(Display* param0, GC param1, [NativeTypeName("unsigned long")] nuint param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSetPointerMapping([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("const unsigned char *")] byte* param1, int param2);
+        public static extern int XSetPointerMapping(Display* param0, [NativeTypeName("const unsigned char *")] byte* param1, int param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSetScreenSaver([NativeTypeName("Display *")] IntPtr param0, int param1, int param2, int param3, int param4);
+        public static extern int XSetScreenSaver(Display* param0, int param1, int param2, int param3, int param4);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSetSelectionOwner([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Atom")] nuint param1, [NativeTypeName("Window")] nuint param2, [NativeTypeName("Time")] nuint param3);
+        public static extern int XSetSelectionOwner(Display* param0, Atom param1, Window param2, Time param3);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSetState([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("GC")] IntPtr param1, [NativeTypeName("unsigned long")] nuint param2, [NativeTypeName("unsigned long")] nuint param3, int param4, [NativeTypeName("unsigned long")] nuint param5);
+        public static extern int XSetState(Display* param0, GC param1, [NativeTypeName("unsigned long")] nuint param2, [NativeTypeName("unsigned long")] nuint param3, int param4, [NativeTypeName("unsigned long")] nuint param5);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSetStipple([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("GC")] IntPtr param1, [NativeTypeName("Pixmap")] nuint param2);
+        public static extern int XSetStipple(Display* param0, GC param1, Pixmap param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSetSubwindowMode([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("GC")] IntPtr param1, int param2);
+        public static extern int XSetSubwindowMode(Display* param0, GC param1, int param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSetTSOrigin([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("GC")] IntPtr param1, int param2, int param3);
+        public static extern int XSetTSOrigin(Display* param0, GC param1, int param2, int param3);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSetTile([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("GC")] IntPtr param1, [NativeTypeName("Pixmap")] nuint param2);
+        public static extern int XSetTile(Display* param0, GC param1, Pixmap param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSetWindowBackground([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("unsigned long")] nuint param2);
+        public static extern int XSetWindowBackground(Display* param0, Window param1, [NativeTypeName("unsigned long")] nuint param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSetWindowBackgroundPixmap([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("Pixmap")] nuint param2);
+        public static extern int XSetWindowBackgroundPixmap(Display* param0, Window param1, Pixmap param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSetWindowBorder([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("unsigned long")] nuint param2);
+        public static extern int XSetWindowBorder(Display* param0, Window param1, [NativeTypeName("unsigned long")] nuint param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSetWindowBorderPixmap([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("Pixmap")] nuint param2);
+        public static extern int XSetWindowBorderPixmap(Display* param0, Window param1, Pixmap param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSetWindowBorderWidth([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("unsigned int")] uint param2);
+        public static extern int XSetWindowBorderWidth(Display* param0, Window param1, [NativeTypeName("unsigned int")] uint param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSetWindowColormap([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("Colormap")] nuint param2);
+        public static extern int XSetWindowColormap(Display* param0, Window param1, Colormap param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XStoreBuffer([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("const char *")] sbyte* param1, int param2, int param3);
+        public static extern int XStoreBuffer(Display* param0, [NativeTypeName("const char *")] sbyte* param1, int param2, int param3);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XStoreBytes([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("const char *")] sbyte* param1, int param2);
+        public static extern int XStoreBytes(Display* param0, [NativeTypeName("const char *")] sbyte* param1, int param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XStoreColor([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Colormap")] nuint param1, [NativeTypeName("XColor *")] XColor* param2);
+        public static extern int XStoreColor(Display* param0, Colormap param1, XColor* param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XStoreColors([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Colormap")] nuint param1, [NativeTypeName("XColor *")] XColor* param2, int param3);
+        public static extern int XStoreColors(Display* param0, Colormap param1, XColor* param2, int param3);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XStoreName([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("const char *")] sbyte* param2);
+        public static extern int XStoreName(Display* param0, Window param1, [NativeTypeName("const char *")] sbyte* param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XStoreNamedColor([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Colormap")] nuint param1, [NativeTypeName("const char *")] sbyte* param2, [NativeTypeName("unsigned long")] nuint param3, int param4);
+        public static extern int XStoreNamedColor(Display* param0, Colormap param1, [NativeTypeName("const char *")] sbyte* param2, [NativeTypeName("unsigned long")] nuint param3, int param4);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XSync([NativeTypeName("Display *")] IntPtr param0, int param1);
+        public static extern int XSync(Display* param0, int param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XTextExtents([NativeTypeName("XFontStruct *")] XFontStruct* param0, [NativeTypeName("const char *")] sbyte* param1, int param2, [NativeTypeName("int *")] int* param3, [NativeTypeName("int *")] int* param4, [NativeTypeName("int *")] int* param5, [NativeTypeName("XCharStruct *")] XCharStruct* param6);
+        public static extern int XTextExtents(XFontStruct* param0, [NativeTypeName("const char *")] sbyte* param1, int param2, int* param3, int* param4, int* param5, XCharStruct* param6);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XTextExtents16([NativeTypeName("XFontStruct *")] XFontStruct* param0, [NativeTypeName("const XChar2b *")] XChar2b* param1, int param2, [NativeTypeName("int *")] int* param3, [NativeTypeName("int *")] int* param4, [NativeTypeName("int *")] int* param5, [NativeTypeName("XCharStruct *")] XCharStruct* param6);
+        public static extern int XTextExtents16(XFontStruct* param0, [NativeTypeName("const XChar2b *")] XChar2b* param1, int param2, int* param3, int* param4, int* param5, XCharStruct* param6);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XTextWidth([NativeTypeName("XFontStruct *")] XFontStruct* param0, [NativeTypeName("const char *")] sbyte* param1, int param2);
+        public static extern int XTextWidth(XFontStruct* param0, [NativeTypeName("const char *")] sbyte* param1, int param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XTextWidth16([NativeTypeName("XFontStruct *")] XFontStruct* param0, [NativeTypeName("const XChar2b *")] XChar2b* param1, int param2);
+        public static extern int XTextWidth16(XFontStruct* param0, [NativeTypeName("const XChar2b *")] XChar2b* param1, int param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XTranslateCoordinates([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("Window")] nuint param2, int param3, int param4, [NativeTypeName("int *")] int* param5, [NativeTypeName("int *")] int* param6, [NativeTypeName("Window *")] nuint* param7);
+        public static extern int XTranslateCoordinates(Display* param0, Window param1, Window param2, int param3, int param4, int* param5, int* param6, Window* param7);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XUndefineCursor([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1);
+        public static extern int XUndefineCursor(Display* param0, Window param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XUngrabButton([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("unsigned int")] uint param1, [NativeTypeName("unsigned int")] uint param2, [NativeTypeName("Window")] nuint param3);
+        public static extern int XUngrabButton(Display* param0, [NativeTypeName("unsigned int")] uint param1, [NativeTypeName("unsigned int")] uint param2, Window param3);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XUngrabKey([NativeTypeName("Display *")] IntPtr param0, int param1, [NativeTypeName("unsigned int")] uint param2, [NativeTypeName("Window")] nuint param3);
+        public static extern int XUngrabKey(Display* param0, int param1, [NativeTypeName("unsigned int")] uint param2, Window param3);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XUngrabKeyboard([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Time")] nuint param1);
+        public static extern int XUngrabKeyboard(Display* param0, Time param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XUngrabPointer([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Time")] nuint param1);
+        public static extern int XUngrabPointer(Display* param0, Time param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XUngrabServer([NativeTypeName("Display *")] IntPtr param0);
+        public static extern int XUngrabServer(Display* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XUninstallColormap([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Colormap")] nuint param1);
+        public static extern int XUninstallColormap(Display* param0, Colormap param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XUnloadFont([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Font")] nuint param1);
+        public static extern int XUnloadFont(Display* param0, Font param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XUnmapSubwindows([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1);
+        public static extern int XUnmapSubwindows(Display* param0, Window param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XUnmapWindow([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1);
+        public static extern int XUnmapWindow(Display* param0, Window param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XVendorRelease([NativeTypeName("Display *")] IntPtr param0);
+        public static extern int XVendorRelease(Display* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XWarpPointer([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("Window")] nuint param2, int param3, int param4, [NativeTypeName("unsigned int")] uint param5, [NativeTypeName("unsigned int")] uint param6, int param7, int param8);
+        public static extern int XWarpPointer(Display* param0, Window param1, Window param2, int param3, int param4, [NativeTypeName("unsigned int")] uint param5, [NativeTypeName("unsigned int")] uint param6, int param7, int param8);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XWidthMMOfScreen([NativeTypeName("Screen *")] Screen* param0);
+        public static extern int XWidthMMOfScreen(Screen* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XWidthOfScreen([NativeTypeName("Screen *")] Screen* param0);
+        public static extern int XWidthOfScreen(Screen* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XWindowEvent([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Window")] nuint param1, [NativeTypeName("long")] nint param2, [NativeTypeName("XEvent *")] XEvent* param3);
+        public static extern int XWindowEvent(Display* param0, Window param1, [NativeTypeName("long")] nint param2, XEvent* param3);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XWriteBitmapFile([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("const char *")] sbyte* param1, [NativeTypeName("Pixmap")] nuint param2, [NativeTypeName("unsigned int")] uint param3, [NativeTypeName("unsigned int")] uint param4, int param5, int param6);
+        public static extern int XWriteBitmapFile(Display* param0, [NativeTypeName("const char *")] sbyte* param1, Pixmap param2, [NativeTypeName("unsigned int")] uint param3, [NativeTypeName("unsigned int")] uint param4, int param5, int param6);
 
         [DllImport("libX11", ExactSpelling = true)]
         public static extern int XSupportsLocale();
@@ -1120,240 +1068,230 @@ namespace TerraFX.Interop
         public static extern sbyte* XSetLocaleModifiers([NativeTypeName("const char *")] sbyte* param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("XOM")]
-        public static extern IntPtr XOpenOM([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("struct _XrmHashBucketRec *")] IntPtr param1, [NativeTypeName("const char *")] sbyte* param2, [NativeTypeName("const char *")] sbyte* param3);
+        public static extern XOM XOpenOM(Display* param0, [NativeTypeName("struct _XrmHashBucketRec *")] XrmHashBucket param1, [NativeTypeName("const char *")] sbyte* param2, [NativeTypeName("const char *")] sbyte* param3);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XCloseOM([NativeTypeName("XOM")] IntPtr param0);
-
-        [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("char *")]
-        public static extern sbyte* XSetOMValues([NativeTypeName("XOM")] IntPtr param0);
+        public static extern int XCloseOM(XOM param0);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("char *")]
-        public static extern sbyte* XGetOMValues([NativeTypeName("XOM")] IntPtr param0);
-
-        [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("Display *")]
-        public static extern IntPtr XDisplayOfOM([NativeTypeName("XOM")] IntPtr param0);
+        public static extern sbyte* XSetOMValues(XOM param0);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("char *")]
-        public static extern sbyte* XLocaleOfOM([NativeTypeName("XOM")] IntPtr param0);
+        public static extern sbyte* XGetOMValues(XOM param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("XOC")]
-        public static extern IntPtr XCreateOC([NativeTypeName("XOM")] IntPtr param0);
-
-        [DllImport("libX11", ExactSpelling = true)]
-        public static extern void XDestroyOC([NativeTypeName("XOC")] IntPtr param0);
-
-        [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("XOM")]
-        public static extern IntPtr XOMOfOC([NativeTypeName("XOC")] IntPtr param0);
+        public static extern Display* XDisplayOfOM(XOM param0);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("char *")]
-        public static extern sbyte* XSetOCValues([NativeTypeName("XOC")] IntPtr param0);
+        public static extern sbyte* XLocaleOfOM(XOM param0);
+
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern XOC XCreateOC(XOM param0);
+
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern void XDestroyOC(XOC param0);
+
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern XOM XOMOfOC(XOC param0);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("char *")]
-        public static extern sbyte* XGetOCValues([NativeTypeName("XOC")] IntPtr param0);
-
-        [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("XFontSet")]
-        public static extern IntPtr XCreateFontSet([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("const char *")] sbyte* param1, [NativeTypeName("char ***")] sbyte*** param2, [NativeTypeName("int *")] int* param3, [NativeTypeName("char **")] sbyte** param4);
-
-        [DllImport("libX11", ExactSpelling = true)]
-        public static extern void XFreeFontSet([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("XFontSet")] IntPtr param1);
-
-        [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XFontsOfFontSet([NativeTypeName("XFontSet")] IntPtr param0, [NativeTypeName("XFontStruct ***")] XFontStruct*** param1, [NativeTypeName("char ***")] sbyte*** param2);
+        public static extern sbyte* XSetOCValues(XOC param0);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("char *")]
-        public static extern sbyte* XBaseFontNameListOfFontSet([NativeTypeName("XFontSet")] IntPtr param0);
+        public static extern sbyte* XGetOCValues(XOC param0);
+
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern XFontSet XCreateFontSet(Display* param0, [NativeTypeName("const char *")] sbyte* param1, [NativeTypeName("char ***")] sbyte*** param2, int* param3, [NativeTypeName("char **")] sbyte** param4);
+
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern void XFreeFontSet(Display* param0, XFontSet param1);
+
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XFontsOfFontSet(XFontSet param0, XFontStruct*** param1, [NativeTypeName("char ***")] sbyte*** param2);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("char *")]
-        public static extern sbyte* XLocaleOfFontSet([NativeTypeName("XFontSet")] IntPtr param0);
-
-        [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XContextDependentDrawing([NativeTypeName("XFontSet")] IntPtr param0);
-
-        [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XDirectionalDependentDrawing([NativeTypeName("XFontSet")] IntPtr param0);
-
-        [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XContextualDrawing([NativeTypeName("XFontSet")] IntPtr param0);
-
-        [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("XFontSetExtents *")]
-        public static extern XFontSetExtents* XExtentsOfFontSet([NativeTypeName("XFontSet")] IntPtr param0);
-
-        [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XmbTextEscapement([NativeTypeName("XFontSet")] IntPtr param0, [NativeTypeName("const char *")] sbyte* param1, int param2);
-
-        [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XwcTextEscapement([NativeTypeName("XFontSet")] IntPtr param0, [NativeTypeName("const wchar_t *")] int* param1, int param2);
-
-        [DllImport("libX11", ExactSpelling = true)]
-        public static extern int Xutf8TextEscapement([NativeTypeName("XFontSet")] IntPtr param0, [NativeTypeName("const char *")] sbyte* param1, int param2);
-
-        [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XmbTextExtents([NativeTypeName("XFontSet")] IntPtr param0, [NativeTypeName("const char *")] sbyte* param1, int param2, [NativeTypeName("XRectangle *")] XRectangle* param3, [NativeTypeName("XRectangle *")] XRectangle* param4);
-
-        [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XwcTextExtents([NativeTypeName("XFontSet")] IntPtr param0, [NativeTypeName("const wchar_t *")] int* param1, int param2, [NativeTypeName("XRectangle *")] XRectangle* param3, [NativeTypeName("XRectangle *")] XRectangle* param4);
-
-        [DllImport("libX11", ExactSpelling = true)]
-        public static extern int Xutf8TextExtents([NativeTypeName("XFontSet")] IntPtr param0, [NativeTypeName("const char *")] sbyte* param1, int param2, [NativeTypeName("XRectangle *")] XRectangle* param3, [NativeTypeName("XRectangle *")] XRectangle* param4);
-
-        [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XmbTextPerCharExtents([NativeTypeName("XFontSet")] IntPtr param0, [NativeTypeName("const char *")] sbyte* param1, int param2, [NativeTypeName("XRectangle *")] XRectangle* param3, [NativeTypeName("XRectangle *")] XRectangle* param4, int param5, [NativeTypeName("int *")] int* param6, [NativeTypeName("XRectangle *")] XRectangle* param7, [NativeTypeName("XRectangle *")] XRectangle* param8);
-
-        [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XwcTextPerCharExtents([NativeTypeName("XFontSet")] IntPtr param0, [NativeTypeName("const wchar_t *")] int* param1, int param2, [NativeTypeName("XRectangle *")] XRectangle* param3, [NativeTypeName("XRectangle *")] XRectangle* param4, int param5, [NativeTypeName("int *")] int* param6, [NativeTypeName("XRectangle *")] XRectangle* param7, [NativeTypeName("XRectangle *")] XRectangle* param8);
-
-        [DllImport("libX11", ExactSpelling = true)]
-        public static extern int Xutf8TextPerCharExtents([NativeTypeName("XFontSet")] IntPtr param0, [NativeTypeName("const char *")] sbyte* param1, int param2, [NativeTypeName("XRectangle *")] XRectangle* param3, [NativeTypeName("XRectangle *")] XRectangle* param4, int param5, [NativeTypeName("int *")] int* param6, [NativeTypeName("XRectangle *")] XRectangle* param7, [NativeTypeName("XRectangle *")] XRectangle* param8);
-
-        [DllImport("libX11", ExactSpelling = true)]
-        public static extern void XmbDrawText([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("GC")] IntPtr param2, int param3, int param4, [NativeTypeName("XmbTextItem *")] XmbTextItem* param5, int param6);
-
-        [DllImport("libX11", ExactSpelling = true)]
-        public static extern void XwcDrawText([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("GC")] IntPtr param2, int param3, int param4, [NativeTypeName("XwcTextItem *")] XwcTextItem* param5, int param6);
-
-        [DllImport("libX11", ExactSpelling = true)]
-        public static extern void Xutf8DrawText([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("GC")] IntPtr param2, int param3, int param4, [NativeTypeName("XmbTextItem *")] XmbTextItem* param5, int param6);
-
-        [DllImport("libX11", ExactSpelling = true)]
-        public static extern void XmbDrawString([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("XFontSet")] IntPtr param2, [NativeTypeName("GC")] IntPtr param3, int param4, int param5, [NativeTypeName("const char *")] sbyte* param6, int param7);
-
-        [DllImport("libX11", ExactSpelling = true)]
-        public static extern void XwcDrawString([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("XFontSet")] IntPtr param2, [NativeTypeName("GC")] IntPtr param3, int param4, int param5, [NativeTypeName("const wchar_t *")] int* param6, int param7);
-
-        [DllImport("libX11", ExactSpelling = true)]
-        public static extern void Xutf8DrawString([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("XFontSet")] IntPtr param2, [NativeTypeName("GC")] IntPtr param3, int param4, int param5, [NativeTypeName("const char *")] sbyte* param6, int param7);
-
-        [DllImport("libX11", ExactSpelling = true)]
-        public static extern void XmbDrawImageString([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("XFontSet")] IntPtr param2, [NativeTypeName("GC")] IntPtr param3, int param4, int param5, [NativeTypeName("const char *")] sbyte* param6, int param7);
-
-        [DllImport("libX11", ExactSpelling = true)]
-        public static extern void XwcDrawImageString([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("XFontSet")] IntPtr param2, [NativeTypeName("GC")] IntPtr param3, int param4, int param5, [NativeTypeName("const wchar_t *")] int* param6, int param7);
-
-        [DllImport("libX11", ExactSpelling = true)]
-        public static extern void Xutf8DrawImageString([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("Drawable")] nuint param1, [NativeTypeName("XFontSet")] IntPtr param2, [NativeTypeName("GC")] IntPtr param3, int param4, int param5, [NativeTypeName("const char *")] sbyte* param6, int param7);
-
-        [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("XIM")]
-        public static extern IntPtr XOpenIM([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("struct _XrmHashBucketRec *")] IntPtr param1, [NativeTypeName("char *")] sbyte* param2, [NativeTypeName("char *")] sbyte* param3);
-
-        [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XCloseIM([NativeTypeName("XIM")] IntPtr param0);
+        public static extern sbyte* XBaseFontNameListOfFontSet(XFontSet param0);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("char *")]
-        public static extern sbyte* XGetIMValues([NativeTypeName("XIM")] IntPtr param0);
+        public static extern sbyte* XLocaleOfFontSet(XFontSet param0);
+
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XContextDependentDrawing(XFontSet param0);
+
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XDirectionalDependentDrawing(XFontSet param0);
+
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XContextualDrawing(XFontSet param0);
+
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern XFontSetExtents* XExtentsOfFontSet(XFontSet param0);
+
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XmbTextEscapement(XFontSet param0, [NativeTypeName("const char *")] sbyte* param1, int param2);
+
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XwcTextEscapement(XFontSet param0, [NativeTypeName("const wchar_t *")] uint* param1, int param2);
+
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int Xutf8TextEscapement(XFontSet param0, [NativeTypeName("const char *")] sbyte* param1, int param2);
+
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XmbTextExtents(XFontSet param0, [NativeTypeName("const char *")] sbyte* param1, int param2, XRectangle* param3, XRectangle* param4);
+
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XwcTextExtents(XFontSet param0, [NativeTypeName("const wchar_t *")] uint* param1, int param2, XRectangle* param3, XRectangle* param4);
+
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int Xutf8TextExtents(XFontSet param0, [NativeTypeName("const char *")] sbyte* param1, int param2, XRectangle* param3, XRectangle* param4);
+
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XmbTextPerCharExtents(XFontSet param0, [NativeTypeName("const char *")] sbyte* param1, int param2, XRectangle* param3, XRectangle* param4, int param5, int* param6, XRectangle* param7, XRectangle* param8);
+
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XwcTextPerCharExtents(XFontSet param0, [NativeTypeName("const wchar_t *")] uint* param1, int param2, XRectangle* param3, XRectangle* param4, int param5, int* param6, XRectangle* param7, XRectangle* param8);
+
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int Xutf8TextPerCharExtents(XFontSet param0, [NativeTypeName("const char *")] sbyte* param1, int param2, XRectangle* param3, XRectangle* param4, int param5, int* param6, XRectangle* param7, XRectangle* param8);
+
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern void XmbDrawText(Display* param0, Drawable param1, GC param2, int param3, int param4, XmbTextItem* param5, int param6);
+
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern void XwcDrawText(Display* param0, Drawable param1, GC param2, int param3, int param4, XwcTextItem* param5, int param6);
+
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern void Xutf8DrawText(Display* param0, Drawable param1, GC param2, int param3, int param4, XmbTextItem* param5, int param6);
+
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern void XmbDrawString(Display* param0, Drawable param1, XFontSet param2, GC param3, int param4, int param5, [NativeTypeName("const char *")] sbyte* param6, int param7);
+
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern void XwcDrawString(Display* param0, Drawable param1, XFontSet param2, GC param3, int param4, int param5, [NativeTypeName("const wchar_t *")] uint* param6, int param7);
+
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern void Xutf8DrawString(Display* param0, Drawable param1, XFontSet param2, GC param3, int param4, int param5, [NativeTypeName("const char *")] sbyte* param6, int param7);
+
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern void XmbDrawImageString(Display* param0, Drawable param1, XFontSet param2, GC param3, int param4, int param5, [NativeTypeName("const char *")] sbyte* param6, int param7);
+
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern void XwcDrawImageString(Display* param0, Drawable param1, XFontSet param2, GC param3, int param4, int param5, [NativeTypeName("const wchar_t *")] uint* param6, int param7);
+
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern void Xutf8DrawImageString(Display* param0, Drawable param1, XFontSet param2, GC param3, int param4, int param5, [NativeTypeName("const char *")] sbyte* param6, int param7);
+
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern XIM XOpenIM(Display* param0, [NativeTypeName("struct _XrmHashBucketRec *")] XrmHashBucket param1, [NativeTypeName("char *")] sbyte* param2, [NativeTypeName("char *")] sbyte* param3);
+
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern int XCloseIM(XIM param0);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("char *")]
-        public static extern sbyte* XSetIMValues([NativeTypeName("XIM")] IntPtr param0);
-
-        [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("Display *")]
-        public static extern IntPtr XDisplayOfIM([NativeTypeName("XIM")] IntPtr param0);
+        public static extern sbyte* XGetIMValues(XIM param0);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("char *")]
-        public static extern sbyte* XLocaleOfIM([NativeTypeName("XIM")] IntPtr param0);
+        public static extern sbyte* XSetIMValues(XIM param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("XIC")]
-        public static extern IntPtr XCreateIC([NativeTypeName("XIM")] IntPtr param0);
+        public static extern Display* XDisplayOfIM(XIM param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern void XDestroyIC([NativeTypeName("XIC")] IntPtr param0);
+        [return: NativeTypeName("char *")]
+        public static extern sbyte* XLocaleOfIM(XIM param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern void XSetICFocus([NativeTypeName("XIC")] IntPtr param0);
+        public static extern XIC XCreateIC(XIM param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern void XUnsetICFocus([NativeTypeName("XIC")] IntPtr param0);
+        public static extern void XDestroyIC(XIC param0);
+
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern void XSetICFocus(XIC param0);
+
+        [DllImport("libX11", ExactSpelling = true)]
+        public static extern void XUnsetICFocus(XIC param0);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("wchar_t *")]
-        public static extern int* XwcResetIC([NativeTypeName("XIC")] IntPtr param0);
+        public static extern uint* XwcResetIC(XIC param0);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("char *")]
-        public static extern sbyte* XmbResetIC([NativeTypeName("XIC")] IntPtr param0);
+        public static extern sbyte* XmbResetIC(XIC param0);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("char *")]
-        public static extern sbyte* Xutf8ResetIC([NativeTypeName("XIC")] IntPtr param0);
+        public static extern sbyte* Xutf8ResetIC(XIC param0);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("char *")]
-        public static extern sbyte* XSetICValues([NativeTypeName("XIC")] IntPtr param0);
+        public static extern sbyte* XSetICValues(XIC param0);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("char *")]
-        public static extern sbyte* XGetICValues([NativeTypeName("XIC")] IntPtr param0);
+        public static extern sbyte* XGetICValues(XIC param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        [return: NativeTypeName("XIM")]
-        public static extern IntPtr XIMOfIC([NativeTypeName("XIC")] IntPtr param0);
+        public static extern XIM XIMOfIC(XIC param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XFilterEvent([NativeTypeName("XEvent *")] XEvent* param0, [NativeTypeName("Window")] nuint param1);
+        public static extern int XFilterEvent(XEvent* param0, Window param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XmbLookupString([NativeTypeName("XIC")] IntPtr param0, [NativeTypeName("XKeyPressedEvent *")] XKeyEvent* param1, [NativeTypeName("char *")] sbyte* param2, int param3, [NativeTypeName("KeySym *")] nuint* param4, [NativeTypeName("int *")] int* param5);
+        public static extern int XmbLookupString(XIC param0, [NativeTypeName("XKeyPressedEvent *")] XKeyEvent* param1, [NativeTypeName("char *")] sbyte* param2, int param3, KeySym* param4, int* param5);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XwcLookupString([NativeTypeName("XIC")] IntPtr param0, [NativeTypeName("XKeyPressedEvent *")] XKeyEvent* param1, [NativeTypeName("wchar_t *")] int* param2, int param3, [NativeTypeName("KeySym *")] nuint* param4, [NativeTypeName("int *")] int* param5);
+        public static extern int XwcLookupString(XIC param0, [NativeTypeName("XKeyPressedEvent *")] XKeyEvent* param1, [NativeTypeName("wchar_t *")] uint* param2, int param3, KeySym* param4, int* param5);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int Xutf8LookupString([NativeTypeName("XIC")] IntPtr param0, [NativeTypeName("XKeyPressedEvent *")] XKeyEvent* param1, [NativeTypeName("char *")] sbyte* param2, int param3, [NativeTypeName("KeySym *")] nuint* param4, [NativeTypeName("int *")] int* param5);
+        public static extern int Xutf8LookupString(XIC param0, [NativeTypeName("XKeyPressedEvent *")] XKeyEvent* param1, [NativeTypeName("char *")] sbyte* param2, int param3, KeySym* param4, int* param5);
 
         [DllImport("libX11", ExactSpelling = true)]
         [return: NativeTypeName("XVaNestedList")]
         public static extern void* XVaCreateNestedList(int param0);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XRegisterIMInstantiateCallback([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("struct _XrmHashBucketRec *")] IntPtr param1, [NativeTypeName("char *")] sbyte* param2, [NativeTypeName("char *")] sbyte* param3, [NativeTypeName("XIDProc")] delegate* unmanaged<IntPtr, sbyte*, sbyte*, void> param4, [NativeTypeName("XPointer")] sbyte* param5);
+        public static extern int XRegisterIMInstantiateCallback(Display* param0, [NativeTypeName("struct _XrmHashBucketRec *")] XrmHashBucket param1, [NativeTypeName("char *")] sbyte* param2, [NativeTypeName("char *")] sbyte* param3, [NativeTypeName("XIDProc")] delegate* unmanaged<Display*, sbyte*, sbyte*, void> param4, [NativeTypeName("XPointer")] sbyte* param5);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XUnregisterIMInstantiateCallback([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("struct _XrmHashBucketRec *")] IntPtr param1, [NativeTypeName("char *")] sbyte* param2, [NativeTypeName("char *")] sbyte* param3, [NativeTypeName("XIDProc")] delegate* unmanaged<IntPtr, sbyte*, sbyte*, void> param4, [NativeTypeName("XPointer")] sbyte* param5);
+        public static extern int XUnregisterIMInstantiateCallback(Display* param0, [NativeTypeName("struct _XrmHashBucketRec *")] XrmHashBucket param1, [NativeTypeName("char *")] sbyte* param2, [NativeTypeName("char *")] sbyte* param3, [NativeTypeName("XIDProc")] delegate* unmanaged<Display*, sbyte*, sbyte*, void> param4, [NativeTypeName("XPointer")] sbyte* param5);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XInternalConnectionNumbers([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("int **")] int** param1, [NativeTypeName("int *")] int* param2);
+        public static extern int XInternalConnectionNumbers(Display* param0, int** param1, int* param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern void XProcessInternalConnection([NativeTypeName("Display *")] IntPtr param0, int param1);
+        public static extern void XProcessInternalConnection(Display* param0, int param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XAddConnectionWatch([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("XConnectionWatchProc")] delegate* unmanaged<IntPtr, sbyte*, int, int, sbyte**, void> param1, [NativeTypeName("XPointer")] sbyte* param2);
+        public static extern int XAddConnectionWatch(Display* param0, [NativeTypeName("XConnectionWatchProc")] delegate* unmanaged<Display*, sbyte*, int, int, sbyte**, void> param1, [NativeTypeName("XPointer")] sbyte* param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern void XRemoveConnectionWatch([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("XConnectionWatchProc")] delegate* unmanaged<IntPtr, sbyte*, int, int, sbyte**, void> param1, [NativeTypeName("XPointer")] sbyte* param2);
+        public static extern void XRemoveConnectionWatch(Display* param0, [NativeTypeName("XConnectionWatchProc")] delegate* unmanaged<Display*, sbyte*, int, int, sbyte**, void> param1, [NativeTypeName("XPointer")] sbyte* param2);
 
         [DllImport("libX11", ExactSpelling = true)]
         public static extern void XSetAuthorization([NativeTypeName("char *")] sbyte* param0, int param1, [NativeTypeName("char *")] sbyte* param2, int param3);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int _Xmbtowc([NativeTypeName("wchar_t *")] int* param0, [NativeTypeName("char *")] sbyte* param1, int param2);
+        public static extern int _Xmbtowc([NativeTypeName("wchar_t *")] uint* param0, [NativeTypeName("char *")] sbyte* param1, int param2);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int _Xwctomb([NativeTypeName("char *")] sbyte* param0, [NativeTypeName("wchar_t")] int param1);
+        public static extern int _Xwctomb([NativeTypeName("char *")] sbyte* param0, [NativeTypeName("wchar_t")] uint param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern int XGetEventData([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("XGenericEventCookie *")] XGenericEventCookie* param1);
+        public static extern int XGetEventData(Display* param0, XGenericEventCookie* param1);
 
         [DllImport("libX11", ExactSpelling = true)]
-        public static extern void XFreeEventData([NativeTypeName("Display *")] IntPtr param0, [NativeTypeName("XGenericEventCookie *")] XGenericEventCookie* param1);
+        public static extern void XFreeEventData(Display* param0, XGenericEventCookie* param1);
 
         [NativeTypeName("#define XlibSpecificationRelease 6")]
         public const int XlibSpecificationRelease = 6;
@@ -1375,9 +1313,6 @@ namespace TerraFX.Interop
 
         [NativeTypeName("#define QueuedAfterFlush 2")]
         public const int QueuedAfterFlush = 2;
-
-        [NativeTypeName("#define AllPlanes ((unsigned long)~0L)")]
-        public static readonly nuint AllPlanes = unchecked((nuint)(~0));
 
         [NativeTypeName("#define XNRequiredCharSet \"requiredCharSet\"")]
         public static ReadOnlySpan<byte> XNRequiredCharSet => new byte[] { 0x72, 0x65, 0x71, 0x75, 0x69, 0x72, 0x65, 0x64, 0x43, 0x68, 0x61, 0x72, 0x53, 0x65, 0x74, 0x00 };

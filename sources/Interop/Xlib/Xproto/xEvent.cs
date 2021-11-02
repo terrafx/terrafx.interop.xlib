@@ -121,10 +121,8 @@ namespace TerraFX.Interop
 
             public partial struct _u_e__Struct
             {
-                [NativeTypeName("BYTE")]
                 public byte type;
 
-                [NativeTypeName("BYTE")]
                 public byte detail;
 
                 [NativeTypeName("CARD16")]
@@ -166,7 +164,6 @@ namespace TerraFX.Interop
                 [NativeTypeName("BOOL")]
                 public byte sameScreen;
 
-                [NativeTypeName("BYTE")]
                 public byte pad1;
             }
 
@@ -202,10 +199,8 @@ namespace TerraFX.Interop
                 [NativeTypeName("KeyButMask")]
                 public ushort state;
 
-                [NativeTypeName("BYTE")]
                 public byte mode;
 
-                [NativeTypeName("BYTE")]
                 public byte flags;
             }
 
@@ -217,16 +212,12 @@ namespace TerraFX.Interop
                 [NativeTypeName("CARD32")]
                 public uint window;
 
-                [NativeTypeName("BYTE")]
                 public byte mode;
 
-                [NativeTypeName("BYTE")]
                 public byte pad1;
 
-                [NativeTypeName("BYTE")]
                 public byte pad2;
 
-                [NativeTypeName("BYTE")]
                 public byte pad3;
             }
 
@@ -283,16 +274,12 @@ namespace TerraFX.Interop
                 [NativeTypeName("CARD16")]
                 public ushort count;
 
-                [NativeTypeName("BYTE")]
                 public byte majorEvent;
 
-                [NativeTypeName("BYTE")]
                 public byte pad1;
 
-                [NativeTypeName("BYTE")]
                 public byte pad2;
 
-                [NativeTypeName("BYTE")]
                 public byte pad3;
             }
 
@@ -307,10 +294,8 @@ namespace TerraFX.Interop
                 [NativeTypeName("CARD16")]
                 public ushort minorEvent;
 
-                [NativeTypeName("BYTE")]
                 public byte majorEvent;
 
-                [NativeTypeName("BYTE")]
                 public byte bpad;
             }
 
@@ -325,13 +310,10 @@ namespace TerraFX.Interop
                 [NativeTypeName("CARD8")]
                 public byte state;
 
-                [NativeTypeName("BYTE")]
                 public byte pad1;
 
-                [NativeTypeName("BYTE")]
                 public byte pad2;
 
-                [NativeTypeName("BYTE")]
                 public byte pad3;
             }
 
@@ -364,7 +346,6 @@ namespace TerraFX.Interop
                 [NativeTypeName("BOOL")]
                 public byte @override;
 
-                [NativeTypeName("BYTE")]
                 public byte bpad;
             }
 
@@ -394,13 +375,10 @@ namespace TerraFX.Interop
                 [NativeTypeName("BOOL")]
                 public byte fromConfigure;
 
-                [NativeTypeName("BYTE")]
                 public byte pad1;
 
-                [NativeTypeName("BYTE")]
                 public byte pad2;
 
-                [NativeTypeName("BYTE")]
                 public byte pad3;
             }
 
@@ -418,13 +396,10 @@ namespace TerraFX.Interop
                 [NativeTypeName("BOOL")]
                 public byte @override;
 
-                [NativeTypeName("BYTE")]
                 public byte pad1;
 
-                [NativeTypeName("BYTE")]
                 public byte pad2;
 
-                [NativeTypeName("BYTE")]
                 public byte pad3;
             }
 
@@ -463,13 +438,10 @@ namespace TerraFX.Interop
                 [NativeTypeName("BOOL")]
                 public byte @override;
 
-                [NativeTypeName("BYTE")]
                 public byte pad1;
 
-                [NativeTypeName("BYTE")]
                 public byte pad2;
 
-                [NativeTypeName("BYTE")]
                 public byte pad3;
             }
 
@@ -505,7 +477,6 @@ namespace TerraFX.Interop
                 [NativeTypeName("BOOL")]
                 public byte @override;
 
-                [NativeTypeName("BYTE")]
                 public byte bpad;
             }
 
@@ -604,16 +575,12 @@ namespace TerraFX.Interop
                 [NativeTypeName("CARD32")]
                 public uint parent;
 
-                [NativeTypeName("BYTE")]
                 public byte place;
 
-                [NativeTypeName("BYTE")]
                 public byte pad1;
 
-                [NativeTypeName("BYTE")]
                 public byte pad2;
 
-                [NativeTypeName("BYTE")]
                 public byte pad3;
             }
 
@@ -631,10 +598,8 @@ namespace TerraFX.Interop
                 [NativeTypeName("CARD32")]
                 public uint time;
 
-                [NativeTypeName("BYTE")]
                 public byte state;
 
-                [NativeTypeName("BYTE")]
                 public byte pad1;
 
                 [NativeTypeName("CARD16")]
@@ -715,13 +680,10 @@ namespace TerraFX.Interop
                 [NativeTypeName("BOOL")]
                 public byte c_new;
 
-                [NativeTypeName("BYTE")]
                 public byte state;
 
-                [NativeTypeName("BYTE")]
                 public byte pad1;
 
-                [NativeTypeName("BYTE")]
                 public byte pad2;
             }
 
@@ -739,7 +701,6 @@ namespace TerraFX.Interop
                 [NativeTypeName("CARD8")]
                 public byte count;
 
-                [NativeTypeName("BYTE")]
                 public byte pad1;
             }
 

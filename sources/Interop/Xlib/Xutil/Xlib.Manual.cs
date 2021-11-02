@@ -7,19 +7,22 @@ namespace TerraFX.Interop
 {
     public static unsafe partial class Xlib
     {
-        public static bool IsKeypadKey([NativeTypeName("KeySym")] nuint keysym) => (keysym >= XK_KP_Space) && (keysym <= XK_KP_Equal);
+        [NativeTypeName("#define ReleaseByFreeingColormap ((XID) 1L)")]
+        public static XID ReleaseByFreeingColormap => ((XID)(1));
 
-        public static bool IsPrivateKeypadKey([NativeTypeName("KeySym")] nuint keysym) => (keysym >= 0x11000000) && (keysym <= 0x1100FFFF);
+        public static bool IsKeypadKey(KeySym keysym) => (keysym >= (KeySym)(XK_KP_Space)) && (keysym <= (KeySym)(XK_KP_Equal));
 
-        public static bool IsCursorKey([NativeTypeName("KeySym")] nuint keysym) => (keysym >= XK_Home) && (keysym < XK_Select);
+        public static bool IsPrivateKeypadKey(KeySym keysym) => (keysym >= (KeySym)(0x11000000)) && (keysym <= (KeySym)(0x1100FFFF));
 
-        public static bool IsPFKey([NativeTypeName("KeySym")] nuint keysym) => (keysym >= XK_KP_F1) && (keysym <= XK_KP_F4);
+        public static bool IsCursorKey(KeySym keysym) => (keysym >= (KeySym)(XK_Home)) && (keysym < (KeySym)(XK_Select));
 
-        public static bool IsFunctionKey([NativeTypeName("KeySym")] nuint keysym) => (keysym >= XK_F1) && (keysym <= XK_F35);
+        public static bool IsPFKey(KeySym keysym) => (keysym >= (KeySym)(XK_KP_F1)) && (keysym <= (KeySym)(XK_KP_F4));
 
-        public static bool IsMiscFunctionKey([NativeTypeName("KeySym")] nuint keysym) => (keysym >= XK_Select) && (keysym <= XK_Break);
+        public static bool IsFunctionKey(KeySym keysym) => (keysym >= (KeySym)(XK_F1)) && (keysym <= (KeySym)(XK_F35));
 
-        public static bool IsModifierKey([NativeTypeName("KeySym")] nuint keysym) => ((keysym >= XK_Shift_L) && (keysym <= XK_Hyper_R)) || ((keysym >=  XK_ISO_Lock) && (keysym <= XK_ISO_Level5_Lock)) || (keysym == XK_Mode_switch) || (keysym == XK_Num_Lock);
+        public static bool IsMiscFunctionKey(KeySym keysym) => (keysym >= (KeySym)(XK_Select)) && (keysym <= (KeySym)(XK_Break));
+
+        public static bool IsModifierKey(KeySym keysym) => ((keysym >= (KeySym)(XK_Shift_L)) && (keysym <= (KeySym)(XK_Hyper_R))) || ((keysym >= (KeySym)(XK_ISO_Lock)) && (keysym <= (KeySym)(XK_ISO_Level5_Lock))) || (keysym == (KeySym)(XK_Mode_switch)) || (keysym == (KeySym)(XK_Num_Lock));
 
         [return: NativeTypeName("XContext")]
         public static int XUniqueContext() => XrmUniqueQuark();

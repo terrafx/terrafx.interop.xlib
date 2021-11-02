@@ -7,14 +7,12 @@ namespace TerraFX.Interop
 {
     public partial struct XSetWindowAttributes
     {
-        [NativeTypeName("Pixmap")]
-        public nuint background_pixmap;
+        public Pixmap background_pixmap;
 
         [NativeTypeName("unsigned long")]
         public nuint background_pixel;
 
-        [NativeTypeName("Pixmap")]
-        public nuint border_pixmap;
+        public Pixmap border_pixmap;
 
         [NativeTypeName("unsigned long")]
         public nuint border_pixel;
@@ -41,10 +39,8 @@ namespace TerraFX.Interop
 
         public int override_redirect;
 
-        [NativeTypeName("Colormap")]
-        public nuint colormap;
+        public Colormap colormap;
 
-        [NativeTypeName("Cursor")]
-        public nuint cursor;
+        public Cursor cursor;
     }
 }

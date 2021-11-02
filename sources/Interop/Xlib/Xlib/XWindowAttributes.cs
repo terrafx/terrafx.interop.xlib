@@ -19,11 +19,9 @@ namespace TerraFX.Interop
 
         public int depth;
 
-        [NativeTypeName("Visual *")]
         public Visual* visual;
 
-        [NativeTypeName("Window")]
-        public nuint root;
+        public Window root;
 
         public int c_class;
 
@@ -41,8 +39,7 @@ namespace TerraFX.Interop
 
         public int save_under;
 
-        [NativeTypeName("Colormap")]
-        public nuint colormap;
+        public Colormap colormap;
 
         public int map_installed;
 
@@ -59,7 +56,6 @@ namespace TerraFX.Interop
 
         public int override_redirect;
 
-        [NativeTypeName("Screen *")]
         public Screen* screen;
     }
 }

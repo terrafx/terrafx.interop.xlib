@@ -22,10 +22,8 @@ namespace TerraFX.Interop
         [NativeTypeName("CARD16")]
         public ushort eventMask;
 
-        [NativeTypeName("BYTE")]
         public byte pointerMode;
 
-        [NativeTypeName("BYTE")]
         public byte keyboardMode;
 
         [NativeTypeName("CARD32")]

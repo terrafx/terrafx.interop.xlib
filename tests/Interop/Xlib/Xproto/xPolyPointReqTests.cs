@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="xPolyPointReq" /> struct.</summary>
-    public static unsafe class xPolyPointReqTests
+    public static unsafe partial class xPolyPointReqTests
     {
         /// <summary>Validates that the <see cref="xPolyPointReq" /> struct is blittable.</summary>
         [Test]

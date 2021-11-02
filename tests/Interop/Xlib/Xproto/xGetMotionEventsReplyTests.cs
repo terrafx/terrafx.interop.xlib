@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="xGetMotionEventsReply" /> struct.</summary>
-    public static unsafe class xGetMotionEventsReplyTests
+    public static unsafe partial class xGetMotionEventsReplyTests
     {
         /// <summary>Validates that the <see cref="xGetMotionEventsReply" /> struct is blittable.</summary>
         [Test]

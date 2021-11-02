@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="xWindowRoot" /> struct.</summary>
-    public static unsafe class xWindowRootTests
+    public static unsafe partial class xWindowRootTests
     {
         /// <summary>Validates that the <see cref="xWindowRoot" /> struct is blittable.</summary>
         [Test]

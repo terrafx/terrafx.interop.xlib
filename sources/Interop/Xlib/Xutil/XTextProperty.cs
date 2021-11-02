@@ -10,8 +10,7 @@ namespace TerraFX.Interop
         [NativeTypeName("unsigned char *")]
         public byte* value;
 
-        [NativeTypeName("Atom")]
-        public nuint encoding;
+        public Atom encoding;
 
         public int format;
 
