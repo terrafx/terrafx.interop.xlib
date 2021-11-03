@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="XcmsColorSpace" /> struct.</summary>
-    public static unsafe class XcmsColorSpaceTests
+    public static unsafe partial class XcmsColorSpaceTests
     {
         /// <summary>Validates that the <see cref="XcmsColorSpace" /> struct is blittable.</summary>
         [Test]

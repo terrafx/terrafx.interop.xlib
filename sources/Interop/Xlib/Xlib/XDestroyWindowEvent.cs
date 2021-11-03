@@ -3,11 +3,9 @@
 // Ported from include/X11/Xlib.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
-using System;
-
 namespace TerraFX.Interop
 {
-    public partial struct XDestroyWindowEvent
+    public unsafe partial struct XDestroyWindowEvent
     {
         public int type;
 
@@ -16,13 +14,10 @@ namespace TerraFX.Interop
 
         public int send_event;
 
-        [NativeTypeName("Display *")]
-        public IntPtr display;
+        public Display* display;
 
-        [NativeTypeName("Window")]
-        public nuint @event;
+        public Window @event;
 
-        [NativeTypeName("Window")]
-        public nuint window;
+        public Window window;
     }
 }

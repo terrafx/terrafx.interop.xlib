@@ -14,7 +14,6 @@ namespace TerraFX.Interop
 
         public int delta;
 
-        [NativeTypeName("Font")]
-        public nuint font;
+        public Font font;
     }
 }

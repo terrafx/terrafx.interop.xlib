@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="xSetDashesReq" /> struct.</summary>
-    public static unsafe class xSetDashesReqTests
+    public static unsafe partial class xSetDashesReqTests
     {
         /// <summary>Validates that the <see cref="xSetDashesReq" /> struct is blittable.</summary>
         [Test]

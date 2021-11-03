@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="xCreateCursorReq" /> struct.</summary>
-    public static unsafe class xCreateCursorReqTests
+    public static unsafe partial class xCreateCursorReqTests
     {
         /// <summary>Validates that the <see cref="xCreateCursorReq" /> struct is blittable.</summary>
         [Test]

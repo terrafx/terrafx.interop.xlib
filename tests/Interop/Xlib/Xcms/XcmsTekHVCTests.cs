@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="XcmsTekHVC" /> struct.</summary>
-    public static unsafe class XcmsTekHVCTests
+    public static unsafe partial class XcmsTekHVCTests
     {
         /// <summary>Validates that the <see cref="XcmsTekHVC" /> struct is blittable.</summary>
         [Test]

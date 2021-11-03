@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="xReparentWindowReq" /> struct.</summary>
-    public static unsafe class xReparentWindowReqTests
+    public static unsafe partial class xReparentWindowReqTests
     {
         /// <summary>Validates that the <see cref="xReparentWindowReq" /> struct is blittable.</summary>
         [Test]

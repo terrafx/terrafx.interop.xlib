@@ -14,20 +14,16 @@ namespace TerraFX.Interop
 
         public int initial_state;
 
-        [NativeTypeName("Pixmap")]
-        public nuint icon_pixmap;
+        public Pixmap icon_pixmap;
 
-        [NativeTypeName("Window")]
-        public nuint icon_window;
+        public Window icon_window;
 
         public int icon_x;
 
         public int icon_y;
 
-        [NativeTypeName("Pixmap")]
-        public nuint icon_mask;
+        public Pixmap icon_mask;
 
-        [NativeTypeName("XID")]
-        public nuint window_group;
+        public XID window_group;
     }
 }

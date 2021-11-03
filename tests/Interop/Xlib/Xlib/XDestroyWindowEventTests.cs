@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="XDestroyWindowEvent" /> struct.</summary>
-    public static unsafe class XDestroyWindowEventTests
+    public static unsafe partial class XDestroyWindowEventTests
     {
         /// <summary>Validates that the <see cref="XDestroyWindowEvent" /> struct is blittable.</summary>
         [Test]

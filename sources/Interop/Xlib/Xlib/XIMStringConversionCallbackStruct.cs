@@ -18,7 +18,6 @@ namespace TerraFX.Interop
         [NativeTypeName("unsigned short")]
         public ushort factor;
 
-        [NativeTypeName("XIMStringConversionText *")]
         public XIMStringConversionText* text;
     }
 }

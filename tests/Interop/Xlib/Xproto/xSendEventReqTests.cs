@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="xSendEventReq" /> struct.</summary>
-    public static unsafe class xSendEventReqTests
+    public static unsafe partial class xSendEventReqTests
     {
         /// <summary>Validates that the <see cref="xSendEventReq" /> struct is blittable.</summary>
         [Test]

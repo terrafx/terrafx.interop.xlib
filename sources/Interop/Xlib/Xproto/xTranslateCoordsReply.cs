@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public partial struct xTranslateCoordsReply
     {
-        [NativeTypeName("BYTE")]
         public byte type;
 
         [NativeTypeName("BOOL")]

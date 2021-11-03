@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="xSetSelectionOwnerReq" /> struct.</summary>
-    public static unsafe class xSetSelectionOwnerReqTests
+    public static unsafe partial class xSetSelectionOwnerReqTests
     {
         /// <summary>Validates that the <see cref="xSetSelectionOwnerReq" /> struct is blittable.</summary>
         [Test]

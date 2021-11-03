@@ -22,10 +22,8 @@ namespace TerraFX.Interop
         [NativeTypeName("CARD32")]
         public uint time;
 
-        [NativeTypeName("BYTE")]
         public byte pointerMode;
 
-        [NativeTypeName("BYTE")]
         public byte keyboardMode;
 
         [NativeTypeName("CARD16")]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="XIconSize" /> struct.</summary>
-    public static unsafe class XIconSizeTests
+    public static unsafe partial class XIconSizeTests
     {
         /// <summary>Validates that the <see cref="XIconSize" /> struct is blittable.</summary>
         [Test]

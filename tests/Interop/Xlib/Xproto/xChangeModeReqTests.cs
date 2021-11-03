@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="xChangeModeReq" /> struct.</summary>
-    public static unsafe class xChangeModeReqTests
+    public static unsafe partial class xChangeModeReqTests
     {
         /// <summary>Validates that the <see cref="xChangeModeReq" /> struct is blittable.</summary>
         [Test]

@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="XTimeCoord" /> struct.</summary>
-    public static unsafe class XTimeCoordTests
+    public static unsafe partial class XTimeCoordTests
     {
         /// <summary>Validates that the <see cref="XTimeCoord" /> struct is blittable.</summary>
         [Test]

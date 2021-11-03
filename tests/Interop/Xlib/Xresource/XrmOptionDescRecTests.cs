@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="XrmOptionDescRec" /> struct.</summary>
-    public static unsafe class XrmOptionDescRecTests
+    public static unsafe partial class XrmOptionDescRecTests
     {
         /// <summary>Validates that the <see cref="XrmOptionDescRec" /> struct is blittable.</summary>
         [Test]

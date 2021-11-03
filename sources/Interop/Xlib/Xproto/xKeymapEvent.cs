@@ -7,7 +7,6 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct xKeymapEvent
     {
-        [NativeTypeName("BYTE")]
         public byte type;
 
         [NativeTypeName("BYTE [31]")]

@@ -7,14 +7,12 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct XTextItem16
     {
-        [NativeTypeName("XChar2b *")]
         public XChar2b* chars;
 
         public int nchars;
 
         public int delta;
 
-        [NativeTypeName("Font")]
-        public nuint font;
+        public Font font;
     }
 }

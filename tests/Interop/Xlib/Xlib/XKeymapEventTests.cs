@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="XKeymapEvent" /> struct.</summary>
-    public static unsafe class XKeymapEventTests
+    public static unsafe partial class XKeymapEventTests
     {
         /// <summary>Validates that the <see cref="XKeymapEvent" /> struct is blittable.</summary>
         [Test]

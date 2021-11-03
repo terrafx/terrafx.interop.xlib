@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="XWindowChanges" /> struct.</summary>
-    public static unsafe class XWindowChangesTests
+    public static unsafe partial class XWindowChangesTests
     {
         /// <summary>Validates that the <see cref="XWindowChanges" /> struct is blittable.</summary>
         [Test]

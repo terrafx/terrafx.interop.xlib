@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="XHostAddress" /> struct.</summary>
-    public static unsafe class XHostAddressTests
+    public static unsafe partial class XHostAddressTests
     {
         /// <summary>Validates that the <see cref="XHostAddress" /> struct is blittable.</summary>
         [Test]

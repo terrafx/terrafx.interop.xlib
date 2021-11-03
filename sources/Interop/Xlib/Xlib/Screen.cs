@@ -3,20 +3,16 @@
 // Ported from include/X11/Xlib.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
-using System;
-
 namespace TerraFX.Interop
 {
     public unsafe partial struct Screen
     {
-        [NativeTypeName("XExtData *")]
         public XExtData* ext_data;
 
         [NativeTypeName("struct _XDisplay *")]
-        public IntPtr display;
+        public Display* display;
 
-        [NativeTypeName("Window")]
-        public nuint root;
+        public Window root;
 
         public int width;
 
@@ -28,19 +24,15 @@ namespace TerraFX.Interop
 
         public int ndepths;
 
-        [NativeTypeName("Depth *")]
         public Depth* depths;
 
         public int root_depth;
 
-        [NativeTypeName("Visual *")]
         public Visual* root_visual;
 
-        [NativeTypeName("GC")]
-        public IntPtr default_gc;
+        public GC default_gc;
 
-        [NativeTypeName("Colormap")]
-        public nuint cmap;
+        public Colormap cmap;
 
         [NativeTypeName("unsigned long")]
         public nuint white_pixel;

@@ -7,8 +7,7 @@ namespace TerraFX.Interop
 {
     public partial struct XFontProp
     {
-        [NativeTypeName("Atom")]
-        public nuint name;
+        public Atom name;
 
         [NativeTypeName("unsigned long")]
         public nuint card32;

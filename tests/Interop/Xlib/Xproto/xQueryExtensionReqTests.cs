@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="xQueryExtensionReq" /> struct.</summary>
-    public static unsafe class xQueryExtensionReqTests
+    public static unsafe partial class xQueryExtensionReqTests
     {
         /// <summary>Validates that the <see cref="xQueryExtensionReq" /> struct is blittable.</summary>
         [Test]

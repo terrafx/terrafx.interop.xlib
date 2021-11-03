@@ -7,9 +7,8 @@ using System;
 
 namespace TerraFX.Interop
 {
-    public unsafe partial struct XPrivDisplay
+    public unsafe partial struct Display
     {
-        [NativeTypeName("XExtData *")]
         public XExtData* ext_data;
 
         [NativeTypeName("struct _XPrivate *")]
@@ -26,19 +25,16 @@ namespace TerraFX.Interop
         [NativeTypeName("char *")]
         public sbyte* vendor;
 
-        [NativeTypeName("XID")]
-        public nuint private3;
+        public XID private3;
 
-        [NativeTypeName("XID")]
-        public nuint private4;
+        public XID private4;
 
-        [NativeTypeName("XID")]
-        public nuint private5;
+        public XID private5;
 
         public int private6;
 
         [NativeTypeName("XID (*)(struct _XDisplay *)")]
-        public delegate* unmanaged<IntPtr, nuint> resource_alloc;
+        public delegate* unmanaged<Display*, XID> resource_alloc;
 
         public int byte_order;
 
@@ -50,7 +46,6 @@ namespace TerraFX.Interop
 
         public int nformats;
 
-        [NativeTypeName("ScreenFormat *")]
         public ScreenFormat* pixmap_format;
 
         public int private8;
@@ -87,10 +82,10 @@ namespace TerraFX.Interop
         public uint max_request_size;
 
         [NativeTypeName("struct _XrmHashBucketRec *")]
-        public IntPtr db;
+        public XrmHashBucket db;
 
         [NativeTypeName("int (*)(struct _XDisplay *)")]
-        public delegate* unmanaged<IntPtr, int> private15;
+        public delegate* unmanaged<Display*, int> private15;
 
         [NativeTypeName("char *")]
         public sbyte* display_name;
@@ -99,7 +94,6 @@ namespace TerraFX.Interop
 
         public int nscreens;
 
-        [NativeTypeName("Screen *")]
         public Screen* screens;
 
         [NativeTypeName("unsigned long")]

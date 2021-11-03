@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="xSetScreenSaverReq" /> struct.</summary>
-    public static unsafe class xSetScreenSaverReqTests
+    public static unsafe partial class xSetScreenSaverReqTests
     {
         /// <summary>Validates that the <see cref="xSetScreenSaverReq" /> struct is blittable.</summary>
         [Test]

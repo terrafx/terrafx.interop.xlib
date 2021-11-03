@@ -9,34 +9,34 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="XcmsCCC" /> struct.</summary>
-    public static unsafe class XcmsCCCTests
+    /// <summary>Provides validation of the <see cref="XcmsCCCRec" /> struct.</summary>
+    public static unsafe partial class XcmsCCCRecTests
     {
-        /// <summary>Validates that the <see cref="XcmsCCC" /> struct is blittable.</summary>
+        /// <summary>Validates that the <see cref="XcmsCCCRec" /> struct is blittable.</summary>
         [Test]
         public static void IsBlittableTest()
         {
-            Assert.That(Marshal.SizeOf<XcmsCCC>(), Is.EqualTo(sizeof(XcmsCCC)));
+            Assert.That(Marshal.SizeOf<XcmsCCCRec>(), Is.EqualTo(sizeof(XcmsCCCRec)));
         }
 
-        /// <summary>Validates that the <see cref="XcmsCCC" /> struct has the right <see cref="LayoutKind" />.</summary>
+        /// <summary>Validates that the <see cref="XcmsCCCRec" /> struct has the right <see cref="LayoutKind" />.</summary>
         [Test]
         public static void IsLayoutSequentialTest()
         {
-            Assert.That(typeof(XcmsCCC).IsLayoutSequential, Is.True);
+            Assert.That(typeof(XcmsCCCRec).IsLayoutSequential, Is.True);
         }
 
-        /// <summary>Validates that the <see cref="XcmsCCC" /> struct has the correct size.</summary>
+        /// <summary>Validates that the <see cref="XcmsCCCRec" /> struct has the correct size.</summary>
         [Test]
         public static void SizeOfTest()
         {
             if (Environment.Is64BitProcess)
             {
-                Assert.That(sizeof(XcmsCCC), Is.EqualTo(112));
+                Assert.That(sizeof(XcmsCCCRec), Is.EqualTo(112));
             }
             else
             {
-                Assert.That(sizeof(XcmsCCC), Is.EqualTo(80));
+                Assert.That(sizeof(XcmsCCCRec), Is.EqualTo(80));
             }
         }
     }

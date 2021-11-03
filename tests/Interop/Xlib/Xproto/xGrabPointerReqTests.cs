@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="xGrabPointerReq" /> struct.</summary>
-    public static unsafe class xGrabPointerReqTests
+    public static unsafe partial class xGrabPointerReqTests
     {
         /// <summary>Validates that the <see cref="xGrabPointerReq" /> struct is blittable.</summary>
         [Test]

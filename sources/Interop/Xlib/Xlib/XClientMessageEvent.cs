@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop
 {
-    public partial struct XClientMessageEvent
+    public unsafe partial struct XClientMessageEvent
     {
         public int type;
 
@@ -18,14 +18,11 @@ namespace TerraFX.Interop
 
         public int send_event;
 
-        [NativeTypeName("Display *")]
-        public IntPtr display;
+        public Display* display;
 
-        [NativeTypeName("Window")]
-        public nuint window;
+        public Window window;
 
-        [NativeTypeName("Atom")]
-        public nuint message_type;
+        public Atom message_type;
 
         public int format;
 

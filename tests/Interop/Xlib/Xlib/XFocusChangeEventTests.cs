@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="XFocusChangeEvent" /> struct.</summary>
-    public static unsafe class XFocusChangeEventTests
+    public static unsafe partial class XFocusChangeEventTests
     {
         /// <summary>Validates that the <see cref="XFocusChangeEvent" /> struct is blittable.</summary>
         [Test]

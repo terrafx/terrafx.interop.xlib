@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public int num_hot_key;
 
-        [NativeTypeName("XIMHotKeyTrigger *")]
         public XIMHotKeyTrigger* key;
     }
 }

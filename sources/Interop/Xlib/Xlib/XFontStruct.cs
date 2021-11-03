@@ -7,11 +7,9 @@ namespace TerraFX.Interop
 {
     public unsafe partial struct XFontStruct
     {
-        [NativeTypeName("XExtData *")]
         public XExtData* ext_data;
 
-        [NativeTypeName("Font")]
-        public nuint fid;
+        public Font fid;
 
         [NativeTypeName("unsigned int")]
         public uint direction;
@@ -35,14 +33,12 @@ namespace TerraFX.Interop
 
         public int n_properties;
 
-        [NativeTypeName("XFontProp *")]
         public XFontProp* properties;
 
         public XCharStruct min_bounds;
 
         public XCharStruct max_bounds;
 
-        [NativeTypeName("XCharStruct *")]
         public XCharStruct* per_char;
 
         public int ascent;

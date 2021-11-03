@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct xError
     {
-        [NativeTypeName("BYTE")]
         public byte type;
 
-        [NativeTypeName("BYTE")]
         public byte errorCode;
 
         [NativeTypeName("CARD16")]
@@ -25,7 +23,6 @@ namespace TerraFX.Interop
         [NativeTypeName("CARD8")]
         public byte majorCode;
 
-        [NativeTypeName("BYTE")]
         public byte pad1;
 
         [NativeTypeName("CARD32")]

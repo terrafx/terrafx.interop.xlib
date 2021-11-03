@@ -9,7 +9,6 @@ namespace TerraFX.Interop
     {
         public int num_font;
 
-        [NativeTypeName("XFontStruct **")]
         public XFontStruct** font_struct_list;
 
         [NativeTypeName("char **")]

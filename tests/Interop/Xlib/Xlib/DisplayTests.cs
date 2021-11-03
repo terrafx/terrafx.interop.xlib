@@ -9,34 +9,34 @@ using System.Runtime.InteropServices;
 
 namespace TerraFX.Interop.UnitTests
 {
-    /// <summary>Provides validation of the <see cref="XPrivDisplay" /> struct.</summary>
-    public static unsafe class XPrivDisplayTests
+    /// <summary>Provides validation of the <see cref="Display" /> struct.</summary>
+    public static unsafe partial class DisplayTests
     {
-        /// <summary>Validates that the <see cref="XPrivDisplay" /> struct is blittable.</summary>
+        /// <summary>Validates that the <see cref="Display" /> struct is blittable.</summary>
         [Test]
         public static void IsBlittableTest()
         {
-            Assert.That(Marshal.SizeOf<XPrivDisplay>(), Is.EqualTo(sizeof(XPrivDisplay)));
+            Assert.That(Marshal.SizeOf<Display>(), Is.EqualTo(sizeof(Display)));
         }
 
-        /// <summary>Validates that the <see cref="XPrivDisplay" /> struct has the right <see cref="LayoutKind" />.</summary>
+        /// <summary>Validates that the <see cref="Display" /> struct has the right <see cref="LayoutKind" />.</summary>
         [Test]
         public static void IsLayoutSequentialTest()
         {
-            Assert.That(typeof(XPrivDisplay).IsLayoutSequential, Is.True);
+            Assert.That(typeof(Display).IsLayoutSequential, Is.True);
         }
 
-        /// <summary>Validates that the <see cref="XPrivDisplay" /> struct has the correct size.</summary>
+        /// <summary>Validates that the <see cref="Display" /> struct has the correct size.</summary>
         [Test]
         public static void SizeOfTest()
         {
             if (Environment.Is64BitProcess)
             {
-                Assert.That(sizeof(XPrivDisplay), Is.EqualTo(296));
+                Assert.That(sizeof(Display), Is.EqualTo(296));
             }
             else
             {
-                Assert.That(sizeof(XPrivDisplay), Is.EqualTo(176));
+                Assert.That(sizeof(Display), Is.EqualTo(176));
             }
         }
     }

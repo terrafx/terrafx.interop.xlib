@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="xChangeHostsReq" /> struct.</summary>
-    public static unsafe class xChangeHostsReqTests
+    public static unsafe partial class xChangeHostsReqTests
     {
         /// <summary>Validates that the <see cref="xChangeHostsReq" /> struct is blittable.</summary>
         [Test]

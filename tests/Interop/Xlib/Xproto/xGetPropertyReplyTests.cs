@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="xGetPropertyReply" /> struct.</summary>
-    public static unsafe class xGetPropertyReplyTests
+    public static unsafe partial class xGetPropertyReplyTests
     {
         /// <summary>Validates that the <see cref="xGetPropertyReply" /> struct is blittable.</summary>
         [Test]

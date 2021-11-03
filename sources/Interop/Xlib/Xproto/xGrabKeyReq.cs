@@ -25,19 +25,14 @@ namespace TerraFX.Interop
         [NativeTypeName("CARD8")]
         public byte key;
 
-        [NativeTypeName("BYTE")]
         public byte pointerMode;
 
-        [NativeTypeName("BYTE")]
         public byte keyboardMode;
 
-        [NativeTypeName("BYTE")]
         public byte pad1;
 
-        [NativeTypeName("BYTE")]
         public byte pad2;
 
-        [NativeTypeName("BYTE")]
         public byte pad3;
     }
 }

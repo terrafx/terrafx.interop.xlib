@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="XOMFontInfo" /> struct.</summary>
-    public static unsafe class XOMFontInfoTests
+    public static unsafe partial class XOMFontInfoTests
     {
         /// <summary>Validates that the <see cref="XOMFontInfo" /> struct is blittable.</summary>
         [Test]

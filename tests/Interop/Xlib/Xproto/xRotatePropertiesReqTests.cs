@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="xRotatePropertiesReq" /> struct.</summary>
-    public static unsafe class xRotatePropertiesReqTests
+    public static unsafe partial class xRotatePropertiesReqTests
     {
         /// <summary>Validates that the <see cref="xRotatePropertiesReq" /> struct is blittable.</summary>
         [Test]

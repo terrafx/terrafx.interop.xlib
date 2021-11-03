@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct xGrabPointerReply
     {
-        [NativeTypeName("BYTE")]
         public byte type;
 
-        [NativeTypeName("BYTE")]
         public byte status;
 
         [NativeTypeName("CARD16")]

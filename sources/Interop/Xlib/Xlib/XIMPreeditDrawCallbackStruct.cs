@@ -13,7 +13,6 @@ namespace TerraFX.Interop
 
         public int chg_length;
 
-        [NativeTypeName("XIMText *")]
         public XIMText* text;
     }
 }

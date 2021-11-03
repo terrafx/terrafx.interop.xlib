@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="XComposeStatus" /> struct.</summary>
-    public static unsafe class XComposeStatusTests
+    public static unsafe partial class XComposeStatusTests
     {
         /// <summary>Validates that the <see cref="XComposeStatus" /> struct is blittable.</summary>
         [Test]

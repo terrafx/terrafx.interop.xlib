@@ -7,10 +7,8 @@ namespace TerraFX.Interop
 {
     public partial struct xListPropertiesReply
     {
-        [NativeTypeName("BYTE")]
         public byte type;
 
-        [NativeTypeName("BYTE")]
         public byte pad1;
 
         [NativeTypeName("CARD16")]

@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="xCreatePixmapReq" /> struct.</summary>
-    public static unsafe class xCreatePixmapReqTests
+    public static unsafe partial class xCreatePixmapReqTests
     {
         /// <summary>Validates that the <see cref="xCreatePixmapReq" /> struct is blittable.</summary>
         [Test]

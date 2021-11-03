@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("CARD8")]
         public byte success;
 
-        [NativeTypeName("BYTE")]
         public byte lengthReason;
 
         [NativeTypeName("CARD16")]

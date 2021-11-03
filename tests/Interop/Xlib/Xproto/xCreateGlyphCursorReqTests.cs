@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="xCreateGlyphCursorReq" /> struct.</summary>
-    public static unsafe class xCreateGlyphCursorReqTests
+    public static unsafe partial class xCreateGlyphCursorReqTests
     {
         /// <summary>Validates that the <see cref="xCreateGlyphCursorReq" /> struct is blittable.</summary>
         [Test]

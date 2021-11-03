@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="XServerInterpretedAddress" /> struct.</summary>
-    public static unsafe class XServerInterpretedAddressTests
+    public static unsafe partial class XServerInterpretedAddressTests
     {
         /// <summary>Validates that the <see cref="XServerInterpretedAddress" /> struct is blittable.</summary>
         [Test]

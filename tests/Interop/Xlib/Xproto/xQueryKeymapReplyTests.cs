@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="xQueryKeymapReply" /> struct.</summary>
-    public static unsafe class xQueryKeymapReplyTests
+    public static unsafe partial class xQueryKeymapReplyTests
     {
         /// <summary>Validates that the <see cref="xQueryKeymapReply" /> struct is blittable.</summary>
         [Test]

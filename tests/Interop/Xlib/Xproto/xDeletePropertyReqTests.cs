@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="xDeletePropertyReq" /> struct.</summary>
-    public static unsafe class xDeletePropertyReqTests
+    public static unsafe partial class xDeletePropertyReqTests
     {
         /// <summary>Validates that the <see cref="xDeletePropertyReq" /> struct is blittable.</summary>
         [Test]

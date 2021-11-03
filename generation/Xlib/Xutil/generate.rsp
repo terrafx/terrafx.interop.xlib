@@ -8,6 +8,7 @@ IsMiscFunctionKey
 IsModifierKey
 IsPFKey
 IsPrivateKeypadKey
+ReleaseByFreeingColormap
 XAddPixel
 XDestroyImage
 XGetPixel

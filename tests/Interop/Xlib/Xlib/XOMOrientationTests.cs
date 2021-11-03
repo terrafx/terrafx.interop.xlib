@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="XOMOrientation" /> struct.</summary>
-    public static unsafe class XOMOrientationTests
+    public static unsafe partial class XOMOrientationTests
     {
         /// <summary>Validates that the <see cref="XOMOrientation" /> struct is blittable.</summary>
         [Test]

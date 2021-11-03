@@ -11,7 +11,6 @@ namespace TerraFX.Interop
 
         public int nvisuals;
 
-        [NativeTypeName("Visual *")]
         public Visual* visuals;
     }
 }

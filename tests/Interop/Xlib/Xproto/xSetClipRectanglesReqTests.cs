@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="xSetClipRectanglesReq" /> struct.</summary>
-    public static unsafe class xSetClipRectanglesReqTests
+    public static unsafe partial class xSetClipRectanglesReqTests
     {
         /// <summary>Validates that the <see cref="xSetClipRectanglesReq" /> struct is blittable.</summary>
         [Test]

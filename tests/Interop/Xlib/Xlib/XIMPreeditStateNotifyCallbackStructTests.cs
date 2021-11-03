@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 namespace TerraFX.Interop.UnitTests
 {
     /// <summary>Provides validation of the <see cref="XIMPreeditStateNotifyCallbackStruct" /> struct.</summary>
-    public static unsafe class XIMPreeditStateNotifyCallbackStructTests
+    public static unsafe partial class XIMPreeditStateNotifyCallbackStructTests
     {
         /// <summary>Validates that the <see cref="XIMPreeditStateNotifyCallbackStruct" /> struct is blittable.</summary>
         [Test]

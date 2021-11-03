@@ -10,7 +10,6 @@ namespace TerraFX.Interop
         [NativeTypeName("CARD8")]
         public byte family;
 
-        [NativeTypeName("BYTE")]
         public byte pad;
 
         [NativeTypeName("CARD16")]
