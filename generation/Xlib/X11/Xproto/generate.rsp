@@ -1,0 +1,14 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+Xlib-Xproto.h
+--methodClassName
+Xlib
+--namespace
+TerraFX.Interop.Xlib
+--output
+../../../../sources/Interop/Xlib/X11/Xproto
+--test-output
+../../../../tests/Interop/Xlib/X11/Xproto
+--traverse
+/usr/include/X11/Xproto.h

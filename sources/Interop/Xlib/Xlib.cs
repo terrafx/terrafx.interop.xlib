@@ -4,7 +4,7 @@ using System;
 using System.Reflection;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop
+namespace TerraFX.Interop.Xlib
 {
     public static unsafe partial class Xlib
     {

@@ -1,0 +1,14 @@
+@../../../settings.rsp
+@../../../remap.rsp
+--file
+Xlib-cursorfont.h
+--methodClassName
+Xlib
+--namespace
+TerraFX.Interop.Xlib
+--output
+../../../../sources/Interop/Xlib/X11/cursorfont
+--test-output
+../../../../tests/Interop/Xlib/X11/cursorfont
+--traverse
+/usr/include/X11/cursorfont.h

@@ -72,80 +72,84 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{48E1
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "generation", "generation", "{90486D00-8305-4731-BC3F-4F44965D808C}"
 	ProjectSection(SolutionItems) = preProject
+		generation\remap-handles.rsp = generation\remap-handles.rsp
+		generation\remap-other.rsp = generation\remap-other.rsp
+		generation\remap-transparent.rsp = generation\remap-transparent.rsp
+		generation\remap-types.rsp = generation\remap-types.rsp
 		generation\remap.rsp = generation\remap.rsp
 		generation\settings.rsp = generation\settings.rsp
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Xlib", "Xlib", "{CDA6EE4E-D045-4EDE-ACB2-43D435651D91}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "X11", "X11", "{CDA6EE4E-D045-4EDE-ACB2-43D435651D91}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "cursorfont", "cursorfont", "{FEF50D28-2AF2-4201-AD91-AD483FC30A17}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Xlib\cursorfont\generate.rsp = generation\Xlib\cursorfont\generate.rsp
-		generation\Xlib\cursorfont\header.txt = generation\Xlib\cursorfont\header.txt
-		generation\Xlib\cursorfont\Xlib-cursorfont.h = generation\Xlib\cursorfont\Xlib-cursorfont.h
+		generation\Xlib\X11\cursorfont\generate.rsp = generation\Xlib\X11\cursorfont\generate.rsp
+		generation\Xlib\X11\cursorfont\header.txt = generation\Xlib\X11\cursorfont\header.txt
+		generation\Xlib\X11\cursorfont\Xlib-cursorfont.h = generation\Xlib\X11\cursorfont\Xlib-cursorfont.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "keysymdef", "keysymdef", "{65802BFA-A866-4D07-86D0-FACE295CD675}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Xlib\keysymdef\generate.rsp = generation\Xlib\keysymdef\generate.rsp
-		generation\Xlib\keysymdef\header.txt = generation\Xlib\keysymdef\header.txt
-		generation\Xlib\keysymdef\Xlib-keysymdef.h = generation\Xlib\keysymdef\Xlib-keysymdef.h
+		generation\Xlib\X11\keysymdef\generate.rsp = generation\Xlib\X11\keysymdef\generate.rsp
+		generation\Xlib\X11\keysymdef\header.txt = generation\Xlib\X11\keysymdef\header.txt
+		generation\Xlib\X11\keysymdef\Xlib-keysymdef.h = generation\Xlib\X11\keysymdef\Xlib-keysymdef.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "X", "X", "{7A1824C8-7227-458B-80DB-8EAE03F7C477}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Xlib\X\generate.rsp = generation\Xlib\X\generate.rsp
-		generation\Xlib\X\header.txt = generation\Xlib\X\header.txt
-		generation\Xlib\X\Xlib-X.h = generation\Xlib\X\Xlib-X.h
+		generation\Xlib\X11\X\generate.rsp = generation\Xlib\X11\X\generate.rsp
+		generation\Xlib\X11\X\header.txt = generation\Xlib\X11\X\header.txt
+		generation\Xlib\X11\X\Xlib-X.h = generation\Xlib\X11\X\Xlib-X.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Xatom", "Xatom", "{7A3A90E7-1302-4973-A669-CE442752892F}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Xlib\Xatom\generate.rsp = generation\Xlib\Xatom\generate.rsp
-		generation\Xlib\Xatom\header.txt = generation\Xlib\Xatom\header.txt
-		generation\Xlib\Xatom\Xlib-Xatom.h = generation\Xlib\Xatom\Xlib-Xatom.h
+		generation\Xlib\X11\Xatom\generate.rsp = generation\Xlib\X11\Xatom\generate.rsp
+		generation\Xlib\X11\Xatom\header.txt = generation\Xlib\X11\Xatom\header.txt
+		generation\Xlib\X11\Xatom\Xlib-Xatom.h = generation\Xlib\X11\Xatom\Xlib-Xatom.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Xcms", "Xcms", "{5CE0CD72-8BE8-45FC-931B-9646F44F1FDD}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Xlib\Xcms\generate.rsp = generation\Xlib\Xcms\generate.rsp
-		generation\Xlib\Xcms\header.txt = generation\Xlib\Xcms\header.txt
-		generation\Xlib\Xcms\Xlib-Xcms.h = generation\Xlib\Xcms\Xlib-Xcms.h
+		generation\Xlib\X11\Xcms\generate.rsp = generation\Xlib\X11\Xcms\generate.rsp
+		generation\Xlib\X11\Xcms\header.txt = generation\Xlib\X11\Xcms\header.txt
+		generation\Xlib\X11\Xcms\Xlib-Xcms.h = generation\Xlib\X11\Xcms\Xlib-Xcms.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Xlib", "Xlib", "{A0178C52-032A-4FA3-812F-A6412BBC8768}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Xlib\Xlib\generate.rsp = generation\Xlib\Xlib\generate.rsp
-		generation\Xlib\Xlib\header.txt = generation\Xlib\Xlib\header.txt
-		generation\Xlib\Xlib\Xlib-Xlib.h = generation\Xlib\Xlib\Xlib-Xlib.h
+		generation\Xlib\X11\Xlib\generate.rsp = generation\Xlib\X11\Xlib\generate.rsp
+		generation\Xlib\X11\Xlib\header.txt = generation\Xlib\X11\Xlib\header.txt
+		generation\Xlib\X11\Xlib\Xlib-Xlib.h = generation\Xlib\X11\Xlib\Xlib-Xlib.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Xproto", "Xproto", "{C60B046E-50B9-4431-8793-CEB22ABDC679}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Xlib\Xproto\generate.rsp = generation\Xlib\Xproto\generate.rsp
-		generation\Xlib\Xproto\header.txt = generation\Xlib\Xproto\header.txt
-		generation\Xlib\Xproto\Xlib-Xproto.h = generation\Xlib\Xproto\Xlib-Xproto.h
+		generation\Xlib\X11\Xproto\generate.rsp = generation\Xlib\X11\Xproto\generate.rsp
+		generation\Xlib\X11\Xproto\header.txt = generation\Xlib\X11\Xproto\header.txt
+		generation\Xlib\X11\Xproto\Xlib-Xproto.h = generation\Xlib\X11\Xproto\Xlib-Xproto.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Xprotostr", "Xprotostr", "{AACEFB20-C357-444F-95D6-91DBA365AF3E}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Xlib\Xprotostr\generate.rsp = generation\Xlib\Xprotostr\generate.rsp
-		generation\Xlib\Xprotostr\header.txt = generation\Xlib\Xprotostr\header.txt
-		generation\Xlib\Xprotostr\Xlib-Xprotostr.h = generation\Xlib\Xprotostr\Xlib-Xprotostr.h
+		generation\Xlib\X11\Xprotostr\generate.rsp = generation\Xlib\X11\Xprotostr\generate.rsp
+		generation\Xlib\X11\Xprotostr\header.txt = generation\Xlib\X11\Xprotostr\header.txt
+		generation\Xlib\X11\Xprotostr\Xlib-Xprotostr.h = generation\Xlib\X11\Xprotostr\Xlib-Xprotostr.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Xresource", "Xresource", "{5F9025A5-D822-4506-8D9F-284248336937}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Xlib\Xresource\generate.rsp = generation\Xlib\Xresource\generate.rsp
-		generation\Xlib\Xresource\header.txt = generation\Xlib\Xresource\header.txt
-		generation\Xlib\Xresource\Xlib-Xresource.h = generation\Xlib\Xresource\Xlib-Xresource.h
+		generation\Xlib\X11\Xresource\generate.rsp = generation\Xlib\X11\Xresource\generate.rsp
+		generation\Xlib\X11\Xresource\header.txt = generation\Xlib\X11\Xresource\header.txt
+		generation\Xlib\X11\Xresource\Xlib-Xresource.h = generation\Xlib\X11\Xresource\Xlib-Xresource.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Xutil", "Xutil", "{DF5123A5-AB01-42FB-8F1E-2DD319107969}"
 	ProjectSection(SolutionItems) = preProject
-		generation\Xlib\Xutil\generate.rsp = generation\Xlib\Xutil\generate.rsp
-		generation\Xlib\Xutil\header.txt = generation\Xlib\Xutil\header.txt
-		generation\Xlib\Xutil\Xlib-Xutil.h = generation\Xlib\Xutil\Xlib-Xutil.h
+		generation\Xlib\X11\Xutil\generate.rsp = generation\Xlib\X11\Xutil\generate.rsp
+		generation\Xlib\X11\Xutil\header.txt = generation\Xlib\X11\Xutil\header.txt
+		generation\Xlib\X11\Xutil\Xlib-Xutil.h = generation\Xlib\X11\Xutil\Xlib-Xutil.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{928928F6-2FC7-4848-8BA4-4B9E03D4736A}"
@@ -153,6 +157,17 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{87C91881-18AD-4273-829F-E46158664F12}"
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\ci.yml = .github\workflows\ci.yml
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Xlib", "Xlib", "{E537C66D-D3BA-4075-A463-DF5DF2C37A47}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "other", "other", "{81C27DF5-2ED2-4A99-A4A4-984E3CA82467}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "helper-types", "helper-types", "{5466A5A4-6C37-4F5A-8C32-CDC126FBE1FF}"
+	ProjectSection(SolutionItems) = preProject
+		generation\Xlib\other\helper-types\generate.rsp = generation\Xlib\other\helper-types\generate.rsp
+		generation\Xlib\other\helper-types\header.txt = generation\Xlib\other\helper-types\header.txt
+		generation\Xlib\other\helper-types\other-helper-types.h = generation\Xlib\other\helper-types\other-helper-types.h
 	EndProjectSection
 EndProject
 Global
@@ -180,7 +195,7 @@ Global
 		{7E31C739-2787-44ED-8304-7EFCEE1A2B2C} = {EFB05081-EC44-49D3-B6D1-52AE42085B5B}
 		{32D5D5C6-C467-4200-A978-4DCEBAD16ABF} = {7E31C739-2787-44ED-8304-7EFCEE1A2B2C}
 		{FE1214EA-21BD-4087-AD01-D42DBA8572FE} = {32D5D5C6-C467-4200-A978-4DCEBAD16ABF}
-		{CDA6EE4E-D045-4EDE-ACB2-43D435651D91} = {90486D00-8305-4731-BC3F-4F44965D808C}
+		{CDA6EE4E-D045-4EDE-ACB2-43D435651D91} = {E537C66D-D3BA-4075-A463-DF5DF2C37A47}
 		{FEF50D28-2AF2-4201-AD91-AD483FC30A17} = {CDA6EE4E-D045-4EDE-ACB2-43D435651D91}
 		{65802BFA-A866-4D07-86D0-FACE295CD675} = {CDA6EE4E-D045-4EDE-ACB2-43D435651D91}
 		{7A1824C8-7227-458B-80DB-8EAE03F7C477} = {CDA6EE4E-D045-4EDE-ACB2-43D435651D91}
@@ -192,6 +207,9 @@ Global
 		{5F9025A5-D822-4506-8D9F-284248336937} = {CDA6EE4E-D045-4EDE-ACB2-43D435651D91}
 		{DF5123A5-AB01-42FB-8F1E-2DD319107969} = {CDA6EE4E-D045-4EDE-ACB2-43D435651D91}
 		{87C91881-18AD-4273-829F-E46158664F12} = {928928F6-2FC7-4848-8BA4-4B9E03D4736A}
+		{E537C66D-D3BA-4075-A463-DF5DF2C37A47} = {90486D00-8305-4731-BC3F-4F44965D808C}
+		{81C27DF5-2ED2-4A99-A4A4-984E3CA82467} = {E537C66D-D3BA-4075-A463-DF5DF2C37A47}
+		{5466A5A4-6C37-4F5A-8C32-CDC126FBE1FF} = {81C27DF5-2ED2-4A99-A4A4-984E3CA82467}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2FE36DF8-2D9C-4F20-8787-45DC74B57461}

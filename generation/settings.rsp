@@ -26,13 +26,9 @@ multi-file
 --headerFile
 header.txt
 --include-directory
-/usr/include
-/usr/include/linux
+/usr/lib/gcc/x86_64-linux-gnu/9/include
 /usr/include/x86_64-linux-gnu
---methodClassName
-Xlib
---namespace
-TerraFX.Interop
+/usr/include
 --with-callconv
 *=Winapi
 --with-librarypath
