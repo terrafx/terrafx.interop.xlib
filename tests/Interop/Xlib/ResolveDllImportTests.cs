@@ -19,8 +19,10 @@ namespace TerraFX.Interop.Xlib.UnitTests
         [Platform("Linux")]
         public static void ResolveDllImportTest()
         {
-            var assembly = typeof(Xlib).Assembly;
-            ProcessAssembly(assembly);
+            Assert.Multiple(() => {
+                var assembly = typeof(Xlib).Assembly;
+                ProcessAssembly(assembly);
+            });
         }
 
         private static void ProcessAssembly(Assembly assembly)
@@ -33,14 +35,21 @@ namespace TerraFX.Interop.Xlib.UnitTests
 
         private static void ProcessMethod(MethodInfo method)
         {
-            var dllImportAttribute = method.GetCustomAttributes(typeof(DllImportAttribute)).SingleOrDefault() as DllImportAttribute;
+            var customAttribute = method.GetCustomAttributes(typeof(DllImportAttribute)).SingleOrDefault();
 
-            if (dllImportAttribute is null)
+            if (customAttribute is not DllImportAttribute)
             {
                 return;
             }
 
-            RuntimeHelpers.PrepareMethod(method.MethodHandle);
+            try
+            {
+                RuntimeHelpers.PrepareMethod(method.MethodHandle);
+            }
+            catch (Exception exception)
+            {
+                Assert.Fail(exception.Message);
+            }
         }
 
         private static void ProcessType(Type type)
