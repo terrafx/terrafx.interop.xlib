@@ -2,9 +2,7 @@
 
 using NUnit.Framework;
 using System;
-using System.Linq;
 using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 #pragma warning disable IL2026
@@ -42,7 +40,7 @@ namespace TerraFX.Interop.Xlib.UnitTests
 
             try
             {
-                Marshal.Prelink(method.MethodHandle);
+                Marshal.Prelink(method);
             }
             catch (Exception exception)
             {
