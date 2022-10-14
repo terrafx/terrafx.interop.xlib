@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XTimeCoord" /> struct.</summary>
+public static unsafe partial class XTimeCoordTests
 {
-    /// <summary>Provides validation of the <see cref="XTimeCoord" /> struct.</summary>
-    public static unsafe partial class XTimeCoordTests
+    /// <summary>Validates that the <see cref="XTimeCoord" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XTimeCoord" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XTimeCoord>(), Is.EqualTo(sizeof(XTimeCoord)));
-        }
+        Assert.That(Marshal.SizeOf<XTimeCoord>(), Is.EqualTo(sizeof(XTimeCoord)));
+    }
 
-        /// <summary>Validates that the <see cref="XTimeCoord" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XTimeCoord).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XTimeCoord" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XTimeCoord).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XTimeCoord" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XTimeCoord" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XTimeCoord), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(XTimeCoord), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(XTimeCoord), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(XTimeCoord), Is.EqualTo(8));
         }
     }
 }

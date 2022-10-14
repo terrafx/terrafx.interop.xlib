@@ -3,17 +3,16 @@
 // Ported from include/X11/Xcms.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © Tektronix, Inc.
 
-namespace TerraFX.Interop.Xlib
+namespace TerraFX.Interop.Xlib;
+
+public partial struct XcmsCIEuvY
 {
-    public partial struct XcmsCIEuvY
-    {
-        [NativeTypeName("XcmsFloat")]
-        public double u_prime;
+    [NativeTypeName("XcmsFloat")]
+    public double u_prime;
 
-        [NativeTypeName("XcmsFloat")]
-        public double v_prime;
+    [NativeTypeName("XcmsFloat")]
+    public double v_prime;
 
-        [NativeTypeName("XcmsFloat")]
-        public double Y;
-    }
+    [NativeTypeName("XcmsFloat")]
+    public double Y;
 }

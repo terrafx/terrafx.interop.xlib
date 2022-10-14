@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xConnSetupPrefix" /> struct.</summary>
+public static unsafe partial class xConnSetupPrefixTests
 {
-    /// <summary>Provides validation of the <see cref="xConnSetupPrefix" /> struct.</summary>
-    public static unsafe partial class xConnSetupPrefixTests
+    /// <summary>Validates that the <see cref="xConnSetupPrefix" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xConnSetupPrefix" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xConnSetupPrefix>(), Is.EqualTo(sizeof(xConnSetupPrefix)));
-        }
+        Assert.That(Marshal.SizeOf<xConnSetupPrefix>(), Is.EqualTo(sizeof(xConnSetupPrefix)));
+    }
 
-        /// <summary>Validates that the <see cref="xConnSetupPrefix" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xConnSetupPrefix).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xConnSetupPrefix" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xConnSetupPrefix).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xConnSetupPrefix" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xConnSetupPrefix), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="xConnSetupPrefix" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xConnSetupPrefix), Is.EqualTo(8));
     }
 }

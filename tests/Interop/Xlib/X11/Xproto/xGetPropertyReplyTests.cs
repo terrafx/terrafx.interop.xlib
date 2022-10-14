@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xGetPropertyReply" /> struct.</summary>
+public static unsafe partial class xGetPropertyReplyTests
 {
-    /// <summary>Provides validation of the <see cref="xGetPropertyReply" /> struct.</summary>
-    public static unsafe partial class xGetPropertyReplyTests
+    /// <summary>Validates that the <see cref="xGetPropertyReply" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xGetPropertyReply" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xGetPropertyReply>(), Is.EqualTo(sizeof(xGetPropertyReply)));
-        }
+        Assert.That(Marshal.SizeOf<xGetPropertyReply>(), Is.EqualTo(sizeof(xGetPropertyReply)));
+    }
 
-        /// <summary>Validates that the <see cref="xGetPropertyReply" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xGetPropertyReply).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xGetPropertyReply" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xGetPropertyReply).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xGetPropertyReply" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xGetPropertyReply), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="xGetPropertyReply" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xGetPropertyReply), Is.EqualTo(32));
     }
 }

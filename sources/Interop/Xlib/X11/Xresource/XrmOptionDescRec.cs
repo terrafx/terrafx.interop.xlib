@@ -3,19 +3,18 @@
 // Ported from include/X11/Xresource.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
-namespace TerraFX.Interop.Xlib
+namespace TerraFX.Interop.Xlib;
+
+public unsafe partial struct XrmOptionDescRec
 {
-    public unsafe partial struct XrmOptionDescRec
-    {
-        [NativeTypeName("char *")]
-        public sbyte* option;
+    [NativeTypeName("char *")]
+    public sbyte* option;
 
-        [NativeTypeName("char *")]
-        public sbyte* specifier;
+    [NativeTypeName("char *")]
+    public sbyte* specifier;
 
-        public XrmOptionKind argKind;
+    public XrmOptionKind argKind;
 
-        [NativeTypeName("XPointer")]
-        public sbyte* value;
-    }
+    [NativeTypeName("XPointer")]
+    public sbyte* value;
 }

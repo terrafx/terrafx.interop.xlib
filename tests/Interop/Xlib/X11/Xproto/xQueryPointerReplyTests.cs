@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xQueryPointerReply" /> struct.</summary>
+public static unsafe partial class xQueryPointerReplyTests
 {
-    /// <summary>Provides validation of the <see cref="xQueryPointerReply" /> struct.</summary>
-    public static unsafe partial class xQueryPointerReplyTests
+    /// <summary>Validates that the <see cref="xQueryPointerReply" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xQueryPointerReply" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xQueryPointerReply>(), Is.EqualTo(sizeof(xQueryPointerReply)));
-        }
+        Assert.That(Marshal.SizeOf<xQueryPointerReply>(), Is.EqualTo(sizeof(xQueryPointerReply)));
+    }
 
-        /// <summary>Validates that the <see cref="xQueryPointerReply" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xQueryPointerReply).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xQueryPointerReply" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xQueryPointerReply).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xQueryPointerReply" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xQueryPointerReply), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="xQueryPointerReply" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xQueryPointerReply), Is.EqualTo(32));
     }
 }

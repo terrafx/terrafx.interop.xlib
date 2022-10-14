@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xResourceReq" /> struct.</summary>
+public static unsafe partial class xResourceReqTests
 {
-    /// <summary>Provides validation of the <see cref="xResourceReq" /> struct.</summary>
-    public static unsafe partial class xResourceReqTests
+    /// <summary>Validates that the <see cref="xResourceReq" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xResourceReq" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xResourceReq>(), Is.EqualTo(sizeof(xResourceReq)));
-        }
+        Assert.That(Marshal.SizeOf<xResourceReq>(), Is.EqualTo(sizeof(xResourceReq)));
+    }
 
-        /// <summary>Validates that the <see cref="xResourceReq" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xResourceReq).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xResourceReq" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xResourceReq).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xResourceReq" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xResourceReq), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="xResourceReq" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xResourceReq), Is.EqualTo(8));
     }
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="Visual" /> struct.</summary>
+public static unsafe partial class VisualTests
 {
-    /// <summary>Provides validation of the <see cref="Visual" /> struct.</summary>
-    public static unsafe partial class VisualTests
+    /// <summary>Validates that the <see cref="Visual" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="Visual" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<Visual>(), Is.EqualTo(sizeof(Visual)));
-        }
+        Assert.That(Marshal.SizeOf<Visual>(), Is.EqualTo(sizeof(Visual)));
+    }
 
-        /// <summary>Validates that the <see cref="Visual" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(Visual).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="Visual" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(Visual).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="Visual" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="Visual" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(Visual), Is.EqualTo(56));
-            }
-            else
-            {
-                Assert.That(sizeof(Visual), Is.EqualTo(32));
-            }
+            Assert.That(sizeof(Visual), Is.EqualTo(56));
+        }
+        else
+        {
+            Assert.That(sizeof(Visual), Is.EqualTo(32));
         }
     }
 }

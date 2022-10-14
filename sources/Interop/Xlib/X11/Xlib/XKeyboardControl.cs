@@ -3,24 +3,23 @@
 // Ported from include/X11/Xlib.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
-namespace TerraFX.Interop.Xlib
+namespace TerraFX.Interop.Xlib;
+
+public partial struct XKeyboardControl
 {
-    public partial struct XKeyboardControl
-    {
-        public int key_click_percent;
+    public int key_click_percent;
 
-        public int bell_percent;
+    public int bell_percent;
 
-        public int bell_pitch;
+    public int bell_pitch;
 
-        public int bell_duration;
+    public int bell_duration;
 
-        public int led;
+    public int led;
 
-        public int led_mode;
+    public int led_mode;
 
-        public int key;
+    public int key;
 
-        public int auto_repeat_mode;
-    }
+    public int auto_repeat_mode;
 }

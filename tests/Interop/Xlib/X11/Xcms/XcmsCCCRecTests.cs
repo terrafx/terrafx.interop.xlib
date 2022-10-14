@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XcmsCCCRec" /> struct.</summary>
+public static unsafe partial class XcmsCCCRecTests
 {
-    /// <summary>Provides validation of the <see cref="XcmsCCCRec" /> struct.</summary>
-    public static unsafe partial class XcmsCCCRecTests
+    /// <summary>Validates that the <see cref="XcmsCCCRec" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XcmsCCCRec" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XcmsCCCRec>(), Is.EqualTo(sizeof(XcmsCCCRec)));
-        }
+        Assert.That(Marshal.SizeOf<XcmsCCCRec>(), Is.EqualTo(sizeof(XcmsCCCRec)));
+    }
 
-        /// <summary>Validates that the <see cref="XcmsCCCRec" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XcmsCCCRec).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XcmsCCCRec" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XcmsCCCRec).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XcmsCCCRec" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XcmsCCCRec" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XcmsCCCRec), Is.EqualTo(112));
-            }
-            else
-            {
-                Assert.That(sizeof(XcmsCCCRec), Is.EqualTo(80));
-            }
+            Assert.That(sizeof(XcmsCCCRec), Is.EqualTo(112));
+        }
+        else
+        {
+            Assert.That(sizeof(XcmsCCCRec), Is.EqualTo(80));
         }
     }
 }

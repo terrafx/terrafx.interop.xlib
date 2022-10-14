@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xLookupColorReply" /> struct.</summary>
+public static unsafe partial class xLookupColorReplyTests
 {
-    /// <summary>Provides validation of the <see cref="xLookupColorReply" /> struct.</summary>
-    public static unsafe partial class xLookupColorReplyTests
+    /// <summary>Validates that the <see cref="xLookupColorReply" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xLookupColorReply" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xLookupColorReply>(), Is.EqualTo(sizeof(xLookupColorReply)));
-        }
+        Assert.That(Marshal.SizeOf<xLookupColorReply>(), Is.EqualTo(sizeof(xLookupColorReply)));
+    }
 
-        /// <summary>Validates that the <see cref="xLookupColorReply" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xLookupColorReply).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xLookupColorReply" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xLookupColorReply).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xLookupColorReply" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xLookupColorReply), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="xLookupColorReply" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xLookupColorReply), Is.EqualTo(32));
     }
 }

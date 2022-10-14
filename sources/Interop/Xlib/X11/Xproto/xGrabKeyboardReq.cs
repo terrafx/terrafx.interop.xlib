@@ -3,30 +3,29 @@
 // Ported from include/X11/Xproto.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
-namespace TerraFX.Interop.Xlib
+namespace TerraFX.Interop.Xlib;
+
+public partial struct xGrabKeyboardReq
 {
-    public partial struct xGrabKeyboardReq
-    {
-        [NativeTypeName("CARD8")]
-        public byte reqType;
+    [NativeTypeName("CARD8")]
+    public byte reqType;
 
-        [NativeTypeName("BOOL")]
-        public byte ownerEvents;
+    [NativeTypeName("BOOL")]
+    public byte ownerEvents;
 
-        [NativeTypeName("CARD16")]
-        public ushort length;
+    [NativeTypeName("CARD16")]
+    public ushort length;
 
-        [NativeTypeName("CARD32")]
-        public uint grabWindow;
+    [NativeTypeName("CARD32")]
+    public uint grabWindow;
 
-        [NativeTypeName("CARD32")]
-        public uint time;
+    [NativeTypeName("CARD32")]
+    public uint time;
 
-        public byte pointerMode;
+    public byte pointerMode;
 
-        public byte keyboardMode;
+    public byte keyboardMode;
 
-        [NativeTypeName("CARD16")]
-        public ushort pad;
-    }
+    [NativeTypeName("CARD16")]
+    public ushort pad;
 }

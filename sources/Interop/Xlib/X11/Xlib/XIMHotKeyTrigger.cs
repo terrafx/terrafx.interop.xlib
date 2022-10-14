@@ -3,14 +3,13 @@
 // Ported from include/X11/Xlib.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
-namespace TerraFX.Interop.Xlib
+namespace TerraFX.Interop.Xlib;
+
+public partial struct XIMHotKeyTrigger
 {
-    public partial struct XIMHotKeyTrigger
-    {
-        public KeySym keysym;
+    public KeySym keysym;
 
-        public int modifier;
+    public int modifier;
 
-        public int modifier_mask;
-    }
+    public int modifier_mask;
 }

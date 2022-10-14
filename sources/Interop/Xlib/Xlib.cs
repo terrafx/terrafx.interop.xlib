@@ -4,73 +4,72 @@ using System;
 using System.Reflection;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib
+namespace TerraFX.Interop.Xlib;
+
+public static unsafe partial class Xlib
 {
-    public static unsafe partial class Xlib
+    public static event DllImportResolver? ResolveLibrary;
+
+    static Xlib()
     {
-        public static event DllImportResolver? ResolveLibrary;
+        NativeLibrary.SetDllImportResolver(Assembly.GetExecutingAssembly(), OnDllImport);
+    }
 
-        static Xlib()
+    private static IntPtr OnDllImport(string libraryName, Assembly assembly, DllImportSearchPath? searchPath)
+    {
+        if (TryResolveLibrary(libraryName, assembly, searchPath, out var nativeLibrary))
         {
-            NativeLibrary.SetDllImportResolver(Assembly.GetExecutingAssembly(), OnDllImport);
+            return nativeLibrary;
         }
 
-        private static IntPtr OnDllImport(string libraryName, Assembly assembly, DllImportSearchPath? searchPath)
+        if (libraryName.Equals("libX11") && TryResolveLibX11(assembly, searchPath, out nativeLibrary))
         {
-            if (TryResolveLibrary(libraryName, assembly, searchPath, out var nativeLibrary))
-            {
-                return nativeLibrary;
-            }
-
-            if (libraryName.Equals("libX11") && TryResolveLibX11(assembly, searchPath, out nativeLibrary))
-            {
-                return nativeLibrary;
-            }
-
-            return IntPtr.Zero;
+            return nativeLibrary;
         }
 
-        private static bool TryResolveLibX11(Assembly assembly, DllImportSearchPath? searchPath, out IntPtr nativeLibrary)
+        return IntPtr.Zero;
+    }
+
+    private static bool TryResolveLibX11(Assembly assembly, DllImportSearchPath? searchPath, out IntPtr nativeLibrary)
+    {
+        if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
         {
-            if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+            if (NativeLibrary.TryLoad("libX11.so.6", assembly, searchPath, out nativeLibrary))
             {
-                if (NativeLibrary.TryLoad("libX11.so.6", assembly, searchPath, out nativeLibrary))
+                return true;
+            }
+        }
+        else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+        {
+            if (NativeLibrary.TryLoad("libX11.6.dylib", assembly, searchPath, out nativeLibrary))
+            {
+                return true;
+            }
+        }
+
+        return NativeLibrary.TryLoad("libX11", assembly, searchPath, out nativeLibrary);
+    }
+
+    private static bool TryResolveLibrary(string libraryName, Assembly assembly, DllImportSearchPath? searchPath, out IntPtr nativeLibrary)
+    {
+        var resolveLibrary = ResolveLibrary;
+
+        if (resolveLibrary != null)
+        {
+            var resolvers = resolveLibrary.GetInvocationList();
+
+            foreach (DllImportResolver resolver in resolvers)
+            {
+                nativeLibrary = resolver(libraryName, assembly, searchPath);
+
+                if (nativeLibrary != IntPtr.Zero)
                 {
                     return true;
                 }
             }
-            else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
-            {
-                if (NativeLibrary.TryLoad("libX11.6.dylib", assembly, searchPath, out nativeLibrary))
-                {
-                    return true;
-                }
-            }
-
-            return NativeLibrary.TryLoad("libX11", assembly, searchPath, out nativeLibrary);
         }
 
-        private static bool TryResolveLibrary(string libraryName, Assembly assembly, DllImportSearchPath? searchPath, out IntPtr nativeLibrary)
-        {
-            var resolveLibrary = ResolveLibrary;
-
-            if (resolveLibrary != null)
-            {
-                var resolvers = resolveLibrary.GetInvocationList();
-
-                foreach (DllImportResolver resolver in resolvers)
-                {
-                    nativeLibrary = resolver(libraryName, assembly, searchPath);
-
-                    if (nativeLibrary != IntPtr.Zero)
-                    {
-                        return true;
-                    }
-                }
-            }
-
-            nativeLibrary = IntPtr.Zero;
-            return false;
-        }
+        nativeLibrary = IntPtr.Zero;
+        return false;
     }
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xRotatePropertiesReq" /> struct.</summary>
+public static unsafe partial class xRotatePropertiesReqTests
 {
-    /// <summary>Provides validation of the <see cref="xRotatePropertiesReq" /> struct.</summary>
-    public static unsafe partial class xRotatePropertiesReqTests
+    /// <summary>Validates that the <see cref="xRotatePropertiesReq" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xRotatePropertiesReq" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xRotatePropertiesReq>(), Is.EqualTo(sizeof(xRotatePropertiesReq)));
-        }
+        Assert.That(Marshal.SizeOf<xRotatePropertiesReq>(), Is.EqualTo(sizeof(xRotatePropertiesReq)));
+    }
 
-        /// <summary>Validates that the <see cref="xRotatePropertiesReq" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xRotatePropertiesReq).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xRotatePropertiesReq" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xRotatePropertiesReq).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xRotatePropertiesReq" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xRotatePropertiesReq), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="xRotatePropertiesReq" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xRotatePropertiesReq), Is.EqualTo(12));
     }
 }

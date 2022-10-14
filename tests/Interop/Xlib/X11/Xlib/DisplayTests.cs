@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="Display" /> struct.</summary>
+public static unsafe partial class DisplayTests
 {
-    /// <summary>Provides validation of the <see cref="Display" /> struct.</summary>
-    public static unsafe partial class DisplayTests
+    /// <summary>Validates that the <see cref="Display" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="Display" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<Display>(), Is.EqualTo(sizeof(Display)));
-        }
+        Assert.That(Marshal.SizeOf<Display>(), Is.EqualTo(sizeof(Display)));
+    }
 
-        /// <summary>Validates that the <see cref="Display" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(Display).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="Display" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(Display).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="Display" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="Display" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(Display), Is.EqualTo(296));
-            }
-            else
-            {
-                Assert.That(sizeof(Display), Is.EqualTo(176));
-            }
+            Assert.That(sizeof(Display), Is.EqualTo(296));
+        }
+        else
+        {
+            Assert.That(sizeof(Display), Is.EqualTo(176));
         }
     }
 }

@@ -3,28 +3,27 @@
 // Ported from include/X11/Xproto.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
-namespace TerraFX.Interop.Xlib
+namespace TerraFX.Interop.Xlib;
+
+public partial struct xConnClientPrefix
 {
-    public partial struct xConnClientPrefix
-    {
-        [NativeTypeName("CARD8")]
-        public byte byteOrder;
+    [NativeTypeName("CARD8")]
+    public byte byteOrder;
 
-        public byte pad;
+    public byte pad;
 
-        [NativeTypeName("CARD16")]
-        public ushort majorVersion;
+    [NativeTypeName("CARD16")]
+    public ushort majorVersion;
 
-        [NativeTypeName("CARD16")]
-        public ushort minorVersion;
+    [NativeTypeName("CARD16")]
+    public ushort minorVersion;
 
-        [NativeTypeName("CARD16")]
-        public ushort nbytesAuthProto;
+    [NativeTypeName("CARD16")]
+    public ushort nbytesAuthProto;
 
-        [NativeTypeName("CARD16")]
-        public ushort nbytesAuthString;
+    [NativeTypeName("CARD16")]
+    public ushort nbytesAuthString;
 
-        [NativeTypeName("CARD16")]
-        public ushort pad2;
-    }
+    [NativeTypeName("CARD16")]
+    public ushort pad2;
 }

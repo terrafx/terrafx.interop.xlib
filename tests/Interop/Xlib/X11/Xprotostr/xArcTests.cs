@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xArc" /> struct.</summary>
+public static unsafe partial class xArcTests
 {
-    /// <summary>Provides validation of the <see cref="xArc" /> struct.</summary>
-    public static unsafe partial class xArcTests
+    /// <summary>Validates that the <see cref="xArc" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xArc" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xArc>(), Is.EqualTo(sizeof(xArc)));
-        }
+        Assert.That(Marshal.SizeOf<xArc>(), Is.EqualTo(sizeof(xArc)));
+    }
 
-        /// <summary>Validates that the <see cref="xArc" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xArc).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xArc" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xArc).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xArc" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xArc), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="xArc" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xArc), Is.EqualTo(12));
     }
 }

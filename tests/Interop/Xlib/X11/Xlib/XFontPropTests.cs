@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XFontProp" /> struct.</summary>
+public static unsafe partial class XFontPropTests
 {
-    /// <summary>Provides validation of the <see cref="XFontProp" /> struct.</summary>
-    public static unsafe partial class XFontPropTests
+    /// <summary>Validates that the <see cref="XFontProp" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XFontProp" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XFontProp>(), Is.EqualTo(sizeof(XFontProp)));
-        }
+        Assert.That(Marshal.SizeOf<XFontProp>(), Is.EqualTo(sizeof(XFontProp)));
+    }
 
-        /// <summary>Validates that the <see cref="XFontProp" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XFontProp).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XFontProp" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XFontProp).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XFontProp" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XFontProp" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XFontProp), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(XFontProp), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(XFontProp), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(XFontProp), Is.EqualTo(8));
         }
     }
 }

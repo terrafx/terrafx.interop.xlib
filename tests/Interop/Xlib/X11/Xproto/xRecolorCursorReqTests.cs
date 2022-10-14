@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xRecolorCursorReq" /> struct.</summary>
+public static unsafe partial class xRecolorCursorReqTests
 {
-    /// <summary>Provides validation of the <see cref="xRecolorCursorReq" /> struct.</summary>
-    public static unsafe partial class xRecolorCursorReqTests
+    /// <summary>Validates that the <see cref="xRecolorCursorReq" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xRecolorCursorReq" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xRecolorCursorReq>(), Is.EqualTo(sizeof(xRecolorCursorReq)));
-        }
+        Assert.That(Marshal.SizeOf<xRecolorCursorReq>(), Is.EqualTo(sizeof(xRecolorCursorReq)));
+    }
 
-        /// <summary>Validates that the <see cref="xRecolorCursorReq" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xRecolorCursorReq).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xRecolorCursorReq" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xRecolorCursorReq).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xRecolorCursorReq" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xRecolorCursorReq), Is.EqualTo(20));
-        }
+    /// <summary>Validates that the <see cref="xRecolorCursorReq" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xRecolorCursorReq), Is.EqualTo(20));
     }
 }

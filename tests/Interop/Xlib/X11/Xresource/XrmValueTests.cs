@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XrmValue" /> struct.</summary>
+public static unsafe partial class XrmValueTests
 {
-    /// <summary>Provides validation of the <see cref="XrmValue" /> struct.</summary>
-    public static unsafe partial class XrmValueTests
+    /// <summary>Validates that the <see cref="XrmValue" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XrmValue" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XrmValue>(), Is.EqualTo(sizeof(XrmValue)));
-        }
+        Assert.That(Marshal.SizeOf<XrmValue>(), Is.EqualTo(sizeof(XrmValue)));
+    }
 
-        /// <summary>Validates that the <see cref="XrmValue" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XrmValue).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XrmValue" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XrmValue).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XrmValue" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XrmValue" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XrmValue), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(XrmValue), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(XrmValue), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(XrmValue), Is.EqualTo(8));
         }
     }
 }

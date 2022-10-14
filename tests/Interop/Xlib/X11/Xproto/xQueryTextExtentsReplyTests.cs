@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xQueryTextExtentsReply" /> struct.</summary>
+public static unsafe partial class xQueryTextExtentsReplyTests
 {
-    /// <summary>Provides validation of the <see cref="xQueryTextExtentsReply" /> struct.</summary>
-    public static unsafe partial class xQueryTextExtentsReplyTests
+    /// <summary>Validates that the <see cref="xQueryTextExtentsReply" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xQueryTextExtentsReply" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xQueryTextExtentsReply>(), Is.EqualTo(sizeof(xQueryTextExtentsReply)));
-        }
+        Assert.That(Marshal.SizeOf<xQueryTextExtentsReply>(), Is.EqualTo(sizeof(xQueryTextExtentsReply)));
+    }
 
-        /// <summary>Validates that the <see cref="xQueryTextExtentsReply" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xQueryTextExtentsReply).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xQueryTextExtentsReply" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xQueryTextExtentsReply).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xQueryTextExtentsReply" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xQueryTextExtentsReply), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="xQueryTextExtentsReply" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xQueryTextExtentsReply), Is.EqualTo(32));
     }
 }

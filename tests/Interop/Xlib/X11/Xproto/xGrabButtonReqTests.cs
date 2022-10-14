@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xGrabButtonReq" /> struct.</summary>
+public static unsafe partial class xGrabButtonReqTests
 {
-    /// <summary>Provides validation of the <see cref="xGrabButtonReq" /> struct.</summary>
-    public static unsafe partial class xGrabButtonReqTests
+    /// <summary>Validates that the <see cref="xGrabButtonReq" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xGrabButtonReq" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xGrabButtonReq>(), Is.EqualTo(sizeof(xGrabButtonReq)));
-        }
+        Assert.That(Marshal.SizeOf<xGrabButtonReq>(), Is.EqualTo(sizeof(xGrabButtonReq)));
+    }
 
-        /// <summary>Validates that the <see cref="xGrabButtonReq" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xGrabButtonReq).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xGrabButtonReq" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xGrabButtonReq).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xGrabButtonReq" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xGrabButtonReq), Is.EqualTo(24));
-        }
+    /// <summary>Validates that the <see cref="xGrabButtonReq" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xGrabButtonReq), Is.EqualTo(24));
     }
 }

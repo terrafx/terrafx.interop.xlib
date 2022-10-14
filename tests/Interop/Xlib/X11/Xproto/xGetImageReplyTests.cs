@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xGetImageReply" /> struct.</summary>
+public static unsafe partial class xGetImageReplyTests
 {
-    /// <summary>Provides validation of the <see cref="xGetImageReply" /> struct.</summary>
-    public static unsafe partial class xGetImageReplyTests
+    /// <summary>Validates that the <see cref="xGetImageReply" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xGetImageReply" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xGetImageReply>(), Is.EqualTo(sizeof(xGetImageReply)));
-        }
+        Assert.That(Marshal.SizeOf<xGetImageReply>(), Is.EqualTo(sizeof(xGetImageReply)));
+    }
 
-        /// <summary>Validates that the <see cref="xGetImageReply" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xGetImageReply).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xGetImageReply" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xGetImageReply).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xGetImageReply" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xGetImageReply), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="xGetImageReply" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xGetImageReply), Is.EqualTo(32));
     }
 }

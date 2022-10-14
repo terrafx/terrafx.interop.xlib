@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xChangePointerControlReq" /> struct.</summary>
+public static unsafe partial class xChangePointerControlReqTests
 {
-    /// <summary>Provides validation of the <see cref="xChangePointerControlReq" /> struct.</summary>
-    public static unsafe partial class xChangePointerControlReqTests
+    /// <summary>Validates that the <see cref="xChangePointerControlReq" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xChangePointerControlReq" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xChangePointerControlReq>(), Is.EqualTo(sizeof(xChangePointerControlReq)));
-        }
+        Assert.That(Marshal.SizeOf<xChangePointerControlReq>(), Is.EqualTo(sizeof(xChangePointerControlReq)));
+    }
 
-        /// <summary>Validates that the <see cref="xChangePointerControlReq" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xChangePointerControlReq).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xChangePointerControlReq" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xChangePointerControlReq).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xChangePointerControlReq" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xChangePointerControlReq), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="xChangePointerControlReq" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xChangePointerControlReq), Is.EqualTo(12));
     }
 }

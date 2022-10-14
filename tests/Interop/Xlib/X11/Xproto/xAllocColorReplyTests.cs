@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xAllocColorReply" /> struct.</summary>
+public static unsafe partial class xAllocColorReplyTests
 {
-    /// <summary>Provides validation of the <see cref="xAllocColorReply" /> struct.</summary>
-    public static unsafe partial class xAllocColorReplyTests
+    /// <summary>Validates that the <see cref="xAllocColorReply" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xAllocColorReply" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xAllocColorReply>(), Is.EqualTo(sizeof(xAllocColorReply)));
-        }
+        Assert.That(Marshal.SizeOf<xAllocColorReply>(), Is.EqualTo(sizeof(xAllocColorReply)));
+    }
 
-        /// <summary>Validates that the <see cref="xAllocColorReply" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xAllocColorReply).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xAllocColorReply" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xAllocColorReply).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xAllocColorReply" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xAllocColorReply), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="xAllocColorReply" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xAllocColorReply), Is.EqualTo(32));
     }
 }

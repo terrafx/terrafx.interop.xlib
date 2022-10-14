@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XOMCharSetList" /> struct.</summary>
+public static unsafe partial class XOMCharSetListTests
 {
-    /// <summary>Provides validation of the <see cref="XOMCharSetList" /> struct.</summary>
-    public static unsafe partial class XOMCharSetListTests
+    /// <summary>Validates that the <see cref="XOMCharSetList" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XOMCharSetList" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XOMCharSetList>(), Is.EqualTo(sizeof(XOMCharSetList)));
-        }
+        Assert.That(Marshal.SizeOf<XOMCharSetList>(), Is.EqualTo(sizeof(XOMCharSetList)));
+    }
 
-        /// <summary>Validates that the <see cref="XOMCharSetList" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XOMCharSetList).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XOMCharSetList" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XOMCharSetList).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XOMCharSetList" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XOMCharSetList" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XOMCharSetList), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(XOMCharSetList), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(XOMCharSetList), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(XOMCharSetList), Is.EqualTo(8));
         }
     }
 }

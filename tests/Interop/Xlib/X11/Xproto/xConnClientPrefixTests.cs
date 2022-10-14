@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xConnClientPrefix" /> struct.</summary>
+public static unsafe partial class xConnClientPrefixTests
 {
-    /// <summary>Provides validation of the <see cref="xConnClientPrefix" /> struct.</summary>
-    public static unsafe partial class xConnClientPrefixTests
+    /// <summary>Validates that the <see cref="xConnClientPrefix" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xConnClientPrefix" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xConnClientPrefix>(), Is.EqualTo(sizeof(xConnClientPrefix)));
-        }
+        Assert.That(Marshal.SizeOf<xConnClientPrefix>(), Is.EqualTo(sizeof(xConnClientPrefix)));
+    }
 
-        /// <summary>Validates that the <see cref="xConnClientPrefix" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xConnClientPrefix).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xConnClientPrefix" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xConnClientPrefix).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xConnClientPrefix" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xConnClientPrefix), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="xConnClientPrefix" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xConnClientPrefix), Is.EqualTo(12));
     }
 }

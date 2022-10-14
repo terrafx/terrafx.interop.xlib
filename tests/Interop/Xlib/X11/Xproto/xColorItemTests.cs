@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xColorItem" /> struct.</summary>
+public static unsafe partial class xColorItemTests
 {
-    /// <summary>Provides validation of the <see cref="xColorItem" /> struct.</summary>
-    public static unsafe partial class xColorItemTests
+    /// <summary>Validates that the <see cref="xColorItem" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xColorItem" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xColorItem>(), Is.EqualTo(sizeof(xColorItem)));
-        }
+        Assert.That(Marshal.SizeOf<xColorItem>(), Is.EqualTo(sizeof(xColorItem)));
+    }
 
-        /// <summary>Validates that the <see cref="xColorItem" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xColorItem).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xColorItem" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xColorItem).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xColorItem" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xColorItem), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="xColorItem" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xColorItem), Is.EqualTo(12));
     }
 }

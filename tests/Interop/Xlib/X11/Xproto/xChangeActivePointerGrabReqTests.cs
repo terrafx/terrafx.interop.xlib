@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xChangeActivePointerGrabReq" /> struct.</summary>
+public static unsafe partial class xChangeActivePointerGrabReqTests
 {
-    /// <summary>Provides validation of the <see cref="xChangeActivePointerGrabReq" /> struct.</summary>
-    public static unsafe partial class xChangeActivePointerGrabReqTests
+    /// <summary>Validates that the <see cref="xChangeActivePointerGrabReq" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xChangeActivePointerGrabReq" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xChangeActivePointerGrabReq>(), Is.EqualTo(sizeof(xChangeActivePointerGrabReq)));
-        }
+        Assert.That(Marshal.SizeOf<xChangeActivePointerGrabReq>(), Is.EqualTo(sizeof(xChangeActivePointerGrabReq)));
+    }
 
-        /// <summary>Validates that the <see cref="xChangeActivePointerGrabReq" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xChangeActivePointerGrabReq).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xChangeActivePointerGrabReq" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xChangeActivePointerGrabReq).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xChangeActivePointerGrabReq" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xChangeActivePointerGrabReq), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="xChangeActivePointerGrabReq" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xChangeActivePointerGrabReq), Is.EqualTo(16));
     }
 }

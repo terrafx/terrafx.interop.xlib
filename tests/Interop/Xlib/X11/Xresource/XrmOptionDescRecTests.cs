@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XrmOptionDescRec" /> struct.</summary>
+public static unsafe partial class XrmOptionDescRecTests
 {
-    /// <summary>Provides validation of the <see cref="XrmOptionDescRec" /> struct.</summary>
-    public static unsafe partial class XrmOptionDescRecTests
+    /// <summary>Validates that the <see cref="XrmOptionDescRec" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XrmOptionDescRec" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XrmOptionDescRec>(), Is.EqualTo(sizeof(XrmOptionDescRec)));
-        }
+        Assert.That(Marshal.SizeOf<XrmOptionDescRec>(), Is.EqualTo(sizeof(XrmOptionDescRec)));
+    }
 
-        /// <summary>Validates that the <see cref="XrmOptionDescRec" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XrmOptionDescRec).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XrmOptionDescRec" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XrmOptionDescRec).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XrmOptionDescRec" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XrmOptionDescRec" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XrmOptionDescRec), Is.EqualTo(32));
-            }
-            else
-            {
-                Assert.That(sizeof(XrmOptionDescRec), Is.EqualTo(16));
-            }
+            Assert.That(sizeof(XrmOptionDescRec), Is.EqualTo(32));
+        }
+        else
+        {
+            Assert.That(sizeof(XrmOptionDescRec), Is.EqualTo(16));
         }
     }
 }

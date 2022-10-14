@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xQueryColorsReq" /> struct.</summary>
+public static unsafe partial class xQueryColorsReqTests
 {
-    /// <summary>Provides validation of the <see cref="xQueryColorsReq" /> struct.</summary>
-    public static unsafe partial class xQueryColorsReqTests
+    /// <summary>Validates that the <see cref="xQueryColorsReq" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xQueryColorsReq" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xQueryColorsReq>(), Is.EqualTo(sizeof(xQueryColorsReq)));
-        }
+        Assert.That(Marshal.SizeOf<xQueryColorsReq>(), Is.EqualTo(sizeof(xQueryColorsReq)));
+    }
 
-        /// <summary>Validates that the <see cref="xQueryColorsReq" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xQueryColorsReq).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xQueryColorsReq" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xQueryColorsReq).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xQueryColorsReq" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xQueryColorsReq), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="xQueryColorsReq" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xQueryColorsReq), Is.EqualTo(8));
     }
 }

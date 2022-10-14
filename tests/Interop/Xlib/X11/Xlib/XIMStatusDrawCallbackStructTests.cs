@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XIMStatusDrawCallbackStruct" /> struct.</summary>
+public static unsafe partial class XIMStatusDrawCallbackStructTests
 {
-    /// <summary>Provides validation of the <see cref="XIMStatusDrawCallbackStruct" /> struct.</summary>
-    public static unsafe partial class XIMStatusDrawCallbackStructTests
+    /// <summary>Validates that the <see cref="XIMStatusDrawCallbackStruct" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XIMStatusDrawCallbackStruct" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XIMStatusDrawCallbackStruct>(), Is.EqualTo(sizeof(XIMStatusDrawCallbackStruct)));
-        }
+        Assert.That(Marshal.SizeOf<XIMStatusDrawCallbackStruct>(), Is.EqualTo(sizeof(XIMStatusDrawCallbackStruct)));
+    }
 
-        /// <summary>Validates that the <see cref="XIMStatusDrawCallbackStruct" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XIMStatusDrawCallbackStruct).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XIMStatusDrawCallbackStruct" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XIMStatusDrawCallbackStruct).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XIMStatusDrawCallbackStruct" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XIMStatusDrawCallbackStruct" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XIMStatusDrawCallbackStruct), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(XIMStatusDrawCallbackStruct), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(XIMStatusDrawCallbackStruct), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(XIMStatusDrawCallbackStruct), Is.EqualTo(8));
         }
     }
 }

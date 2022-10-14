@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xGetPropertyReq" /> struct.</summary>
+public static unsafe partial class xGetPropertyReqTests
 {
-    /// <summary>Provides validation of the <see cref="xGetPropertyReq" /> struct.</summary>
-    public static unsafe partial class xGetPropertyReqTests
+    /// <summary>Validates that the <see cref="xGetPropertyReq" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xGetPropertyReq" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xGetPropertyReq>(), Is.EqualTo(sizeof(xGetPropertyReq)));
-        }
+        Assert.That(Marshal.SizeOf<xGetPropertyReq>(), Is.EqualTo(sizeof(xGetPropertyReq)));
+    }
 
-        /// <summary>Validates that the <see cref="xGetPropertyReq" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xGetPropertyReq).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xGetPropertyReq" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xGetPropertyReq).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xGetPropertyReq" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xGetPropertyReq), Is.EqualTo(24));
-        }
+    /// <summary>Validates that the <see cref="xGetPropertyReq" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xGetPropertyReq), Is.EqualTo(24));
     }
 }

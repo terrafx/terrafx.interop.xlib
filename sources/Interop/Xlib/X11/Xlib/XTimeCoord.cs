@@ -3,14 +3,13 @@
 // Ported from include/X11/Xlib.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
-namespace TerraFX.Interop.Xlib
+namespace TerraFX.Interop.Xlib;
+
+public partial struct XTimeCoord
 {
-    public partial struct XTimeCoord
-    {
-        public Time time;
+    public Time time;
 
-        public short x;
+    public short x;
 
-        public short y;
-    }
+    public short y;
 }

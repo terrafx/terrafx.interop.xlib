@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XReparentEvent" /> struct.</summary>
+public static unsafe partial class XReparentEventTests
 {
-    /// <summary>Provides validation of the <see cref="XReparentEvent" /> struct.</summary>
-    public static unsafe partial class XReparentEventTests
+    /// <summary>Validates that the <see cref="XReparentEvent" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XReparentEvent" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XReparentEvent>(), Is.EqualTo(sizeof(XReparentEvent)));
-        }
+        Assert.That(Marshal.SizeOf<XReparentEvent>(), Is.EqualTo(sizeof(XReparentEvent)));
+    }
 
-        /// <summary>Validates that the <see cref="XReparentEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XReparentEvent).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XReparentEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XReparentEvent).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XReparentEvent" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XReparentEvent" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XReparentEvent), Is.EqualTo(72));
-            }
-            else
-            {
-                Assert.That(sizeof(XReparentEvent), Is.EqualTo(40));
-            }
+            Assert.That(sizeof(XReparentEvent), Is.EqualTo(72));
+        }
+        else
+        {
+            Assert.That(sizeof(XReparentEvent), Is.EqualTo(40));
         }
     }
 }

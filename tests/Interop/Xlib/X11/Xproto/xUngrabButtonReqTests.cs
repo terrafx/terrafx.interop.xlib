@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xUngrabButtonReq" /> struct.</summary>
+public static unsafe partial class xUngrabButtonReqTests
 {
-    /// <summary>Provides validation of the <see cref="xUngrabButtonReq" /> struct.</summary>
-    public static unsafe partial class xUngrabButtonReqTests
+    /// <summary>Validates that the <see cref="xUngrabButtonReq" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xUngrabButtonReq" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xUngrabButtonReq>(), Is.EqualTo(sizeof(xUngrabButtonReq)));
-        }
+        Assert.That(Marshal.SizeOf<xUngrabButtonReq>(), Is.EqualTo(sizeof(xUngrabButtonReq)));
+    }
 
-        /// <summary>Validates that the <see cref="xUngrabButtonReq" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xUngrabButtonReq).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xUngrabButtonReq" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xUngrabButtonReq).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xUngrabButtonReq" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xUngrabButtonReq), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="xUngrabButtonReq" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xUngrabButtonReq), Is.EqualTo(12));
     }
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xSetPointerMappingReq" /> struct.</summary>
+public static unsafe partial class xSetPointerMappingReqTests
 {
-    /// <summary>Provides validation of the <see cref="xSetPointerMappingReq" /> struct.</summary>
-    public static unsafe partial class xSetPointerMappingReqTests
+    /// <summary>Validates that the <see cref="xSetPointerMappingReq" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xSetPointerMappingReq" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xSetPointerMappingReq>(), Is.EqualTo(sizeof(xSetPointerMappingReq)));
-        }
+        Assert.That(Marshal.SizeOf<xSetPointerMappingReq>(), Is.EqualTo(sizeof(xSetPointerMappingReq)));
+    }
 
-        /// <summary>Validates that the <see cref="xSetPointerMappingReq" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xSetPointerMappingReq).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xSetPointerMappingReq" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xSetPointerMappingReq).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xSetPointerMappingReq" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xSetPointerMappingReq), Is.EqualTo(4));
-        }
+    /// <summary>Validates that the <see cref="xSetPointerMappingReq" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xSetPointerMappingReq), Is.EqualTo(4));
     }
 }

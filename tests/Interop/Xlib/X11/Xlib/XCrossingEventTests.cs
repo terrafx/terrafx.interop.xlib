@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XCrossingEvent" /> struct.</summary>
+public static unsafe partial class XCrossingEventTests
 {
-    /// <summary>Provides validation of the <see cref="XCrossingEvent" /> struct.</summary>
-    public static unsafe partial class XCrossingEventTests
+    /// <summary>Validates that the <see cref="XCrossingEvent" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XCrossingEvent" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XCrossingEvent>(), Is.EqualTo(sizeof(XCrossingEvent)));
-        }
+        Assert.That(Marshal.SizeOf<XCrossingEvent>(), Is.EqualTo(sizeof(XCrossingEvent)));
+    }
 
-        /// <summary>Validates that the <see cref="XCrossingEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XCrossingEvent).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XCrossingEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XCrossingEvent).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XCrossingEvent" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XCrossingEvent" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XCrossingEvent), Is.EqualTo(104));
-            }
-            else
-            {
-                Assert.That(sizeof(XCrossingEvent), Is.EqualTo(68));
-            }
+            Assert.That(sizeof(XCrossingEvent), Is.EqualTo(104));
+        }
+        else
+        {
+            Assert.That(sizeof(XCrossingEvent), Is.EqualTo(68));
         }
     }
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XSelectionEvent" /> struct.</summary>
+public static unsafe partial class XSelectionEventTests
 {
-    /// <summary>Provides validation of the <see cref="XSelectionEvent" /> struct.</summary>
-    public static unsafe partial class XSelectionEventTests
+    /// <summary>Validates that the <see cref="XSelectionEvent" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XSelectionEvent" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XSelectionEvent>(), Is.EqualTo(sizeof(XSelectionEvent)));
-        }
+        Assert.That(Marshal.SizeOf<XSelectionEvent>(), Is.EqualTo(sizeof(XSelectionEvent)));
+    }
 
-        /// <summary>Validates that the <see cref="XSelectionEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XSelectionEvent).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XSelectionEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XSelectionEvent).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XSelectionEvent" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XSelectionEvent" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XSelectionEvent), Is.EqualTo(72));
-            }
-            else
-            {
-                Assert.That(sizeof(XSelectionEvent), Is.EqualTo(36));
-            }
+            Assert.That(sizeof(XSelectionEvent), Is.EqualTo(72));
+        }
+        else
+        {
+            Assert.That(sizeof(XSelectionEvent), Is.EqualTo(36));
         }
     }
 }

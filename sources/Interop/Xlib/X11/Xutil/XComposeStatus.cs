@@ -3,13 +3,12 @@
 // Ported from include/X11/Xutil.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
-namespace TerraFX.Interop.Xlib
-{
-    public unsafe partial struct XComposeStatus
-    {
-        [NativeTypeName("XPointer")]
-        public sbyte* compose_ptr;
+namespace TerraFX.Interop.Xlib;
 
-        public int chars_matched;
-    }
+public unsafe partial struct XComposeStatus
+{
+    [NativeTypeName("XPointer")]
+    public sbyte* compose_ptr;
+
+    public int chars_matched;
 }

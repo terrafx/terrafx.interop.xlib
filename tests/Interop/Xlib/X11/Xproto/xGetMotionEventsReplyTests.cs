@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xGetMotionEventsReply" /> struct.</summary>
+public static unsafe partial class xGetMotionEventsReplyTests
 {
-    /// <summary>Provides validation of the <see cref="xGetMotionEventsReply" /> struct.</summary>
-    public static unsafe partial class xGetMotionEventsReplyTests
+    /// <summary>Validates that the <see cref="xGetMotionEventsReply" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xGetMotionEventsReply" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xGetMotionEventsReply>(), Is.EqualTo(sizeof(xGetMotionEventsReply)));
-        }
+        Assert.That(Marshal.SizeOf<xGetMotionEventsReply>(), Is.EqualTo(sizeof(xGetMotionEventsReply)));
+    }
 
-        /// <summary>Validates that the <see cref="xGetMotionEventsReply" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xGetMotionEventsReply).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xGetMotionEventsReply" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xGetMotionEventsReply).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xGetMotionEventsReply" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xGetMotionEventsReply), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="xGetMotionEventsReply" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xGetMotionEventsReply), Is.EqualTo(32));
     }
 }

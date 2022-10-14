@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XOMFontInfo" /> struct.</summary>
+public static unsafe partial class XOMFontInfoTests
 {
-    /// <summary>Provides validation of the <see cref="XOMFontInfo" /> struct.</summary>
-    public static unsafe partial class XOMFontInfoTests
+    /// <summary>Validates that the <see cref="XOMFontInfo" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XOMFontInfo" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XOMFontInfo>(), Is.EqualTo(sizeof(XOMFontInfo)));
-        }
+        Assert.That(Marshal.SizeOf<XOMFontInfo>(), Is.EqualTo(sizeof(XOMFontInfo)));
+    }
 
-        /// <summary>Validates that the <see cref="XOMFontInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XOMFontInfo).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XOMFontInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XOMFontInfo).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XOMFontInfo" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XOMFontInfo" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XOMFontInfo), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(XOMFontInfo), Is.EqualTo(12));
-            }
+            Assert.That(sizeof(XOMFontInfo), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(XOMFontInfo), Is.EqualTo(12));
         }
     }
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xGetMotionEventsReq" /> struct.</summary>
+public static unsafe partial class xGetMotionEventsReqTests
 {
-    /// <summary>Provides validation of the <see cref="xGetMotionEventsReq" /> struct.</summary>
-    public static unsafe partial class xGetMotionEventsReqTests
+    /// <summary>Validates that the <see cref="xGetMotionEventsReq" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xGetMotionEventsReq" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xGetMotionEventsReq>(), Is.EqualTo(sizeof(xGetMotionEventsReq)));
-        }
+        Assert.That(Marshal.SizeOf<xGetMotionEventsReq>(), Is.EqualTo(sizeof(xGetMotionEventsReq)));
+    }
 
-        /// <summary>Validates that the <see cref="xGetMotionEventsReq" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xGetMotionEventsReq).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xGetMotionEventsReq" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xGetMotionEventsReq).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xGetMotionEventsReq" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xGetMotionEventsReq), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="xGetMotionEventsReq" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xGetMotionEventsReq), Is.EqualTo(16));
     }
 }

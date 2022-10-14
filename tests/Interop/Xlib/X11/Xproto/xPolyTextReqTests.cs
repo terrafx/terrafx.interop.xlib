@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xPolyTextReq" /> struct.</summary>
+public static unsafe partial class xPolyTextReqTests
 {
-    /// <summary>Provides validation of the <see cref="xPolyTextReq" /> struct.</summary>
-    public static unsafe partial class xPolyTextReqTests
+    /// <summary>Validates that the <see cref="xPolyTextReq" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xPolyTextReq" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xPolyTextReq>(), Is.EqualTo(sizeof(xPolyTextReq)));
-        }
+        Assert.That(Marshal.SizeOf<xPolyTextReq>(), Is.EqualTo(sizeof(xPolyTextReq)));
+    }
 
-        /// <summary>Validates that the <see cref="xPolyTextReq" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xPolyTextReq).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xPolyTextReq" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xPolyTextReq).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xPolyTextReq" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xPolyTextReq), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="xPolyTextReq" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xPolyTextReq), Is.EqualTo(16));
     }
 }

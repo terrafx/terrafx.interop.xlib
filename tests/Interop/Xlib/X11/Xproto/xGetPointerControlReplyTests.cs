@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xGetPointerControlReply" /> struct.</summary>
+public static unsafe partial class xGetPointerControlReplyTests
 {
-    /// <summary>Provides validation of the <see cref="xGetPointerControlReply" /> struct.</summary>
-    public static unsafe partial class xGetPointerControlReplyTests
+    /// <summary>Validates that the <see cref="xGetPointerControlReply" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xGetPointerControlReply" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xGetPointerControlReply>(), Is.EqualTo(sizeof(xGetPointerControlReply)));
-        }
+        Assert.That(Marshal.SizeOf<xGetPointerControlReply>(), Is.EqualTo(sizeof(xGetPointerControlReply)));
+    }
 
-        /// <summary>Validates that the <see cref="xGetPointerControlReply" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xGetPointerControlReply).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xGetPointerControlReply" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xGetPointerControlReply).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xGetPointerControlReply" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xGetPointerControlReply), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="xGetPointerControlReply" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xGetPointerControlReply), Is.EqualTo(32));
     }
 }

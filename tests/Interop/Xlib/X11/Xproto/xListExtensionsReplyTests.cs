@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xListExtensionsReply" /> struct.</summary>
+public static unsafe partial class xListExtensionsReplyTests
 {
-    /// <summary>Provides validation of the <see cref="xListExtensionsReply" /> struct.</summary>
-    public static unsafe partial class xListExtensionsReplyTests
+    /// <summary>Validates that the <see cref="xListExtensionsReply" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xListExtensionsReply" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xListExtensionsReply>(), Is.EqualTo(sizeof(xListExtensionsReply)));
-        }
+        Assert.That(Marshal.SizeOf<xListExtensionsReply>(), Is.EqualTo(sizeof(xListExtensionsReply)));
+    }
 
-        /// <summary>Validates that the <see cref="xListExtensionsReply" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xListExtensionsReply).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xListExtensionsReply" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xListExtensionsReply).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xListExtensionsReply" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xListExtensionsReply), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="xListExtensionsReply" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xListExtensionsReply), Is.EqualTo(32));
     }
 }

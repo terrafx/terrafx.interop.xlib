@@ -3,19 +3,18 @@
 // Ported from include/X11/Xlib.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
-namespace TerraFX.Interop.Xlib
+namespace TerraFX.Interop.Xlib;
+
+public unsafe partial struct XAnyEvent
 {
-    public unsafe partial struct XAnyEvent
-    {
-        public int type;
+    public int type;
 
-        [NativeTypeName("unsigned long")]
-        public nuint serial;
+    [NativeTypeName("unsigned long")]
+    public nuint serial;
 
-        public int send_event;
+    public int send_event;
 
-        public Display* display;
+    public Display* display;
 
-        public Window window;
-    }
+    public Window window;
 }

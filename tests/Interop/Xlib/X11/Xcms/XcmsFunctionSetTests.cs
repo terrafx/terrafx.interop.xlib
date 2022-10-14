@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XcmsFunctionSet" /> struct.</summary>
+public static unsafe partial class XcmsFunctionSetTests
 {
-    /// <summary>Provides validation of the <see cref="XcmsFunctionSet" /> struct.</summary>
-    public static unsafe partial class XcmsFunctionSetTests
+    /// <summary>Validates that the <see cref="XcmsFunctionSet" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XcmsFunctionSet" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XcmsFunctionSet>(), Is.EqualTo(sizeof(XcmsFunctionSet)));
-        }
+        Assert.That(Marshal.SizeOf<XcmsFunctionSet>(), Is.EqualTo(sizeof(XcmsFunctionSet)));
+    }
 
-        /// <summary>Validates that the <see cref="XcmsFunctionSet" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XcmsFunctionSet).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XcmsFunctionSet" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XcmsFunctionSet).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XcmsFunctionSet" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XcmsFunctionSet" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XcmsFunctionSet), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(XcmsFunctionSet), Is.EqualTo(12));
-            }
+            Assert.That(sizeof(XcmsFunctionSet), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(XcmsFunctionSet), Is.EqualTo(12));
         }
     }
 }

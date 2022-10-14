@@ -3,15 +3,14 @@
 // Ported from include/X11/Xlib.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
-namespace TerraFX.Interop.Xlib
+namespace TerraFX.Interop.Xlib;
+
+public unsafe partial struct XOMFontInfo
 {
-    public unsafe partial struct XOMFontInfo
-    {
-        public int num_font;
+    public int num_font;
 
-        public XFontStruct** font_struct_list;
+    public XFontStruct** font_struct_list;
 
-        [NativeTypeName("char **")]
-        public sbyte** font_name_list;
-    }
+    [NativeTypeName("char **")]
+    public sbyte** font_name_list;
 }

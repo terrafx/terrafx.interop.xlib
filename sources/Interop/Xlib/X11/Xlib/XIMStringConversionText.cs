@@ -5,31 +5,30 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib
+namespace TerraFX.Interop.Xlib;
+
+public unsafe partial struct XIMStringConversionText
 {
-    public unsafe partial struct XIMStringConversionText
+    [NativeTypeName("unsigned short")]
+    public ushort length;
+
+    [NativeTypeName("XIMStringConversionFeedback *")]
+    public nuint* feedback;
+
+    public int encoding_is_wchar;
+
+    [NativeTypeName("union (anonymous union at /usr/include/X11/Xlib.h:1295:5)")]
+    public _string_e__Union @string;
+
+    [StructLayout(LayoutKind.Explicit)]
+    public unsafe partial struct _string_e__Union
     {
-        [NativeTypeName("unsigned short")]
-        public ushort length;
+        [FieldOffset(0)]
+        [NativeTypeName("char *")]
+        public sbyte* mbs;
 
-        [NativeTypeName("XIMStringConversionFeedback *")]
-        public nuint* feedback;
-
-        public int encoding_is_wchar;
-
-        [NativeTypeName("union (anonymous union at /usr/include/X11/Xlib.h:1295:5)")]
-        public _string_e__Union @string;
-
-        [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _string_e__Union
-        {
-            [FieldOffset(0)]
-            [NativeTypeName("char *")]
-            public sbyte* mbs;
-
-            [FieldOffset(0)]
-            [NativeTypeName("wchar_t *")]
-            public uint* wcs;
-        }
+        [FieldOffset(0)]
+        [NativeTypeName("wchar_t *")]
+        public uint* wcs;
     }
 }

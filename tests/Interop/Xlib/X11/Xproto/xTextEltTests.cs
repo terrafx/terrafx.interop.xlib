@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xTextElt" /> struct.</summary>
+public static unsafe partial class xTextEltTests
 {
-    /// <summary>Provides validation of the <see cref="xTextElt" /> struct.</summary>
-    public static unsafe partial class xTextEltTests
+    /// <summary>Validates that the <see cref="xTextElt" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xTextElt" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xTextElt>(), Is.EqualTo(sizeof(xTextElt)));
-        }
+        Assert.That(Marshal.SizeOf<xTextElt>(), Is.EqualTo(sizeof(xTextElt)));
+    }
 
-        /// <summary>Validates that the <see cref="xTextElt" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xTextElt).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xTextElt" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xTextElt).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xTextElt" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xTextElt), Is.EqualTo(2));
-        }
+    /// <summary>Validates that the <see cref="xTextElt" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xTextElt), Is.EqualTo(2));
     }
 }

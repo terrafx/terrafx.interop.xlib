@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XAnyEvent" /> struct.</summary>
+public static unsafe partial class XAnyEventTests
 {
-    /// <summary>Provides validation of the <see cref="XAnyEvent" /> struct.</summary>
-    public static unsafe partial class XAnyEventTests
+    /// <summary>Validates that the <see cref="XAnyEvent" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XAnyEvent" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XAnyEvent>(), Is.EqualTo(sizeof(XAnyEvent)));
-        }
+        Assert.That(Marshal.SizeOf<XAnyEvent>(), Is.EqualTo(sizeof(XAnyEvent)));
+    }
 
-        /// <summary>Validates that the <see cref="XAnyEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XAnyEvent).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XAnyEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XAnyEvent).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XAnyEvent" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XAnyEvent" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XAnyEvent), Is.EqualTo(40));
-            }
-            else
-            {
-                Assert.That(sizeof(XAnyEvent), Is.EqualTo(20));
-            }
+            Assert.That(sizeof(XAnyEvent), Is.EqualTo(40));
+        }
+        else
+        {
+            Assert.That(sizeof(XAnyEvent), Is.EqualTo(20));
         }
     }
 }

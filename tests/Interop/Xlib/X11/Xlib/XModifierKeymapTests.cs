@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XModifierKeymap" /> struct.</summary>
+public static unsafe partial class XModifierKeymapTests
 {
-    /// <summary>Provides validation of the <see cref="XModifierKeymap" /> struct.</summary>
-    public static unsafe partial class XModifierKeymapTests
+    /// <summary>Validates that the <see cref="XModifierKeymap" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XModifierKeymap" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XModifierKeymap>(), Is.EqualTo(sizeof(XModifierKeymap)));
-        }
+        Assert.That(Marshal.SizeOf<XModifierKeymap>(), Is.EqualTo(sizeof(XModifierKeymap)));
+    }
 
-        /// <summary>Validates that the <see cref="XModifierKeymap" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XModifierKeymap).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XModifierKeymap" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XModifierKeymap).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XModifierKeymap" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XModifierKeymap" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XModifierKeymap), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(XModifierKeymap), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(XModifierKeymap), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(XModifierKeymap), Is.EqualTo(8));
         }
     }
 }

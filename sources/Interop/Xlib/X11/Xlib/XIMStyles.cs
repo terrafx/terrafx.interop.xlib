@@ -3,14 +3,13 @@
 // Ported from include/X11/Xlib.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
-namespace TerraFX.Interop.Xlib
-{
-    public unsafe partial struct XIMStyles
-    {
-        [NativeTypeName("unsigned short")]
-        public ushort count_styles;
+namespace TerraFX.Interop.Xlib;
 
-        [NativeTypeName("XIMStyle *")]
-        public nuint* supported_styles;
-    }
+public unsafe partial struct XIMStyles
+{
+    [NativeTypeName("unsigned short")]
+    public ushort count_styles;
+
+    [NativeTypeName("XIMStyle *")]
+    public nuint* supported_styles;
 }

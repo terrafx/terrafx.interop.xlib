@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XColormapEvent" /> struct.</summary>
+public static unsafe partial class XColormapEventTests
 {
-    /// <summary>Provides validation of the <see cref="XColormapEvent" /> struct.</summary>
-    public static unsafe partial class XColormapEventTests
+    /// <summary>Validates that the <see cref="XColormapEvent" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XColormapEvent" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XColormapEvent>(), Is.EqualTo(sizeof(XColormapEvent)));
-        }
+        Assert.That(Marshal.SizeOf<XColormapEvent>(), Is.EqualTo(sizeof(XColormapEvent)));
+    }
 
-        /// <summary>Validates that the <see cref="XColormapEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XColormapEvent).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XColormapEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XColormapEvent).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XColormapEvent" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XColormapEvent" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XColormapEvent), Is.EqualTo(56));
-            }
-            else
-            {
-                Assert.That(sizeof(XColormapEvent), Is.EqualTo(32));
-            }
+            Assert.That(sizeof(XColormapEvent), Is.EqualTo(56));
+        }
+        else
+        {
+            Assert.That(sizeof(XColormapEvent), Is.EqualTo(32));
         }
     }
 }

@@ -3,22 +3,21 @@
 // Ported from include/X11/Xlib.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
-namespace TerraFX.Interop.Xlib
+namespace TerraFX.Interop.Xlib;
+
+[NativeTypeName("unsigned int")]
+public enum XIMCaretDirection : uint
 {
-    [NativeTypeName("unsigned int")]
-    public enum XIMCaretDirection : uint
-    {
-        XIMForwardChar,
-        XIMBackwardChar,
-        XIMForwardWord,
-        XIMBackwardWord,
-        XIMCaretUp,
-        XIMCaretDown,
-        XIMNextLine,
-        XIMPreviousLine,
-        XIMLineStart,
-        XIMLineEnd,
-        XIMAbsolutePosition,
-        XIMDontChange,
-    }
+    XIMForwardChar,
+    XIMBackwardChar,
+    XIMForwardWord,
+    XIMBackwardWord,
+    XIMCaretUp,
+    XIMCaretDown,
+    XIMNextLine,
+    XIMPreviousLine,
+    XIMLineStart,
+    XIMLineEnd,
+    XIMAbsolutePosition,
+    XIMDontChange,
 }

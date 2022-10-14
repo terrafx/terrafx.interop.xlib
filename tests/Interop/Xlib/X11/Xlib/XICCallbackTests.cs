@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XICCallback" /> struct.</summary>
+public static unsafe partial class XICCallbackTests
 {
-    /// <summary>Provides validation of the <see cref="XICCallback" /> struct.</summary>
-    public static unsafe partial class XICCallbackTests
+    /// <summary>Validates that the <see cref="XICCallback" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XICCallback" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XICCallback>(), Is.EqualTo(sizeof(XICCallback)));
-        }
+        Assert.That(Marshal.SizeOf<XICCallback>(), Is.EqualTo(sizeof(XICCallback)));
+    }
 
-        /// <summary>Validates that the <see cref="XICCallback" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XICCallback).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XICCallback" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XICCallback).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XICCallback" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XICCallback" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XICCallback), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(XICCallback), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(XICCallback), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(XICCallback), Is.EqualTo(8));
         }
     }
 }

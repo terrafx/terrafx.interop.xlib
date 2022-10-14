@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XWMHints" /> struct.</summary>
+public static unsafe partial class XWMHintsTests
 {
-    /// <summary>Provides validation of the <see cref="XWMHints" /> struct.</summary>
-    public static unsafe partial class XWMHintsTests
+    /// <summary>Validates that the <see cref="XWMHints" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XWMHints" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XWMHints>(), Is.EqualTo(sizeof(XWMHints)));
-        }
+        Assert.That(Marshal.SizeOf<XWMHints>(), Is.EqualTo(sizeof(XWMHints)));
+    }
 
-        /// <summary>Validates that the <see cref="XWMHints" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XWMHints).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XWMHints" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XWMHints).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XWMHints" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XWMHints" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XWMHints), Is.EqualTo(56));
-            }
-            else
-            {
-                Assert.That(sizeof(XWMHints), Is.EqualTo(36));
-            }
+            Assert.That(sizeof(XWMHints), Is.EqualTo(56));
+        }
+        else
+        {
+            Assert.That(sizeof(XWMHints), Is.EqualTo(36));
         }
     }
 }

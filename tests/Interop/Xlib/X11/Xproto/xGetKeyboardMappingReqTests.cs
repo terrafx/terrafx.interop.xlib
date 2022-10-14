@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xGetKeyboardMappingReq" /> struct.</summary>
+public static unsafe partial class xGetKeyboardMappingReqTests
 {
-    /// <summary>Provides validation of the <see cref="xGetKeyboardMappingReq" /> struct.</summary>
-    public static unsafe partial class xGetKeyboardMappingReqTests
+    /// <summary>Validates that the <see cref="xGetKeyboardMappingReq" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xGetKeyboardMappingReq" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xGetKeyboardMappingReq>(), Is.EqualTo(sizeof(xGetKeyboardMappingReq)));
-        }
+        Assert.That(Marshal.SizeOf<xGetKeyboardMappingReq>(), Is.EqualTo(sizeof(xGetKeyboardMappingReq)));
+    }
 
-        /// <summary>Validates that the <see cref="xGetKeyboardMappingReq" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xGetKeyboardMappingReq).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xGetKeyboardMappingReq" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xGetKeyboardMappingReq).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xGetKeyboardMappingReq" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xGetKeyboardMappingReq), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="xGetKeyboardMappingReq" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xGetKeyboardMappingReq), Is.EqualTo(8));
     }
 }

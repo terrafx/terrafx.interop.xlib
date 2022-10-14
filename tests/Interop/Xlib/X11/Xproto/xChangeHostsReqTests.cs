@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xChangeHostsReq" /> struct.</summary>
+public static unsafe partial class xChangeHostsReqTests
 {
-    /// <summary>Provides validation of the <see cref="xChangeHostsReq" /> struct.</summary>
-    public static unsafe partial class xChangeHostsReqTests
+    /// <summary>Validates that the <see cref="xChangeHostsReq" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xChangeHostsReq" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xChangeHostsReq>(), Is.EqualTo(sizeof(xChangeHostsReq)));
-        }
+        Assert.That(Marshal.SizeOf<xChangeHostsReq>(), Is.EqualTo(sizeof(xChangeHostsReq)));
+    }
 
-        /// <summary>Validates that the <see cref="xChangeHostsReq" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xChangeHostsReq).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xChangeHostsReq" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xChangeHostsReq).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xChangeHostsReq" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xChangeHostsReq), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="xChangeHostsReq" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xChangeHostsReq), Is.EqualTo(8));
     }
 }

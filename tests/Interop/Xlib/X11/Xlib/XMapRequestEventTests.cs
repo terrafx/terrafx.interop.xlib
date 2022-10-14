@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XMapRequestEvent" /> struct.</summary>
+public static unsafe partial class XMapRequestEventTests
 {
-    /// <summary>Provides validation of the <see cref="XMapRequestEvent" /> struct.</summary>
-    public static unsafe partial class XMapRequestEventTests
+    /// <summary>Validates that the <see cref="XMapRequestEvent" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XMapRequestEvent" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XMapRequestEvent>(), Is.EqualTo(sizeof(XMapRequestEvent)));
-        }
+        Assert.That(Marshal.SizeOf<XMapRequestEvent>(), Is.EqualTo(sizeof(XMapRequestEvent)));
+    }
 
-        /// <summary>Validates that the <see cref="XMapRequestEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XMapRequestEvent).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XMapRequestEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XMapRequestEvent).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XMapRequestEvent" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XMapRequestEvent" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XMapRequestEvent), Is.EqualTo(48));
-            }
-            else
-            {
-                Assert.That(sizeof(XMapRequestEvent), Is.EqualTo(24));
-            }
+            Assert.That(sizeof(XMapRequestEvent), Is.EqualTo(48));
+        }
+        else
+        {
+            Assert.That(sizeof(XMapRequestEvent), Is.EqualTo(24));
         }
     }
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XCirculateRequestEvent" /> struct.</summary>
+public static unsafe partial class XCirculateRequestEventTests
 {
-    /// <summary>Provides validation of the <see cref="XCirculateRequestEvent" /> struct.</summary>
-    public static unsafe partial class XCirculateRequestEventTests
+    /// <summary>Validates that the <see cref="XCirculateRequestEvent" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XCirculateRequestEvent" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XCirculateRequestEvent>(), Is.EqualTo(sizeof(XCirculateRequestEvent)));
-        }
+        Assert.That(Marshal.SizeOf<XCirculateRequestEvent>(), Is.EqualTo(sizeof(XCirculateRequestEvent)));
+    }
 
-        /// <summary>Validates that the <see cref="XCirculateRequestEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XCirculateRequestEvent).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XCirculateRequestEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XCirculateRequestEvent).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XCirculateRequestEvent" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XCirculateRequestEvent" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XCirculateRequestEvent), Is.EqualTo(56));
-            }
-            else
-            {
-                Assert.That(sizeof(XCirculateRequestEvent), Is.EqualTo(28));
-            }
+            Assert.That(sizeof(XCirculateRequestEvent), Is.EqualTo(56));
+        }
+        else
+        {
+            Assert.That(sizeof(XCirculateRequestEvent), Is.EqualTo(28));
         }
     }
 }

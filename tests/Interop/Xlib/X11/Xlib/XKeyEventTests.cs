@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XKeyEvent" /> struct.</summary>
+public static unsafe partial class XKeyEventTests
 {
-    /// <summary>Provides validation of the <see cref="XKeyEvent" /> struct.</summary>
-    public static unsafe partial class XKeyEventTests
+    /// <summary>Validates that the <see cref="XKeyEvent" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XKeyEvent" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XKeyEvent>(), Is.EqualTo(sizeof(XKeyEvent)));
-        }
+        Assert.That(Marshal.SizeOf<XKeyEvent>(), Is.EqualTo(sizeof(XKeyEvent)));
+    }
 
-        /// <summary>Validates that the <see cref="XKeyEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XKeyEvent).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XKeyEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XKeyEvent).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XKeyEvent" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XKeyEvent" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XKeyEvent), Is.EqualTo(96));
-            }
-            else
-            {
-                Assert.That(sizeof(XKeyEvent), Is.EqualTo(60));
-            }
+            Assert.That(sizeof(XKeyEvent), Is.EqualTo(96));
+        }
+        else
+        {
+            Assert.That(sizeof(XKeyEvent), Is.EqualTo(60));
         }
     }
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XIMPreeditStateNotifyCallbackStruct" /> struct.</summary>
+public static unsafe partial class XIMPreeditStateNotifyCallbackStructTests
 {
-    /// <summary>Provides validation of the <see cref="XIMPreeditStateNotifyCallbackStruct" /> struct.</summary>
-    public static unsafe partial class XIMPreeditStateNotifyCallbackStructTests
+    /// <summary>Validates that the <see cref="XIMPreeditStateNotifyCallbackStruct" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XIMPreeditStateNotifyCallbackStruct" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XIMPreeditStateNotifyCallbackStruct>(), Is.EqualTo(sizeof(XIMPreeditStateNotifyCallbackStruct)));
-        }
+        Assert.That(Marshal.SizeOf<XIMPreeditStateNotifyCallbackStruct>(), Is.EqualTo(sizeof(XIMPreeditStateNotifyCallbackStruct)));
+    }
 
-        /// <summary>Validates that the <see cref="XIMPreeditStateNotifyCallbackStruct" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XIMPreeditStateNotifyCallbackStruct).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XIMPreeditStateNotifyCallbackStruct" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XIMPreeditStateNotifyCallbackStruct).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XIMPreeditStateNotifyCallbackStruct" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XIMPreeditStateNotifyCallbackStruct" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XIMPreeditStateNotifyCallbackStruct), Is.EqualTo(8));
-            }
-            else
-            {
-                Assert.That(sizeof(XIMPreeditStateNotifyCallbackStruct), Is.EqualTo(4));
-            }
+            Assert.That(sizeof(XIMPreeditStateNotifyCallbackStruct), Is.EqualTo(8));
+        }
+        else
+        {
+            Assert.That(sizeof(XIMPreeditStateNotifyCallbackStruct), Is.EqualTo(4));
         }
     }
 }

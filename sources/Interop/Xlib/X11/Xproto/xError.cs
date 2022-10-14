@@ -3,41 +3,40 @@
 // Ported from include/X11/Xproto.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
-namespace TerraFX.Interop.Xlib
+namespace TerraFX.Interop.Xlib;
+
+public partial struct xError
 {
-    public partial struct xError
-    {
-        public byte type;
+    public byte type;
 
-        public byte errorCode;
+    public byte errorCode;
 
-        [NativeTypeName("CARD16")]
-        public ushort sequenceNumber;
+    [NativeTypeName("CARD16")]
+    public ushort sequenceNumber;
 
-        [NativeTypeName("CARD32")]
-        public uint resourceID;
+    [NativeTypeName("CARD32")]
+    public uint resourceID;
 
-        [NativeTypeName("CARD16")]
-        public ushort minorCode;
+    [NativeTypeName("CARD16")]
+    public ushort minorCode;
 
-        [NativeTypeName("CARD8")]
-        public byte majorCode;
+    [NativeTypeName("CARD8")]
+    public byte majorCode;
 
-        public byte pad1;
+    public byte pad1;
 
-        [NativeTypeName("CARD32")]
-        public uint pad3;
+    [NativeTypeName("CARD32")]
+    public uint pad3;
 
-        [NativeTypeName("CARD32")]
-        public uint pad4;
+    [NativeTypeName("CARD32")]
+    public uint pad4;
 
-        [NativeTypeName("CARD32")]
-        public uint pad5;
+    [NativeTypeName("CARD32")]
+    public uint pad5;
 
-        [NativeTypeName("CARD32")]
-        public uint pad6;
+    [NativeTypeName("CARD32")]
+    public uint pad6;
 
-        [NativeTypeName("CARD32")]
-        public uint pad7;
-    }
+    [NativeTypeName("CARD32")]
+    public uint pad7;
 }

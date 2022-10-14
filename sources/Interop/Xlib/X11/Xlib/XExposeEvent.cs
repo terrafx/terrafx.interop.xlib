@@ -3,29 +3,28 @@
 // Ported from include/X11/Xlib.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
-namespace TerraFX.Interop.Xlib
+namespace TerraFX.Interop.Xlib;
+
+public unsafe partial struct XExposeEvent
 {
-    public unsafe partial struct XExposeEvent
-    {
-        public int type;
+    public int type;
 
-        [NativeTypeName("unsigned long")]
-        public nuint serial;
+    [NativeTypeName("unsigned long")]
+    public nuint serial;
 
-        public int send_event;
+    public int send_event;
 
-        public Display* display;
+    public Display* display;
 
-        public Window window;
+    public Window window;
 
-        public int x;
+    public int x;
 
-        public int y;
+    public int y;
 
-        public int width;
+    public int width;
 
-        public int height;
+    public int height;
 
-        public int count;
-    }
+    public int count;
 }

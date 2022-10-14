@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XcmsRGBi" /> struct.</summary>
+public static unsafe partial class XcmsRGBiTests
 {
-    /// <summary>Provides validation of the <see cref="XcmsRGBi" /> struct.</summary>
-    public static unsafe partial class XcmsRGBiTests
+    /// <summary>Validates that the <see cref="XcmsRGBi" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XcmsRGBi" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XcmsRGBi>(), Is.EqualTo(sizeof(XcmsRGBi)));
-        }
+        Assert.That(Marshal.SizeOf<XcmsRGBi>(), Is.EqualTo(sizeof(XcmsRGBi)));
+    }
 
-        /// <summary>Validates that the <see cref="XcmsRGBi" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XcmsRGBi).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XcmsRGBi" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XcmsRGBi).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XcmsRGBi" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(XcmsRGBi), Is.EqualTo(24));
-        }
+    /// <summary>Validates that the <see cref="XcmsRGBi" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(XcmsRGBi), Is.EqualTo(24));
     }
 }
