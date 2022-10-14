@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xQueryBestSizeReq" /> struct.</summary>
+public static unsafe partial class xQueryBestSizeReqTests
 {
-    /// <summary>Provides validation of the <see cref="xQueryBestSizeReq" /> struct.</summary>
-    public static unsafe partial class xQueryBestSizeReqTests
+    /// <summary>Validates that the <see cref="xQueryBestSizeReq" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xQueryBestSizeReq" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xQueryBestSizeReq>(), Is.EqualTo(sizeof(xQueryBestSizeReq)));
-        }
+        Assert.That(Marshal.SizeOf<xQueryBestSizeReq>(), Is.EqualTo(sizeof(xQueryBestSizeReq)));
+    }
 
-        /// <summary>Validates that the <see cref="xQueryBestSizeReq" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xQueryBestSizeReq).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xQueryBestSizeReq" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xQueryBestSizeReq).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xQueryBestSizeReq" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xQueryBestSizeReq), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="xQueryBestSizeReq" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xQueryBestSizeReq), Is.EqualTo(12));
     }
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XMotionEvent" /> struct.</summary>
+public static unsafe partial class XMotionEventTests
 {
-    /// <summary>Provides validation of the <see cref="XMotionEvent" /> struct.</summary>
-    public static unsafe partial class XMotionEventTests
+    /// <summary>Validates that the <see cref="XMotionEvent" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XMotionEvent" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XMotionEvent>(), Is.EqualTo(sizeof(XMotionEvent)));
-        }
+        Assert.That(Marshal.SizeOf<XMotionEvent>(), Is.EqualTo(sizeof(XMotionEvent)));
+    }
 
-        /// <summary>Validates that the <see cref="XMotionEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XMotionEvent).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XMotionEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XMotionEvent).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XMotionEvent" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XMotionEvent" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XMotionEvent), Is.EqualTo(96));
-            }
-            else
-            {
-                Assert.That(sizeof(XMotionEvent), Is.EqualTo(60));
-            }
+            Assert.That(sizeof(XMotionEvent), Is.EqualTo(96));
+        }
+        else
+        {
+            Assert.That(sizeof(XMotionEvent), Is.EqualTo(60));
         }
     }
 }

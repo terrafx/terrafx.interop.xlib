@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xSetDashesReq" /> struct.</summary>
+public static unsafe partial class xSetDashesReqTests
 {
-    /// <summary>Provides validation of the <see cref="xSetDashesReq" /> struct.</summary>
-    public static unsafe partial class xSetDashesReqTests
+    /// <summary>Validates that the <see cref="xSetDashesReq" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xSetDashesReq" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xSetDashesReq>(), Is.EqualTo(sizeof(xSetDashesReq)));
-        }
+        Assert.That(Marshal.SizeOf<xSetDashesReq>(), Is.EqualTo(sizeof(xSetDashesReq)));
+    }
 
-        /// <summary>Validates that the <see cref="xSetDashesReq" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xSetDashesReq).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xSetDashesReq" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xSetDashesReq).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xSetDashesReq" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xSetDashesReq), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="xSetDashesReq" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xSetDashesReq), Is.EqualTo(12));
     }
 }

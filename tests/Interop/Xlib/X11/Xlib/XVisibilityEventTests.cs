@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XVisibilityEvent" /> struct.</summary>
+public static unsafe partial class XVisibilityEventTests
 {
-    /// <summary>Provides validation of the <see cref="XVisibilityEvent" /> struct.</summary>
-    public static unsafe partial class XVisibilityEventTests
+    /// <summary>Validates that the <see cref="XVisibilityEvent" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XVisibilityEvent" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XVisibilityEvent>(), Is.EqualTo(sizeof(XVisibilityEvent)));
-        }
+        Assert.That(Marshal.SizeOf<XVisibilityEvent>(), Is.EqualTo(sizeof(XVisibilityEvent)));
+    }
 
-        /// <summary>Validates that the <see cref="XVisibilityEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XVisibilityEvent).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XVisibilityEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XVisibilityEvent).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XVisibilityEvent" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XVisibilityEvent" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XVisibilityEvent), Is.EqualTo(48));
-            }
-            else
-            {
-                Assert.That(sizeof(XVisibilityEvent), Is.EqualTo(24));
-            }
+            Assert.That(sizeof(XVisibilityEvent), Is.EqualTo(48));
+        }
+        else
+        {
+            Assert.That(sizeof(XVisibilityEvent), Is.EqualTo(24));
         }
     }
 }

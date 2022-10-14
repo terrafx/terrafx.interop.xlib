@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xDepth" /> struct.</summary>
+public static unsafe partial class xDepthTests
 {
-    /// <summary>Provides validation of the <see cref="xDepth" /> struct.</summary>
-    public static unsafe partial class xDepthTests
+    /// <summary>Validates that the <see cref="xDepth" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xDepth" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xDepth>(), Is.EqualTo(sizeof(xDepth)));
-        }
+        Assert.That(Marshal.SizeOf<xDepth>(), Is.EqualTo(sizeof(xDepth)));
+    }
 
-        /// <summary>Validates that the <see cref="xDepth" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xDepth).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xDepth" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xDepth).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xDepth" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xDepth), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="xDepth" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xDepth), Is.EqualTo(8));
     }
 }

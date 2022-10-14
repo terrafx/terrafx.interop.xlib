@@ -3,13 +3,12 @@
 // Ported from include/X11/Xlib.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
-namespace TerraFX.Interop.Xlib
-{
-    public unsafe partial struct XModifierKeymap
-    {
-        public int max_keypermod;
+namespace TerraFX.Interop.Xlib;
 
-        [NativeTypeName("KeyCode *")]
-        public byte* modifiermap;
-    }
+public unsafe partial struct XModifierKeymap
+{
+    public int max_keypermod;
+
+    [NativeTypeName("KeyCode *")]
+    public byte* modifiermap;
 }

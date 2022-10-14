@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xOpenFontReq" /> struct.</summary>
+public static unsafe partial class xOpenFontReqTests
 {
-    /// <summary>Provides validation of the <see cref="xOpenFontReq" /> struct.</summary>
-    public static unsafe partial class xOpenFontReqTests
+    /// <summary>Validates that the <see cref="xOpenFontReq" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xOpenFontReq" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xOpenFontReq>(), Is.EqualTo(sizeof(xOpenFontReq)));
-        }
+        Assert.That(Marshal.SizeOf<xOpenFontReq>(), Is.EqualTo(sizeof(xOpenFontReq)));
+    }
 
-        /// <summary>Validates that the <see cref="xOpenFontReq" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xOpenFontReq).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xOpenFontReq" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xOpenFontReq).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xOpenFontReq" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xOpenFontReq), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="xOpenFontReq" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xOpenFontReq), Is.EqualTo(12));
     }
 }

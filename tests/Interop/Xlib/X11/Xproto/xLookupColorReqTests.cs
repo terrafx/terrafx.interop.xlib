@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xLookupColorReq" /> struct.</summary>
+public static unsafe partial class xLookupColorReqTests
 {
-    /// <summary>Provides validation of the <see cref="xLookupColorReq" /> struct.</summary>
-    public static unsafe partial class xLookupColorReqTests
+    /// <summary>Validates that the <see cref="xLookupColorReq" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xLookupColorReq" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xLookupColorReq>(), Is.EqualTo(sizeof(xLookupColorReq)));
-        }
+        Assert.That(Marshal.SizeOf<xLookupColorReq>(), Is.EqualTo(sizeof(xLookupColorReq)));
+    }
 
-        /// <summary>Validates that the <see cref="xLookupColorReq" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xLookupColorReq).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xLookupColorReq" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xLookupColorReq).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xLookupColorReq" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xLookupColorReq), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="xLookupColorReq" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xLookupColorReq), Is.EqualTo(12));
     }
 }

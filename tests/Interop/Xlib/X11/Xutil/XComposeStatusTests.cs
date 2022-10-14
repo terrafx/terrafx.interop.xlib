@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XComposeStatus" /> struct.</summary>
+public static unsafe partial class XComposeStatusTests
 {
-    /// <summary>Provides validation of the <see cref="XComposeStatus" /> struct.</summary>
-    public static unsafe partial class XComposeStatusTests
+    /// <summary>Validates that the <see cref="XComposeStatus" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XComposeStatus" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XComposeStatus>(), Is.EqualTo(sizeof(XComposeStatus)));
-        }
+        Assert.That(Marshal.SizeOf<XComposeStatus>(), Is.EqualTo(sizeof(XComposeStatus)));
+    }
 
-        /// <summary>Validates that the <see cref="XComposeStatus" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XComposeStatus).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XComposeStatus" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XComposeStatus).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XComposeStatus" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XComposeStatus" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XComposeStatus), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(XComposeStatus), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(XComposeStatus), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(XComposeStatus), Is.EqualTo(8));
         }
     }
 }

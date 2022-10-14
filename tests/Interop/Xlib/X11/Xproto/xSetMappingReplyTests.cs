@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xSetMappingReply" /> struct.</summary>
+public static unsafe partial class xSetMappingReplyTests
 {
-    /// <summary>Provides validation of the <see cref="xSetMappingReply" /> struct.</summary>
-    public static unsafe partial class xSetMappingReplyTests
+    /// <summary>Validates that the <see cref="xSetMappingReply" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xSetMappingReply" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xSetMappingReply>(), Is.EqualTo(sizeof(xSetMappingReply)));
-        }
+        Assert.That(Marshal.SizeOf<xSetMappingReply>(), Is.EqualTo(sizeof(xSetMappingReply)));
+    }
 
-        /// <summary>Validates that the <see cref="xSetMappingReply" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xSetMappingReply).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xSetMappingReply" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xSetMappingReply).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xSetMappingReply" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xSetMappingReply), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="xSetMappingReply" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xSetMappingReply), Is.EqualTo(32));
     }
 }

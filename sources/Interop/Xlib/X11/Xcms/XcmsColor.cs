@@ -5,48 +5,47 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib
+namespace TerraFX.Interop.Xlib;
+
+public partial struct XcmsColor
 {
-    public partial struct XcmsColor
+    [NativeTypeName("union (anonymous union at /usr/include/X11/Xcms.h:176:5)")]
+    public _spec_e__Union spec;
+
+    [NativeTypeName("unsigned long")]
+    public nuint pixel;
+
+    [NativeTypeName("XcmsColorFormat")]
+    public nuint format;
+
+    [StructLayout(LayoutKind.Explicit)]
+    public partial struct _spec_e__Union
     {
-        [NativeTypeName("union (anonymous union at /usr/include/X11/Xcms.h:176:5)")]
-        public _spec_e__Union spec;
+        [FieldOffset(0)]
+        public XcmsRGB RGB;
 
-        [NativeTypeName("unsigned long")]
-        public nuint pixel;
+        [FieldOffset(0)]
+        public XcmsRGBi RGBi;
 
-        [NativeTypeName("XcmsColorFormat")]
-        public nuint format;
+        [FieldOffset(0)]
+        public XcmsCIEXYZ CIEXYZ;
 
-        [StructLayout(LayoutKind.Explicit)]
-        public partial struct _spec_e__Union
-        {
-            [FieldOffset(0)]
-            public XcmsRGB RGB;
+        [FieldOffset(0)]
+        public XcmsCIEuvY CIEuvY;
 
-            [FieldOffset(0)]
-            public XcmsRGBi RGBi;
+        [FieldOffset(0)]
+        public XcmsCIExyY CIExyY;
 
-            [FieldOffset(0)]
-            public XcmsCIEXYZ CIEXYZ;
+        [FieldOffset(0)]
+        public XcmsCIELab CIELab;
 
-            [FieldOffset(0)]
-            public XcmsCIEuvY CIEuvY;
+        [FieldOffset(0)]
+        public XcmsCIELuv CIELuv;
 
-            [FieldOffset(0)]
-            public XcmsCIExyY CIExyY;
+        [FieldOffset(0)]
+        public XcmsTekHVC TekHVC;
 
-            [FieldOffset(0)]
-            public XcmsCIELab CIELab;
-
-            [FieldOffset(0)]
-            public XcmsCIELuv CIELuv;
-
-            [FieldOffset(0)]
-            public XcmsTekHVC TekHVC;
-
-            [FieldOffset(0)]
-            public XcmsPad Pad;
-        }
+        [FieldOffset(0)]
+        public XcmsPad Pad;
     }
 }

@@ -3,20 +3,19 @@
 // Ported from include/X11/Xprotostr.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
-namespace TerraFX.Interop.Xlib
+namespace TerraFX.Interop.Xlib;
+
+public partial struct xSegment
 {
-    public partial struct xSegment
-    {
-        [NativeTypeName("INT16")]
-        public short x1;
+    [NativeTypeName("INT16")]
+    public short x1;
 
-        [NativeTypeName("INT16")]
-        public short y1;
+    [NativeTypeName("INT16")]
+    public short y1;
 
-        [NativeTypeName("INT16")]
-        public short x2;
+    [NativeTypeName("INT16")]
+    public short x2;
 
-        [NativeTypeName("INT16")]
-        public short y2;
-    }
+    [NativeTypeName("INT16")]
+    public short y2;
 }

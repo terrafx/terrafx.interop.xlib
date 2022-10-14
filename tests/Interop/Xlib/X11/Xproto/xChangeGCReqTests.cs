@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xChangeGCReq" /> struct.</summary>
+public static unsafe partial class xChangeGCReqTests
 {
-    /// <summary>Provides validation of the <see cref="xChangeGCReq" /> struct.</summary>
-    public static unsafe partial class xChangeGCReqTests
+    /// <summary>Validates that the <see cref="xChangeGCReq" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xChangeGCReq" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xChangeGCReq>(), Is.EqualTo(sizeof(xChangeGCReq)));
-        }
+        Assert.That(Marshal.SizeOf<xChangeGCReq>(), Is.EqualTo(sizeof(xChangeGCReq)));
+    }
 
-        /// <summary>Validates that the <see cref="xChangeGCReq" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xChangeGCReq).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xChangeGCReq" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xChangeGCReq).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xChangeGCReq" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xChangeGCReq), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="xChangeGCReq" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xChangeGCReq), Is.EqualTo(12));
     }
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XDestroyWindowEvent" /> struct.</summary>
+public static unsafe partial class XDestroyWindowEventTests
 {
-    /// <summary>Provides validation of the <see cref="XDestroyWindowEvent" /> struct.</summary>
-    public static unsafe partial class XDestroyWindowEventTests
+    /// <summary>Validates that the <see cref="XDestroyWindowEvent" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XDestroyWindowEvent" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XDestroyWindowEvent>(), Is.EqualTo(sizeof(XDestroyWindowEvent)));
-        }
+        Assert.That(Marshal.SizeOf<XDestroyWindowEvent>(), Is.EqualTo(sizeof(XDestroyWindowEvent)));
+    }
 
-        /// <summary>Validates that the <see cref="XDestroyWindowEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XDestroyWindowEvent).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XDestroyWindowEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XDestroyWindowEvent).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XDestroyWindowEvent" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XDestroyWindowEvent" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XDestroyWindowEvent), Is.EqualTo(48));
-            }
-            else
-            {
-                Assert.That(sizeof(XDestroyWindowEvent), Is.EqualTo(24));
-            }
+            Assert.That(sizeof(XDestroyWindowEvent), Is.EqualTo(48));
+        }
+        else
+        {
+            Assert.That(sizeof(XDestroyWindowEvent), Is.EqualTo(24));
         }
     }
 }

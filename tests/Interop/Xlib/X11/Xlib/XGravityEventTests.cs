@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XGravityEvent" /> struct.</summary>
+public static unsafe partial class XGravityEventTests
 {
-    /// <summary>Provides validation of the <see cref="XGravityEvent" /> struct.</summary>
-    public static unsafe partial class XGravityEventTests
+    /// <summary>Validates that the <see cref="XGravityEvent" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XGravityEvent" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XGravityEvent>(), Is.EqualTo(sizeof(XGravityEvent)));
-        }
+        Assert.That(Marshal.SizeOf<XGravityEvent>(), Is.EqualTo(sizeof(XGravityEvent)));
+    }
 
-        /// <summary>Validates that the <see cref="XGravityEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XGravityEvent).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XGravityEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XGravityEvent).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XGravityEvent" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XGravityEvent" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XGravityEvent), Is.EqualTo(56));
-            }
-            else
-            {
-                Assert.That(sizeof(XGravityEvent), Is.EqualTo(32));
-            }
+            Assert.That(sizeof(XGravityEvent), Is.EqualTo(56));
+        }
+        else
+        {
+            Assert.That(sizeof(XGravityEvent), Is.EqualTo(32));
         }
     }
 }

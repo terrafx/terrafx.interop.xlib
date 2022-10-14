@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XTextItem" /> struct.</summary>
+public static unsafe partial class XTextItemTests
 {
-    /// <summary>Provides validation of the <see cref="XTextItem" /> struct.</summary>
-    public static unsafe partial class XTextItemTests
+    /// <summary>Validates that the <see cref="XTextItem" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XTextItem" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XTextItem>(), Is.EqualTo(sizeof(XTextItem)));
-        }
+        Assert.That(Marshal.SizeOf<XTextItem>(), Is.EqualTo(sizeof(XTextItem)));
+    }
 
-        /// <summary>Validates that the <see cref="XTextItem" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XTextItem).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XTextItem" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XTextItem).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XTextItem" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XTextItem" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XTextItem), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(XTextItem), Is.EqualTo(16));
-            }
+            Assert.That(sizeof(XTextItem), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(XTextItem), Is.EqualTo(16));
         }
     }
 }

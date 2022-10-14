@@ -3,30 +3,29 @@
 // Ported from include/X11/Xcms.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © Tektronix, Inc.
 
-namespace TerraFX.Interop.Xlib
+namespace TerraFX.Interop.Xlib;
+
+public unsafe partial struct XcmsCCCRec
 {
-    public unsafe partial struct XcmsCCCRec
-    {
-        public Display* dpy;
+    public Display* dpy;
 
-        public int screenNumber;
+    public int screenNumber;
 
-        public Visual* visual;
+    public Visual* visual;
 
-        public XcmsColor clientWhitePt;
+    public XcmsColor clientWhitePt;
 
-        [NativeTypeName("XcmsCompressionProc")]
-        public delegate* unmanaged<XcmsCCC, XcmsColor*, uint, uint, int*, int> gamutCompProc;
+    [NativeTypeName("XcmsCompressionProc")]
+    public delegate* unmanaged<XcmsCCC, XcmsColor*, uint, uint, int*, int> gamutCompProc;
 
-        [NativeTypeName("XPointer")]
-        public sbyte* gamutCompClientData;
+    [NativeTypeName("XPointer")]
+    public sbyte* gamutCompClientData;
 
-        [NativeTypeName("XcmsWhiteAdjustProc")]
-        public delegate* unmanaged<XcmsCCC, XcmsColor*, XcmsColor*, nuint, XcmsColor*, uint, int*, int> whitePtAdjProc;
+    [NativeTypeName("XcmsWhiteAdjustProc")]
+    public delegate* unmanaged<XcmsCCC, XcmsColor*, XcmsColor*, nuint, XcmsColor*, uint, int*, int> whitePtAdjProc;
 
-        [NativeTypeName("XPointer")]
-        public sbyte* whitePtAdjClientData;
+    [NativeTypeName("XPointer")]
+    public sbyte* whitePtAdjClientData;
 
-        public XcmsPerScrnInfo* pPerScrnInfo;
-    }
+    public XcmsPerScrnInfo* pPerScrnInfo;
 }

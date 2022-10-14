@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="Depth" /> struct.</summary>
+public static unsafe partial class DepthTests
 {
-    /// <summary>Provides validation of the <see cref="Depth" /> struct.</summary>
-    public static unsafe partial class DepthTests
+    /// <summary>Validates that the <see cref="Depth" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="Depth" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<Depth>(), Is.EqualTo(sizeof(Depth)));
-        }
+        Assert.That(Marshal.SizeOf<Depth>(), Is.EqualTo(sizeof(Depth)));
+    }
 
-        /// <summary>Validates that the <see cref="Depth" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(Depth).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="Depth" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(Depth).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="Depth" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="Depth" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(Depth), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(Depth), Is.EqualTo(12));
-            }
+            Assert.That(sizeof(Depth), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(Depth), Is.EqualTo(12));
         }
     }
 }

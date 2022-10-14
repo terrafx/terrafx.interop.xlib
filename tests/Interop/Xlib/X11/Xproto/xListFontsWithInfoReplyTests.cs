@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xListFontsWithInfoReply" /> struct.</summary>
+public static unsafe partial class xListFontsWithInfoReplyTests
 {
-    /// <summary>Provides validation of the <see cref="xListFontsWithInfoReply" /> struct.</summary>
-    public static unsafe partial class xListFontsWithInfoReplyTests
+    /// <summary>Validates that the <see cref="xListFontsWithInfoReply" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xListFontsWithInfoReply" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xListFontsWithInfoReply>(), Is.EqualTo(sizeof(xListFontsWithInfoReply)));
-        }
+        Assert.That(Marshal.SizeOf<xListFontsWithInfoReply>(), Is.EqualTo(sizeof(xListFontsWithInfoReply)));
+    }
 
-        /// <summary>Validates that the <see cref="xListFontsWithInfoReply" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xListFontsWithInfoReply).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xListFontsWithInfoReply" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xListFontsWithInfoReply).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xListFontsWithInfoReply" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xListFontsWithInfoReply), Is.EqualTo(60));
-        }
+    /// <summary>Validates that the <see cref="xListFontsWithInfoReply" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xListFontsWithInfoReply), Is.EqualTo(60));
     }
 }

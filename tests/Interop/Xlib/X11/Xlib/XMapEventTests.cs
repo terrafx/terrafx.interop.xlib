@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XMapEvent" /> struct.</summary>
+public static unsafe partial class XMapEventTests
 {
-    /// <summary>Provides validation of the <see cref="XMapEvent" /> struct.</summary>
-    public static unsafe partial class XMapEventTests
+    /// <summary>Validates that the <see cref="XMapEvent" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XMapEvent" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XMapEvent>(), Is.EqualTo(sizeof(XMapEvent)));
-        }
+        Assert.That(Marshal.SizeOf<XMapEvent>(), Is.EqualTo(sizeof(XMapEvent)));
+    }
 
-        /// <summary>Validates that the <see cref="XMapEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XMapEvent).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XMapEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XMapEvent).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XMapEvent" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XMapEvent" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XMapEvent), Is.EqualTo(56));
-            }
-            else
-            {
-                Assert.That(sizeof(XMapEvent), Is.EqualTo(28));
-            }
+            Assert.That(sizeof(XMapEvent), Is.EqualTo(56));
+        }
+        else
+        {
+            Assert.That(sizeof(XMapEvent), Is.EqualTo(28));
         }
     }
 }

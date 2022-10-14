@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XSizeHints" /> struct.</summary>
+public static unsafe partial class XSizeHintsTests
 {
-    /// <summary>Provides validation of the <see cref="XSizeHints" /> struct.</summary>
-    public static unsafe partial class XSizeHintsTests
+    /// <summary>Validates that the <see cref="XSizeHints" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XSizeHints" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XSizeHints>(), Is.EqualTo(sizeof(XSizeHints)));
-        }
+        Assert.That(Marshal.SizeOf<XSizeHints>(), Is.EqualTo(sizeof(XSizeHints)));
+    }
 
-        /// <summary>Validates that the <see cref="XSizeHints" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XSizeHints).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XSizeHints" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XSizeHints).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XSizeHints" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XSizeHints" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XSizeHints), Is.EqualTo(80));
-            }
-            else
-            {
-                Assert.That(sizeof(XSizeHints), Is.EqualTo(72));
-            }
+            Assert.That(sizeof(XSizeHints), Is.EqualTo(80));
+        }
+        else
+        {
+            Assert.That(sizeof(XSizeHints), Is.EqualTo(72));
         }
     }
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xSetClipRectanglesReq" /> struct.</summary>
+public static unsafe partial class xSetClipRectanglesReqTests
 {
-    /// <summary>Provides validation of the <see cref="xSetClipRectanglesReq" /> struct.</summary>
-    public static unsafe partial class xSetClipRectanglesReqTests
+    /// <summary>Validates that the <see cref="xSetClipRectanglesReq" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xSetClipRectanglesReq" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xSetClipRectanglesReq>(), Is.EqualTo(sizeof(xSetClipRectanglesReq)));
-        }
+        Assert.That(Marshal.SizeOf<xSetClipRectanglesReq>(), Is.EqualTo(sizeof(xSetClipRectanglesReq)));
+    }
 
-        /// <summary>Validates that the <see cref="xSetClipRectanglesReq" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xSetClipRectanglesReq).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xSetClipRectanglesReq" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xSetClipRectanglesReq).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xSetClipRectanglesReq" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xSetClipRectanglesReq), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="xSetClipRectanglesReq" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xSetClipRectanglesReq), Is.EqualTo(12));
     }
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XKeyboardControl" /> struct.</summary>
+public static unsafe partial class XKeyboardControlTests
 {
-    /// <summary>Provides validation of the <see cref="XKeyboardControl" /> struct.</summary>
-    public static unsafe partial class XKeyboardControlTests
+    /// <summary>Validates that the <see cref="XKeyboardControl" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XKeyboardControl" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XKeyboardControl>(), Is.EqualTo(sizeof(XKeyboardControl)));
-        }
+        Assert.That(Marshal.SizeOf<XKeyboardControl>(), Is.EqualTo(sizeof(XKeyboardControl)));
+    }
 
-        /// <summary>Validates that the <see cref="XKeyboardControl" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XKeyboardControl).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XKeyboardControl" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XKeyboardControl).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XKeyboardControl" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(XKeyboardControl), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="XKeyboardControl" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(XKeyboardControl), Is.EqualTo(32));
     }
 }

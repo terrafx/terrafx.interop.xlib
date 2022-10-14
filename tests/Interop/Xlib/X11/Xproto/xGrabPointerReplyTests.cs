@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xGrabPointerReply" /> struct.</summary>
+public static unsafe partial class xGrabPointerReplyTests
 {
-    /// <summary>Provides validation of the <see cref="xGrabPointerReply" /> struct.</summary>
-    public static unsafe partial class xGrabPointerReplyTests
+    /// <summary>Validates that the <see cref="xGrabPointerReply" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xGrabPointerReply" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xGrabPointerReply>(), Is.EqualTo(sizeof(xGrabPointerReply)));
-        }
+        Assert.That(Marshal.SizeOf<xGrabPointerReply>(), Is.EqualTo(sizeof(xGrabPointerReply)));
+    }
 
-        /// <summary>Validates that the <see cref="xGrabPointerReply" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xGrabPointerReply).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xGrabPointerReply" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xGrabPointerReply).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xGrabPointerReply" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xGrabPointerReply), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="xGrabPointerReply" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xGrabPointerReply), Is.EqualTo(32));
     }
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xGrabKeyboardReq" /> struct.</summary>
+public static unsafe partial class xGrabKeyboardReqTests
 {
-    /// <summary>Provides validation of the <see cref="xGrabKeyboardReq" /> struct.</summary>
-    public static unsafe partial class xGrabKeyboardReqTests
+    /// <summary>Validates that the <see cref="xGrabKeyboardReq" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xGrabKeyboardReq" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xGrabKeyboardReq>(), Is.EqualTo(sizeof(xGrabKeyboardReq)));
-        }
+        Assert.That(Marshal.SizeOf<xGrabKeyboardReq>(), Is.EqualTo(sizeof(xGrabKeyboardReq)));
+    }
 
-        /// <summary>Validates that the <see cref="xGrabKeyboardReq" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xGrabKeyboardReq).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xGrabKeyboardReq" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xGrabKeyboardReq).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xGrabKeyboardReq" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xGrabKeyboardReq), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="xGrabKeyboardReq" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xGrabKeyboardReq), Is.EqualTo(16));
     }
 }

@@ -3,42 +3,41 @@
 // Ported from include/X11/Xproto.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
-namespace TerraFX.Interop.Xlib
+namespace TerraFX.Interop.Xlib;
+
+public partial struct xAllocColorReply
 {
-    public partial struct xAllocColorReply
-    {
-        public byte type;
+    public byte type;
 
-        public byte pad1;
+    public byte pad1;
 
-        [NativeTypeName("CARD16")]
-        public ushort sequenceNumber;
+    [NativeTypeName("CARD16")]
+    public ushort sequenceNumber;
 
-        [NativeTypeName("CARD32")]
-        public uint length;
+    [NativeTypeName("CARD32")]
+    public uint length;
 
-        [NativeTypeName("CARD16")]
-        public ushort red;
+    [NativeTypeName("CARD16")]
+    public ushort red;
 
-        [NativeTypeName("CARD16")]
-        public ushort green;
+    [NativeTypeName("CARD16")]
+    public ushort green;
 
-        [NativeTypeName("CARD16")]
-        public ushort blue;
+    [NativeTypeName("CARD16")]
+    public ushort blue;
 
-        [NativeTypeName("CARD16")]
-        public ushort pad2;
+    [NativeTypeName("CARD16")]
+    public ushort pad2;
 
-        [NativeTypeName("CARD32")]
-        public uint pixel;
+    [NativeTypeName("CARD32")]
+    public uint pixel;
 
-        [NativeTypeName("CARD32")]
-        public uint pad3;
+    [NativeTypeName("CARD32")]
+    public uint pad3;
 
-        [NativeTypeName("CARD32")]
-        public uint pad4;
+    [NativeTypeName("CARD32")]
+    public uint pad4;
 
-        [NativeTypeName("CARD32")]
-        public uint pad5;
-    }
+    [NativeTypeName("CARD32")]
+    public uint pad5;
 }

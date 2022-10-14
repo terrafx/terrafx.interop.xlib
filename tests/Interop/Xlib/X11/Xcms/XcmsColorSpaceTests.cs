@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XcmsColorSpace" /> struct.</summary>
+public static unsafe partial class XcmsColorSpaceTests
 {
-    /// <summary>Provides validation of the <see cref="XcmsColorSpace" /> struct.</summary>
-    public static unsafe partial class XcmsColorSpaceTests
+    /// <summary>Validates that the <see cref="XcmsColorSpace" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XcmsColorSpace" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XcmsColorSpace>(), Is.EqualTo(sizeof(XcmsColorSpace)));
-        }
+        Assert.That(Marshal.SizeOf<XcmsColorSpace>(), Is.EqualTo(sizeof(XcmsColorSpace)));
+    }
 
-        /// <summary>Validates that the <see cref="XcmsColorSpace" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XcmsColorSpace).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XcmsColorSpace" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XcmsColorSpace).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XcmsColorSpace" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XcmsColorSpace" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XcmsColorSpace), Is.EqualTo(48));
-            }
-            else
-            {
-                Assert.That(sizeof(XcmsColorSpace), Is.EqualTo(24));
-            }
+            Assert.That(sizeof(XcmsColorSpace), Is.EqualTo(48));
+        }
+        else
+        {
+            Assert.That(sizeof(XcmsColorSpace), Is.EqualTo(24));
         }
     }
 }

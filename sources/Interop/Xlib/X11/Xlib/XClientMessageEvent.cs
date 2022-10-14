@@ -7,63 +7,62 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib
+namespace TerraFX.Interop.Xlib;
+
+public unsafe partial struct XClientMessageEvent
 {
-    public unsafe partial struct XClientMessageEvent
+    public int type;
+
+    [NativeTypeName("unsigned long")]
+    public nuint serial;
+
+    public int send_event;
+
+    public Display* display;
+
+    public Window window;
+
+    public Atom message_type;
+
+    public int format;
+
+    [NativeTypeName("union (anonymous union at /usr/include/X11/Xlib.h:905:2)")]
+    public _data_e__Union data;
+
+    [StructLayout(LayoutKind.Explicit)]
+    public unsafe partial struct _data_e__Union
     {
-        public int type;
+        [FieldOffset(0)]
+        [NativeTypeName("char [20]")]
+        public fixed sbyte b[20];
 
-        [NativeTypeName("unsigned long")]
-        public nuint serial;
+        [FieldOffset(0)]
+        [NativeTypeName("short [10]")]
+        public fixed short s[10];
 
-        public int send_event;
+        [FieldOffset(0)]
+        [NativeTypeName("long [5]")]
+        public _l_e__FixedBuffer l;
 
-        public Display* display;
-
-        public Window window;
-
-        public Atom message_type;
-
-        public int format;
-
-        [NativeTypeName("union (anonymous union at /usr/include/X11/Xlib.h:905:2)")]
-        public _data_e__Union data;
-
-        [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _data_e__Union
+        public partial struct _l_e__FixedBuffer
         {
-            [FieldOffset(0)]
-            [NativeTypeName("char [20]")]
-            public fixed sbyte b[20];
+            public nint e0;
+            public nint e1;
+            public nint e2;
+            public nint e3;
+            public nint e4;
 
-            [FieldOffset(0)]
-            [NativeTypeName("short [10]")]
-            public fixed short s[10];
-
-            [FieldOffset(0)]
-            [NativeTypeName("long [5]")]
-            public _l_e__FixedBuffer l;
-
-            public partial struct _l_e__FixedBuffer
+            public ref nint this[int index]
             {
-                public nint e0;
-                public nint e1;
-                public nint e2;
-                public nint e3;
-                public nint e4;
-
-                public ref nint this[int index]
-                {
-                    [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                    get
-                    {
-                        return ref AsSpan()[index];
-                    }
-                }
-
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
-                public Span<nint> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 5);
+                get
+                {
+                    return ref AsSpan()[index];
+                }
             }
+
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            public Span<nint> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 5);
         }
     }
 }

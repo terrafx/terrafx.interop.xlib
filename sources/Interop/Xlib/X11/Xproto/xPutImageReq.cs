@@ -3,44 +3,43 @@
 // Ported from include/X11/Xproto.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
-namespace TerraFX.Interop.Xlib
+namespace TerraFX.Interop.Xlib;
+
+public partial struct xPutImageReq
 {
-    public partial struct xPutImageReq
-    {
-        [NativeTypeName("CARD8")]
-        public byte reqType;
+    [NativeTypeName("CARD8")]
+    public byte reqType;
 
-        [NativeTypeName("CARD8")]
-        public byte format;
+    [NativeTypeName("CARD8")]
+    public byte format;
 
-        [NativeTypeName("CARD16")]
-        public ushort length;
+    [NativeTypeName("CARD16")]
+    public ushort length;
 
-        [NativeTypeName("CARD32")]
-        public uint drawable;
+    [NativeTypeName("CARD32")]
+    public uint drawable;
 
-        [NativeTypeName("CARD32")]
-        public uint gc;
+    [NativeTypeName("CARD32")]
+    public uint gc;
 
-        [NativeTypeName("CARD16")]
-        public ushort width;
+    [NativeTypeName("CARD16")]
+    public ushort width;
 
-        [NativeTypeName("CARD16")]
-        public ushort height;
+    [NativeTypeName("CARD16")]
+    public ushort height;
 
-        [NativeTypeName("INT16")]
-        public short dstX;
+    [NativeTypeName("INT16")]
+    public short dstX;
 
-        [NativeTypeName("INT16")]
-        public short dstY;
+    [NativeTypeName("INT16")]
+    public short dstY;
 
-        [NativeTypeName("CARD8")]
-        public byte leftPad;
+    [NativeTypeName("CARD8")]
+    public byte leftPad;
 
-        [NativeTypeName("CARD8")]
-        public byte depth;
+    [NativeTypeName("CARD8")]
+    public byte depth;
 
-        [NativeTypeName("CARD16")]
-        public ushort pad;
-    }
+    [NativeTypeName("CARD16")]
+    public ushort pad;
 }

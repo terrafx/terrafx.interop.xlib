@@ -3,25 +3,24 @@
 // Ported from include/X11/Xproto.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
-namespace TerraFX.Interop.Xlib
+namespace TerraFX.Interop.Xlib;
+
+public partial struct xSendEventReq
 {
-    public partial struct xSendEventReq
-    {
-        [NativeTypeName("CARD8")]
-        public byte reqType;
+    [NativeTypeName("CARD8")]
+    public byte reqType;
 
-        [NativeTypeName("BOOL")]
-        public byte propagate;
+    [NativeTypeName("BOOL")]
+    public byte propagate;
 
-        [NativeTypeName("CARD16")]
-        public ushort length;
+    [NativeTypeName("CARD16")]
+    public ushort length;
 
-        [NativeTypeName("CARD32")]
-        public uint destination;
+    [NativeTypeName("CARD32")]
+    public uint destination;
 
-        [NativeTypeName("CARD32")]
-        public uint eventMask;
+    [NativeTypeName("CARD32")]
+    public uint eventMask;
 
-        public xEvent @event;
-    }
+    public xEvent @event;
 }

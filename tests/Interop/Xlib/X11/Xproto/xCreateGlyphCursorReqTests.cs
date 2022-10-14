@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xCreateGlyphCursorReq" /> struct.</summary>
+public static unsafe partial class xCreateGlyphCursorReqTests
 {
-    /// <summary>Provides validation of the <see cref="xCreateGlyphCursorReq" /> struct.</summary>
-    public static unsafe partial class xCreateGlyphCursorReqTests
+    /// <summary>Validates that the <see cref="xCreateGlyphCursorReq" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xCreateGlyphCursorReq" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xCreateGlyphCursorReq>(), Is.EqualTo(sizeof(xCreateGlyphCursorReq)));
-        }
+        Assert.That(Marshal.SizeOf<xCreateGlyphCursorReq>(), Is.EqualTo(sizeof(xCreateGlyphCursorReq)));
+    }
 
-        /// <summary>Validates that the <see cref="xCreateGlyphCursorReq" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xCreateGlyphCursorReq).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xCreateGlyphCursorReq" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xCreateGlyphCursorReq).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xCreateGlyphCursorReq" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xCreateGlyphCursorReq), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="xCreateGlyphCursorReq" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xCreateGlyphCursorReq), Is.EqualTo(32));
     }
 }

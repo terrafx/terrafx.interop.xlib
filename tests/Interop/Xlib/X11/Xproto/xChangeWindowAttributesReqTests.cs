@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xChangeWindowAttributesReq" /> struct.</summary>
+public static unsafe partial class xChangeWindowAttributesReqTests
 {
-    /// <summary>Provides validation of the <see cref="xChangeWindowAttributesReq" /> struct.</summary>
-    public static unsafe partial class xChangeWindowAttributesReqTests
+    /// <summary>Validates that the <see cref="xChangeWindowAttributesReq" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xChangeWindowAttributesReq" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xChangeWindowAttributesReq>(), Is.EqualTo(sizeof(xChangeWindowAttributesReq)));
-        }
+        Assert.That(Marshal.SizeOf<xChangeWindowAttributesReq>(), Is.EqualTo(sizeof(xChangeWindowAttributesReq)));
+    }
 
-        /// <summary>Validates that the <see cref="xChangeWindowAttributesReq" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xChangeWindowAttributesReq).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xChangeWindowAttributesReq" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xChangeWindowAttributesReq).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xChangeWindowAttributesReq" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xChangeWindowAttributesReq), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="xChangeWindowAttributesReq" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xChangeWindowAttributesReq), Is.EqualTo(12));
     }
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XColor" /> struct.</summary>
+public static unsafe partial class XColorTests
 {
-    /// <summary>Provides validation of the <see cref="XColor" /> struct.</summary>
-    public static unsafe partial class XColorTests
+    /// <summary>Validates that the <see cref="XColor" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XColor" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XColor>(), Is.EqualTo(sizeof(XColor)));
-        }
+        Assert.That(Marshal.SizeOf<XColor>(), Is.EqualTo(sizeof(XColor)));
+    }
 
-        /// <summary>Validates that the <see cref="XColor" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XColor).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XColor" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XColor).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XColor" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XColor" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XColor), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(XColor), Is.EqualTo(12));
-            }
+            Assert.That(sizeof(XColor), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(XColor), Is.EqualTo(12));
         }
     }
 }

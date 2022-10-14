@@ -3,17 +3,16 @@
 // Ported from include/X11/Xproto.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
-namespace TerraFX.Interop.Xlib
+namespace TerraFX.Interop.Xlib;
+
+public partial struct xTimecoord
 {
-    public partial struct xTimecoord
-    {
-        [NativeTypeName("CARD32")]
-        public uint time;
+    [NativeTypeName("CARD32")]
+    public uint time;
 
-        [NativeTypeName("INT16")]
-        public short x;
+    [NativeTypeName("INT16")]
+    public short x;
 
-        [NativeTypeName("INT16")]
-        public short y;
-    }
+    [NativeTypeName("INT16")]
+    public short y;
 }

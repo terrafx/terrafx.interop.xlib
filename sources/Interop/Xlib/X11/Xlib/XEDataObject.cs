@@ -5,27 +5,26 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib
+namespace TerraFX.Interop.Xlib;
+
+[StructLayout(LayoutKind.Explicit)]
+public unsafe partial struct XEDataObject
 {
-    [StructLayout(LayoutKind.Explicit)]
-    public unsafe partial struct XEDataObject
-    {
-        [FieldOffset(0)]
-        public Display* display;
+    [FieldOffset(0)]
+    public Display* display;
 
-        [FieldOffset(0)]
-        public GC gc;
+    [FieldOffset(0)]
+    public GC gc;
 
-        [FieldOffset(0)]
-        public Visual* visual;
+    [FieldOffset(0)]
+    public Visual* visual;
 
-        [FieldOffset(0)]
-        public Screen* screen;
+    [FieldOffset(0)]
+    public Screen* screen;
 
-        [FieldOffset(0)]
-        public ScreenFormat* pixmap_format;
+    [FieldOffset(0)]
+    public ScreenFormat* pixmap_format;
 
-        [FieldOffset(0)]
-        public XFontStruct* font;
-    }
+    [FieldOffset(0)]
+    public XFontStruct* font;
 }

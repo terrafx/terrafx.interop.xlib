@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XVisualInfo" /> struct.</summary>
+public static unsafe partial class XVisualInfoTests
 {
-    /// <summary>Provides validation of the <see cref="XVisualInfo" /> struct.</summary>
-    public static unsafe partial class XVisualInfoTests
+    /// <summary>Validates that the <see cref="XVisualInfo" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XVisualInfo" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XVisualInfo>(), Is.EqualTo(sizeof(XVisualInfo)));
-        }
+        Assert.That(Marshal.SizeOf<XVisualInfo>(), Is.EqualTo(sizeof(XVisualInfo)));
+    }
 
-        /// <summary>Validates that the <see cref="XVisualInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XVisualInfo).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XVisualInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XVisualInfo).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XVisualInfo" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XVisualInfo" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XVisualInfo), Is.EqualTo(64));
-            }
-            else
-            {
-                Assert.That(sizeof(XVisualInfo), Is.EqualTo(40));
-            }
+            Assert.That(sizeof(XVisualInfo), Is.EqualTo(64));
+        }
+        else
+        {
+            Assert.That(sizeof(XVisualInfo), Is.EqualTo(40));
         }
     }
 }

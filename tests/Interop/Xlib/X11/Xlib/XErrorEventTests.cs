@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XErrorEvent" /> struct.</summary>
+public static unsafe partial class XErrorEventTests
 {
-    /// <summary>Provides validation of the <see cref="XErrorEvent" /> struct.</summary>
-    public static unsafe partial class XErrorEventTests
+    /// <summary>Validates that the <see cref="XErrorEvent" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XErrorEvent" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XErrorEvent>(), Is.EqualTo(sizeof(XErrorEvent)));
-        }
+        Assert.That(Marshal.SizeOf<XErrorEvent>(), Is.EqualTo(sizeof(XErrorEvent)));
+    }
 
-        /// <summary>Validates that the <see cref="XErrorEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XErrorEvent).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XErrorEvent" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XErrorEvent).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XErrorEvent" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XErrorEvent" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XErrorEvent), Is.EqualTo(40));
-            }
-            else
-            {
-                Assert.That(sizeof(XErrorEvent), Is.EqualTo(20));
-            }
+            Assert.That(sizeof(XErrorEvent), Is.EqualTo(40));
+        }
+        else
+        {
+            Assert.That(sizeof(XErrorEvent), Is.EqualTo(20));
         }
     }
 }

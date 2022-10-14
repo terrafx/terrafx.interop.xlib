@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xPoint" /> struct.</summary>
+public static unsafe partial class xPointTests
 {
-    /// <summary>Provides validation of the <see cref="xPoint" /> struct.</summary>
-    public static unsafe partial class xPointTests
+    /// <summary>Validates that the <see cref="xPoint" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xPoint" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xPoint>(), Is.EqualTo(sizeof(xPoint)));
-        }
+        Assert.That(Marshal.SizeOf<xPoint>(), Is.EqualTo(sizeof(xPoint)));
+    }
 
-        /// <summary>Validates that the <see cref="xPoint" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xPoint).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xPoint" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xPoint).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xPoint" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xPoint), Is.EqualTo(4));
-        }
+    /// <summary>Validates that the <see cref="xPoint" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xPoint), Is.EqualTo(4));
     }
 }

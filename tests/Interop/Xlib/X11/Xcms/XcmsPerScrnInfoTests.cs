@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XcmsPerScrnInfo" /> struct.</summary>
+public static unsafe partial class XcmsPerScrnInfoTests
 {
-    /// <summary>Provides validation of the <see cref="XcmsPerScrnInfo" /> struct.</summary>
-    public static unsafe partial class XcmsPerScrnInfoTests
+    /// <summary>Validates that the <see cref="XcmsPerScrnInfo" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XcmsPerScrnInfo" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XcmsPerScrnInfo>(), Is.EqualTo(sizeof(XcmsPerScrnInfo)));
-        }
+        Assert.That(Marshal.SizeOf<XcmsPerScrnInfo>(), Is.EqualTo(sizeof(XcmsPerScrnInfo)));
+    }
 
-        /// <summary>Validates that the <see cref="XcmsPerScrnInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XcmsPerScrnInfo).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XcmsPerScrnInfo" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XcmsPerScrnInfo).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XcmsPerScrnInfo" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XcmsPerScrnInfo" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XcmsPerScrnInfo), Is.EqualTo(72));
-            }
-            else
-            {
-                Assert.That(sizeof(XcmsPerScrnInfo), Is.EqualTo(56));
-            }
+            Assert.That(sizeof(XcmsPerScrnInfo), Is.EqualTo(72));
+        }
+        else
+        {
+            Assert.That(sizeof(XcmsPerScrnInfo), Is.EqualTo(56));
         }
     }
 }

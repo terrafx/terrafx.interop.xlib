@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XPixmapFormatValues" /> struct.</summary>
+public static unsafe partial class XPixmapFormatValuesTests
 {
-    /// <summary>Provides validation of the <see cref="XPixmapFormatValues" /> struct.</summary>
-    public static unsafe partial class XPixmapFormatValuesTests
+    /// <summary>Validates that the <see cref="XPixmapFormatValues" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XPixmapFormatValues" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XPixmapFormatValues>(), Is.EqualTo(sizeof(XPixmapFormatValues)));
-        }
+        Assert.That(Marshal.SizeOf<XPixmapFormatValues>(), Is.EqualTo(sizeof(XPixmapFormatValues)));
+    }
 
-        /// <summary>Validates that the <see cref="XPixmapFormatValues" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XPixmapFormatValues).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XPixmapFormatValues" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XPixmapFormatValues).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XPixmapFormatValues" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(XPixmapFormatValues), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="XPixmapFormatValues" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(XPixmapFormatValues), Is.EqualTo(12));
     }
 }

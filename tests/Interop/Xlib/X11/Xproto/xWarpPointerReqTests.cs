@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xWarpPointerReq" /> struct.</summary>
+public static unsafe partial class xWarpPointerReqTests
 {
-    /// <summary>Provides validation of the <see cref="xWarpPointerReq" /> struct.</summary>
-    public static unsafe partial class xWarpPointerReqTests
+    /// <summary>Validates that the <see cref="xWarpPointerReq" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xWarpPointerReq" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xWarpPointerReq>(), Is.EqualTo(sizeof(xWarpPointerReq)));
-        }
+        Assert.That(Marshal.SizeOf<xWarpPointerReq>(), Is.EqualTo(sizeof(xWarpPointerReq)));
+    }
 
-        /// <summary>Validates that the <see cref="xWarpPointerReq" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xWarpPointerReq).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xWarpPointerReq" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xWarpPointerReq).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xWarpPointerReq" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xWarpPointerReq), Is.EqualTo(24));
-        }
+    /// <summary>Validates that the <see cref="xWarpPointerReq" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xWarpPointerReq), Is.EqualTo(24));
     }
 }

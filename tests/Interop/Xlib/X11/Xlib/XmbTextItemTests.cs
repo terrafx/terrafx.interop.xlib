@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XmbTextItem" /> struct.</summary>
+public static unsafe partial class XmbTextItemTests
 {
-    /// <summary>Provides validation of the <see cref="XmbTextItem" /> struct.</summary>
-    public static unsafe partial class XmbTextItemTests
+    /// <summary>Validates that the <see cref="XmbTextItem" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XmbTextItem" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XmbTextItem>(), Is.EqualTo(sizeof(XmbTextItem)));
-        }
+        Assert.That(Marshal.SizeOf<XmbTextItem>(), Is.EqualTo(sizeof(XmbTextItem)));
+    }
 
-        /// <summary>Validates that the <see cref="XmbTextItem" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XmbTextItem).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XmbTextItem" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XmbTextItem).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XmbTextItem" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XmbTextItem" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XmbTextItem), Is.EqualTo(24));
-            }
-            else
-            {
-                Assert.That(sizeof(XmbTextItem), Is.EqualTo(16));
-            }
+            Assert.That(sizeof(XmbTextItem), Is.EqualTo(24));
+        }
+        else
+        {
+            Assert.That(sizeof(XmbTextItem), Is.EqualTo(16));
         }
     }
 }

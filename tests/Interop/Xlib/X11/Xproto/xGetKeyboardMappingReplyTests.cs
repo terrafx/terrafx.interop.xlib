@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xGetKeyboardMappingReply" /> struct.</summary>
+public static unsafe partial class xGetKeyboardMappingReplyTests
 {
-    /// <summary>Provides validation of the <see cref="xGetKeyboardMappingReply" /> struct.</summary>
-    public static unsafe partial class xGetKeyboardMappingReplyTests
+    /// <summary>Validates that the <see cref="xGetKeyboardMappingReply" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xGetKeyboardMappingReply" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xGetKeyboardMappingReply>(), Is.EqualTo(sizeof(xGetKeyboardMappingReply)));
-        }
+        Assert.That(Marshal.SizeOf<xGetKeyboardMappingReply>(), Is.EqualTo(sizeof(xGetKeyboardMappingReply)));
+    }
 
-        /// <summary>Validates that the <see cref="xGetKeyboardMappingReply" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xGetKeyboardMappingReply).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xGetKeyboardMappingReply" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xGetKeyboardMappingReply).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xGetKeyboardMappingReply" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xGetKeyboardMappingReply), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="xGetKeyboardMappingReply" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xGetKeyboardMappingReply), Is.EqualTo(32));
     }
 }

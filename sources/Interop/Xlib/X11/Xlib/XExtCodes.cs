@@ -3,16 +3,15 @@
 // Ported from include/X11/Xlib.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
-namespace TerraFX.Interop.Xlib
+namespace TerraFX.Interop.Xlib;
+
+public partial struct XExtCodes
 {
-    public partial struct XExtCodes
-    {
-        public int extension;
+    public int extension;
 
-        public int major_opcode;
+    public int major_opcode;
 
-        public int first_event;
+    public int first_event;
 
-        public int first_error;
-    }
+    public int first_error;
 }

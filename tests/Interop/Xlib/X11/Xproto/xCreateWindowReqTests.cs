@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xCreateWindowReq" /> struct.</summary>
+public static unsafe partial class xCreateWindowReqTests
 {
-    /// <summary>Provides validation of the <see cref="xCreateWindowReq" /> struct.</summary>
-    public static unsafe partial class xCreateWindowReqTests
+    /// <summary>Validates that the <see cref="xCreateWindowReq" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xCreateWindowReq" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xCreateWindowReq>(), Is.EqualTo(sizeof(xCreateWindowReq)));
-        }
+        Assert.That(Marshal.SizeOf<xCreateWindowReq>(), Is.EqualTo(sizeof(xCreateWindowReq)));
+    }
 
-        /// <summary>Validates that the <see cref="xCreateWindowReq" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xCreateWindowReq).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xCreateWindowReq" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xCreateWindowReq).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xCreateWindowReq" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xCreateWindowReq), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="xCreateWindowReq" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xCreateWindowReq), Is.EqualTo(32));
     }
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xQueryTreeReply" /> struct.</summary>
+public static unsafe partial class xQueryTreeReplyTests
 {
-    /// <summary>Provides validation of the <see cref="xQueryTreeReply" /> struct.</summary>
-    public static unsafe partial class xQueryTreeReplyTests
+    /// <summary>Validates that the <see cref="xQueryTreeReply" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xQueryTreeReply" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xQueryTreeReply>(), Is.EqualTo(sizeof(xQueryTreeReply)));
-        }
+        Assert.That(Marshal.SizeOf<xQueryTreeReply>(), Is.EqualTo(sizeof(xQueryTreeReply)));
+    }
 
-        /// <summary>Validates that the <see cref="xQueryTreeReply" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xQueryTreeReply).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xQueryTreeReply" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xQueryTreeReply).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xQueryTreeReply" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xQueryTreeReply), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="xQueryTreeReply" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xQueryTreeReply), Is.EqualTo(32));
     }
 }

@@ -3,27 +3,26 @@
 // Ported from include/X11/Xlib.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
-namespace TerraFX.Interop.Xlib
+namespace TerraFX.Interop.Xlib;
+
+public unsafe partial struct Visual
 {
-    public unsafe partial struct Visual
-    {
-        public XExtData* ext_data;
+    public XExtData* ext_data;
 
-        public VisualID visualid;
+    public VisualID visualid;
 
-        public int c_class;
+    public int c_class;
 
-        [NativeTypeName("unsigned long")]
-        public nuint red_mask;
+    [NativeTypeName("unsigned long")]
+    public nuint red_mask;
 
-        [NativeTypeName("unsigned long")]
-        public nuint green_mask;
+    [NativeTypeName("unsigned long")]
+    public nuint green_mask;
 
-        [NativeTypeName("unsigned long")]
-        public nuint blue_mask;
+    [NativeTypeName("unsigned long")]
+    public nuint blue_mask;
 
-        public int bits_per_rgb;
+    public int bits_per_rgb;
 
-        public int map_entries;
-    }
+    public int map_entries;
 }

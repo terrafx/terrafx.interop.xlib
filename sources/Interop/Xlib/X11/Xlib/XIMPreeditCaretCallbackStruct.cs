@@ -3,14 +3,13 @@
 // Ported from include/X11/Xlib.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
-namespace TerraFX.Interop.Xlib
+namespace TerraFX.Interop.Xlib;
+
+public partial struct XIMPreeditCaretCallbackStruct
 {
-    public partial struct XIMPreeditCaretCallbackStruct
-    {
-        public int position;
+    public int position;
 
-        public XIMCaretDirection direction;
+    public XIMCaretDirection direction;
 
-        public XIMCaretStyle style;
-    }
+    public XIMCaretStyle style;
 }

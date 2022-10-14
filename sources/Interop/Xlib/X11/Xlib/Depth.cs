@@ -3,14 +3,13 @@
 // Ported from include/X11/Xlib.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
-namespace TerraFX.Interop.Xlib
+namespace TerraFX.Interop.Xlib;
+
+public unsafe partial struct Depth
 {
-    public unsafe partial struct Depth
-    {
-        public int depth;
+    public int depth;
 
-        public int nvisuals;
+    public int nvisuals;
 
-        public Visual* visuals;
-    }
+    public Visual* visuals;
 }

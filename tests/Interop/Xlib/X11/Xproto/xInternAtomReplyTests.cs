@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xInternAtomReply" /> struct.</summary>
+public static unsafe partial class xInternAtomReplyTests
 {
-    /// <summary>Provides validation of the <see cref="xInternAtomReply" /> struct.</summary>
-    public static unsafe partial class xInternAtomReplyTests
+    /// <summary>Validates that the <see cref="xInternAtomReply" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xInternAtomReply" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xInternAtomReply>(), Is.EqualTo(sizeof(xInternAtomReply)));
-        }
+        Assert.That(Marshal.SizeOf<xInternAtomReply>(), Is.EqualTo(sizeof(xInternAtomReply)));
+    }
 
-        /// <summary>Validates that the <see cref="xInternAtomReply" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xInternAtomReply).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xInternAtomReply" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xInternAtomReply).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xInternAtomReply" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xInternAtomReply), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="xInternAtomReply" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xInternAtomReply), Is.EqualTo(32));
     }
 }

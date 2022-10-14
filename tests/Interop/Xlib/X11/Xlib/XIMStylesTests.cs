@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XIMStyles" /> struct.</summary>
+public static unsafe partial class XIMStylesTests
 {
-    /// <summary>Provides validation of the <see cref="XIMStyles" /> struct.</summary>
-    public static unsafe partial class XIMStylesTests
+    /// <summary>Validates that the <see cref="XIMStyles" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XIMStyles" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XIMStyles>(), Is.EqualTo(sizeof(XIMStyles)));
-        }
+        Assert.That(Marshal.SizeOf<XIMStyles>(), Is.EqualTo(sizeof(XIMStyles)));
+    }
 
-        /// <summary>Validates that the <see cref="XIMStyles" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XIMStyles).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XIMStyles" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XIMStyles).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XIMStyles" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XIMStyles" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XIMStyles), Is.EqualTo(16));
-            }
-            else
-            {
-                Assert.That(sizeof(XIMStyles), Is.EqualTo(8));
-            }
+            Assert.That(sizeof(XIMStyles), Is.EqualTo(16));
+        }
+        else
+        {
+            Assert.That(sizeof(XIMStyles), Is.EqualTo(8));
         }
     }
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xCirculateWindowReq" /> struct.</summary>
+public static unsafe partial class xCirculateWindowReqTests
 {
-    /// <summary>Provides validation of the <see cref="xCirculateWindowReq" /> struct.</summary>
-    public static unsafe partial class xCirculateWindowReqTests
+    /// <summary>Validates that the <see cref="xCirculateWindowReq" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xCirculateWindowReq" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xCirculateWindowReq>(), Is.EqualTo(sizeof(xCirculateWindowReq)));
-        }
+        Assert.That(Marshal.SizeOf<xCirculateWindowReq>(), Is.EqualTo(sizeof(xCirculateWindowReq)));
+    }
 
-        /// <summary>Validates that the <see cref="xCirculateWindowReq" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xCirculateWindowReq).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xCirculateWindowReq" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xCirculateWindowReq).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xCirculateWindowReq" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xCirculateWindowReq), Is.EqualTo(8));
-        }
+    /// <summary>Validates that the <see cref="xCirculateWindowReq" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xCirculateWindowReq), Is.EqualTo(8));
     }
 }

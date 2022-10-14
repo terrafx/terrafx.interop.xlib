@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xPolySegmentReq" /> struct.</summary>
+public static unsafe partial class xPolySegmentReqTests
 {
-    /// <summary>Provides validation of the <see cref="xPolySegmentReq" /> struct.</summary>
-    public static unsafe partial class xPolySegmentReqTests
+    /// <summary>Validates that the <see cref="xPolySegmentReq" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xPolySegmentReq" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xPolySegmentReq>(), Is.EqualTo(sizeof(xPolySegmentReq)));
-        }
+        Assert.That(Marshal.SizeOf<xPolySegmentReq>(), Is.EqualTo(sizeof(xPolySegmentReq)));
+    }
 
-        /// <summary>Validates that the <see cref="xPolySegmentReq" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xPolySegmentReq).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xPolySegmentReq" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xPolySegmentReq).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xPolySegmentReq" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xPolySegmentReq), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="xPolySegmentReq" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xPolySegmentReq), Is.EqualTo(12));
     }
 }

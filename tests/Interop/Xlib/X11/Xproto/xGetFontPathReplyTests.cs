@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xGetFontPathReply" /> struct.</summary>
+public static unsafe partial class xGetFontPathReplyTests
 {
-    /// <summary>Provides validation of the <see cref="xGetFontPathReply" /> struct.</summary>
-    public static unsafe partial class xGetFontPathReplyTests
+    /// <summary>Validates that the <see cref="xGetFontPathReply" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xGetFontPathReply" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xGetFontPathReply>(), Is.EqualTo(sizeof(xGetFontPathReply)));
-        }
+        Assert.That(Marshal.SizeOf<xGetFontPathReply>(), Is.EqualTo(sizeof(xGetFontPathReply)));
+    }
 
-        /// <summary>Validates that the <see cref="xGetFontPathReply" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xGetFontPathReply).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xGetFontPathReply" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xGetFontPathReply).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xGetFontPathReply" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xGetFontPathReply), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="xGetFontPathReply" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xGetFontPathReply), Is.EqualTo(32));
     }
 }

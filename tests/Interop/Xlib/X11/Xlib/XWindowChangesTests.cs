@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XWindowChanges" /> struct.</summary>
+public static unsafe partial class XWindowChangesTests
 {
-    /// <summary>Provides validation of the <see cref="XWindowChanges" /> struct.</summary>
-    public static unsafe partial class XWindowChangesTests
+    /// <summary>Validates that the <see cref="XWindowChanges" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XWindowChanges" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XWindowChanges>(), Is.EqualTo(sizeof(XWindowChanges)));
-        }
+        Assert.That(Marshal.SizeOf<XWindowChanges>(), Is.EqualTo(sizeof(XWindowChanges)));
+    }
 
-        /// <summary>Validates that the <see cref="XWindowChanges" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XWindowChanges).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XWindowChanges" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XWindowChanges).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XWindowChanges" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XWindowChanges" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XWindowChanges), Is.EqualTo(40));
-            }
-            else
-            {
-                Assert.That(sizeof(XWindowChanges), Is.EqualTo(28));
-            }
+            Assert.That(sizeof(XWindowChanges), Is.EqualTo(40));
+        }
+        else
+        {
+            Assert.That(sizeof(XWindowChanges), Is.EqualTo(28));
         }
     }
 }

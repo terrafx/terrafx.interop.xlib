@@ -3,21 +3,20 @@
 // Ported from include/X11/Xlib.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
-namespace TerraFX.Interop.Xlib
+namespace TerraFX.Interop.Xlib;
+
+public partial struct XCharStruct
 {
-    public partial struct XCharStruct
-    {
-        public short lbearing;
+    public short lbearing;
 
-        public short rbearing;
+    public short rbearing;
 
-        public short width;
+    public short width;
 
-        public short ascent;
+    public short ascent;
 
-        public short descent;
+    public short descent;
 
-        [NativeTypeName("unsigned short")]
-        public ushort attributes;
-    }
+    [NativeTypeName("unsigned short")]
+    public ushort attributes;
 }

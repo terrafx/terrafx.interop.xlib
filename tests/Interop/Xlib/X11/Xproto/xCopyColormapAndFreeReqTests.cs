@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xCopyColormapAndFreeReq" /> struct.</summary>
+public static unsafe partial class xCopyColormapAndFreeReqTests
 {
-    /// <summary>Provides validation of the <see cref="xCopyColormapAndFreeReq" /> struct.</summary>
-    public static unsafe partial class xCopyColormapAndFreeReqTests
+    /// <summary>Validates that the <see cref="xCopyColormapAndFreeReq" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xCopyColormapAndFreeReq" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xCopyColormapAndFreeReq>(), Is.EqualTo(sizeof(xCopyColormapAndFreeReq)));
-        }
+        Assert.That(Marshal.SizeOf<xCopyColormapAndFreeReq>(), Is.EqualTo(sizeof(xCopyColormapAndFreeReq)));
+    }
 
-        /// <summary>Validates that the <see cref="xCopyColormapAndFreeReq" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xCopyColormapAndFreeReq).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xCopyColormapAndFreeReq" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xCopyColormapAndFreeReq).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xCopyColormapAndFreeReq" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xCopyColormapAndFreeReq), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="xCopyColormapAndFreeReq" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xCopyColormapAndFreeReq), Is.EqualTo(12));
     }
 }

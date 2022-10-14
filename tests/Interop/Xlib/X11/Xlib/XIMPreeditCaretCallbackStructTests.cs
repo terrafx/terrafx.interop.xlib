@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XIMPreeditCaretCallbackStruct" /> struct.</summary>
+public static unsafe partial class XIMPreeditCaretCallbackStructTests
 {
-    /// <summary>Provides validation of the <see cref="XIMPreeditCaretCallbackStruct" /> struct.</summary>
-    public static unsafe partial class XIMPreeditCaretCallbackStructTests
+    /// <summary>Validates that the <see cref="XIMPreeditCaretCallbackStruct" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XIMPreeditCaretCallbackStruct" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XIMPreeditCaretCallbackStruct>(), Is.EqualTo(sizeof(XIMPreeditCaretCallbackStruct)));
-        }
+        Assert.That(Marshal.SizeOf<XIMPreeditCaretCallbackStruct>(), Is.EqualTo(sizeof(XIMPreeditCaretCallbackStruct)));
+    }
 
-        /// <summary>Validates that the <see cref="XIMPreeditCaretCallbackStruct" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XIMPreeditCaretCallbackStruct).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XIMPreeditCaretCallbackStruct" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XIMPreeditCaretCallbackStruct).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XIMPreeditCaretCallbackStruct" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(XIMPreeditCaretCallbackStruct), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="XIMPreeditCaretCallbackStruct" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(XIMPreeditCaretCallbackStruct), Is.EqualTo(12));
     }
 }

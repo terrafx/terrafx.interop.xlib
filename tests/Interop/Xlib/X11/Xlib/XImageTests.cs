@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XImage" /> struct.</summary>
+public static unsafe partial class XImageTests
 {
-    /// <summary>Provides validation of the <see cref="XImage" /> struct.</summary>
-    public static unsafe partial class XImageTests
+    /// <summary>Validates that the <see cref="XImage" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XImage" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XImage>(), Is.EqualTo(sizeof(XImage)));
-        }
+        Assert.That(Marshal.SizeOf<XImage>(), Is.EqualTo(sizeof(XImage)));
+    }
 
-        /// <summary>Validates that the <see cref="XImage" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XImage).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XImage" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XImage).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XImage" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XImage" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XImage), Is.EqualTo(136));
-            }
-            else
-            {
-                Assert.That(sizeof(XImage), Is.EqualTo(88));
-            }
+            Assert.That(sizeof(XImage), Is.EqualTo(136));
+        }
+        else
+        {
+            Assert.That(sizeof(XImage), Is.EqualTo(88));
         }
     }
 }

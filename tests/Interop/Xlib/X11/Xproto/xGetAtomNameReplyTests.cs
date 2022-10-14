@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xGetAtomNameReply" /> struct.</summary>
+public static unsafe partial class xGetAtomNameReplyTests
 {
-    /// <summary>Provides validation of the <see cref="xGetAtomNameReply" /> struct.</summary>
-    public static unsafe partial class xGetAtomNameReplyTests
+    /// <summary>Validates that the <see cref="xGetAtomNameReply" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xGetAtomNameReply" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xGetAtomNameReply>(), Is.EqualTo(sizeof(xGetAtomNameReply)));
-        }
+        Assert.That(Marshal.SizeOf<xGetAtomNameReply>(), Is.EqualTo(sizeof(xGetAtomNameReply)));
+    }
 
-        /// <summary>Validates that the <see cref="xGetAtomNameReply" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xGetAtomNameReply).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xGetAtomNameReply" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xGetAtomNameReply).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xGetAtomNameReply" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xGetAtomNameReply), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="xGetAtomNameReply" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xGetAtomNameReply), Is.EqualTo(32));
     }
 }

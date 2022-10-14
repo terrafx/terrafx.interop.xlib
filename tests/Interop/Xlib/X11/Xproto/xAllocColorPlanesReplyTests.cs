@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xAllocColorPlanesReply" /> struct.</summary>
+public static unsafe partial class xAllocColorPlanesReplyTests
 {
-    /// <summary>Provides validation of the <see cref="xAllocColorPlanesReply" /> struct.</summary>
-    public static unsafe partial class xAllocColorPlanesReplyTests
+    /// <summary>Validates that the <see cref="xAllocColorPlanesReply" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xAllocColorPlanesReply" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xAllocColorPlanesReply>(), Is.EqualTo(sizeof(xAllocColorPlanesReply)));
-        }
+        Assert.That(Marshal.SizeOf<xAllocColorPlanesReply>(), Is.EqualTo(sizeof(xAllocColorPlanesReply)));
+    }
 
-        /// <summary>Validates that the <see cref="xAllocColorPlanesReply" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xAllocColorPlanesReply).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xAllocColorPlanesReply" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xAllocColorPlanesReply).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xAllocColorPlanesReply" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xAllocColorPlanesReply), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="xAllocColorPlanesReply" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xAllocColorPlanesReply), Is.EqualTo(32));
     }
 }

@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xGetInputFocusReply" /> struct.</summary>
+public static unsafe partial class xGetInputFocusReplyTests
 {
-    /// <summary>Provides validation of the <see cref="xGetInputFocusReply" /> struct.</summary>
-    public static unsafe partial class xGetInputFocusReplyTests
+    /// <summary>Validates that the <see cref="xGetInputFocusReply" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xGetInputFocusReply" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xGetInputFocusReply>(), Is.EqualTo(sizeof(xGetInputFocusReply)));
-        }
+        Assert.That(Marshal.SizeOf<xGetInputFocusReply>(), Is.EqualTo(sizeof(xGetInputFocusReply)));
+    }
 
-        /// <summary>Validates that the <see cref="xGetInputFocusReply" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xGetInputFocusReply).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xGetInputFocusReply" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xGetInputFocusReply).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xGetInputFocusReply" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xGetInputFocusReply), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="xGetInputFocusReply" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xGetInputFocusReply), Is.EqualTo(32));
     }
 }

@@ -7,37 +7,36 @@ using NUnit.Framework;
 using System;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XWindowAttributes" /> struct.</summary>
+public static unsafe partial class XWindowAttributesTests
 {
-    /// <summary>Provides validation of the <see cref="XWindowAttributes" /> struct.</summary>
-    public static unsafe partial class XWindowAttributesTests
+    /// <summary>Validates that the <see cref="XWindowAttributes" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XWindowAttributes" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XWindowAttributes>(), Is.EqualTo(sizeof(XWindowAttributes)));
-        }
+        Assert.That(Marshal.SizeOf<XWindowAttributes>(), Is.EqualTo(sizeof(XWindowAttributes)));
+    }
 
-        /// <summary>Validates that the <see cref="XWindowAttributes" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XWindowAttributes).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XWindowAttributes" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XWindowAttributes).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XWindowAttributes" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
+    /// <summary>Validates that the <see cref="XWindowAttributes" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        if (Environment.Is64BitProcess)
         {
-            if (Environment.Is64BitProcess)
-            {
-                Assert.That(sizeof(XWindowAttributes), Is.EqualTo(136));
-            }
-            else
-            {
-                Assert.That(sizeof(XWindowAttributes), Is.EqualTo(92));
-            }
+            Assert.That(sizeof(XWindowAttributes), Is.EqualTo(136));
+        }
+        else
+        {
+            Assert.That(sizeof(XWindowAttributes), Is.EqualTo(92));
         }
     }
 }

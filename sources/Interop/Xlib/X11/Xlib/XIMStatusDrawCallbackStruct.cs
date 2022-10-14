@@ -5,23 +5,22 @@
 
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib
+namespace TerraFX.Interop.Xlib;
+
+public partial struct XIMStatusDrawCallbackStruct
 {
-    public partial struct XIMStatusDrawCallbackStruct
+    public XIMStatusDataType type;
+
+    [NativeTypeName("union (anonymous union at /usr/include/X11/Xlib.h:1359:5)")]
+    public _data_e__Union data;
+
+    [StructLayout(LayoutKind.Explicit)]
+    public unsafe partial struct _data_e__Union
     {
-        public XIMStatusDataType type;
+        [FieldOffset(0)]
+        public XIMText* text;
 
-        [NativeTypeName("union (anonymous union at /usr/include/X11/Xlib.h:1359:5)")]
-        public _data_e__Union data;
-
-        [StructLayout(LayoutKind.Explicit)]
-        public unsafe partial struct _data_e__Union
-        {
-            [FieldOffset(0)]
-            public XIMText* text;
-
-            [FieldOffset(0)]
-            public Pixmap bitmap;
-        }
+        [FieldOffset(0)]
+        public Pixmap bitmap;
     }
 }

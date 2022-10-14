@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xAllocColorReq" /> struct.</summary>
+public static unsafe partial class xAllocColorReqTests
 {
-    /// <summary>Provides validation of the <see cref="xAllocColorReq" /> struct.</summary>
-    public static unsafe partial class xAllocColorReqTests
+    /// <summary>Validates that the <see cref="xAllocColorReq" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xAllocColorReq" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xAllocColorReq>(), Is.EqualTo(sizeof(xAllocColorReq)));
-        }
+        Assert.That(Marshal.SizeOf<xAllocColorReq>(), Is.EqualTo(sizeof(xAllocColorReq)));
+    }
 
-        /// <summary>Validates that the <see cref="xAllocColorReq" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xAllocColorReq).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xAllocColorReq" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xAllocColorReq).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xAllocColorReq" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xAllocColorReq), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="xAllocColorReq" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xAllocColorReq), Is.EqualTo(16));
     }
 }

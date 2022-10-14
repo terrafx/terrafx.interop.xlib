@@ -3,14 +3,13 @@
 // Ported from include/X11/Xproto.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
-namespace TerraFX.Interop.Xlib
-{
-    public partial struct xFontProp
-    {
-        [NativeTypeName("CARD32")]
-        public uint name;
+namespace TerraFX.Interop.Xlib;
 
-        [NativeTypeName("CARD32")]
-        public uint value;
-    }
+public partial struct xFontProp
+{
+    [NativeTypeName("CARD32")]
+    public uint name;
+
+    [NativeTypeName("CARD32")]
+    public uint value;
 }

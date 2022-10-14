@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="XFontSetExtents" /> struct.</summary>
+public static unsafe partial class XFontSetExtentsTests
 {
-    /// <summary>Provides validation of the <see cref="XFontSetExtents" /> struct.</summary>
-    public static unsafe partial class XFontSetExtentsTests
+    /// <summary>Validates that the <see cref="XFontSetExtents" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="XFontSetExtents" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<XFontSetExtents>(), Is.EqualTo(sizeof(XFontSetExtents)));
-        }
+        Assert.That(Marshal.SizeOf<XFontSetExtents>(), Is.EqualTo(sizeof(XFontSetExtents)));
+    }
 
-        /// <summary>Validates that the <see cref="XFontSetExtents" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(XFontSetExtents).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="XFontSetExtents" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(XFontSetExtents).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="XFontSetExtents" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(XFontSetExtents), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="XFontSetExtents" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(XFontSetExtents), Is.EqualTo(16));
     }
 }

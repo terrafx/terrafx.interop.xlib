@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xAllocColorPlanesReq" /> struct.</summary>
+public static unsafe partial class xAllocColorPlanesReqTests
 {
-    /// <summary>Provides validation of the <see cref="xAllocColorPlanesReq" /> struct.</summary>
-    public static unsafe partial class xAllocColorPlanesReqTests
+    /// <summary>Validates that the <see cref="xAllocColorPlanesReq" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xAllocColorPlanesReq" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xAllocColorPlanesReq>(), Is.EqualTo(sizeof(xAllocColorPlanesReq)));
-        }
+        Assert.That(Marshal.SizeOf<xAllocColorPlanesReq>(), Is.EqualTo(sizeof(xAllocColorPlanesReq)));
+    }
 
-        /// <summary>Validates that the <see cref="xAllocColorPlanesReq" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xAllocColorPlanesReq).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xAllocColorPlanesReq" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xAllocColorPlanesReq).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xAllocColorPlanesReq" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xAllocColorPlanesReq), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="xAllocColorPlanesReq" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xAllocColorPlanesReq), Is.EqualTo(16));
     }
 }

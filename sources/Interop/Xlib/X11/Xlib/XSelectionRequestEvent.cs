@@ -3,29 +3,28 @@
 // Ported from include/X11/Xlib.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
-namespace TerraFX.Interop.Xlib
+namespace TerraFX.Interop.Xlib;
+
+public unsafe partial struct XSelectionRequestEvent
 {
-    public unsafe partial struct XSelectionRequestEvent
-    {
-        public int type;
+    public int type;
 
-        [NativeTypeName("unsigned long")]
-        public nuint serial;
+    [NativeTypeName("unsigned long")]
+    public nuint serial;
 
-        public int send_event;
+    public int send_event;
 
-        public Display* display;
+    public Display* display;
 
-        public Window owner;
+    public Window owner;
 
-        public Window requestor;
+    public Window requestor;
 
-        public Atom selection;
+    public Atom selection;
 
-        public Atom target;
+    public Atom target;
 
-        public Atom property;
+    public Atom property;
 
-        public Time time;
-    }
+    public Time time;
 }

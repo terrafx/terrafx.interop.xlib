@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xGetScreenSaverReply" /> struct.</summary>
+public static unsafe partial class xGetScreenSaverReplyTests
 {
-    /// <summary>Provides validation of the <see cref="xGetScreenSaverReply" /> struct.</summary>
-    public static unsafe partial class xGetScreenSaverReplyTests
+    /// <summary>Validates that the <see cref="xGetScreenSaverReply" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xGetScreenSaverReply" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xGetScreenSaverReply>(), Is.EqualTo(sizeof(xGetScreenSaverReply)));
-        }
+        Assert.That(Marshal.SizeOf<xGetScreenSaverReply>(), Is.EqualTo(sizeof(xGetScreenSaverReply)));
+    }
 
-        /// <summary>Validates that the <see cref="xGetScreenSaverReply" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xGetScreenSaverReply).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xGetScreenSaverReply" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xGetScreenSaverReply).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xGetScreenSaverReply" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xGetScreenSaverReply), Is.EqualTo(32));
-        }
+    /// <summary>Validates that the <see cref="xGetScreenSaverReply" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xGetScreenSaverReply), Is.EqualTo(32));
     }
 }

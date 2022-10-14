@@ -3,29 +3,28 @@
 // Ported from include/X11/Xproto.h in the Xlib - C Language X Interface: X Version 11, Release 7.7
 // Original source is Copyright © The Open Group
 
-namespace TerraFX.Interop.Xlib
+namespace TerraFX.Interop.Xlib;
+
+public partial struct xSetScreenSaverReq
 {
-    public partial struct xSetScreenSaverReq
-    {
-        [NativeTypeName("CARD8")]
-        public byte reqType;
+    [NativeTypeName("CARD8")]
+    public byte reqType;
 
-        public byte pad;
+    public byte pad;
 
-        [NativeTypeName("CARD16")]
-        public ushort length;
+    [NativeTypeName("CARD16")]
+    public ushort length;
 
-        [NativeTypeName("INT16")]
-        public short timeout;
+    [NativeTypeName("INT16")]
+    public short timeout;
 
-        [NativeTypeName("INT16")]
-        public short interval;
+    [NativeTypeName("INT16")]
+    public short interval;
 
-        public byte preferBlank;
+    public byte preferBlank;
 
-        public byte allowExpose;
+    public byte allowExpose;
 
-        [NativeTypeName("CARD16")]
-        public ushort pad2;
-    }
+    [NativeTypeName("CARD16")]
+    public ushort pad2;
 }

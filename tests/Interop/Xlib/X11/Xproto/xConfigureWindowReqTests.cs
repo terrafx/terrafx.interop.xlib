@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xConfigureWindowReq" /> struct.</summary>
+public static unsafe partial class xConfigureWindowReqTests
 {
-    /// <summary>Provides validation of the <see cref="xConfigureWindowReq" /> struct.</summary>
-    public static unsafe partial class xConfigureWindowReqTests
+    /// <summary>Validates that the <see cref="xConfigureWindowReq" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xConfigureWindowReq" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xConfigureWindowReq>(), Is.EqualTo(sizeof(xConfigureWindowReq)));
-        }
+        Assert.That(Marshal.SizeOf<xConfigureWindowReq>(), Is.EqualTo(sizeof(xConfigureWindowReq)));
+    }
 
-        /// <summary>Validates that the <see cref="xConfigureWindowReq" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xConfigureWindowReq).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xConfigureWindowReq" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xConfigureWindowReq).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xConfigureWindowReq" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xConfigureWindowReq), Is.EqualTo(12));
-        }
+    /// <summary>Validates that the <see cref="xConfigureWindowReq" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xConfigureWindowReq), Is.EqualTo(12));
     }
 }

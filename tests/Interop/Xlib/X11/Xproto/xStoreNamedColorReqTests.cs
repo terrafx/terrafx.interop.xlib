@@ -6,30 +6,29 @@
 using NUnit.Framework;
 using System.Runtime.InteropServices;
 
-namespace TerraFX.Interop.Xlib.UnitTests
+namespace TerraFX.Interop.Xlib.UnitTests;
+
+/// <summary>Provides validation of the <see cref="xStoreNamedColorReq" /> struct.</summary>
+public static unsafe partial class xStoreNamedColorReqTests
 {
-    /// <summary>Provides validation of the <see cref="xStoreNamedColorReq" /> struct.</summary>
-    public static unsafe partial class xStoreNamedColorReqTests
+    /// <summary>Validates that the <see cref="xStoreNamedColorReq" /> struct is blittable.</summary>
+    [Test]
+    public static void IsBlittableTest()
     {
-        /// <summary>Validates that the <see cref="xStoreNamedColorReq" /> struct is blittable.</summary>
-        [Test]
-        public static void IsBlittableTest()
-        {
-            Assert.That(Marshal.SizeOf<xStoreNamedColorReq>(), Is.EqualTo(sizeof(xStoreNamedColorReq)));
-        }
+        Assert.That(Marshal.SizeOf<xStoreNamedColorReq>(), Is.EqualTo(sizeof(xStoreNamedColorReq)));
+    }
 
-        /// <summary>Validates that the <see cref="xStoreNamedColorReq" /> struct has the right <see cref="LayoutKind" />.</summary>
-        [Test]
-        public static void IsLayoutSequentialTest()
-        {
-            Assert.That(typeof(xStoreNamedColorReq).IsLayoutSequential, Is.True);
-        }
+    /// <summary>Validates that the <see cref="xStoreNamedColorReq" /> struct has the right <see cref="LayoutKind" />.</summary>
+    [Test]
+    public static void IsLayoutSequentialTest()
+    {
+        Assert.That(typeof(xStoreNamedColorReq).IsLayoutSequential, Is.True);
+    }
 
-        /// <summary>Validates that the <see cref="xStoreNamedColorReq" /> struct has the correct size.</summary>
-        [Test]
-        public static void SizeOfTest()
-        {
-            Assert.That(sizeof(xStoreNamedColorReq), Is.EqualTo(16));
-        }
+    /// <summary>Validates that the <see cref="xStoreNamedColorReq" /> struct has the correct size.</summary>
+    [Test]
+    public static void SizeOfTest()
+    {
+        Assert.That(sizeof(xStoreNamedColorReq), Is.EqualTo(16));
     }
 }
