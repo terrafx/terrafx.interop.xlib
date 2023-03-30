@@ -18,6 +18,6 @@ public unsafe partial struct XcmsPerScrnInfo
     [NativeTypeName("unsigned char")]
     public byte state;
 
-    [NativeTypeName("char [3]")]
+    [NativeTypeName("char[3]")]
     public fixed sbyte pad[3];
 }

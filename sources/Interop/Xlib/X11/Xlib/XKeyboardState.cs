@@ -22,6 +22,6 @@ public unsafe partial struct XKeyboardState
 
     public int global_auto_repeat;
 
-    [NativeTypeName("char [32]")]
+    [NativeTypeName("char[32]")]
     public fixed sbyte auto_repeats[32];
 }

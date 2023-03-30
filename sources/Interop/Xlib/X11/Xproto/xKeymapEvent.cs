@@ -9,6 +9,6 @@ public unsafe partial struct xKeymapEvent
 {
     public byte type;
 
-    [NativeTypeName("BYTE [31]")]
+    [NativeTypeName("BYTE[31]")]
     public fixed byte map[31];
 }

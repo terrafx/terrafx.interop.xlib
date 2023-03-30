@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Xlib;
 
-public unsafe partial struct Atom : IComparable, IComparable<Atom>, IEquatable<Atom>, IFormattable
+public readonly unsafe partial struct Atom : IComparable, IComparable<Atom>, IEquatable<Atom>, IFormattable
 {
     public readonly void* Value;
 
@@ -31,43 +31,43 @@ public unsafe partial struct Atom : IComparable, IComparable<Atom>, IEquatable<A
 
     public static implicit operator void*(Atom value) => value.Value;
 
-    public static explicit operator Atom(byte value) => new Atom((void*)(value));
+    public static explicit operator Atom(byte value) => new Atom(unchecked((void*)(value)));
 
     public static explicit operator byte(Atom value) => (byte)(value.Value);
 
-    public static explicit operator Atom(short value) => new Atom((void*)(value));
+    public static explicit operator Atom(short value) => new Atom(unchecked((void*)(value)));
 
     public static explicit operator short(Atom value) => (short)(value.Value);
 
-    public static explicit operator Atom(int value) => new Atom((void*)(value));
+    public static explicit operator Atom(int value) => new Atom(unchecked((void*)(value)));
 
     public static explicit operator int(Atom value) => (int)(value.Value);
 
-    public static explicit operator Atom(long value) => new Atom((void*)(value));
+    public static explicit operator Atom(long value) => new Atom(unchecked((void*)(value)));
 
     public static explicit operator long(Atom value) => (long)(value.Value);
 
-    public static explicit operator Atom(nint value) => new Atom((void*)(value));
+    public static explicit operator Atom(nint value) => new Atom(unchecked((void*)(value)));
 
     public static implicit operator nint(Atom value) => (nint)(value.Value);
 
-    public static explicit operator Atom(sbyte value) => new Atom((void*)(value));
+    public static explicit operator Atom(sbyte value) => new Atom(unchecked((void*)(value)));
 
     public static explicit operator sbyte(Atom value) => (sbyte)(value.Value);
 
-    public static explicit operator Atom(ushort value) => new Atom((void*)(value));
+    public static explicit operator Atom(ushort value) => new Atom(unchecked((void*)(value)));
 
     public static explicit operator ushort(Atom value) => (ushort)(value.Value);
 
-    public static explicit operator Atom(uint value) => new Atom((void*)(value));
+    public static explicit operator Atom(uint value) => new Atom(unchecked((void*)(value)));
 
     public static explicit operator uint(Atom value) => (uint)(value.Value);
 
-    public static explicit operator Atom(ulong value) => new Atom((void*)(value));
+    public static explicit operator Atom(ulong value) => new Atom(unchecked((void*)(value)));
 
     public static explicit operator ulong(Atom value) => (ulong)(value.Value);
 
-    public static explicit operator Atom(nuint value) => new Atom((void*)(value));
+    public static explicit operator Atom(nuint value) => new Atom(unchecked((void*)(value)));
 
     public static implicit operator nuint(Atom value) => (nuint)(value.Value);
 

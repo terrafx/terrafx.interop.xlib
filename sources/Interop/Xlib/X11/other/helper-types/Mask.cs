@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Xlib;
 
-public unsafe partial struct Mask : IComparable, IComparable<Mask>, IEquatable<Mask>, IFormattable
+public readonly unsafe partial struct Mask : IComparable, IComparable<Mask>, IEquatable<Mask>, IFormattable
 {
     public readonly void* Value;
 
@@ -31,43 +31,43 @@ public unsafe partial struct Mask : IComparable, IComparable<Mask>, IEquatable<M
 
     public static implicit operator void*(Mask value) => value.Value;
 
-    public static explicit operator Mask(byte value) => new Mask((void*)(value));
+    public static explicit operator Mask(byte value) => new Mask(unchecked((void*)(value)));
 
     public static explicit operator byte(Mask value) => (byte)(value.Value);
 
-    public static explicit operator Mask(short value) => new Mask((void*)(value));
+    public static explicit operator Mask(short value) => new Mask(unchecked((void*)(value)));
 
     public static explicit operator short(Mask value) => (short)(value.Value);
 
-    public static explicit operator Mask(int value) => new Mask((void*)(value));
+    public static explicit operator Mask(int value) => new Mask(unchecked((void*)(value)));
 
     public static explicit operator int(Mask value) => (int)(value.Value);
 
-    public static explicit operator Mask(long value) => new Mask((void*)(value));
+    public static explicit operator Mask(long value) => new Mask(unchecked((void*)(value)));
 
     public static explicit operator long(Mask value) => (long)(value.Value);
 
-    public static explicit operator Mask(nint value) => new Mask((void*)(value));
+    public static explicit operator Mask(nint value) => new Mask(unchecked((void*)(value)));
 
     public static implicit operator nint(Mask value) => (nint)(value.Value);
 
-    public static explicit operator Mask(sbyte value) => new Mask((void*)(value));
+    public static explicit operator Mask(sbyte value) => new Mask(unchecked((void*)(value)));
 
     public static explicit operator sbyte(Mask value) => (sbyte)(value.Value);
 
-    public static explicit operator Mask(ushort value) => new Mask((void*)(value));
+    public static explicit operator Mask(ushort value) => new Mask(unchecked((void*)(value)));
 
     public static explicit operator ushort(Mask value) => (ushort)(value.Value);
 
-    public static explicit operator Mask(uint value) => new Mask((void*)(value));
+    public static explicit operator Mask(uint value) => new Mask(unchecked((void*)(value)));
 
     public static explicit operator uint(Mask value) => (uint)(value.Value);
 
-    public static explicit operator Mask(ulong value) => new Mask((void*)(value));
+    public static explicit operator Mask(ulong value) => new Mask(unchecked((void*)(value)));
 
     public static explicit operator ulong(Mask value) => (ulong)(value.Value);
 
-    public static explicit operator Mask(nuint value) => new Mask((void*)(value));
+    public static explicit operator Mask(nuint value) => new Mask(unchecked((void*)(value)));
 
     public static implicit operator nuint(Mask value) => (nuint)(value.Value);
 

@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Xlib;
 
-public unsafe partial struct KeySym : IComparable, IComparable<KeySym>, IEquatable<KeySym>, IFormattable
+public readonly unsafe partial struct KeySym : IComparable, IComparable<KeySym>, IEquatable<KeySym>, IFormattable
 {
     public readonly void* Value;
 
@@ -31,43 +31,43 @@ public unsafe partial struct KeySym : IComparable, IComparable<KeySym>, IEquatab
 
     public static implicit operator void*(KeySym value) => value.Value;
 
-    public static explicit operator KeySym(byte value) => new KeySym((void*)(value));
+    public static explicit operator KeySym(byte value) => new KeySym(unchecked((void*)(value)));
 
     public static explicit operator byte(KeySym value) => (byte)(value.Value);
 
-    public static explicit operator KeySym(short value) => new KeySym((void*)(value));
+    public static explicit operator KeySym(short value) => new KeySym(unchecked((void*)(value)));
 
     public static explicit operator short(KeySym value) => (short)(value.Value);
 
-    public static explicit operator KeySym(int value) => new KeySym((void*)(value));
+    public static explicit operator KeySym(int value) => new KeySym(unchecked((void*)(value)));
 
     public static explicit operator int(KeySym value) => (int)(value.Value);
 
-    public static explicit operator KeySym(long value) => new KeySym((void*)(value));
+    public static explicit operator KeySym(long value) => new KeySym(unchecked((void*)(value)));
 
     public static explicit operator long(KeySym value) => (long)(value.Value);
 
-    public static explicit operator KeySym(nint value) => new KeySym((void*)(value));
+    public static explicit operator KeySym(nint value) => new KeySym(unchecked((void*)(value)));
 
     public static implicit operator nint(KeySym value) => (nint)(value.Value);
 
-    public static explicit operator KeySym(sbyte value) => new KeySym((void*)(value));
+    public static explicit operator KeySym(sbyte value) => new KeySym(unchecked((void*)(value)));
 
     public static explicit operator sbyte(KeySym value) => (sbyte)(value.Value);
 
-    public static explicit operator KeySym(ushort value) => new KeySym((void*)(value));
+    public static explicit operator KeySym(ushort value) => new KeySym(unchecked((void*)(value)));
 
     public static explicit operator ushort(KeySym value) => (ushort)(value.Value);
 
-    public static explicit operator KeySym(uint value) => new KeySym((void*)(value));
+    public static explicit operator KeySym(uint value) => new KeySym(unchecked((void*)(value)));
 
     public static explicit operator uint(KeySym value) => (uint)(value.Value);
 
-    public static explicit operator KeySym(ulong value) => new KeySym((void*)(value));
+    public static explicit operator KeySym(ulong value) => new KeySym(unchecked((void*)(value)));
 
     public static explicit operator ulong(KeySym value) => (ulong)(value.Value);
 
-    public static explicit operator KeySym(nuint value) => new KeySym((void*)(value));
+    public static explicit operator KeySym(nuint value) => new KeySym(unchecked((void*)(value)));
 
     public static implicit operator nuint(KeySym value) => (nuint)(value.Value);
 

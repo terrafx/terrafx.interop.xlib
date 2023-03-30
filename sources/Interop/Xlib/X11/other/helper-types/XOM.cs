@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Xlib;
 
-public unsafe partial struct XOM : IComparable, IComparable<XOM>, IEquatable<XOM>, IFormattable
+public readonly unsafe partial struct XOM : IComparable, IComparable<XOM>, IEquatable<XOM>, IFormattable
 {
     public readonly void* Value;
 
@@ -31,43 +31,43 @@ public unsafe partial struct XOM : IComparable, IComparable<XOM>, IEquatable<XOM
 
     public static implicit operator void*(XOM value) => value.Value;
 
-    public static explicit operator XOM(byte value) => new XOM((void*)(value));
+    public static explicit operator XOM(byte value) => new XOM(unchecked((void*)(value)));
 
     public static explicit operator byte(XOM value) => (byte)(value.Value);
 
-    public static explicit operator XOM(short value) => new XOM((void*)(value));
+    public static explicit operator XOM(short value) => new XOM(unchecked((void*)(value)));
 
     public static explicit operator short(XOM value) => (short)(value.Value);
 
-    public static explicit operator XOM(int value) => new XOM((void*)(value));
+    public static explicit operator XOM(int value) => new XOM(unchecked((void*)(value)));
 
     public static explicit operator int(XOM value) => (int)(value.Value);
 
-    public static explicit operator XOM(long value) => new XOM((void*)(value));
+    public static explicit operator XOM(long value) => new XOM(unchecked((void*)(value)));
 
     public static explicit operator long(XOM value) => (long)(value.Value);
 
-    public static explicit operator XOM(nint value) => new XOM((void*)(value));
+    public static explicit operator XOM(nint value) => new XOM(unchecked((void*)(value)));
 
     public static implicit operator nint(XOM value) => (nint)(value.Value);
 
-    public static explicit operator XOM(sbyte value) => new XOM((void*)(value));
+    public static explicit operator XOM(sbyte value) => new XOM(unchecked((void*)(value)));
 
     public static explicit operator sbyte(XOM value) => (sbyte)(value.Value);
 
-    public static explicit operator XOM(ushort value) => new XOM((void*)(value));
+    public static explicit operator XOM(ushort value) => new XOM(unchecked((void*)(value)));
 
     public static explicit operator ushort(XOM value) => (ushort)(value.Value);
 
-    public static explicit operator XOM(uint value) => new XOM((void*)(value));
+    public static explicit operator XOM(uint value) => new XOM(unchecked((void*)(value)));
 
     public static explicit operator uint(XOM value) => (uint)(value.Value);
 
-    public static explicit operator XOM(ulong value) => new XOM((void*)(value));
+    public static explicit operator XOM(ulong value) => new XOM(unchecked((void*)(value)));
 
     public static explicit operator ulong(XOM value) => (ulong)(value.Value);
 
-    public static explicit operator XOM(nuint value) => new XOM((void*)(value));
+    public static explicit operator XOM(nuint value) => new XOM(unchecked((void*)(value)));
 
     public static implicit operator nuint(XOM value) => (nuint)(value.Value);
 

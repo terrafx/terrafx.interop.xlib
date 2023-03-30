@@ -4,6 +4,7 @@
 // Original source is Copyright © The Open Group
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -33,15 +34,15 @@ public unsafe partial struct XClientMessageEvent
     public unsafe partial struct _data_e__Union
     {
         [FieldOffset(0)]
-        [NativeTypeName("char [20]")]
+        [NativeTypeName("char[20]")]
         public fixed sbyte b[20];
 
         [FieldOffset(0)]
-        [NativeTypeName("short [10]")]
+        [NativeTypeName("short[10]")]
         public fixed short s[10];
 
         [FieldOffset(0)]
-        [NativeTypeName("long [5]")]
+        [NativeTypeName("long[5]")]
         public _l_e__FixedBuffer l;
 
         public partial struct _l_e__FixedBuffer
@@ -52,6 +53,7 @@ public unsafe partial struct XClientMessageEvent
             public nint e3;
             public nint e4;
 
+            [UnscopedRef]
             public ref nint this[int index]
             {
                 [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -62,6 +64,7 @@ public unsafe partial struct XClientMessageEvent
             }
 
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            [UnscopedRef]
             public Span<nint> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 5);
         }
     }

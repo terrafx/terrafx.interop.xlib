@@ -164,6 +164,7 @@ public static unsafe partial class Xlib
     public static extern XHostAddress* XListHosts(Display* param0, int* param1, int* param2);
 
     [DllImport("libX11", ExactSpelling = true)]
+    [Obsolete]
     public static extern KeySym XKeycodeToKeysym(Display* param0, [NativeTypeName("KeyCode")] byte param1, int param2);
 
     [DllImport("libX11", ExactSpelling = true)]
@@ -305,6 +306,9 @@ public static unsafe partial class Xlib
     [DllImport("libX11", ExactSpelling = true)]
     [return: NativeTypeName("XIOErrorHandler")]
     public static extern delegate* unmanaged<Display*, int> XSetIOErrorHandler([NativeTypeName("XIOErrorHandler")] delegate* unmanaged<Display*, int> param0);
+
+    [DllImport("libX11", ExactSpelling = true)]
+    public static extern void XSetIOErrorExitHandler(Display* param0, [NativeTypeName("XIOErrorExitHandler")] delegate* unmanaged<Display*, void*, void> param1, void* param2);
 
     [DllImport("libX11", ExactSpelling = true)]
     public static extern XPixmapFormatValues* XListPixmapFormats(Display* param0, int* param1);
@@ -803,7 +807,7 @@ public static unsafe partial class Xlib
     public static extern int XQueryExtension(Display* param0, [NativeTypeName("const char *")] sbyte* param1, int* param2, int* param3, int* param4);
 
     [DllImport("libX11", ExactSpelling = true)]
-    public static extern int XQueryKeymap(Display* param0, [NativeTypeName("char [32]")] sbyte* param1);
+    public static extern int XQueryKeymap(Display* param0, [NativeTypeName("char[32]")] sbyte* param1);
 
     [DllImport("libX11", ExactSpelling = true)]
     public static extern int XQueryPointer(Display* param0, Window param1, Window* param2, Window* param3, int* param4, int* param5, int* param6, int* param7, [NativeTypeName("unsigned int *")] uint* param8);
@@ -1073,13 +1077,13 @@ public static unsafe partial class Xlib
     [DllImport("libX11", ExactSpelling = true)]
     public static extern int XCloseOM(XOM param0);
 
-    [DllImport("libX11", ExactSpelling = true)]
+    [DllImport("libX11", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [return: NativeTypeName("char *")]
-    public static extern sbyte* XSetOMValues(XOM param0);
+    public static extern sbyte* XSetOMValues(XOM param0, __arglist);
 
-    [DllImport("libX11", ExactSpelling = true)]
+    [DllImport("libX11", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [return: NativeTypeName("char *")]
-    public static extern sbyte* XGetOMValues(XOM param0);
+    public static extern sbyte* XGetOMValues(XOM param0, __arglist);
 
     [DllImport("libX11", ExactSpelling = true)]
     public static extern Display* XDisplayOfOM(XOM param0);
@@ -1088,8 +1092,8 @@ public static unsafe partial class Xlib
     [return: NativeTypeName("char *")]
     public static extern sbyte* XLocaleOfOM(XOM param0);
 
-    [DllImport("libX11", ExactSpelling = true)]
-    public static extern XOC XCreateOC(XOM param0);
+    [DllImport("libX11", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    public static extern XOC XCreateOC(XOM param0, __arglist);
 
     [DllImport("libX11", ExactSpelling = true)]
     public static extern void XDestroyOC(XOC param0);
@@ -1097,13 +1101,13 @@ public static unsafe partial class Xlib
     [DllImport("libX11", ExactSpelling = true)]
     public static extern XOM XOMOfOC(XOC param0);
 
-    [DllImport("libX11", ExactSpelling = true)]
+    [DllImport("libX11", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [return: NativeTypeName("char *")]
-    public static extern sbyte* XSetOCValues(XOC param0);
+    public static extern sbyte* XSetOCValues(XOC param0, __arglist);
 
-    [DllImport("libX11", ExactSpelling = true)]
+    [DllImport("libX11", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [return: NativeTypeName("char *")]
-    public static extern sbyte* XGetOCValues(XOC param0);
+    public static extern sbyte* XGetOCValues(XOC param0, __arglist);
 
     [DllImport("libX11", ExactSpelling = true)]
     public static extern XFontSet XCreateFontSet(Display* param0, [NativeTypeName("const char *")] sbyte* param1, [NativeTypeName("char ***")] sbyte*** param2, int* param3, [NativeTypeName("char **")] sbyte** param4);
@@ -1194,13 +1198,13 @@ public static unsafe partial class Xlib
     [DllImport("libX11", ExactSpelling = true)]
     public static extern int XCloseIM(XIM param0);
 
-    [DllImport("libX11", ExactSpelling = true)]
+    [DllImport("libX11", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [return: NativeTypeName("char *")]
-    public static extern sbyte* XGetIMValues(XIM param0);
+    public static extern sbyte* XGetIMValues(XIM param0, __arglist);
 
-    [DllImport("libX11", ExactSpelling = true)]
+    [DllImport("libX11", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [return: NativeTypeName("char *")]
-    public static extern sbyte* XSetIMValues(XIM param0);
+    public static extern sbyte* XSetIMValues(XIM param0, __arglist);
 
     [DllImport("libX11", ExactSpelling = true)]
     public static extern Display* XDisplayOfIM(XIM param0);
@@ -1209,8 +1213,8 @@ public static unsafe partial class Xlib
     [return: NativeTypeName("char *")]
     public static extern sbyte* XLocaleOfIM(XIM param0);
 
-    [DllImport("libX11", ExactSpelling = true)]
-    public static extern XIC XCreateIC(XIM param0);
+    [DllImport("libX11", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
+    public static extern XIC XCreateIC(XIM param0, __arglist);
 
     [DllImport("libX11", ExactSpelling = true)]
     public static extern void XDestroyIC(XIC param0);
@@ -1233,13 +1237,13 @@ public static unsafe partial class Xlib
     [return: NativeTypeName("char *")]
     public static extern sbyte* Xutf8ResetIC(XIC param0);
 
-    [DllImport("libX11", ExactSpelling = true)]
+    [DllImport("libX11", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [return: NativeTypeName("char *")]
-    public static extern sbyte* XSetICValues(XIC param0);
+    public static extern sbyte* XSetICValues(XIC param0, __arglist);
 
-    [DllImport("libX11", ExactSpelling = true)]
+    [DllImport("libX11", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [return: NativeTypeName("char *")]
-    public static extern sbyte* XGetICValues(XIC param0);
+    public static extern sbyte* XGetICValues(XIC param0, __arglist);
 
     [DllImport("libX11", ExactSpelling = true)]
     public static extern XIM XIMOfIC(XIC param0);
@@ -1256,9 +1260,9 @@ public static unsafe partial class Xlib
     [DllImport("libX11", ExactSpelling = true)]
     public static extern int Xutf8LookupString(XIC param0, [NativeTypeName("XKeyPressedEvent *")] XKeyEvent* param1, [NativeTypeName("char *")] sbyte* param2, int param3, KeySym* param4, int* param5);
 
-    [DllImport("libX11", ExactSpelling = true)]
+    [DllImport("libX11", CallingConvention = CallingConvention.Cdecl, ExactSpelling = true)]
     [return: NativeTypeName("XVaNestedList")]
-    public static extern void* XVaCreateNestedList(int param0);
+    public static extern void* XVaCreateNestedList(int param0, __arglist);
 
     [DllImport("libX11", ExactSpelling = true)]
     public static extern int XRegisterIMInstantiateCallback(Display* param0, [NativeTypeName("struct _XrmHashBucketRec *")] XrmHashBucket param1, [NativeTypeName("char *")] sbyte* param2, [NativeTypeName("char *")] sbyte* param3, [NativeTypeName("XIDProc")] delegate* unmanaged<Display*, sbyte*, sbyte*, void> param4, [NativeTypeName("XPointer")] sbyte* param5);
@@ -1315,34 +1319,34 @@ public static unsafe partial class Xlib
     public const int QueuedAfterFlush = 2;
 
     [NativeTypeName("#define XNRequiredCharSet \"requiredCharSet\"")]
-    public static ReadOnlySpan<byte> XNRequiredCharSet => new byte[] { 0x72, 0x65, 0x71, 0x75, 0x69, 0x72, 0x65, 0x64, 0x43, 0x68, 0x61, 0x72, 0x53, 0x65, 0x74, 0x00 };
+    public static ReadOnlySpan<byte> XNRequiredCharSet => "requiredCharSet"u8;
 
     [NativeTypeName("#define XNQueryOrientation \"queryOrientation\"")]
-    public static ReadOnlySpan<byte> XNQueryOrientation => new byte[] { 0x71, 0x75, 0x65, 0x72, 0x79, 0x4F, 0x72, 0x69, 0x65, 0x6E, 0x74, 0x61, 0x74, 0x69, 0x6F, 0x6E, 0x00 };
+    public static ReadOnlySpan<byte> XNQueryOrientation => "queryOrientation"u8;
 
     [NativeTypeName("#define XNBaseFontName \"baseFontName\"")]
-    public static ReadOnlySpan<byte> XNBaseFontName => new byte[] { 0x62, 0x61, 0x73, 0x65, 0x46, 0x6F, 0x6E, 0x74, 0x4E, 0x61, 0x6D, 0x65, 0x00 };
+    public static ReadOnlySpan<byte> XNBaseFontName => "baseFontName"u8;
 
     [NativeTypeName("#define XNOMAutomatic \"omAutomatic\"")]
-    public static ReadOnlySpan<byte> XNOMAutomatic => new byte[] { 0x6F, 0x6D, 0x41, 0x75, 0x74, 0x6F, 0x6D, 0x61, 0x74, 0x69, 0x63, 0x00 };
+    public static ReadOnlySpan<byte> XNOMAutomatic => "omAutomatic"u8;
 
     [NativeTypeName("#define XNMissingCharSet \"missingCharSet\"")]
-    public static ReadOnlySpan<byte> XNMissingCharSet => new byte[] { 0x6D, 0x69, 0x73, 0x73, 0x69, 0x6E, 0x67, 0x43, 0x68, 0x61, 0x72, 0x53, 0x65, 0x74, 0x00 };
+    public static ReadOnlySpan<byte> XNMissingCharSet => "missingCharSet"u8;
 
     [NativeTypeName("#define XNDefaultString \"defaultString\"")]
-    public static ReadOnlySpan<byte> XNDefaultString => new byte[] { 0x64, 0x65, 0x66, 0x61, 0x75, 0x6C, 0x74, 0x53, 0x74, 0x72, 0x69, 0x6E, 0x67, 0x00 };
+    public static ReadOnlySpan<byte> XNDefaultString => "defaultString"u8;
 
     [NativeTypeName("#define XNOrientation \"orientation\"")]
-    public static ReadOnlySpan<byte> XNOrientation => new byte[] { 0x6F, 0x72, 0x69, 0x65, 0x6E, 0x74, 0x61, 0x74, 0x69, 0x6F, 0x6E, 0x00 };
+    public static ReadOnlySpan<byte> XNOrientation => "orientation"u8;
 
     [NativeTypeName("#define XNDirectionalDependentDrawing \"directionalDependentDrawing\"")]
-    public static ReadOnlySpan<byte> XNDirectionalDependentDrawing => new byte[] { 0x64, 0x69, 0x72, 0x65, 0x63, 0x74, 0x69, 0x6F, 0x6E, 0x61, 0x6C, 0x44, 0x65, 0x70, 0x65, 0x6E, 0x64, 0x65, 0x6E, 0x74, 0x44, 0x72, 0x61, 0x77, 0x69, 0x6E, 0x67, 0x00 };
+    public static ReadOnlySpan<byte> XNDirectionalDependentDrawing => "directionalDependentDrawing"u8;
 
     [NativeTypeName("#define XNContextualDrawing \"contextualDrawing\"")]
-    public static ReadOnlySpan<byte> XNContextualDrawing => new byte[] { 0x63, 0x6F, 0x6E, 0x74, 0x65, 0x78, 0x74, 0x75, 0x61, 0x6C, 0x44, 0x72, 0x61, 0x77, 0x69, 0x6E, 0x67, 0x00 };
+    public static ReadOnlySpan<byte> XNContextualDrawing => "contextualDrawing"u8;
 
     [NativeTypeName("#define XNFontInfo \"fontInfo\"")]
-    public static ReadOnlySpan<byte> XNFontInfo => new byte[] { 0x66, 0x6F, 0x6E, 0x74, 0x49, 0x6E, 0x66, 0x6F, 0x00 };
+    public static ReadOnlySpan<byte> XNFontInfo => "fontInfo"u8;
 
     [NativeTypeName("#define XIMPreeditArea 0x0001L")]
     public const nint XIMPreeditArea = 0x0001;
@@ -1372,130 +1376,130 @@ public static unsafe partial class Xlib
     public const nint XIMStatusNone = 0x0800;
 
     [NativeTypeName("#define XNVaNestedList \"XNVaNestedList\"")]
-    public static ReadOnlySpan<byte> XNVaNestedList => new byte[] { 0x58, 0x4E, 0x56, 0x61, 0x4E, 0x65, 0x73, 0x74, 0x65, 0x64, 0x4C, 0x69, 0x73, 0x74, 0x00 };
+    public static ReadOnlySpan<byte> XNVaNestedList => "XNVaNestedList"u8;
 
     [NativeTypeName("#define XNQueryInputStyle \"queryInputStyle\"")]
-    public static ReadOnlySpan<byte> XNQueryInputStyle => new byte[] { 0x71, 0x75, 0x65, 0x72, 0x79, 0x49, 0x6E, 0x70, 0x75, 0x74, 0x53, 0x74, 0x79, 0x6C, 0x65, 0x00 };
+    public static ReadOnlySpan<byte> XNQueryInputStyle => "queryInputStyle"u8;
 
     [NativeTypeName("#define XNClientWindow \"clientWindow\"")]
-    public static ReadOnlySpan<byte> XNClientWindow => new byte[] { 0x63, 0x6C, 0x69, 0x65, 0x6E, 0x74, 0x57, 0x69, 0x6E, 0x64, 0x6F, 0x77, 0x00 };
+    public static ReadOnlySpan<byte> XNClientWindow => "clientWindow"u8;
 
     [NativeTypeName("#define XNInputStyle \"inputStyle\"")]
-    public static ReadOnlySpan<byte> XNInputStyle => new byte[] { 0x69, 0x6E, 0x70, 0x75, 0x74, 0x53, 0x74, 0x79, 0x6C, 0x65, 0x00 };
+    public static ReadOnlySpan<byte> XNInputStyle => "inputStyle"u8;
 
     [NativeTypeName("#define XNFocusWindow \"focusWindow\"")]
-    public static ReadOnlySpan<byte> XNFocusWindow => new byte[] { 0x66, 0x6F, 0x63, 0x75, 0x73, 0x57, 0x69, 0x6E, 0x64, 0x6F, 0x77, 0x00 };
+    public static ReadOnlySpan<byte> XNFocusWindow => "focusWindow"u8;
 
     [NativeTypeName("#define XNResourceName \"resourceName\"")]
-    public static ReadOnlySpan<byte> XNResourceName => new byte[] { 0x72, 0x65, 0x73, 0x6F, 0x75, 0x72, 0x63, 0x65, 0x4E, 0x61, 0x6D, 0x65, 0x00 };
+    public static ReadOnlySpan<byte> XNResourceName => "resourceName"u8;
 
     [NativeTypeName("#define XNResourceClass \"resourceClass\"")]
-    public static ReadOnlySpan<byte> XNResourceClass => new byte[] { 0x72, 0x65, 0x73, 0x6F, 0x75, 0x72, 0x63, 0x65, 0x43, 0x6C, 0x61, 0x73, 0x73, 0x00 };
+    public static ReadOnlySpan<byte> XNResourceClass => "resourceClass"u8;
 
     [NativeTypeName("#define XNGeometryCallback \"geometryCallback\"")]
-    public static ReadOnlySpan<byte> XNGeometryCallback => new byte[] { 0x67, 0x65, 0x6F, 0x6D, 0x65, 0x74, 0x72, 0x79, 0x43, 0x61, 0x6C, 0x6C, 0x62, 0x61, 0x63, 0x6B, 0x00 };
+    public static ReadOnlySpan<byte> XNGeometryCallback => "geometryCallback"u8;
 
     [NativeTypeName("#define XNDestroyCallback \"destroyCallback\"")]
-    public static ReadOnlySpan<byte> XNDestroyCallback => new byte[] { 0x64, 0x65, 0x73, 0x74, 0x72, 0x6F, 0x79, 0x43, 0x61, 0x6C, 0x6C, 0x62, 0x61, 0x63, 0x6B, 0x00 };
+    public static ReadOnlySpan<byte> XNDestroyCallback => "destroyCallback"u8;
 
     [NativeTypeName("#define XNFilterEvents \"filterEvents\"")]
-    public static ReadOnlySpan<byte> XNFilterEvents => new byte[] { 0x66, 0x69, 0x6C, 0x74, 0x65, 0x72, 0x45, 0x76, 0x65, 0x6E, 0x74, 0x73, 0x00 };
+    public static ReadOnlySpan<byte> XNFilterEvents => "filterEvents"u8;
 
     [NativeTypeName("#define XNPreeditStartCallback \"preeditStartCallback\"")]
-    public static ReadOnlySpan<byte> XNPreeditStartCallback => new byte[] { 0x70, 0x72, 0x65, 0x65, 0x64, 0x69, 0x74, 0x53, 0x74, 0x61, 0x72, 0x74, 0x43, 0x61, 0x6C, 0x6C, 0x62, 0x61, 0x63, 0x6B, 0x00 };
+    public static ReadOnlySpan<byte> XNPreeditStartCallback => "preeditStartCallback"u8;
 
     [NativeTypeName("#define XNPreeditDoneCallback \"preeditDoneCallback\"")]
-    public static ReadOnlySpan<byte> XNPreeditDoneCallback => new byte[] { 0x70, 0x72, 0x65, 0x65, 0x64, 0x69, 0x74, 0x44, 0x6F, 0x6E, 0x65, 0x43, 0x61, 0x6C, 0x6C, 0x62, 0x61, 0x63, 0x6B, 0x00 };
+    public static ReadOnlySpan<byte> XNPreeditDoneCallback => "preeditDoneCallback"u8;
 
     [NativeTypeName("#define XNPreeditDrawCallback \"preeditDrawCallback\"")]
-    public static ReadOnlySpan<byte> XNPreeditDrawCallback => new byte[] { 0x70, 0x72, 0x65, 0x65, 0x64, 0x69, 0x74, 0x44, 0x72, 0x61, 0x77, 0x43, 0x61, 0x6C, 0x6C, 0x62, 0x61, 0x63, 0x6B, 0x00 };
+    public static ReadOnlySpan<byte> XNPreeditDrawCallback => "preeditDrawCallback"u8;
 
     [NativeTypeName("#define XNPreeditCaretCallback \"preeditCaretCallback\"")]
-    public static ReadOnlySpan<byte> XNPreeditCaretCallback => new byte[] { 0x70, 0x72, 0x65, 0x65, 0x64, 0x69, 0x74, 0x43, 0x61, 0x72, 0x65, 0x74, 0x43, 0x61, 0x6C, 0x6C, 0x62, 0x61, 0x63, 0x6B, 0x00 };
+    public static ReadOnlySpan<byte> XNPreeditCaretCallback => "preeditCaretCallback"u8;
 
     [NativeTypeName("#define XNPreeditStateNotifyCallback \"preeditStateNotifyCallback\"")]
-    public static ReadOnlySpan<byte> XNPreeditStateNotifyCallback => new byte[] { 0x70, 0x72, 0x65, 0x65, 0x64, 0x69, 0x74, 0x53, 0x74, 0x61, 0x74, 0x65, 0x4E, 0x6F, 0x74, 0x69, 0x66, 0x79, 0x43, 0x61, 0x6C, 0x6C, 0x62, 0x61, 0x63, 0x6B, 0x00 };
+    public static ReadOnlySpan<byte> XNPreeditStateNotifyCallback => "preeditStateNotifyCallback"u8;
 
     [NativeTypeName("#define XNPreeditAttributes \"preeditAttributes\"")]
-    public static ReadOnlySpan<byte> XNPreeditAttributes => new byte[] { 0x70, 0x72, 0x65, 0x65, 0x64, 0x69, 0x74, 0x41, 0x74, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x65, 0x73, 0x00 };
+    public static ReadOnlySpan<byte> XNPreeditAttributes => "preeditAttributes"u8;
 
     [NativeTypeName("#define XNStatusStartCallback \"statusStartCallback\"")]
-    public static ReadOnlySpan<byte> XNStatusStartCallback => new byte[] { 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x53, 0x74, 0x61, 0x72, 0x74, 0x43, 0x61, 0x6C, 0x6C, 0x62, 0x61, 0x63, 0x6B, 0x00 };
+    public static ReadOnlySpan<byte> XNStatusStartCallback => "statusStartCallback"u8;
 
     [NativeTypeName("#define XNStatusDoneCallback \"statusDoneCallback\"")]
-    public static ReadOnlySpan<byte> XNStatusDoneCallback => new byte[] { 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x44, 0x6F, 0x6E, 0x65, 0x43, 0x61, 0x6C, 0x6C, 0x62, 0x61, 0x63, 0x6B, 0x00 };
+    public static ReadOnlySpan<byte> XNStatusDoneCallback => "statusDoneCallback"u8;
 
     [NativeTypeName("#define XNStatusDrawCallback \"statusDrawCallback\"")]
-    public static ReadOnlySpan<byte> XNStatusDrawCallback => new byte[] { 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x44, 0x72, 0x61, 0x77, 0x43, 0x61, 0x6C, 0x6C, 0x62, 0x61, 0x63, 0x6B, 0x00 };
+    public static ReadOnlySpan<byte> XNStatusDrawCallback => "statusDrawCallback"u8;
 
     [NativeTypeName("#define XNStatusAttributes \"statusAttributes\"")]
-    public static ReadOnlySpan<byte> XNStatusAttributes => new byte[] { 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x41, 0x74, 0x74, 0x72, 0x69, 0x62, 0x75, 0x74, 0x65, 0x73, 0x00 };
+    public static ReadOnlySpan<byte> XNStatusAttributes => "statusAttributes"u8;
 
     [NativeTypeName("#define XNArea \"area\"")]
-    public static ReadOnlySpan<byte> XNArea => new byte[] { 0x61, 0x72, 0x65, 0x61, 0x00 };
+    public static ReadOnlySpan<byte> XNArea => "area"u8;
 
     [NativeTypeName("#define XNAreaNeeded \"areaNeeded\"")]
-    public static ReadOnlySpan<byte> XNAreaNeeded => new byte[] { 0x61, 0x72, 0x65, 0x61, 0x4E, 0x65, 0x65, 0x64, 0x65, 0x64, 0x00 };
+    public static ReadOnlySpan<byte> XNAreaNeeded => "areaNeeded"u8;
 
     [NativeTypeName("#define XNSpotLocation \"spotLocation\"")]
-    public static ReadOnlySpan<byte> XNSpotLocation => new byte[] { 0x73, 0x70, 0x6F, 0x74, 0x4C, 0x6F, 0x63, 0x61, 0x74, 0x69, 0x6F, 0x6E, 0x00 };
+    public static ReadOnlySpan<byte> XNSpotLocation => "spotLocation"u8;
 
     [NativeTypeName("#define XNColormap \"colorMap\"")]
-    public static ReadOnlySpan<byte> XNColormap => new byte[] { 0x63, 0x6F, 0x6C, 0x6F, 0x72, 0x4D, 0x61, 0x70, 0x00 };
+    public static ReadOnlySpan<byte> XNColormap => "colorMap"u8;
 
     [NativeTypeName("#define XNStdColormap \"stdColorMap\"")]
-    public static ReadOnlySpan<byte> XNStdColormap => new byte[] { 0x73, 0x74, 0x64, 0x43, 0x6F, 0x6C, 0x6F, 0x72, 0x4D, 0x61, 0x70, 0x00 };
+    public static ReadOnlySpan<byte> XNStdColormap => "stdColorMap"u8;
 
     [NativeTypeName("#define XNForeground \"foreground\"")]
-    public static ReadOnlySpan<byte> XNForeground => new byte[] { 0x66, 0x6F, 0x72, 0x65, 0x67, 0x72, 0x6F, 0x75, 0x6E, 0x64, 0x00 };
+    public static ReadOnlySpan<byte> XNForeground => "foreground"u8;
 
     [NativeTypeName("#define XNBackground \"background\"")]
-    public static ReadOnlySpan<byte> XNBackground => new byte[] { 0x62, 0x61, 0x63, 0x6B, 0x67, 0x72, 0x6F, 0x75, 0x6E, 0x64, 0x00 };
+    public static ReadOnlySpan<byte> XNBackground => "background"u8;
 
     [NativeTypeName("#define XNBackgroundPixmap \"backgroundPixmap\"")]
-    public static ReadOnlySpan<byte> XNBackgroundPixmap => new byte[] { 0x62, 0x61, 0x63, 0x6B, 0x67, 0x72, 0x6F, 0x75, 0x6E, 0x64, 0x50, 0x69, 0x78, 0x6D, 0x61, 0x70, 0x00 };
+    public static ReadOnlySpan<byte> XNBackgroundPixmap => "backgroundPixmap"u8;
 
     [NativeTypeName("#define XNFontSet \"fontSet\"")]
-    public static ReadOnlySpan<byte> XNFontSet => new byte[] { 0x66, 0x6F, 0x6E, 0x74, 0x53, 0x65, 0x74, 0x00 };
+    public static ReadOnlySpan<byte> XNFontSet => "fontSet"u8;
 
     [NativeTypeName("#define XNLineSpace \"lineSpace\"")]
-    public static ReadOnlySpan<byte> XNLineSpace => new byte[] { 0x6C, 0x69, 0x6E, 0x65, 0x53, 0x70, 0x61, 0x63, 0x65, 0x00 };
+    public static ReadOnlySpan<byte> XNLineSpace => "lineSpace"u8;
 
     [NativeTypeName("#define XNCursor \"cursor\"")]
-    public static ReadOnlySpan<byte> XNCursor => new byte[] { 0x63, 0x75, 0x72, 0x73, 0x6F, 0x72, 0x00 };
+    public static ReadOnlySpan<byte> XNCursor => "cursor"u8;
 
     [NativeTypeName("#define XNQueryIMValuesList \"queryIMValuesList\"")]
-    public static ReadOnlySpan<byte> XNQueryIMValuesList => new byte[] { 0x71, 0x75, 0x65, 0x72, 0x79, 0x49, 0x4D, 0x56, 0x61, 0x6C, 0x75, 0x65, 0x73, 0x4C, 0x69, 0x73, 0x74, 0x00 };
+    public static ReadOnlySpan<byte> XNQueryIMValuesList => "queryIMValuesList"u8;
 
     [NativeTypeName("#define XNQueryICValuesList \"queryICValuesList\"")]
-    public static ReadOnlySpan<byte> XNQueryICValuesList => new byte[] { 0x71, 0x75, 0x65, 0x72, 0x79, 0x49, 0x43, 0x56, 0x61, 0x6C, 0x75, 0x65, 0x73, 0x4C, 0x69, 0x73, 0x74, 0x00 };
+    public static ReadOnlySpan<byte> XNQueryICValuesList => "queryICValuesList"u8;
 
     [NativeTypeName("#define XNVisiblePosition \"visiblePosition\"")]
-    public static ReadOnlySpan<byte> XNVisiblePosition => new byte[] { 0x76, 0x69, 0x73, 0x69, 0x62, 0x6C, 0x65, 0x50, 0x6F, 0x73, 0x69, 0x74, 0x69, 0x6F, 0x6E, 0x00 };
+    public static ReadOnlySpan<byte> XNVisiblePosition => "visiblePosition"u8;
 
     [NativeTypeName("#define XNR6PreeditCallback \"r6PreeditCallback\"")]
-    public static ReadOnlySpan<byte> XNR6PreeditCallback => new byte[] { 0x72, 0x36, 0x50, 0x72, 0x65, 0x65, 0x64, 0x69, 0x74, 0x43, 0x61, 0x6C, 0x6C, 0x62, 0x61, 0x63, 0x6B, 0x00 };
+    public static ReadOnlySpan<byte> XNR6PreeditCallback => "r6PreeditCallback"u8;
 
     [NativeTypeName("#define XNStringConversionCallback \"stringConversionCallback\"")]
-    public static ReadOnlySpan<byte> XNStringConversionCallback => new byte[] { 0x73, 0x74, 0x72, 0x69, 0x6E, 0x67, 0x43, 0x6F, 0x6E, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6F, 0x6E, 0x43, 0x61, 0x6C, 0x6C, 0x62, 0x61, 0x63, 0x6B, 0x00 };
+    public static ReadOnlySpan<byte> XNStringConversionCallback => "stringConversionCallback"u8;
 
     [NativeTypeName("#define XNStringConversion \"stringConversion\"")]
-    public static ReadOnlySpan<byte> XNStringConversion => new byte[] { 0x73, 0x74, 0x72, 0x69, 0x6E, 0x67, 0x43, 0x6F, 0x6E, 0x76, 0x65, 0x72, 0x73, 0x69, 0x6F, 0x6E, 0x00 };
+    public static ReadOnlySpan<byte> XNStringConversion => "stringConversion"u8;
 
     [NativeTypeName("#define XNResetState \"resetState\"")]
-    public static ReadOnlySpan<byte> XNResetState => new byte[] { 0x72, 0x65, 0x73, 0x65, 0x74, 0x53, 0x74, 0x61, 0x74, 0x65, 0x00 };
+    public static ReadOnlySpan<byte> XNResetState => "resetState"u8;
 
     [NativeTypeName("#define XNHotKey \"hotKey\"")]
-    public static ReadOnlySpan<byte> XNHotKey => new byte[] { 0x68, 0x6F, 0x74, 0x4B, 0x65, 0x79, 0x00 };
+    public static ReadOnlySpan<byte> XNHotKey => "hotKey"u8;
 
     [NativeTypeName("#define XNHotKeyState \"hotKeyState\"")]
-    public static ReadOnlySpan<byte> XNHotKeyState => new byte[] { 0x68, 0x6F, 0x74, 0x4B, 0x65, 0x79, 0x53, 0x74, 0x61, 0x74, 0x65, 0x00 };
+    public static ReadOnlySpan<byte> XNHotKeyState => "hotKeyState"u8;
 
     [NativeTypeName("#define XNPreeditState \"preeditState\"")]
-    public static ReadOnlySpan<byte> XNPreeditState => new byte[] { 0x70, 0x72, 0x65, 0x65, 0x64, 0x69, 0x74, 0x53, 0x74, 0x61, 0x74, 0x65, 0x00 };
+    public static ReadOnlySpan<byte> XNPreeditState => "preeditState"u8;
 
     [NativeTypeName("#define XNSeparatorofNestedList \"separatorofNestedList\"")]
-    public static ReadOnlySpan<byte> XNSeparatorofNestedList => new byte[] { 0x73, 0x65, 0x70, 0x61, 0x72, 0x61, 0x74, 0x6F, 0x72, 0x6F, 0x66, 0x4E, 0x65, 0x73, 0x74, 0x65, 0x64, 0x4C, 0x69, 0x73, 0x74, 0x00 };
+    public static ReadOnlySpan<byte> XNSeparatorofNestedList => "separatorofNestedList"u8;
 
     [NativeTypeName("#define XBufferOverflow -1")]
     public const int XBufferOverflow = -1;

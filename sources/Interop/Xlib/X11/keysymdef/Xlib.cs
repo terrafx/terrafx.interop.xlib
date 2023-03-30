@@ -5131,6 +5131,21 @@ public static partial class Xlib
     [NativeTypeName("#define XK_uhorn 0x10001b0")]
     public const int XK_uhorn = 0x10001b0;
 
+    [NativeTypeName("#define XK_combining_tilde 0x1000303")]
+    public const int XK_combining_tilde = 0x1000303;
+
+    [NativeTypeName("#define XK_combining_grave 0x1000300")]
+    public const int XK_combining_grave = 0x1000300;
+
+    [NativeTypeName("#define XK_combining_acute 0x1000301")]
+    public const int XK_combining_acute = 0x1000301;
+
+    [NativeTypeName("#define XK_combining_hook 0x1000309")]
+    public const int XK_combining_hook = 0x1000309;
+
+    [NativeTypeName("#define XK_combining_belowdot 0x1000323")]
+    public const int XK_combining_belowdot = 0x1000323;
+
     [NativeTypeName("#define XK_EcuSign 0x10020a0")]
     public const int XK_EcuSign = 0x10020a0;
 

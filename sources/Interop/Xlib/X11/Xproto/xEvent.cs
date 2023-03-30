@@ -792,7 +792,7 @@ public partial struct xEvent
                     [NativeTypeName("CARD32")]
                     public uint type;
 
-                    [NativeTypeName("INT8 [20]")]
+                    [NativeTypeName("INT8[20]")]
                     public fixed sbyte bytes[20];
                 }
             }

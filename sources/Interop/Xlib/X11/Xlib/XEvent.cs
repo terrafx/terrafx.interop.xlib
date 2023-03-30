@@ -4,6 +4,7 @@
 // Original source is Copyright © The Open Group
 
 using System;
+using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
@@ -115,7 +116,7 @@ public partial struct XEvent
     public XGenericEventCookie xcookie;
 
     [FieldOffset(0)]
-    [NativeTypeName("long [24]")]
+    [NativeTypeName("long[24]")]
     public _pad_e__FixedBuffer pad;
 
     public partial struct _pad_e__FixedBuffer
@@ -145,6 +146,7 @@ public partial struct XEvent
         public nint e22;
         public nint e23;
 
+        [UnscopedRef]
         public ref nint this[int index]
         {
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
@@ -155,6 +157,7 @@ public partial struct XEvent
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        [UnscopedRef]
         public Span<nint> AsSpan() => MemoryMarshal.CreateSpan(ref e0, 24);
     }
 }

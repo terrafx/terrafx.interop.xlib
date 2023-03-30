@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Xlib;
 
-public unsafe partial struct XrmDatabase : IComparable, IComparable<XrmDatabase>, IEquatable<XrmDatabase>, IFormattable
+public readonly unsafe partial struct XrmDatabase : IComparable, IComparable<XrmDatabase>, IEquatable<XrmDatabase>, IFormattable
 {
     public readonly void* Value;
 
@@ -31,43 +31,43 @@ public unsafe partial struct XrmDatabase : IComparable, IComparable<XrmDatabase>
 
     public static implicit operator void*(XrmDatabase value) => value.Value;
 
-    public static explicit operator XrmDatabase(byte value) => new XrmDatabase((void*)(value));
+    public static explicit operator XrmDatabase(byte value) => new XrmDatabase(unchecked((void*)(value)));
 
     public static explicit operator byte(XrmDatabase value) => (byte)(value.Value);
 
-    public static explicit operator XrmDatabase(short value) => new XrmDatabase((void*)(value));
+    public static explicit operator XrmDatabase(short value) => new XrmDatabase(unchecked((void*)(value)));
 
     public static explicit operator short(XrmDatabase value) => (short)(value.Value);
 
-    public static explicit operator XrmDatabase(int value) => new XrmDatabase((void*)(value));
+    public static explicit operator XrmDatabase(int value) => new XrmDatabase(unchecked((void*)(value)));
 
     public static explicit operator int(XrmDatabase value) => (int)(value.Value);
 
-    public static explicit operator XrmDatabase(long value) => new XrmDatabase((void*)(value));
+    public static explicit operator XrmDatabase(long value) => new XrmDatabase(unchecked((void*)(value)));
 
     public static explicit operator long(XrmDatabase value) => (long)(value.Value);
 
-    public static explicit operator XrmDatabase(nint value) => new XrmDatabase((void*)(value));
+    public static explicit operator XrmDatabase(nint value) => new XrmDatabase(unchecked((void*)(value)));
 
     public static implicit operator nint(XrmDatabase value) => (nint)(value.Value);
 
-    public static explicit operator XrmDatabase(sbyte value) => new XrmDatabase((void*)(value));
+    public static explicit operator XrmDatabase(sbyte value) => new XrmDatabase(unchecked((void*)(value)));
 
     public static explicit operator sbyte(XrmDatabase value) => (sbyte)(value.Value);
 
-    public static explicit operator XrmDatabase(ushort value) => new XrmDatabase((void*)(value));
+    public static explicit operator XrmDatabase(ushort value) => new XrmDatabase(unchecked((void*)(value)));
 
     public static explicit operator ushort(XrmDatabase value) => (ushort)(value.Value);
 
-    public static explicit operator XrmDatabase(uint value) => new XrmDatabase((void*)(value));
+    public static explicit operator XrmDatabase(uint value) => new XrmDatabase(unchecked((void*)(value)));
 
     public static explicit operator uint(XrmDatabase value) => (uint)(value.Value);
 
-    public static explicit operator XrmDatabase(ulong value) => new XrmDatabase((void*)(value));
+    public static explicit operator XrmDatabase(ulong value) => new XrmDatabase(unchecked((void*)(value)));
 
     public static explicit operator ulong(XrmDatabase value) => (ulong)(value.Value);
 
-    public static explicit operator XrmDatabase(nuint value) => new XrmDatabase((void*)(value));
+    public static explicit operator XrmDatabase(nuint value) => new XrmDatabase(unchecked((void*)(value)));
 
     public static implicit operator nuint(XrmDatabase value) => (nuint)(value.Value);
 

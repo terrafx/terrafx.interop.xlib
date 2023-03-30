@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Xlib;
 
-public unsafe partial struct Colormap : IComparable, IComparable<Colormap>, IEquatable<Colormap>, IFormattable
+public readonly unsafe partial struct Colormap : IComparable, IComparable<Colormap>, IEquatable<Colormap>, IFormattable
 {
     public readonly void* Value;
 
@@ -31,43 +31,43 @@ public unsafe partial struct Colormap : IComparable, IComparable<Colormap>, IEqu
 
     public static implicit operator void*(Colormap value) => value.Value;
 
-    public static explicit operator Colormap(byte value) => new Colormap((void*)(value));
+    public static explicit operator Colormap(byte value) => new Colormap(unchecked((void*)(value)));
 
     public static explicit operator byte(Colormap value) => (byte)(value.Value);
 
-    public static explicit operator Colormap(short value) => new Colormap((void*)(value));
+    public static explicit operator Colormap(short value) => new Colormap(unchecked((void*)(value)));
 
     public static explicit operator short(Colormap value) => (short)(value.Value);
 
-    public static explicit operator Colormap(int value) => new Colormap((void*)(value));
+    public static explicit operator Colormap(int value) => new Colormap(unchecked((void*)(value)));
 
     public static explicit operator int(Colormap value) => (int)(value.Value);
 
-    public static explicit operator Colormap(long value) => new Colormap((void*)(value));
+    public static explicit operator Colormap(long value) => new Colormap(unchecked((void*)(value)));
 
     public static explicit operator long(Colormap value) => (long)(value.Value);
 
-    public static explicit operator Colormap(nint value) => new Colormap((void*)(value));
+    public static explicit operator Colormap(nint value) => new Colormap(unchecked((void*)(value)));
 
     public static implicit operator nint(Colormap value) => (nint)(value.Value);
 
-    public static explicit operator Colormap(sbyte value) => new Colormap((void*)(value));
+    public static explicit operator Colormap(sbyte value) => new Colormap(unchecked((void*)(value)));
 
     public static explicit operator sbyte(Colormap value) => (sbyte)(value.Value);
 
-    public static explicit operator Colormap(ushort value) => new Colormap((void*)(value));
+    public static explicit operator Colormap(ushort value) => new Colormap(unchecked((void*)(value)));
 
     public static explicit operator ushort(Colormap value) => (ushort)(value.Value);
 
-    public static explicit operator Colormap(uint value) => new Colormap((void*)(value));
+    public static explicit operator Colormap(uint value) => new Colormap(unchecked((void*)(value)));
 
     public static explicit operator uint(Colormap value) => (uint)(value.Value);
 
-    public static explicit operator Colormap(ulong value) => new Colormap((void*)(value));
+    public static explicit operator Colormap(ulong value) => new Colormap(unchecked((void*)(value)));
 
     public static explicit operator ulong(Colormap value) => (ulong)(value.Value);
 
-    public static explicit operator Colormap(nuint value) => new Colormap((void*)(value));
+    public static explicit operator Colormap(nuint value) => new Colormap(unchecked((void*)(value)));
 
     public static implicit operator nuint(Colormap value) => (nuint)(value.Value);
 

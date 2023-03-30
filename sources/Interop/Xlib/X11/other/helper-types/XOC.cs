@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Xlib;
 
-public unsafe partial struct XOC : IComparable, IComparable<XOC>, IEquatable<XOC>, IFormattable
+public readonly unsafe partial struct XOC : IComparable, IComparable<XOC>, IEquatable<XOC>, IFormattable
 {
     public readonly void* Value;
 
@@ -31,43 +31,43 @@ public unsafe partial struct XOC : IComparable, IComparable<XOC>, IEquatable<XOC
 
     public static implicit operator void*(XOC value) => value.Value;
 
-    public static explicit operator XOC(byte value) => new XOC((void*)(value));
+    public static explicit operator XOC(byte value) => new XOC(unchecked((void*)(value)));
 
     public static explicit operator byte(XOC value) => (byte)(value.Value);
 
-    public static explicit operator XOC(short value) => new XOC((void*)(value));
+    public static explicit operator XOC(short value) => new XOC(unchecked((void*)(value)));
 
     public static explicit operator short(XOC value) => (short)(value.Value);
 
-    public static explicit operator XOC(int value) => new XOC((void*)(value));
+    public static explicit operator XOC(int value) => new XOC(unchecked((void*)(value)));
 
     public static explicit operator int(XOC value) => (int)(value.Value);
 
-    public static explicit operator XOC(long value) => new XOC((void*)(value));
+    public static explicit operator XOC(long value) => new XOC(unchecked((void*)(value)));
 
     public static explicit operator long(XOC value) => (long)(value.Value);
 
-    public static explicit operator XOC(nint value) => new XOC((void*)(value));
+    public static explicit operator XOC(nint value) => new XOC(unchecked((void*)(value)));
 
     public static implicit operator nint(XOC value) => (nint)(value.Value);
 
-    public static explicit operator XOC(sbyte value) => new XOC((void*)(value));
+    public static explicit operator XOC(sbyte value) => new XOC(unchecked((void*)(value)));
 
     public static explicit operator sbyte(XOC value) => (sbyte)(value.Value);
 
-    public static explicit operator XOC(ushort value) => new XOC((void*)(value));
+    public static explicit operator XOC(ushort value) => new XOC(unchecked((void*)(value)));
 
     public static explicit operator ushort(XOC value) => (ushort)(value.Value);
 
-    public static explicit operator XOC(uint value) => new XOC((void*)(value));
+    public static explicit operator XOC(uint value) => new XOC(unchecked((void*)(value)));
 
     public static explicit operator uint(XOC value) => (uint)(value.Value);
 
-    public static explicit operator XOC(ulong value) => new XOC((void*)(value));
+    public static explicit operator XOC(ulong value) => new XOC(unchecked((void*)(value)));
 
     public static explicit operator ulong(XOC value) => (ulong)(value.Value);
 
-    public static explicit operator XOC(nuint value) => new XOC((void*)(value));
+    public static explicit operator XOC(nuint value) => new XOC(unchecked((void*)(value)));
 
     public static implicit operator nuint(XOC value) => (nuint)(value.Value);
 
