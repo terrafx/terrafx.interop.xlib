@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Xlib;
 
-public unsafe partial struct XrmHashBucket : IComparable, IComparable<XrmHashBucket>, IEquatable<XrmHashBucket>, IFormattable
+public readonly unsafe partial struct XrmHashBucket : IComparable, IComparable<XrmHashBucket>, IEquatable<XrmHashBucket>, IFormattable
 {
     public readonly void* Value;
 
@@ -31,43 +31,43 @@ public unsafe partial struct XrmHashBucket : IComparable, IComparable<XrmHashBuc
 
     public static implicit operator void*(XrmHashBucket value) => value.Value;
 
-    public static explicit operator XrmHashBucket(byte value) => new XrmHashBucket((void*)(value));
+    public static explicit operator XrmHashBucket(byte value) => new XrmHashBucket(unchecked((void*)(value)));
 
     public static explicit operator byte(XrmHashBucket value) => (byte)(value.Value);
 
-    public static explicit operator XrmHashBucket(short value) => new XrmHashBucket((void*)(value));
+    public static explicit operator XrmHashBucket(short value) => new XrmHashBucket(unchecked((void*)(value)));
 
     public static explicit operator short(XrmHashBucket value) => (short)(value.Value);
 
-    public static explicit operator XrmHashBucket(int value) => new XrmHashBucket((void*)(value));
+    public static explicit operator XrmHashBucket(int value) => new XrmHashBucket(unchecked((void*)(value)));
 
     public static explicit operator int(XrmHashBucket value) => (int)(value.Value);
 
-    public static explicit operator XrmHashBucket(long value) => new XrmHashBucket((void*)(value));
+    public static explicit operator XrmHashBucket(long value) => new XrmHashBucket(unchecked((void*)(value)));
 
     public static explicit operator long(XrmHashBucket value) => (long)(value.Value);
 
-    public static explicit operator XrmHashBucket(nint value) => new XrmHashBucket((void*)(value));
+    public static explicit operator XrmHashBucket(nint value) => new XrmHashBucket(unchecked((void*)(value)));
 
     public static implicit operator nint(XrmHashBucket value) => (nint)(value.Value);
 
-    public static explicit operator XrmHashBucket(sbyte value) => new XrmHashBucket((void*)(value));
+    public static explicit operator XrmHashBucket(sbyte value) => new XrmHashBucket(unchecked((void*)(value)));
 
     public static explicit operator sbyte(XrmHashBucket value) => (sbyte)(value.Value);
 
-    public static explicit operator XrmHashBucket(ushort value) => new XrmHashBucket((void*)(value));
+    public static explicit operator XrmHashBucket(ushort value) => new XrmHashBucket(unchecked((void*)(value)));
 
     public static explicit operator ushort(XrmHashBucket value) => (ushort)(value.Value);
 
-    public static explicit operator XrmHashBucket(uint value) => new XrmHashBucket((void*)(value));
+    public static explicit operator XrmHashBucket(uint value) => new XrmHashBucket(unchecked((void*)(value)));
 
     public static explicit operator uint(XrmHashBucket value) => (uint)(value.Value);
 
-    public static explicit operator XrmHashBucket(ulong value) => new XrmHashBucket((void*)(value));
+    public static explicit operator XrmHashBucket(ulong value) => new XrmHashBucket(unchecked((void*)(value)));
 
     public static explicit operator ulong(XrmHashBucket value) => (ulong)(value.Value);
 
-    public static explicit operator XrmHashBucket(nuint value) => new XrmHashBucket((void*)(value));
+    public static explicit operator XrmHashBucket(nuint value) => new XrmHashBucket(unchecked((void*)(value)));
 
     public static implicit operator nuint(XrmHashBucket value) => (nuint)(value.Value);
 

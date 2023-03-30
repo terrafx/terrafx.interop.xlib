@@ -17,6 +17,6 @@ public unsafe partial struct xQueryKeymapReply
     [NativeTypeName("CARD32")]
     public uint length;
 
-    [NativeTypeName("BYTE [32]")]
+    [NativeTypeName("BYTE[32]")]
     public fixed byte map[32];
 }

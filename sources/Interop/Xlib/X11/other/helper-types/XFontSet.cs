@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Xlib;
 
-public unsafe partial struct XFontSet : IComparable, IComparable<XFontSet>, IEquatable<XFontSet>, IFormattable
+public readonly unsafe partial struct XFontSet : IComparable, IComparable<XFontSet>, IEquatable<XFontSet>, IFormattable
 {
     public readonly void* Value;
 
@@ -31,43 +31,43 @@ public unsafe partial struct XFontSet : IComparable, IComparable<XFontSet>, IEqu
 
     public static implicit operator void*(XFontSet value) => value.Value;
 
-    public static explicit operator XFontSet(byte value) => new XFontSet((void*)(value));
+    public static explicit operator XFontSet(byte value) => new XFontSet(unchecked((void*)(value)));
 
     public static explicit operator byte(XFontSet value) => (byte)(value.Value);
 
-    public static explicit operator XFontSet(short value) => new XFontSet((void*)(value));
+    public static explicit operator XFontSet(short value) => new XFontSet(unchecked((void*)(value)));
 
     public static explicit operator short(XFontSet value) => (short)(value.Value);
 
-    public static explicit operator XFontSet(int value) => new XFontSet((void*)(value));
+    public static explicit operator XFontSet(int value) => new XFontSet(unchecked((void*)(value)));
 
     public static explicit operator int(XFontSet value) => (int)(value.Value);
 
-    public static explicit operator XFontSet(long value) => new XFontSet((void*)(value));
+    public static explicit operator XFontSet(long value) => new XFontSet(unchecked((void*)(value)));
 
     public static explicit operator long(XFontSet value) => (long)(value.Value);
 
-    public static explicit operator XFontSet(nint value) => new XFontSet((void*)(value));
+    public static explicit operator XFontSet(nint value) => new XFontSet(unchecked((void*)(value)));
 
     public static implicit operator nint(XFontSet value) => (nint)(value.Value);
 
-    public static explicit operator XFontSet(sbyte value) => new XFontSet((void*)(value));
+    public static explicit operator XFontSet(sbyte value) => new XFontSet(unchecked((void*)(value)));
 
     public static explicit operator sbyte(XFontSet value) => (sbyte)(value.Value);
 
-    public static explicit operator XFontSet(ushort value) => new XFontSet((void*)(value));
+    public static explicit operator XFontSet(ushort value) => new XFontSet(unchecked((void*)(value)));
 
     public static explicit operator ushort(XFontSet value) => (ushort)(value.Value);
 
-    public static explicit operator XFontSet(uint value) => new XFontSet((void*)(value));
+    public static explicit operator XFontSet(uint value) => new XFontSet(unchecked((void*)(value)));
 
     public static explicit operator uint(XFontSet value) => (uint)(value.Value);
 
-    public static explicit operator XFontSet(ulong value) => new XFontSet((void*)(value));
+    public static explicit operator XFontSet(ulong value) => new XFontSet(unchecked((void*)(value)));
 
     public static explicit operator ulong(XFontSet value) => (ulong)(value.Value);
 
-    public static explicit operator XFontSet(nuint value) => new XFontSet((void*)(value));
+    public static explicit operator XFontSet(nuint value) => new XFontSet(unchecked((void*)(value)));
 
     public static implicit operator nuint(XFontSet value) => (nuint)(value.Value);
 

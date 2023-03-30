@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Xlib;
 
-public unsafe partial struct Font : IComparable, IComparable<Font>, IEquatable<Font>, IFormattable
+public readonly unsafe partial struct Font : IComparable, IComparable<Font>, IEquatable<Font>, IFormattable
 {
     public readonly void* Value;
 
@@ -31,43 +31,43 @@ public unsafe partial struct Font : IComparable, IComparable<Font>, IEquatable<F
 
     public static implicit operator void*(Font value) => value.Value;
 
-    public static explicit operator Font(byte value) => new Font((void*)(value));
+    public static explicit operator Font(byte value) => new Font(unchecked((void*)(value)));
 
     public static explicit operator byte(Font value) => (byte)(value.Value);
 
-    public static explicit operator Font(short value) => new Font((void*)(value));
+    public static explicit operator Font(short value) => new Font(unchecked((void*)(value)));
 
     public static explicit operator short(Font value) => (short)(value.Value);
 
-    public static explicit operator Font(int value) => new Font((void*)(value));
+    public static explicit operator Font(int value) => new Font(unchecked((void*)(value)));
 
     public static explicit operator int(Font value) => (int)(value.Value);
 
-    public static explicit operator Font(long value) => new Font((void*)(value));
+    public static explicit operator Font(long value) => new Font(unchecked((void*)(value)));
 
     public static explicit operator long(Font value) => (long)(value.Value);
 
-    public static explicit operator Font(nint value) => new Font((void*)(value));
+    public static explicit operator Font(nint value) => new Font(unchecked((void*)(value)));
 
     public static implicit operator nint(Font value) => (nint)(value.Value);
 
-    public static explicit operator Font(sbyte value) => new Font((void*)(value));
+    public static explicit operator Font(sbyte value) => new Font(unchecked((void*)(value)));
 
     public static explicit operator sbyte(Font value) => (sbyte)(value.Value);
 
-    public static explicit operator Font(ushort value) => new Font((void*)(value));
+    public static explicit operator Font(ushort value) => new Font(unchecked((void*)(value)));
 
     public static explicit operator ushort(Font value) => (ushort)(value.Value);
 
-    public static explicit operator Font(uint value) => new Font((void*)(value));
+    public static explicit operator Font(uint value) => new Font(unchecked((void*)(value)));
 
     public static explicit operator uint(Font value) => (uint)(value.Value);
 
-    public static explicit operator Font(ulong value) => new Font((void*)(value));
+    public static explicit operator Font(ulong value) => new Font(unchecked((void*)(value)));
 
     public static explicit operator ulong(Font value) => (ulong)(value.Value);
 
-    public static explicit operator Font(nuint value) => new Font((void*)(value));
+    public static explicit operator Font(nuint value) => new Font(unchecked((void*)(value)));
 
     public static implicit operator nuint(Font value) => (nuint)(value.Value);
 

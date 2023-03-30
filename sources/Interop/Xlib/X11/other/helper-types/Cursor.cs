@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Xlib;
 
-public unsafe partial struct Cursor : IComparable, IComparable<Cursor>, IEquatable<Cursor>, IFormattable
+public readonly unsafe partial struct Cursor : IComparable, IComparable<Cursor>, IEquatable<Cursor>, IFormattable
 {
     public readonly void* Value;
 
@@ -31,43 +31,43 @@ public unsafe partial struct Cursor : IComparable, IComparable<Cursor>, IEquatab
 
     public static implicit operator void*(Cursor value) => value.Value;
 
-    public static explicit operator Cursor(byte value) => new Cursor((void*)(value));
+    public static explicit operator Cursor(byte value) => new Cursor(unchecked((void*)(value)));
 
     public static explicit operator byte(Cursor value) => (byte)(value.Value);
 
-    public static explicit operator Cursor(short value) => new Cursor((void*)(value));
+    public static explicit operator Cursor(short value) => new Cursor(unchecked((void*)(value)));
 
     public static explicit operator short(Cursor value) => (short)(value.Value);
 
-    public static explicit operator Cursor(int value) => new Cursor((void*)(value));
+    public static explicit operator Cursor(int value) => new Cursor(unchecked((void*)(value)));
 
     public static explicit operator int(Cursor value) => (int)(value.Value);
 
-    public static explicit operator Cursor(long value) => new Cursor((void*)(value));
+    public static explicit operator Cursor(long value) => new Cursor(unchecked((void*)(value)));
 
     public static explicit operator long(Cursor value) => (long)(value.Value);
 
-    public static explicit operator Cursor(nint value) => new Cursor((void*)(value));
+    public static explicit operator Cursor(nint value) => new Cursor(unchecked((void*)(value)));
 
     public static implicit operator nint(Cursor value) => (nint)(value.Value);
 
-    public static explicit operator Cursor(sbyte value) => new Cursor((void*)(value));
+    public static explicit operator Cursor(sbyte value) => new Cursor(unchecked((void*)(value)));
 
     public static explicit operator sbyte(Cursor value) => (sbyte)(value.Value);
 
-    public static explicit operator Cursor(ushort value) => new Cursor((void*)(value));
+    public static explicit operator Cursor(ushort value) => new Cursor(unchecked((void*)(value)));
 
     public static explicit operator ushort(Cursor value) => (ushort)(value.Value);
 
-    public static explicit operator Cursor(uint value) => new Cursor((void*)(value));
+    public static explicit operator Cursor(uint value) => new Cursor(unchecked((void*)(value)));
 
     public static explicit operator uint(Cursor value) => (uint)(value.Value);
 
-    public static explicit operator Cursor(ulong value) => new Cursor((void*)(value));
+    public static explicit operator Cursor(ulong value) => new Cursor(unchecked((void*)(value)));
 
     public static explicit operator ulong(Cursor value) => (ulong)(value.Value);
 
-    public static explicit operator Cursor(nuint value) => new Cursor((void*)(value));
+    public static explicit operator Cursor(nuint value) => new Cursor(unchecked((void*)(value)));
 
     public static implicit operator nuint(Cursor value) => (nuint)(value.Value);
 

@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Xlib;
 
-public unsafe partial struct XID : IComparable, IComparable<XID>, IEquatable<XID>, IFormattable
+public readonly unsafe partial struct XID : IComparable, IComparable<XID>, IEquatable<XID>, IFormattable
 {
     public readonly void* Value;
 
@@ -31,43 +31,43 @@ public unsafe partial struct XID : IComparable, IComparable<XID>, IEquatable<XID
 
     public static implicit operator void*(XID value) => value.Value;
 
-    public static explicit operator XID(byte value) => new XID((void*)(value));
+    public static explicit operator XID(byte value) => new XID(unchecked((void*)(value)));
 
     public static explicit operator byte(XID value) => (byte)(value.Value);
 
-    public static explicit operator XID(short value) => new XID((void*)(value));
+    public static explicit operator XID(short value) => new XID(unchecked((void*)(value)));
 
     public static explicit operator short(XID value) => (short)(value.Value);
 
-    public static explicit operator XID(int value) => new XID((void*)(value));
+    public static explicit operator XID(int value) => new XID(unchecked((void*)(value)));
 
     public static explicit operator int(XID value) => (int)(value.Value);
 
-    public static explicit operator XID(long value) => new XID((void*)(value));
+    public static explicit operator XID(long value) => new XID(unchecked((void*)(value)));
 
     public static explicit operator long(XID value) => (long)(value.Value);
 
-    public static explicit operator XID(nint value) => new XID((void*)(value));
+    public static explicit operator XID(nint value) => new XID(unchecked((void*)(value)));
 
     public static implicit operator nint(XID value) => (nint)(value.Value);
 
-    public static explicit operator XID(sbyte value) => new XID((void*)(value));
+    public static explicit operator XID(sbyte value) => new XID(unchecked((void*)(value)));
 
     public static explicit operator sbyte(XID value) => (sbyte)(value.Value);
 
-    public static explicit operator XID(ushort value) => new XID((void*)(value));
+    public static explicit operator XID(ushort value) => new XID(unchecked((void*)(value)));
 
     public static explicit operator ushort(XID value) => (ushort)(value.Value);
 
-    public static explicit operator XID(uint value) => new XID((void*)(value));
+    public static explicit operator XID(uint value) => new XID(unchecked((void*)(value)));
 
     public static explicit operator uint(XID value) => (uint)(value.Value);
 
-    public static explicit operator XID(ulong value) => new XID((void*)(value));
+    public static explicit operator XID(ulong value) => new XID(unchecked((void*)(value)));
 
     public static explicit operator ulong(XID value) => (ulong)(value.Value);
 
-    public static explicit operator XID(nuint value) => new XID((void*)(value));
+    public static explicit operator XID(nuint value) => new XID(unchecked((void*)(value)));
 
     public static implicit operator nuint(XID value) => (nuint)(value.Value);
 

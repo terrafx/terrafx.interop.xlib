@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Xlib;
 
-public unsafe partial struct XIC : IComparable, IComparable<XIC>, IEquatable<XIC>, IFormattable
+public readonly unsafe partial struct XIC : IComparable, IComparable<XIC>, IEquatable<XIC>, IFormattable
 {
     public readonly void* Value;
 
@@ -31,43 +31,43 @@ public unsafe partial struct XIC : IComparable, IComparable<XIC>, IEquatable<XIC
 
     public static implicit operator void*(XIC value) => value.Value;
 
-    public static explicit operator XIC(byte value) => new XIC((void*)(value));
+    public static explicit operator XIC(byte value) => new XIC(unchecked((void*)(value)));
 
     public static explicit operator byte(XIC value) => (byte)(value.Value);
 
-    public static explicit operator XIC(short value) => new XIC((void*)(value));
+    public static explicit operator XIC(short value) => new XIC(unchecked((void*)(value)));
 
     public static explicit operator short(XIC value) => (short)(value.Value);
 
-    public static explicit operator XIC(int value) => new XIC((void*)(value));
+    public static explicit operator XIC(int value) => new XIC(unchecked((void*)(value)));
 
     public static explicit operator int(XIC value) => (int)(value.Value);
 
-    public static explicit operator XIC(long value) => new XIC((void*)(value));
+    public static explicit operator XIC(long value) => new XIC(unchecked((void*)(value)));
 
     public static explicit operator long(XIC value) => (long)(value.Value);
 
-    public static explicit operator XIC(nint value) => new XIC((void*)(value));
+    public static explicit operator XIC(nint value) => new XIC(unchecked((void*)(value)));
 
     public static implicit operator nint(XIC value) => (nint)(value.Value);
 
-    public static explicit operator XIC(sbyte value) => new XIC((void*)(value));
+    public static explicit operator XIC(sbyte value) => new XIC(unchecked((void*)(value)));
 
     public static explicit operator sbyte(XIC value) => (sbyte)(value.Value);
 
-    public static explicit operator XIC(ushort value) => new XIC((void*)(value));
+    public static explicit operator XIC(ushort value) => new XIC(unchecked((void*)(value)));
 
     public static explicit operator ushort(XIC value) => (ushort)(value.Value);
 
-    public static explicit operator XIC(uint value) => new XIC((void*)(value));
+    public static explicit operator XIC(uint value) => new XIC(unchecked((void*)(value)));
 
     public static explicit operator uint(XIC value) => (uint)(value.Value);
 
-    public static explicit operator XIC(ulong value) => new XIC((void*)(value));
+    public static explicit operator XIC(ulong value) => new XIC(unchecked((void*)(value)));
 
     public static explicit operator ulong(XIC value) => (ulong)(value.Value);
 
-    public static explicit operator XIC(nuint value) => new XIC((void*)(value));
+    public static explicit operator XIC(nuint value) => new XIC(unchecked((void*)(value)));
 
     public static implicit operator nuint(XIC value) => (nuint)(value.Value);
 

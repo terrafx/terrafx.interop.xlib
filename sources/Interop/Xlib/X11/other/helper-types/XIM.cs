@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Xlib;
 
-public unsafe partial struct XIM : IComparable, IComparable<XIM>, IEquatable<XIM>, IFormattable
+public readonly unsafe partial struct XIM : IComparable, IComparable<XIM>, IEquatable<XIM>, IFormattable
 {
     public readonly void* Value;
 
@@ -31,43 +31,43 @@ public unsafe partial struct XIM : IComparable, IComparable<XIM>, IEquatable<XIM
 
     public static implicit operator void*(XIM value) => value.Value;
 
-    public static explicit operator XIM(byte value) => new XIM((void*)(value));
+    public static explicit operator XIM(byte value) => new XIM(unchecked((void*)(value)));
 
     public static explicit operator byte(XIM value) => (byte)(value.Value);
 
-    public static explicit operator XIM(short value) => new XIM((void*)(value));
+    public static explicit operator XIM(short value) => new XIM(unchecked((void*)(value)));
 
     public static explicit operator short(XIM value) => (short)(value.Value);
 
-    public static explicit operator XIM(int value) => new XIM((void*)(value));
+    public static explicit operator XIM(int value) => new XIM(unchecked((void*)(value)));
 
     public static explicit operator int(XIM value) => (int)(value.Value);
 
-    public static explicit operator XIM(long value) => new XIM((void*)(value));
+    public static explicit operator XIM(long value) => new XIM(unchecked((void*)(value)));
 
     public static explicit operator long(XIM value) => (long)(value.Value);
 
-    public static explicit operator XIM(nint value) => new XIM((void*)(value));
+    public static explicit operator XIM(nint value) => new XIM(unchecked((void*)(value)));
 
     public static implicit operator nint(XIM value) => (nint)(value.Value);
 
-    public static explicit operator XIM(sbyte value) => new XIM((void*)(value));
+    public static explicit operator XIM(sbyte value) => new XIM(unchecked((void*)(value)));
 
     public static explicit operator sbyte(XIM value) => (sbyte)(value.Value);
 
-    public static explicit operator XIM(ushort value) => new XIM((void*)(value));
+    public static explicit operator XIM(ushort value) => new XIM(unchecked((void*)(value)));
 
     public static explicit operator ushort(XIM value) => (ushort)(value.Value);
 
-    public static explicit operator XIM(uint value) => new XIM((void*)(value));
+    public static explicit operator XIM(uint value) => new XIM(unchecked((void*)(value)));
 
     public static explicit operator uint(XIM value) => (uint)(value.Value);
 
-    public static explicit operator XIM(ulong value) => new XIM((void*)(value));
+    public static explicit operator XIM(ulong value) => new XIM(unchecked((void*)(value)));
 
     public static explicit operator ulong(XIM value) => (ulong)(value.Value);
 
-    public static explicit operator XIM(nuint value) => new XIM((void*)(value));
+    public static explicit operator XIM(nuint value) => new XIM(unchecked((void*)(value)));
 
     public static implicit operator nuint(XIM value) => (nuint)(value.Value);
 

@@ -28,7 +28,7 @@ public unsafe partial struct xChangePropertyReq
     [NativeTypeName("CARD8")]
     public byte format;
 
-    [NativeTypeName("BYTE [3]")]
+    [NativeTypeName("BYTE[3]")]
     public fixed byte pad[3];
 
     [NativeTypeName("CARD32")]

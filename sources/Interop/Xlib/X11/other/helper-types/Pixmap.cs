@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Xlib;
 
-public unsafe partial struct Pixmap : IComparable, IComparable<Pixmap>, IEquatable<Pixmap>, IFormattable
+public readonly unsafe partial struct Pixmap : IComparable, IComparable<Pixmap>, IEquatable<Pixmap>, IFormattable
 {
     public readonly void* Value;
 
@@ -31,43 +31,43 @@ public unsafe partial struct Pixmap : IComparable, IComparable<Pixmap>, IEquatab
 
     public static implicit operator void*(Pixmap value) => value.Value;
 
-    public static explicit operator Pixmap(byte value) => new Pixmap((void*)(value));
+    public static explicit operator Pixmap(byte value) => new Pixmap(unchecked((void*)(value)));
 
     public static explicit operator byte(Pixmap value) => (byte)(value.Value);
 
-    public static explicit operator Pixmap(short value) => new Pixmap((void*)(value));
+    public static explicit operator Pixmap(short value) => new Pixmap(unchecked((void*)(value)));
 
     public static explicit operator short(Pixmap value) => (short)(value.Value);
 
-    public static explicit operator Pixmap(int value) => new Pixmap((void*)(value));
+    public static explicit operator Pixmap(int value) => new Pixmap(unchecked((void*)(value)));
 
     public static explicit operator int(Pixmap value) => (int)(value.Value);
 
-    public static explicit operator Pixmap(long value) => new Pixmap((void*)(value));
+    public static explicit operator Pixmap(long value) => new Pixmap(unchecked((void*)(value)));
 
     public static explicit operator long(Pixmap value) => (long)(value.Value);
 
-    public static explicit operator Pixmap(nint value) => new Pixmap((void*)(value));
+    public static explicit operator Pixmap(nint value) => new Pixmap(unchecked((void*)(value)));
 
     public static implicit operator nint(Pixmap value) => (nint)(value.Value);
 
-    public static explicit operator Pixmap(sbyte value) => new Pixmap((void*)(value));
+    public static explicit operator Pixmap(sbyte value) => new Pixmap(unchecked((void*)(value)));
 
     public static explicit operator sbyte(Pixmap value) => (sbyte)(value.Value);
 
-    public static explicit operator Pixmap(ushort value) => new Pixmap((void*)(value));
+    public static explicit operator Pixmap(ushort value) => new Pixmap(unchecked((void*)(value)));
 
     public static explicit operator ushort(Pixmap value) => (ushort)(value.Value);
 
-    public static explicit operator Pixmap(uint value) => new Pixmap((void*)(value));
+    public static explicit operator Pixmap(uint value) => new Pixmap(unchecked((void*)(value)));
 
     public static explicit operator uint(Pixmap value) => (uint)(value.Value);
 
-    public static explicit operator Pixmap(ulong value) => new Pixmap((void*)(value));
+    public static explicit operator Pixmap(ulong value) => new Pixmap(unchecked((void*)(value)));
 
     public static explicit operator ulong(Pixmap value) => (ulong)(value.Value);
 
-    public static explicit operator Pixmap(nuint value) => new Pixmap((void*)(value));
+    public static explicit operator Pixmap(nuint value) => new Pixmap(unchecked((void*)(value)));
 
     public static implicit operator nuint(Pixmap value) => (nuint)(value.Value);
 

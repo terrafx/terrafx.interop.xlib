@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Xlib;
 
-public unsafe partial struct Region : IComparable, IComparable<Region>, IEquatable<Region>, IFormattable
+public readonly unsafe partial struct Region : IComparable, IComparable<Region>, IEquatable<Region>, IFormattable
 {
     public readonly void* Value;
 
@@ -31,43 +31,43 @@ public unsafe partial struct Region : IComparable, IComparable<Region>, IEquatab
 
     public static implicit operator void*(Region value) => value.Value;
 
-    public static explicit operator Region(byte value) => new Region((void*)(value));
+    public static explicit operator Region(byte value) => new Region(unchecked((void*)(value)));
 
     public static explicit operator byte(Region value) => (byte)(value.Value);
 
-    public static explicit operator Region(short value) => new Region((void*)(value));
+    public static explicit operator Region(short value) => new Region(unchecked((void*)(value)));
 
     public static explicit operator short(Region value) => (short)(value.Value);
 
-    public static explicit operator Region(int value) => new Region((void*)(value));
+    public static explicit operator Region(int value) => new Region(unchecked((void*)(value)));
 
     public static explicit operator int(Region value) => (int)(value.Value);
 
-    public static explicit operator Region(long value) => new Region((void*)(value));
+    public static explicit operator Region(long value) => new Region(unchecked((void*)(value)));
 
     public static explicit operator long(Region value) => (long)(value.Value);
 
-    public static explicit operator Region(nint value) => new Region((void*)(value));
+    public static explicit operator Region(nint value) => new Region(unchecked((void*)(value)));
 
     public static implicit operator nint(Region value) => (nint)(value.Value);
 
-    public static explicit operator Region(sbyte value) => new Region((void*)(value));
+    public static explicit operator Region(sbyte value) => new Region(unchecked((void*)(value)));
 
     public static explicit operator sbyte(Region value) => (sbyte)(value.Value);
 
-    public static explicit operator Region(ushort value) => new Region((void*)(value));
+    public static explicit operator Region(ushort value) => new Region(unchecked((void*)(value)));
 
     public static explicit operator ushort(Region value) => (ushort)(value.Value);
 
-    public static explicit operator Region(uint value) => new Region((void*)(value));
+    public static explicit operator Region(uint value) => new Region(unchecked((void*)(value)));
 
     public static explicit operator uint(Region value) => (uint)(value.Value);
 
-    public static explicit operator Region(ulong value) => new Region((void*)(value));
+    public static explicit operator Region(ulong value) => new Region(unchecked((void*)(value)));
 
     public static explicit operator ulong(Region value) => (ulong)(value.Value);
 
-    public static explicit operator Region(nuint value) => new Region((void*)(value));
+    public static explicit operator Region(nuint value) => new Region(unchecked((void*)(value)));
 
     public static implicit operator nuint(Region value) => (nuint)(value.Value);
 

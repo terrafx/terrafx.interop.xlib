@@ -18,6 +18,6 @@ public unsafe partial struct XKeymapEvent
 
     public Window window;
 
-    [NativeTypeName("char [32]")]
+    [NativeTypeName("char[32]")]
     public fixed sbyte key_vector[32];
 }

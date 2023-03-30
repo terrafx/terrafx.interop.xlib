@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Xlib;
 
-public unsafe partial struct GC : IComparable, IComparable<GC>, IEquatable<GC>, IFormattable
+public readonly unsafe partial struct GC : IComparable, IComparable<GC>, IEquatable<GC>, IFormattable
 {
     public readonly void* Value;
 
@@ -31,43 +31,43 @@ public unsafe partial struct GC : IComparable, IComparable<GC>, IEquatable<GC>, 
 
     public static implicit operator void*(GC value) => value.Value;
 
-    public static explicit operator GC(byte value) => new GC((void*)(value));
+    public static explicit operator GC(byte value) => new GC(unchecked((void*)(value)));
 
     public static explicit operator byte(GC value) => (byte)(value.Value);
 
-    public static explicit operator GC(short value) => new GC((void*)(value));
+    public static explicit operator GC(short value) => new GC(unchecked((void*)(value)));
 
     public static explicit operator short(GC value) => (short)(value.Value);
 
-    public static explicit operator GC(int value) => new GC((void*)(value));
+    public static explicit operator GC(int value) => new GC(unchecked((void*)(value)));
 
     public static explicit operator int(GC value) => (int)(value.Value);
 
-    public static explicit operator GC(long value) => new GC((void*)(value));
+    public static explicit operator GC(long value) => new GC(unchecked((void*)(value)));
 
     public static explicit operator long(GC value) => (long)(value.Value);
 
-    public static explicit operator GC(nint value) => new GC((void*)(value));
+    public static explicit operator GC(nint value) => new GC(unchecked((void*)(value)));
 
     public static implicit operator nint(GC value) => (nint)(value.Value);
 
-    public static explicit operator GC(sbyte value) => new GC((void*)(value));
+    public static explicit operator GC(sbyte value) => new GC(unchecked((void*)(value)));
 
     public static explicit operator sbyte(GC value) => (sbyte)(value.Value);
 
-    public static explicit operator GC(ushort value) => new GC((void*)(value));
+    public static explicit operator GC(ushort value) => new GC(unchecked((void*)(value)));
 
     public static explicit operator ushort(GC value) => (ushort)(value.Value);
 
-    public static explicit operator GC(uint value) => new GC((void*)(value));
+    public static explicit operator GC(uint value) => new GC(unchecked((void*)(value)));
 
     public static explicit operator uint(GC value) => (uint)(value.Value);
 
-    public static explicit operator GC(ulong value) => new GC((void*)(value));
+    public static explicit operator GC(ulong value) => new GC(unchecked((void*)(value)));
 
     public static explicit operator ulong(GC value) => (ulong)(value.Value);
 
-    public static explicit operator GC(nuint value) => new GC((void*)(value));
+    public static explicit operator GC(nuint value) => new GC(unchecked((void*)(value)));
 
     public static implicit operator nuint(GC value) => (nuint)(value.Value);
 

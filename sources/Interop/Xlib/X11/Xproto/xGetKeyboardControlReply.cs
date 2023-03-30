@@ -36,6 +36,6 @@ public unsafe partial struct xGetKeyboardControlReply
     [NativeTypeName("CARD16")]
     public ushort pad;
 
-    [NativeTypeName("BYTE [32]")]
+    [NativeTypeName("BYTE[32]")]
     public fixed byte map[32];
 }

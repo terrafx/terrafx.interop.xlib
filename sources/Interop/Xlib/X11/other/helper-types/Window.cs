@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Xlib;
 
-public unsafe partial struct Window : IComparable, IComparable<Window>, IEquatable<Window>, IFormattable
+public readonly unsafe partial struct Window : IComparable, IComparable<Window>, IEquatable<Window>, IFormattable
 {
     public readonly void* Value;
 
@@ -31,43 +31,43 @@ public unsafe partial struct Window : IComparable, IComparable<Window>, IEquatab
 
     public static implicit operator void*(Window value) => value.Value;
 
-    public static explicit operator Window(byte value) => new Window((void*)(value));
+    public static explicit operator Window(byte value) => new Window(unchecked((void*)(value)));
 
     public static explicit operator byte(Window value) => (byte)(value.Value);
 
-    public static explicit operator Window(short value) => new Window((void*)(value));
+    public static explicit operator Window(short value) => new Window(unchecked((void*)(value)));
 
     public static explicit operator short(Window value) => (short)(value.Value);
 
-    public static explicit operator Window(int value) => new Window((void*)(value));
+    public static explicit operator Window(int value) => new Window(unchecked((void*)(value)));
 
     public static explicit operator int(Window value) => (int)(value.Value);
 
-    public static explicit operator Window(long value) => new Window((void*)(value));
+    public static explicit operator Window(long value) => new Window(unchecked((void*)(value)));
 
     public static explicit operator long(Window value) => (long)(value.Value);
 
-    public static explicit operator Window(nint value) => new Window((void*)(value));
+    public static explicit operator Window(nint value) => new Window(unchecked((void*)(value)));
 
     public static implicit operator nint(Window value) => (nint)(value.Value);
 
-    public static explicit operator Window(sbyte value) => new Window((void*)(value));
+    public static explicit operator Window(sbyte value) => new Window(unchecked((void*)(value)));
 
     public static explicit operator sbyte(Window value) => (sbyte)(value.Value);
 
-    public static explicit operator Window(ushort value) => new Window((void*)(value));
+    public static explicit operator Window(ushort value) => new Window(unchecked((void*)(value)));
 
     public static explicit operator ushort(Window value) => (ushort)(value.Value);
 
-    public static explicit operator Window(uint value) => new Window((void*)(value));
+    public static explicit operator Window(uint value) => new Window(unchecked((void*)(value)));
 
     public static explicit operator uint(Window value) => (uint)(value.Value);
 
-    public static explicit operator Window(ulong value) => new Window((void*)(value));
+    public static explicit operator Window(ulong value) => new Window(unchecked((void*)(value)));
 
     public static explicit operator ulong(Window value) => (ulong)(value.Value);
 
-    public static explicit operator Window(nuint value) => new Window((void*)(value));
+    public static explicit operator Window(nuint value) => new Window(unchecked((void*)(value)));
 
     public static implicit operator nuint(Window value) => (nuint)(value.Value);
 

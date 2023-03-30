@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Xlib;
 
-public unsafe partial struct VisualID : IComparable, IComparable<VisualID>, IEquatable<VisualID>, IFormattable
+public readonly unsafe partial struct VisualID : IComparable, IComparable<VisualID>, IEquatable<VisualID>, IFormattable
 {
     public readonly void* Value;
 
@@ -31,43 +31,43 @@ public unsafe partial struct VisualID : IComparable, IComparable<VisualID>, IEqu
 
     public static implicit operator void*(VisualID value) => value.Value;
 
-    public static explicit operator VisualID(byte value) => new VisualID((void*)(value));
+    public static explicit operator VisualID(byte value) => new VisualID(unchecked((void*)(value)));
 
     public static explicit operator byte(VisualID value) => (byte)(value.Value);
 
-    public static explicit operator VisualID(short value) => new VisualID((void*)(value));
+    public static explicit operator VisualID(short value) => new VisualID(unchecked((void*)(value)));
 
     public static explicit operator short(VisualID value) => (short)(value.Value);
 
-    public static explicit operator VisualID(int value) => new VisualID((void*)(value));
+    public static explicit operator VisualID(int value) => new VisualID(unchecked((void*)(value)));
 
     public static explicit operator int(VisualID value) => (int)(value.Value);
 
-    public static explicit operator VisualID(long value) => new VisualID((void*)(value));
+    public static explicit operator VisualID(long value) => new VisualID(unchecked((void*)(value)));
 
     public static explicit operator long(VisualID value) => (long)(value.Value);
 
-    public static explicit operator VisualID(nint value) => new VisualID((void*)(value));
+    public static explicit operator VisualID(nint value) => new VisualID(unchecked((void*)(value)));
 
     public static implicit operator nint(VisualID value) => (nint)(value.Value);
 
-    public static explicit operator VisualID(sbyte value) => new VisualID((void*)(value));
+    public static explicit operator VisualID(sbyte value) => new VisualID(unchecked((void*)(value)));
 
     public static explicit operator sbyte(VisualID value) => (sbyte)(value.Value);
 
-    public static explicit operator VisualID(ushort value) => new VisualID((void*)(value));
+    public static explicit operator VisualID(ushort value) => new VisualID(unchecked((void*)(value)));
 
     public static explicit operator ushort(VisualID value) => (ushort)(value.Value);
 
-    public static explicit operator VisualID(uint value) => new VisualID((void*)(value));
+    public static explicit operator VisualID(uint value) => new VisualID(unchecked((void*)(value)));
 
     public static explicit operator uint(VisualID value) => (uint)(value.Value);
 
-    public static explicit operator VisualID(ulong value) => new VisualID((void*)(value));
+    public static explicit operator VisualID(ulong value) => new VisualID(unchecked((void*)(value)));
 
     public static explicit operator ulong(VisualID value) => (ulong)(value.Value);
 
-    public static explicit operator VisualID(nuint value) => new VisualID((void*)(value));
+    public static explicit operator VisualID(nuint value) => new VisualID(unchecked((void*)(value)));
 
     public static implicit operator nuint(VisualID value) => (nuint)(value.Value);
 

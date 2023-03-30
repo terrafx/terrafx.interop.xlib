@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Xlib;
 
-public unsafe partial struct Drawable : IComparable, IComparable<Drawable>, IEquatable<Drawable>, IFormattable
+public readonly unsafe partial struct Drawable : IComparable, IComparable<Drawable>, IEquatable<Drawable>, IFormattable
 {
     public readonly void* Value;
 
@@ -31,43 +31,43 @@ public unsafe partial struct Drawable : IComparable, IComparable<Drawable>, IEqu
 
     public static implicit operator void*(Drawable value) => value.Value;
 
-    public static explicit operator Drawable(byte value) => new Drawable((void*)(value));
+    public static explicit operator Drawable(byte value) => new Drawable(unchecked((void*)(value)));
 
     public static explicit operator byte(Drawable value) => (byte)(value.Value);
 
-    public static explicit operator Drawable(short value) => new Drawable((void*)(value));
+    public static explicit operator Drawable(short value) => new Drawable(unchecked((void*)(value)));
 
     public static explicit operator short(Drawable value) => (short)(value.Value);
 
-    public static explicit operator Drawable(int value) => new Drawable((void*)(value));
+    public static explicit operator Drawable(int value) => new Drawable(unchecked((void*)(value)));
 
     public static explicit operator int(Drawable value) => (int)(value.Value);
 
-    public static explicit operator Drawable(long value) => new Drawable((void*)(value));
+    public static explicit operator Drawable(long value) => new Drawable(unchecked((void*)(value)));
 
     public static explicit operator long(Drawable value) => (long)(value.Value);
 
-    public static explicit operator Drawable(nint value) => new Drawable((void*)(value));
+    public static explicit operator Drawable(nint value) => new Drawable(unchecked((void*)(value)));
 
     public static implicit operator nint(Drawable value) => (nint)(value.Value);
 
-    public static explicit operator Drawable(sbyte value) => new Drawable((void*)(value));
+    public static explicit operator Drawable(sbyte value) => new Drawable(unchecked((void*)(value)));
 
     public static explicit operator sbyte(Drawable value) => (sbyte)(value.Value);
 
-    public static explicit operator Drawable(ushort value) => new Drawable((void*)(value));
+    public static explicit operator Drawable(ushort value) => new Drawable(unchecked((void*)(value)));
 
     public static explicit operator ushort(Drawable value) => (ushort)(value.Value);
 
-    public static explicit operator Drawable(uint value) => new Drawable((void*)(value));
+    public static explicit operator Drawable(uint value) => new Drawable(unchecked((void*)(value)));
 
     public static explicit operator uint(Drawable value) => (uint)(value.Value);
 
-    public static explicit operator Drawable(ulong value) => new Drawable((void*)(value));
+    public static explicit operator Drawable(ulong value) => new Drawable(unchecked((void*)(value)));
 
     public static explicit operator ulong(Drawable value) => (ulong)(value.Value);
 
-    public static explicit operator Drawable(nuint value) => new Drawable((void*)(value));
+    public static explicit operator Drawable(nuint value) => new Drawable(unchecked((void*)(value)));
 
     public static implicit operator nuint(Drawable value) => (nuint)(value.Value);
 

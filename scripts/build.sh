@@ -108,6 +108,13 @@ function Generate {
     ClangSharpPInvokeGenerator "@generate.rsp"
     popd
   done
+
+  LASTEXITCODE=$?
+
+  if [ "$LASTEXITCODE" != 0 ]; then
+    echo "'Build' failed for '$solution'"
+    return "$LASTEXITCODE"
+  fi
 }
 
 function Help {

@@ -4,7 +4,7 @@ using System;
 
 namespace TerraFX.Interop.Xlib;
 
-public unsafe partial struct GContext : IComparable, IComparable<GContext>, IEquatable<GContext>, IFormattable
+public readonly unsafe partial struct GContext : IComparable, IComparable<GContext>, IEquatable<GContext>, IFormattable
 {
     public readonly void* Value;
 
@@ -31,43 +31,43 @@ public unsafe partial struct GContext : IComparable, IComparable<GContext>, IEqu
 
     public static implicit operator void*(GContext value) => value.Value;
 
-    public static explicit operator GContext(byte value) => new GContext((void*)(value));
+    public static explicit operator GContext(byte value) => new GContext(unchecked((void*)(value)));
 
     public static explicit operator byte(GContext value) => (byte)(value.Value);
 
-    public static explicit operator GContext(short value) => new GContext((void*)(value));
+    public static explicit operator GContext(short value) => new GContext(unchecked((void*)(value)));
 
     public static explicit operator short(GContext value) => (short)(value.Value);
 
-    public static explicit operator GContext(int value) => new GContext((void*)(value));
+    public static explicit operator GContext(int value) => new GContext(unchecked((void*)(value)));
 
     public static explicit operator int(GContext value) => (int)(value.Value);
 
-    public static explicit operator GContext(long value) => new GContext((void*)(value));
+    public static explicit operator GContext(long value) => new GContext(unchecked((void*)(value)));
 
     public static explicit operator long(GContext value) => (long)(value.Value);
 
-    public static explicit operator GContext(nint value) => new GContext((void*)(value));
+    public static explicit operator GContext(nint value) => new GContext(unchecked((void*)(value)));
 
     public static implicit operator nint(GContext value) => (nint)(value.Value);
 
-    public static explicit operator GContext(sbyte value) => new GContext((void*)(value));
+    public static explicit operator GContext(sbyte value) => new GContext(unchecked((void*)(value)));
 
     public static explicit operator sbyte(GContext value) => (sbyte)(value.Value);
 
-    public static explicit operator GContext(ushort value) => new GContext((void*)(value));
+    public static explicit operator GContext(ushort value) => new GContext(unchecked((void*)(value)));
 
     public static explicit operator ushort(GContext value) => (ushort)(value.Value);
 
-    public static explicit operator GContext(uint value) => new GContext((void*)(value));
+    public static explicit operator GContext(uint value) => new GContext(unchecked((void*)(value)));
 
     public static explicit operator uint(GContext value) => (uint)(value.Value);
 
-    public static explicit operator GContext(ulong value) => new GContext((void*)(value));
+    public static explicit operator GContext(ulong value) => new GContext(unchecked((void*)(value)));
 
     public static explicit operator ulong(GContext value) => (ulong)(value.Value);
 
-    public static explicit operator GContext(nuint value) => new GContext((void*)(value));
+    public static explicit operator GContext(nuint value) => new GContext(unchecked((void*)(value)));
 
     public static implicit operator nuint(GContext value) => (nuint)(value.Value);
 
