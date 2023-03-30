@@ -10,7 +10,7 @@ namespace TerraFX.Interop.Xlib;
 
 public static unsafe partial class Xlib
 {
-    [DllImport("libX11", EntryPoint = "_Z7_XmblenPci", ExactSpelling = true)]
+    [DllImport("libX11", ExactSpelling = true)]
     public static extern int _Xmblen([NativeTypeName("char *")] sbyte* str, int len);
 
     [DllImport("libX11", ExactSpelling = true)]
