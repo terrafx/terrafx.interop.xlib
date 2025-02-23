@@ -28,14 +28,66 @@ dotnet_naming_rule.type_parameters_should_be_pascal_case_prefixed_with_t.severit
 # Set dotnet style options to:
 #    disable certain parent style options since they are not applicable to interop
 ###############################################################################
-csharp_style_expression_bodied_methods = when_on_single_line:none
+dotnet_style_namespace_match_folder = true:none
 dotnet_style_parentheses_in_arithmetic_binary_operators = always_for_clarity:none
 dotnet_style_parentheses_in_other_binary_operators = always_for_clarity:none
 dotnet_style_parentheses_in_other_operators = never_if_unnecessary:none
 dotnet_style_parentheses_in_relational_binary_operators = always_for_clarity:none
+dotnet_style_prefer_compound_assignment = true:none
 dotnet_style_prefer_conditional_expression_over_assignment = true:none
 dotnet_style_prefer_conditional_expression_over_return = true:none
+
+###############################################################################
+# Set csharp style options to:
+#    disable certain parent style options since they are not applicable to interop
+###############################################################################
+csharp_style_expression_bodied_methods = when_on_single_line:none
 csharp_style_prefer_pattern_matching = true:none
+csharp_style_prefer_primary_constructors = true:none
 csharp_style_var_elsewhere = true:none
 csharp_style_var_for_built_in_types = true:none
 csharp_style_var_when_type_is_apparent = true:none
+
+###############################################################################
+# Set dotnet diagnostic options to ignore:
+#    CA1003 - Use generic event handler instances
+#    CA1028 - Enum storage should be Int32
+#    CA1034 - Nested types should not be visible
+#    CA1041 - Provide ObsoleteAttribute message
+#    CA1051 - Do not declare visible instance fields
+#    CA1305 - Specify IFormatProvider
+#    CA1401 - P/Invokes should not be visible
+#    CA1707 - Identifiers should not contain underscores
+#    CA1708 - Identifiers should differ by more than case
+#    CA1720 - Identifiers should not contain type names
+#    CA1724 - Type names should not match namespaces
+#    CA1815 - Override equals and operator equals on value types
+#    CA2225 - Operator overloads have named alternates
+###############################################################################
+dotnet_diagnostic.CA1003.severity = none
+dotnet_diagnostic.CA1028.severity = none
+dotnet_diagnostic.CA1034.severity = none
+dotnet_diagnostic.CA1041.severity = none
+dotnet_diagnostic.CA1051.severity = none
+dotnet_diagnostic.CA1305.severity = none
+dotnet_diagnostic.CA1401.severity = none
+dotnet_diagnostic.CA1707.severity = none
+dotnet_diagnostic.CA1708.severity = none
+dotnet_diagnostic.CA1720.severity = none
+dotnet_diagnostic.CA1724.severity = none
+dotnet_diagnostic.CA1815.severity = none
+dotnet_diagnostic.CA2225.severity = none
+
+###############################################################################
+# Set dotnet diagnostic options to ignore:
+#    CS1591 - Missing XML comment for publicly visible type or member
+#    CS8981 - The type name only contains lower-cased ascii characters
+###############################################################################
+dotnet_diagnostic.CS1591.severity = none
+dotnet_diagnostic.CS8981.severity = none
+
+###############################################################################
+# Set dotnet diagnostic options to ignore:
+#    SYSLIB1054 - Use LibraryImportAttribute instead of DllImportAttribute to generate p/invoke marshalling code at compile time
+###############################################################################
+dotnet_diagnostic.SYSLIB1054.severity = none

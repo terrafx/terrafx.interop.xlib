@@ -3,13 +3,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <NoWarn>$(NoWarn);CA1401;CS1591;CS8981;SYSLIB1054</NoWarn>
     <RootNamespace>TerraFX.Interop</RootNamespace>
-    <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+    <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
   </PropertyGroup>
 
-  <ItemGroup Condition="'$(TargetFramework)' != 'net6.0'">
-    <Compile Remove="Shims/UnscopedRefAttribute.cs" />
+  <ItemGroup>
+    <EmbeddedResource Include="ILLink.Substitutions.xml" LogicalName="ILLink.Substitutions.xml" />
   </ItemGroup>
 
 </Project>
