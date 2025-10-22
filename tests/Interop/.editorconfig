@@ -50,6 +50,8 @@ csharp_style_var_when_type_is_apparent = true:none
 
 ###############################################################################
 # Set dotnet diagnostic options to ignore:
-#    CA1515 - Consider making public types internal
+#    IDE0004 - Remove unnecessary cast
+#    IDE0005 - Remove unnecessary using directives
 ###############################################################################
-dotnet_diagnostic.CA1515.severity = none
+dotnet_diagnostic.IDE0004.severity = none
+dotnet_diagnostic.IDE0005.severity = none
