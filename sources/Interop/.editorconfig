@@ -50,44 +50,8 @@ csharp_style_var_when_type_is_apparent = true:none
 
 ###############################################################################
 # Set dotnet diagnostic options to ignore:
-#    CA1003 - Use generic event handler instances
-#    CA1028 - Enum storage should be Int32
-#    CA1034 - Nested types should not be visible
-#    CA1041 - Provide ObsoleteAttribute message
-#    CA1051 - Do not declare visible instance fields
-#    CA1305 - Specify IFormatProvider
-#    CA1401 - P/Invokes should not be visible
-#    CA1707 - Identifiers should not contain underscores
-#    CA1708 - Identifiers should differ by more than case
-#    CA1720 - Identifiers should not contain type names
-#    CA1724 - Type names should not match namespaces
-#    CA1815 - Override equals and operator equals on value types
-#    CA2225 - Operator overloads have named alternates
+#    IDE0004 - Remove unnecessary cast
+#    IDE0005 - Remove unnecessary using directives
 ###############################################################################
-dotnet_diagnostic.CA1003.severity = none
-dotnet_diagnostic.CA1028.severity = none
-dotnet_diagnostic.CA1034.severity = none
-dotnet_diagnostic.CA1041.severity = none
-dotnet_diagnostic.CA1051.severity = none
-dotnet_diagnostic.CA1305.severity = none
-dotnet_diagnostic.CA1401.severity = none
-dotnet_diagnostic.CA1707.severity = none
-dotnet_diagnostic.CA1708.severity = none
-dotnet_diagnostic.CA1720.severity = none
-dotnet_diagnostic.CA1724.severity = none
-dotnet_diagnostic.CA1815.severity = none
-dotnet_diagnostic.CA2225.severity = none
-
-###############################################################################
-# Set dotnet diagnostic options to ignore:
-#    CS1591 - Missing XML comment for publicly visible type or member
-#    CS8981 - The type name only contains lower-cased ascii characters
-###############################################################################
-dotnet_diagnostic.CS1591.severity = none
-dotnet_diagnostic.CS8981.severity = none
-
-###############################################################################
-# Set dotnet diagnostic options to ignore:
-#    SYSLIB1054 - Use LibraryImportAttribute instead of DllImportAttribute to generate p/invoke marshalling code at compile time
-###############################################################################
-dotnet_diagnostic.SYSLIB1054.severity = none
+dotnet_diagnostic.IDE0004.severity = none
+dotnet_diagnostic.IDE0005.severity = none

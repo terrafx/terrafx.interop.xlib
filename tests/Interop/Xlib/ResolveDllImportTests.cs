@@ -40,6 +40,7 @@ public static unsafe partial class ResolveDllImportTests
         Assert.That(unresolved, Is.Empty);
     }
 
+#pragma warning disable CA1031 // Do not catch general exception types
     private static void ProcessMethod(MethodInfo method, List<string> unresolved)
     {
         if (!method.Attributes.HasFlag(MethodAttributes.PinvokeImpl))
@@ -56,6 +57,7 @@ public static unsafe partial class ResolveDllImportTests
             unresolved.Add(method.Name);
         }
     }
+#pragma warning restore CA1031 // Do not catch general exception types
 
     private static void ProcessType([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicMethods | DynamicallyAccessedMemberTypes.NonPublicMethods | DynamicallyAccessedMemberTypes.PublicNestedTypes | DynamicallyAccessedMemberTypes.NonPublicNestedTypes)] Type type, List<string> unresolved)
     {

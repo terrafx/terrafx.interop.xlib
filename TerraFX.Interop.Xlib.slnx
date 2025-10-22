@@ -1,0 +1,127 @@
+<Solution>
+  <Folder Name="/.github/" />
+  <Folder Name="/.github/workflows/">
+    <File Path=".github/workflows/ci.yml" />
+  </Folder>
+  <Folder Name="/.root/">
+    <File Path=".editorconfig" />
+    <File Path=".gitattributes" />
+    <File Path=".gitignore" />
+    <File Path="build.cmd" />
+    <File Path="build.sh" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Build.targets" />
+    <File Path="Directory.Packages.props" />
+    <File Path="exclusion.dic" />
+    <File Path="global.json" />
+    <File Path="LICENSE.md" />
+    <File Path="NOTICE.md" />
+    <File Path="pack.cmd" />
+    <File Path="pack.sh" />
+    <File Path="restore.cmd" />
+    <File Path="restore.sh" />
+    <File Path="TerraFX.snk" />
+    <File Path="test.cmd" />
+    <File Path="test.sh" />
+  </Folder>
+  <Folder Name="/docs/">
+    <File Path="docs/CODEOWNERS" />
+    <File Path="docs/CODE_OF_CONDUCT.md" />
+    <File Path="docs/CONTRIBUTING.md" />
+    <File Path="docs/ISSUE_TEMPLATE.md" />
+    <File Path="docs/PULL_REQUEST_TEMPLATE.md" />
+    <File Path="docs/README.md" />
+  </Folder>
+  <Folder Name="/generation/">
+    <File Path="generation/remap-handles.rsp" />
+    <File Path="generation/remap-other.rsp" />
+    <File Path="generation/remap-transparent.rsp" />
+    <File Path="generation/remap-types.rsp" />
+    <File Path="generation/remap.rsp" />
+    <File Path="generation/settings.rsp" />
+  </Folder>
+  <Folder Name="/generation/Xlib/" />
+  <Folder Name="/generation/Xlib/other/" />
+  <Folder Name="/generation/Xlib/other/helper-types/">
+    <File Path="generation/Xlib/other/helper-types/generate.rsp" />
+    <File Path="generation/Xlib/other/helper-types/header.txt" />
+    <File Path="generation/Xlib/other/helper-types/other-helper-types.h" />
+  </Folder>
+  <Folder Name="/generation/Xlib/X11/" />
+  <Folder Name="/generation/Xlib/X11/cursorfont/">
+    <File Path="generation/Xlib/X11/cursorfont/generate.rsp" />
+    <File Path="generation/Xlib/X11/cursorfont/header.txt" />
+    <File Path="generation/Xlib/X11/cursorfont/Xlib-cursorfont.h" />
+  </Folder>
+  <Folder Name="/generation/Xlib/X11/keysymdef/">
+    <File Path="generation/Xlib/X11/keysymdef/generate.rsp" />
+    <File Path="generation/Xlib/X11/keysymdef/header.txt" />
+    <File Path="generation/Xlib/X11/keysymdef/Xlib-keysymdef.h" />
+  </Folder>
+  <Folder Name="/generation/Xlib/X11/X/">
+    <File Path="generation/Xlib/X11/X/generate.rsp" />
+    <File Path="generation/Xlib/X11/X/header.txt" />
+    <File Path="generation/Xlib/X11/X/Xlib-X.h" />
+  </Folder>
+  <Folder Name="/generation/Xlib/X11/Xatom/">
+    <File Path="generation/Xlib/X11/Xatom/generate.rsp" />
+    <File Path="generation/Xlib/X11/Xatom/header.txt" />
+    <File Path="generation/Xlib/X11/Xatom/Xlib-Xatom.h" />
+  </Folder>
+  <Folder Name="/generation/Xlib/X11/Xcms/">
+    <File Path="generation/Xlib/X11/Xcms/generate.rsp" />
+    <File Path="generation/Xlib/X11/Xcms/header.txt" />
+    <File Path="generation/Xlib/X11/Xcms/Xlib-Xcms.h" />
+  </Folder>
+  <Folder Name="/generation/Xlib/X11/Xlib/">
+    <File Path="generation/Xlib/X11/Xlib/generate.rsp" />
+    <File Path="generation/Xlib/X11/Xlib/header.txt" />
+    <File Path="generation/Xlib/X11/Xlib/Xlib-Xlib.h" />
+  </Folder>
+  <Folder Name="/generation/Xlib/X11/Xproto/">
+    <File Path="generation/Xlib/X11/Xproto/generate.rsp" />
+    <File Path="generation/Xlib/X11/Xproto/header.txt" />
+    <File Path="generation/Xlib/X11/Xproto/Xlib-Xproto.h" />
+  </Folder>
+  <Folder Name="/generation/Xlib/X11/Xprotostr/">
+    <File Path="generation/Xlib/X11/Xprotostr/generate.rsp" />
+    <File Path="generation/Xlib/X11/Xprotostr/header.txt" />
+    <File Path="generation/Xlib/X11/Xprotostr/Xlib-Xprotostr.h" />
+  </Folder>
+  <Folder Name="/generation/Xlib/X11/Xresource/">
+    <File Path="generation/Xlib/X11/Xresource/generate.rsp" />
+    <File Path="generation/Xlib/X11/Xresource/header.txt" />
+    <File Path="generation/Xlib/X11/Xresource/Xlib-Xresource.h" />
+  </Folder>
+  <Folder Name="/generation/Xlib/X11/Xutil/">
+    <File Path="generation/Xlib/X11/Xutil/generate.rsp" />
+    <File Path="generation/Xlib/X11/Xutil/header.txt" />
+    <File Path="generation/Xlib/X11/Xutil/Xlib-Xutil.h" />
+  </Folder>
+  <Folder Name="/scripts/">
+    <File Path="scripts/build.ps1" />
+    <File Path="scripts/build.sh" />
+    <File Path="scripts/cibuild.cmd" />
+    <File Path="scripts/cibuild.sh" />
+  </Folder>
+  <Folder Name="/sources/">
+    <File Path="sources/Directory.Build.props" />
+    <File Path="sources/Directory.Build.targets" />
+  </Folder>
+  <Folder Name="/sources/Interop/">
+    <File Path="sources/Interop/.editorconfig" />
+  </Folder>
+  <Folder Name="/sources/Interop/Xlib/">
+    <Project Path="sources/Interop/Xlib/TerraFX.Interop.Xlib.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <File Path="tests/Directory.Build.props" />
+    <File Path="tests/Directory.Build.targets" />
+  </Folder>
+  <Folder Name="/tests/Interop/">
+    <File Path="tests/Interop/.editorconfig" />
+  </Folder>
+  <Folder Name="/tests/Interop/Xlib/">
+    <Project Path="tests/Interop/Xlib/TerraFX.Interop.Xlib.UnitTests.csproj" />
+  </Folder>
+</Solution>
